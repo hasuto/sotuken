@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+  <script src="mizusawa_top.js"></script>
+</head>
+
+<body>
+  <a-scene device-orientation-permission-ui="enabled: false" background="color: #90D7EC">
+
+    <a-assets>
+
+      <audio id="audio01" src="" preload="auto"></audio>
+    </a-assets>
+    <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
+
+    <!-- <a-entity camera look-controls
+      orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity> -->
+
+    <!-- <a-gltf-model id="Mizusawa_a" visible="true" src="top_aseets/taiikukan.glb" position="0 0 -18" scale="1 1 1"
+    rotation="0 0 0"></a-gltf-model> -->
+
+    <a-gltf-model id="denkigizyutu" visible="true" src="top_aseets/denkigizyutu.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+    <a-gltf-model id="seisangizyutu" visible="true" src="top_aseets/seisangizyutu.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+    <a-gltf-model id="kentikusetubi" visible="true" src="top_aseets/kentikusetubi.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+    <a-gltf-model id="taikukan_m" visible="true" src="top_aseets/taikukan_m.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+    <a-gltf-model id="honkan_m" visible="true" src="top_aseets/honkan_m.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+    <a-gltf-model id="mizusawa_all" visible="true" src="top_aseets/mizusawa_all.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"></a-gltf-model>
+    <!-- <a-gltf-model onclick="sande_link()" id="kousya" visible="true" src="top_aseets/honkousya.glb" position="-13 0 0" scale="1 1 1"
+    rotation="0 0 0"></a-gltf-model> -->
+    <!-- <a-entity cursor="rayOrigin: mouse"></a-entity> -->
+    <!--   
+    <a-camera id="camera-wrapper" position="15 5 0" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5">
+      <a-cursor></a-cursor>
+    </a-camera> -->
+    <a-entity cursor="rayOrigin: mouse"></a-entity>
+
+    <a-entity id="camera_pc" camera look-controls
+      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 20 10 -20">
+
+    </a-entity>
+    <a-entity id="camera_phone" camera look-controls
+      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 40 10 -30">
+    </a-entity>
+  </a-scene>
+
+
+</body>
+
+</html>
