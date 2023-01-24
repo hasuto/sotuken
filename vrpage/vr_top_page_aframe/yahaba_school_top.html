@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+  <script src="yahaba_school_top.js"></script>
+  <link rel="stylesheet" href="yahaba_school_top.css">
+
+  <!-- <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script> -->
+</head>
+
+<body>
+
+
+  <a-scene device-orientation-permission-ui="enabled: false">
+    <a-assets>
+
+      <audio id="audio01" src="" preload="auto"></audio>
+    </a-assets>
+    <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
+
+    <!--クリック時にイベント発火させなくとも動く-->
+    <!-- <a-gradient-sky material="shader: gradient; topColor: 255 0 0; bottomColor: 0 121 255;"></a-gradient-sky> -->
+    <!-- <a-sky color="linear-gradient(red, yellow)"></a-sky> -->
+    <!-- <a-sky radius="200" theta-start="0" theta-length="300"
+      material="shader:gradientshader;topColor:#c8ceca;  bottomColor:#e2a872;" geometry="" visible="" id="sky"
+      position=""></a-sky> -->
+    <a-sky src="top_aseets/haikei_2.png"></a-sky>
+
+    <a-gltf-model id="honkan_genkan" visible="true" src="top_aseets/honkan_genkan.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="mekatoro_model" visible="true" src="top_aseets/mekatoro.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="senkou_model" visible="true" src="top_aseets/senkou.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="sande_model" visible="true" src="top_aseets/sande.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="densi_model" visible="true" src="top_aseets/densi.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false; startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+      <!--下記のオブジェクトは電子技術科のモデルが誤作動を働かないために設置したもの-->
+    <a-gltf-model id="densi_model_test" visible="false" src="top_aseets/densi.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"></a-gltf-model>
+
+    <a-gltf-model id="kentiku_model" visible="true" src="top_aseets/kentiku.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+
+
+    <a-gltf-model id="zyohou_model" visible="true" src="top_aseets/zyohou.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="watari" visible="true" src="top_aseets/tuuro_all.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"></a-gltf-model>
+
+    <a-gltf-model id="tosyo" visible="true" src="top_aseets/tosyo.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="tamoku" visible="true" src="top_aseets/tamoku.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="taiku" visible="true" src="top_aseets/taiikukan.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="daikyo" visible="true" src="top_aseets/daikyou.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="ryou" visible="true" src="top_aseets/ryou.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="syoku" visible="true" src="top_aseets/syoku.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="piro" visible="true" src="top_aseets/piro.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
+      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+      <a-gltf-model id="yahaba_sousyoku" visible="true" src="top_aseets/yahaba_sousyoku.glb" position="-13 0 0" scale="1 1 1"
+    rotation="0 0 0"></a-gltf-model>
+
+    <!-- <a-gltf-model id="piro" visible="true" src="top_aseets/kousya_sample12_19.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0"></a-gltf-model> -->
+
+
+
+    <a-gltf-model id="mekatoro_point" visible="true" src="top_aseets/mekatoro_point_a.glb" position="1 2 -19"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: 1 2 -19; to: 1 2.5 -19; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: 1 2.5 -19; to: 1 2 -19; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="densi_point" visible="true" src="top_aseets/densi_point_a.glb" position="-2 4 -2"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear "
+      animation__mouseenter="property: position; from: -2 4 -2; to: -2 4.5 -2; dur: 600; loop: false; startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -2 4.5 -2; to: -2 4 -2; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+    <a-gltf-model id="kentiku_point" visible="true" src="top_aseets/kentiku_point_a.glb" position="-8 2 -19"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -8 2 -19; to: -8 2.5 -19; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -8 2.5 -19; to: -8 2 -19; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="sande_point" visible="true" src="top_aseets/sande_point_a.glb" position="-8 2 -16"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -8 2 -16; to: -8 2.5 -16; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -8 2.5 -16; to: -8 2 -16; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="zyohou_point" visible="true" src="top_aseets/zyouhou_point_a.glb" position="-7 4 -2"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -7 4 -2; to: -7 4.5 -2; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -7 4.5 -2; to: -7 4 -2; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="senkou_point" visible="true" src="top_aseets/senkou_point_a.glb" position="1 2 -16"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: 1 2 -16; to: 1 2.5 -16; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: 1 2.5 -16; to: 1 2 -16; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="honkan_point" visible="true" src="top_aseets/honkan_point _a.glb" position="3 4 -2"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: 3 4 -2; to: 3 4.5 -2; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: 3 4.5 -2; to: 3 4 -2; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="syokudou_point" visible="true" src="top_aseets/syokudou_point.glb" position="-17 2 -2"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -17 2 -2; to: -17 2.5 -2; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -17 2.5 -2; to: -17 2 -2; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="taikukan_point" visible="true" src="top_aseets/taikukan_point.glb" position="-2.4 3.4 7"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -2.4 3.4 7; to: -2.4 3.9 7; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -2.4 3.9 7; to: -2.4 3.4 7; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="ryou_point" visible="true" src="top_aseets/ryou_point.glb" position="-14.5 3.6 7"
+      scale="0.5 0.5 0.5" rotation="0 0 0"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+      animation__mouseenter="property: position; from: -14.5 3.6 7; to: -14.5 4.1 7; dur: 600; loop: false;  startEvents: mouseenter"
+      animation__mouseleave="property: position; from: -14.5 4.1 7; to: -14.5 3.6 7; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
+
+
+    <a-gltf-model id="dodai" visible="true" src="top_aseets/dodai.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model>
+    <!-- 
+      <a-gltf-model id="sousyoku" visible="true" src="top_aseets/sousyoku0111_2.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model> -->
+
+    <a-entity cursor="rayOrigin: mouse"></a-entity>
+
+    <a-entity id="camera_pc" camera look-controls
+      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 20 10 -20">
+
+    </a-entity>
+    <a-entity id="camera_phone" camera look-controls
+      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 40 10 -30">
+    </a-entity>
+
+    <!-- //前に書いていたもの値を治したいときに使用 orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 20 10 -20"> 
+        <a-gltf-model id="kousya2" visible="true" src="top_aseets/honkousya.glb" position="-8 10 0" scale="1 1 1"//
+
+    rotation="-80 -50 0"></a-gltf-model>
+    <a-entity mb-text id="text" visible="true" position="0 20 0" rotation="0 0 0" scale="7 7 7" data-text="こんにちわ" color="white"></a-entity> -->
+
+    </a-entity>
+
+
+
+
+
+  </a-scene>
+
+
+
+</body>
+
+</html>

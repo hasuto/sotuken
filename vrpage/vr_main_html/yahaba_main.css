@@ -1,0 +1,1038 @@
+@charset "UTF-8";
+body {
+  margin: 0px;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* モーダルCSS */
+}
+
+.container .header-nav .navbar-brand {
+  color: #004ea2;
+  font-size: larger;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.container .header-nav .navbar-nav {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 22px;
+}
+
+.container .header-nav .navbar-nav .nav-item {
+  list-style: none;
+  margin-left: 50px;
+  opacity: 0.7;
+  -webkit-transition: .3s;
+  transition: .3s;
+  position: relative;
+}
+
+.container .header-nav .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  height: 1.8px;
+  background-color: #004EA2;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+}
+
+.container .header-nav .navbar-nav .nav-item:hover {
+  opacity: 1;
+}
+
+.container .header-nav .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+.container .header-nav .navbar-nav .nav-item .nav-link {
+  color: #004ea2;
+  font-size: medium;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container .modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .modalArea.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.container .modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70%;
+  height: auto;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container .modalWrapper.modal-title {
+  font-size: larger;
+}
+
+.container .modalWrapper.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.container .modalWrapper.modal-body ul {
+  width: auto;
+}
+
+.container .modalWrapper.modal-body ulli {
+  margin: 10px;
+}
+
+.container .modalWrapper.modal-body ulliimg {
+  padding: 3px;
+}
+
+.container .yahaba_school {
+  background-color: #004EA2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation-name: yahaba_school_fadein;
+          animation-name: yahaba_school_fadein;
+  -webkit-animation-direction: 1s;
+          animation-direction: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  height: calc(100% - 54px);
+  width: 100%;
+}
+
+@-webkit-keyframes yahaba_school_fadein {
+  0% {
+    background-color: #004EA2;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+@keyframes yahaba_school_fadein {
+  0% {
+    background-color: #004EA2;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+.container .yahaba_school .vr_content {
+  border-top: solid 3px #004EA2;
+  width: 100%;
+  height: 100%;
+  -webkit-animation-name: vr_content_fadein;
+          animation-name: vr_content_fadein;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  position: relative;
+}
+
+@-webkit-keyframes vr_content_fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vr_content_fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container .yahaba_school .vr_content .button019 a {
+  background: #fff;
+  text-decoration: none;
+  left: 30px;
+  border-radius: 50px;
+  position: absolute;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 280px;
+  padding: 10px 30px 10px 20px;
+  color: #313131;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-weight: 700;
+  z-index: 20;
+}
+
+.container .yahaba_school .vr_content .button019 a.res {
+  font-size: 1.3em;
+}
+
+.container .yahaba_school .vr_content .button019 a.meka {
+  border: solid #2A579A 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.densi {
+  border: solid #FFA826 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.kentiku {
+  border: solid #94B428 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.sande {
+  border: solid #E25C83 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.zyohou {
+  border: solid #E54848 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.senkou {
+  border: solid #6F4C77 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a.honkan {
+  border: solid #004EA2 3px;
+}
+
+.container .yahaba_school .vr_content .button019 a:first-child {
+  margin: 13px 270px 0px 0px;
+  right: 0;
+}
+
+.container .yahaba_school .vr_content .button019 a:nth-child(2) {
+  margin-left: 30px;
+  bottom: 0;
+  left: 0;
+}
+
+.container .yahaba_school .vr_content .button019 a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+
+.container .yahaba_school .vr_content .button019 a.meka:hover {
+  background: #2A579A;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.densi:hover {
+  background: #FFA826;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.kentiku:hover {
+  background: #94B428;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.sande:hover {
+  background: #E25C83;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.zyohou:hover {
+  background: #E54848;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.senkou:hover {
+  background: #6F4C77;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a.honkan:hover {
+  background: #004EA2;
+  color: #FFF;
+}
+
+.container .yahaba_school .vr_content .button019 a:hover:after {
+  right: 1.4rem;
+}
+
+.container .yahaba_school .vr_content #back_button {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+
+.container .yahaba_school .vr_content .vr_control {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.container .yahaba_school .vr_content .vr_control ul {
+  list-style: none;
+  margin: 5px 0px 0px 8%;
+  padding-left: 0;
+}
+
+.container .yahaba_school .vr_content .vr_control ul li {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.container .yahaba_school .vr_content .vr_control ul li:nth-child(2) {
+  margin-left: -1px;
+}
+
+.container .yahaba_school .vr_content .vr_control ul li img {
+  opacity: 0.7;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.container .yahaba_school .vr_content .vr_control ul li img:hover {
+  opacity: 1;
+}
+
+.container .yahaba_school .vr_content .iframe {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  display: block;
+  position: relative;
+}
+
+.container .yahaba_school .vr_content .iframe .iframe_main {
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+.container .yahaba_school .vr_content .iframe .iframe_main iframe {
+  margin-top: 0px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.container .yahaba_school .vr_content .iframe .iframe_main .school_img {
+  z-index: 3;
+  padding-top: 10px;
+  position: absolute;
+}
+
+.container .yahaba_school .vr_content .iframe .iframe_main .school_img #title-img {
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 10;
+  width: 130px;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.container .yahaba_school .vr_content .button {
+  position: absolute;
+  z-index: 20;
+  margin: auto;
+  display: inline;
+}
+
+.container .yahaba_school .vr_content .button.left {
+  -webkit-transform: perspective(50px) translate3d(-30px, 20px, 0px);
+          transform: perspective(50px) translate3d(-30px, 20px, 0px);
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  top: 50%;
+  left: 4%;
+  display: inline;
+  vertical-align: middle;
+}
+
+.container .yahaba_school .vr_content .button.left::after {
+  margin-top: 23px;
+  margin-left: 28px;
+  display: block;
+  content: '';
+  left: 3px;
+  width: 25px;
+  height: 25px;
+  border-left: 5px solid;
+  border-bottom: 5px solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 20;
+}
+
+.container .yahaba_school .vr_content .button.left.fadein {
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+.container .yahaba_school .vr_content .button.left.fadein:hover {
+  background: white;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transform: perspective(100px) translateZ(10px);
+          transform: perspective(100px) translateZ(10px);
+}
+
+.container .yahaba_school .vr_content .button.right {
+  -webkit-transform: perspective(100px) translate3d(30px, 20px, 0px);
+          transform: perspective(100px) translate3d(30px, 20px, 0px);
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  right: 4%;
+  top: 50%;
+  vertical-align: middle;
+}
+
+.container .yahaba_school .vr_content .button.right::after {
+  margin-top: 23px;
+  margin-left: 16px;
+  display: block;
+  content: '';
+  left: 3px;
+  width: 25px;
+  height: 25px;
+  border-top: 5px solid;
+  border-right: 5px solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .yahaba_school .vr_content .button.right.fadein {
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+.container .yahaba_school .vr_content .button.right.fadein:hover {
+  background: white;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transform: perspective(100px) translateZ(10px);
+          transform: perspective(100px) translateZ(10px);
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.meka,
+.container .yahaba_school .vr_content .button.left.fadein.meka {
+  color: #2A579A;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.densi,
+.container .yahaba_school .vr_content .button.left.fadein.densi {
+  color: #FFA826;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.kentiku,
+.container .yahaba_school .vr_content .button.left.fadein.kentiku {
+  color: #94B428;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.sande,
+.container .yahaba_school .vr_content .button.left.fadein.sande {
+  color: #E25C83;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.zyohou,
+.container .yahaba_school .vr_content .button.left.fadein.zyohou {
+  color: #E54848;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.senkou,
+.container .yahaba_school .vr_content .button.left.fadein.senkou {
+  color: #6F4C77;
+}
+
+.container .yahaba_school .vr_content .button.right.fadein.honkan,
+.container .yahaba_school .vr_content .button.left.fadein.honkan {
+  color: #004EA2;
+}
+
+.container .yahaba_school .vr_content .text_parent {
+  position: relative;
+  z-index: 3;
+  font-size: 150%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.container .yahaba_school .vr_content .text_parent.fadein {
+  -webkit-transform: perspective(100px) translate3d(0px, -20px, 0px);
+          transform: perspective(100px) translate3d(0px, -20px, 0px);
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+  opacity: 1;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei {
+  width: 50%;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_text {
+  max-width: 50%;
+  line-height: 1.6;
+  padding: 35px;
+  font-size: 1.3rem;
+  margin: 0px 60px 25px 0px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: absolute;
+  z-index: 20;
+  right: 5%;
+  overflow: hidden;
+  bottom: 0;
+  opacity: 1;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_text.fadein {
+  opacity: 0;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button {
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+  margin: 0px 0px 20px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 20;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  opacity: 0.7;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button:hover {
+  opacity: 1;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .setumei_icon {
+  bottom: 90px;
+  right: 16px;
+  position: absolute;
+  margin-top: 12px;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  opacity: 0;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.fadein {
+  -webkit-transform: perspective(100px) translate3d(0px, 75px, 0px);
+          transform: perspective(100px) translate3d(0px, 75px, 0px);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  opacity: 1;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .batu_icon {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .batu_icon.fadein {
+  opacity: 0;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .classroom_text1 {
+  max-width: 25%;
+  border-radius: 10px;
+  margin: 0px 0px 35px 80px;
+  bottom: 0%;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: perspective(100px) translate3d(30px, 20px, 0px);
+          transform: perspective(100px) translate3d(30px, 20px, 0px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  font-size: 2rem;
+}
+
+.container .yahaba_school .vr_content .text_parent .classroom_text1.res {
+  font-size: 1.3rem;
+}
+
+.container .yahaba_school .vr_content .text_parent .classroom_text3 {
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: perspective(100px) translate3d(20px, 20px, 0px);
+          transform: perspective(100px) translate3d(20px, 20px, 0px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .classroom_text1.scrollin {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+
+.container .yahaba_school .vr_content .text_parent .classroom_text3.scrollin {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+.container .yahaba_school .yahaba_list {
+  max-width: 330px;
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-right: 29px;
+  -webkit-animation-name: yahaba_list_fadein;
+          animation-name: yahaba_list_fadein;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  position: absolute;
+  z-index: 20;
+  right: 0;
+}
+
+.container .yahaba_school .yahaba_list #mekatoro_list_all,
+.container .yahaba_school .yahaba_list #densi_list_all,
+.container .yahaba_school .yahaba_list #kentiku_list_all,
+.container .yahaba_school .yahaba_list #sande_list_all,
+.container .yahaba_school .yahaba_list #zyohou_list_all,
+.container .yahaba_school .yahaba_list #senkou_list_all,
+.container .yahaba_school .yahaba_list #honkan_list_all,
+.container .yahaba_school .yahaba_list #ryou_list_all {
+  display: none;
+}
+
+@-webkit-keyframes yahaba_list_fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes yahaba_list_fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container .yahaba_school .yahaba_list a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label {
+  max-width: 330px;
+  display: block;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 15px 10px 20px;
+  line-height: 1;
+  color: black;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.container .yahaba_school .yahaba_list label.res {
+  width: 260px;
+}
+
+.container .yahaba_school .yahaba_list label.label_meka {
+  border: 4px solid #2A579A;
+}
+
+.container .yahaba_school .yahaba_list label.label_meka.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #2A579A;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_densi {
+  border: 4px solid #FFA826;
+}
+
+.container .yahaba_school .yahaba_list label.label_densi.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #FFA826;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_kentiku {
+  border: 4px solid #94B428;
+}
+
+.container .yahaba_school .yahaba_list label.label_kentiku.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #94B428;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_sande {
+  border: 4px solid #E25C83;
+}
+
+.container .yahaba_school .yahaba_list label.label_sande.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #E25C83;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_zyohou {
+  border: 4px solid #E54848;
+}
+
+.container .yahaba_school .yahaba_list label.label_zyohou.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #E54848;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_senkou {
+  border: 4px solid #6F4C77;
+}
+
+.container .yahaba_school .yahaba_list label.label_senkou.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #6F4C77;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label.label_honkan, .container .yahaba_school .yahaba_list label.label_ryou {
+  border: 4px solid #004EA2;
+}
+
+.container .yahaba_school .yahaba_list label.label_honkan.hover, .container .yahaba_school .yahaba_list label.label_ryou.hover {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #004EA2;
+  color: #fff;
+}
+
+.container .yahaba_school .yahaba_list label p {
+  font-weight: 600;
+  display: inline-block;
+  padding: 0px 45px 0px 0px;
+  left: 0;
+}
+
+.container .yahaba_school .yahaba_list label p.res {
+  font-size: 1.3rem;
+}
+
+.container .yahaba_school .yahaba_list label p::after {
+  width: 25px;
+  height: 8px;
+  display: inline-block;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  -webkit-transform: skew(45deg);
+          transform: skew(45deg);
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  margin-top: -12px;
+  content: "";
+}
+
+.container .yahaba_school .yahaba_list label img {
+  width: 20px;
+  height: 20px;
+}
+
+.container .yahaba_school .yahaba_list input {
+  display: none;
+}
+
+.container .yahaba_school .yahaba_list ul {
+  max-width: 330px;
+  margin: 0px 0;
+  padding: 0;
+  background: #fff;
+  list-style: none;
+  text-align: center;
+}
+
+.container .yahaba_school .yahaba_list li {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.container .yahaba_school .yahaba_list li a {
+  opacity: 0.7;
+  color: #000;
+}
+
+.container .yahaba_school .yahaba_list li a:hover {
+  opacity: 1;
+}
+
+.container .yahaba_school .yahaba_list #senkou2:checked ~ .senkou_list_all label {
+  border-radius: 0px;
+}
+
+.container .yahaba_school .yahaba_list #densi2:checked ~ #densi_list2 li,
+.container .yahaba_school .yahaba_list #mekatoro2:checked ~ #mekatoro_list2 li,
+.container .yahaba_school .yahaba_list #kentiku2:checked ~ #kentiku_list2 li,
+.container .yahaba_school .yahaba_list #sande2:checked ~ #sande_list2 li,
+.container .yahaba_school .yahaba_list #zyohou2:checked ~ #zyohou_list2 li,
+.container .yahaba_school .yahaba_list #senkou2:checked ~ #senkou_list2 li,
+.container .yahaba_school .yahaba_list #honkan2:checked ~ #honkan_list2 li,
+.container .yahaba_school .yahaba_list #ryou:checked ~ #ryou_list li {
+  height: 54px;
+  opacity: 1;
+}
+
+.container .yahaba_school .mask {
+  z-index: 20;
+  width: 100%;
+  height: calc(100% - 52px);
+  -webkit-animation-name: mask_fadein;
+          animation-name: mask_fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  position: absolute;
+  /* 絶対位置指定 */
+  pointer-events: none;
+  background-color: #247BD9;
+  /* マスクは半透明 */
+}
+
+@-webkit-keyframes mask_fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask_fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container .yahaba_school .mask .loader,
+.container .yahaba_school .mask .loader:before,
+.container .yahaba_school .mask .loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+
+.container .yahaba_school .mask .loader {
+  color: #ffffff;
+  font-size: 10px;
+  margin: 500px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  pointer-events: none;
+}
+
+.container .yahaba_school .mask .loader:before,
+.container .yahaba_school .mask .loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.container .yahaba_school .mask .loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.container .yahaba_school .mask .loader:after {
+  left: 3.5em;
+}
+
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    -webkit-box-shadow: 0 2.5em 0 -1.3em;
+            box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    -webkit-box-shadow: 0 2.5em 0 0;
+            box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    -webkit-box-shadow: 0 2.5em 0 -1.3em;
+            box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    -webkit-box-shadow: 0 2.5em 0 0;
+            box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.container .yahaba_school #roder-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 130px;
+}
+
+.container .yahaba_school .mask.roder {
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+  opacity: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+}
+/*# sourceMappingURL=yahaba_main.css.map */

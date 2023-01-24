@@ -1,0 +1,335 @@
+@charset "UTF-8";
+#yahaba_school {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  max-height: 900px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#yahaba_school .vr_content {
+  width: 80%;
+}
+
+#yahaba_school .vr_content .vr_control {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+#yahaba_school .vr_content .vr_control ul {
+  list-style: none;
+  margin: 5px 0px 0px 8%;
+  padding-left: 0;
+}
+
+#yahaba_school .vr_content .vr_control ul li {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+#yahaba_school .vr_content .vr_control ul li:nth-child(2) {
+  margin-left: -1px;
+}
+
+#yahaba_school .vr_content .vr_control ul li img {
+  opacity: 0.7;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#yahaba_school .vr_content .vr_control ul li img:hover {
+  opacity: 1;
+}
+
+#yahaba_school .vr_content .iframe {
+  z-index: 1;
+  margin-top: -54px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+#yahaba_school .vr_content .iframe iframe {
+  width: 95%;
+  height: 95%;
+  aspect-ratio: 16 / 9;
+}
+
+#yahaba_school .vr_content .iframe img {
+  color: #fff;
+  opacity: 0;
+  -webkit-transform: perspective(100px) translate3d(20px, 20px, 0px);
+          transform: perspective(100px) translate3d(20px, 20px, 0px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  height: 100%;
+  margin: auto;
+  width: 8%;
+}
+
+#yahaba_school .vr_content .iframe img.fadein {
+  opacity: 0.7;
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+#yahaba_school .vr_content .iframe img.fadein:hover {
+  opacity: 1;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transform: perspective(100px) translateZ(10px);
+          transform: perspective(100px) translateZ(10px);
+}
+
+#yahaba_school .vr_content .iframe .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* 絶対位置指定 */
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* マスクは半透明 */
+}
+
+#yahaba_school .yahaba_list {
+  width: 20%;
+  margin-left: 10px;
+}
+
+#yahaba_school .yahaba_list a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+#yahaba_school .yahaba_list label {
+  width: 210px;
+  display: block;
+  margin: 0;
+  padding: 12px 15px 30px 15px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 3px solid #c3c3c3;
+  position: relative;
+}
+
+#yahaba_school .yahaba_list label.label_meka {
+  background: #2A579A;
+}
+
+#yahaba_school .yahaba_list label.label_densi {
+  background: #FFA826;
+}
+
+#yahaba_school .yahaba_list label.label_kentiku {
+  background: #94B428;
+}
+
+#yahaba_school .yahaba_list label.label_sande {
+  background: #E25C83;
+}
+
+#yahaba_school .yahaba_list label.label_zyohou {
+  background: #E54848;
+}
+
+#yahaba_school .yahaba_list label.label_senkou {
+  background: #6F4C77;
+}
+
+#yahaba_school .yahaba_list label.label_honkan {
+  background: #004EA2;
+}
+
+#yahaba_school .yahaba_list label p {
+  margin-bottom: -10px;
+  display: inline-block;
+}
+
+#yahaba_school .yahaba_list label p::after {
+  content: url(down_button2.png);
+  white-space: pre;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  position: absolute;
+  top: -87px;
+  left: -22.5px;
+  opacity: 0.7;
+}
+
+#yahaba_school .yahaba_list label p:hover::after {
+  opacity: 1;
+}
+
+#yahaba_school .yahaba_list label img {
+  width: 20px;
+  height: 20px;
+}
+
+#yahaba_school .yahaba_list input {
+  display: none;
+}
+
+#yahaba_school .yahaba_list ul {
+  width: 210px;
+  margin: 0px 0;
+  padding: 0;
+  background: #247BD9;
+  list-style: none;
+  text-align: center;
+}
+
+#yahaba_school .yahaba_list li {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#yahaba_school .yahaba_list li a {
+  opacity: 0.7;
+}
+
+#yahaba_school .yahaba_list li a:hover {
+  opacity: 1;
+}
+
+#yahaba_school .yahaba_list #densi2:checked ~ #densi_list2 li,
+#yahaba_school .yahaba_list #mekatoro2:checked ~ #mekatoro_list2 li,
+#yahaba_school .yahaba_list #kentiku2:checked ~ #kentiku_list2 li,
+#yahaba_school .yahaba_list #sande2:checked ~ #sande_list2 li,
+#yahaba_school .yahaba_list #zyohou2:checked ~ #zyohou_list2 li,
+#yahaba_school .yahaba_list #senkou2:checked ~ #senkou_list2 li,
+#yahaba_school .yahaba_list #honkan2:checked ~ #honkan_list2 li {
+  height: 54px;
+  opacity: 1;
+}
+
+#yahaba_school .text_parent {
+  margin: -70px 0px 0px 30px;
+  position: relative;
+  z-index: 3;
+}
+
+#yahaba_school .text_parent .classroom_text1 {
+  padding: 10px;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: perspective(100px) translate3d(20px, 20px, 0px);
+          transform: perspective(100px) translate3d(20px, 20px, 0px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+#yahaba_school .text_parent .classroom_text3 {
+  padding: 10px;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: perspective(100px) translate3d(20px, 20px, 0px);
+          transform: perspective(100px) translate3d(20px, 20px, 0px);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+#yahaba_school .text_parent .classroom_text1.scrollin {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+#yahaba_school .text_parent .classroom_text3.scrollin {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
+          transform: perspective(100px) translate3d(0px, 0px, 20px);
+}
+
+@-webkit-keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+#welcome {
+  margin-top: 200px;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#loader {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #00c2bc;
+  z-index: 100;
+  margin-bottom: -850px;
+  /* 環境によって「z-index」追加 */
+}
+
+/* 読み込み完了後に「loaded」を付与する */
+#loader.loaded {
+  -webkit-animation: fadeOut 3s forwards;
+          animation: fadeOut 3s forwards;
+}
+/*# sourceMappingURL=vrpage.css.map */

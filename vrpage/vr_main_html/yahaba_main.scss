@@ -1,0 +1,1225 @@
+@charset "UTF-8";
+
+$honkan-color: #004EA2;
+$meka-color: #2A579A;
+$densi-color: #FFA826;
+$kentiku-color: #94B428;
+$sande-color: #E25C83;
+$zyohou-color: #E54848;
+$senkou-color: #6F4C77;
+
+body {
+    margin: 0px;
+}
+
+.container {
+    // padding-left: 15px;
+    // padding-right: 15px;
+    // margin-top: 10px;
+    // margin-left: 150px;
+    // margin-right: 150px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+
+
+    .header-nav {
+        // border-bottom: solid 3px #004EA2;
+
+
+        .navbar-brand {
+            color: #004ea2;
+            font-size: larger;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+
+        .navbar-nav {
+
+            display: inline-flex;
+            height: 22px;
+
+
+            .nav-item {
+                list-style: none;
+                margin-left: 50px;
+                opacity: 0.7;
+                transition: .3s;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    content: '';
+                    height: 1.8px;
+                    background-color: #004EA2;
+                    transition: .3s;
+                    transform: translateX(-50%);
+                    width: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                .nav-link {
+                    color: #004ea2;
+                    font-size: medium;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+    /* モーダルCSS */
+    .modalArea {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+    }
+
+
+
+    .modalWrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: auto;
+        max-width: 500px;
+        padding: 10px 30px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        &.modal-title {
+            font-size: larger;
+        }
+
+        &.closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        &.modal-body ul {
+            width: auto;
+
+            &li {
+                margin: 10px;
+
+                &img {
+                    padding: 3px;
+                }
+            }
+        }
+    }
+
+    .yahaba_school {
+        background-color: $honkan-color;
+        display: flex;
+        animation-name: yahaba_school_fadein;
+        animation-direction: 1s;
+        animation-fill-mode: forwards;
+        height: calc(100% - 54px);
+        width: 100%;
+
+
+        @keyframes yahaba_school_fadein {
+            0% {
+                background-color: $honkan-color;
+            }
+
+            100% {
+                background-color: #fff;
+            }
+        }
+
+
+        .vr_content {
+            border-top: solid 3px #004EA2;
+            width: 100%;
+            height: 100%;
+            // max-height: calc(100% - 54px);
+            animation-name: vr_content_fadein;
+            animation-duration: 3s;
+            position: relative;
+
+            @keyframes vr_content_fadein {
+                0% {
+                    opacity: 0;
+                }
+
+                90% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .button019 a {
+                background: #fff;
+                text-decoration: none;
+                left: 30px;
+
+                border-radius: 50px;
+                position: absolute;
+                // display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                max-width: 280px;
+                padding: 10px 30px 10px 20px;
+                color: #313131;
+                transition: 0.3s ease-in-out;
+                font-weight: 700;
+                z-index: 20;
+
+                &.res {
+                    font-size: 1.3em;
+                }
+
+                &.meka {
+                    border: solid $meka-color 3px;
+                }
+
+                &.densi {
+                    border: solid $densi-color 3px;
+                }
+
+                &.kentiku {
+                    border: solid $kentiku-color 3px;
+                }
+
+                &.sande {
+                    border: solid $sande-color 3px;
+                }
+
+                &.zyohou {
+                    border: solid $zyohou-color 3px;
+                }
+
+                &.senkou {
+                    border: solid $senkou-color 3px;
+                }
+
+                &.honkan {
+                    border: solid $honkan-color 3px;
+                }
+
+                &:first-child {
+                    margin: 13px 270px 0px 0px;
+                    right: 0;
+                }
+
+                &:nth-child(2) {
+                    margin-left: 30px;
+                    bottom: 0;
+                    left: 0;
+
+                }
+
+            }
+
+            .button019 a:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                bottom: 0;
+                right: 2rem;
+                font-size: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s;
+                width: 6px;
+                height: 6px;
+                border-top: solid 2px currentColor;
+                border-right: solid 2px currentColor;
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            .button019 a {
+                &.meka:hover {
+                    background: $meka-color;
+                    color: #FFF;
+                }
+
+                &.densi:hover {
+                    background: $densi-color;
+                    color: #FFF;
+                }
+
+                &.kentiku:hover {
+                    background: $kentiku-color;
+                    color: #FFF;
+                }
+
+                &.sande:hover {
+                    background: $sande-color;
+                    color: #FFF;
+                }
+
+                &.zyohou:hover {
+                    background: $zyohou-color;
+                    color: #FFF;
+                }
+
+                &.senkou:hover {
+                    background: $senkou-color;
+                    color: #FFF;
+                }
+
+                &.honkan:hover {
+                    background: $honkan-color;
+                    color: #FFF;
+                }
+            }
+
+            .button019 a:hover:after {
+                right: 1.4rem;
+            }
+
+            // #game_button {
+            //     position: absolute;
+            //     z-index: 20;
+            //     right: 0;
+            //     margin-right: 245px;
+            //     margin-top: 20px;
+            //     border-radius: 10;
+            // }
+
+            #back_button {
+                position: absolute;
+                z-index: 20;
+                bottom: 0;
+                margin-bottom: 50px;
+                margin-left: 30px;
+
+            }
+
+            .vr_control {
+                position: relative;
+                z-index: 2;
+                width: 100%;
+
+                ul {
+                    list-style: none;
+                    margin: 5px 0px 0px 8%;
+                    padding-left: 0;
+
+
+
+                    li {
+                        margin-left: 5px;
+                        display: inline-block; //高さ幅をしていできるようにinline-block指定
+
+                        &:nth-child(2) {
+                            //ゲームボタンアイコンだけ、幅を狭めるため。
+                            margin-left: -1px;
+                        }
+
+                        img {
+                            opacity: 0.7;
+                            border-radius: 10px;
+                            background-color: rgba($color: white, $alpha: 0.5);
+                            padding: 10px;
+                            width: 50px;
+                            height: 50px;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .iframe {
+                width: 100%;
+                height: 100%;
+                margin-top: 0px;
+                display: block;
+                position: relative;
+
+                //  box-sizing: border-box;
+
+                .iframe_main {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0px 0px 0px 0px;
+
+                    iframe {
+                        margin-top: 0px;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+
+                    }
+
+                    .school_img {
+                        z-index: 3;
+                        padding-top: 10px;
+                        position: absolute;
+
+                        #title-img {
+                            background-color: rgba(255, 255, 255, 0.2);
+                            position: relative;
+                            z-index: 10;
+                            width: 130px;
+                            border-radius: 4px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            margin-left: 30px;
+                            margin-top: 0px;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+
+
+
+
+
+            }
+
+
+            .button {
+                position: absolute;
+                z-index: 20;
+                margin: auto;
+                display: inline;
+
+            }
+
+            .button.left {
+                // opacity: 0;
+                transform: perspective(50px) translate3d(-30px, 20px, 0px);
+                transition: all 1000ms;
+                width: 80px;
+                height: 80px;
+                padding: 0;
+                background: rgba($color: #fff, $alpha: 0.7);
+                border-radius: 50%;
+                top: 50%;
+                left: 4%;
+                // left: 0;
+                // top: 0;
+                display: inline;
+                vertical-align: middle;
+
+
+                &::after {
+                    margin-top: 23px;
+                    margin-left: 28px;
+                    display: block;
+                    content: '';
+                    //color: #E25C83;
+                    left: 3px;
+                    width: 25px;
+                    height: 25px;
+                    border-left: 5px solid;
+                    border-bottom: 5px solid;
+                    transform: rotate(45deg);
+                    z-index: 20;
+                }
+
+                // i {
+                //     font-size: 150%;
+                //     line-height: 60px;
+                //     -webkit-transition: all .3s;
+                //     transition: all .3s;
+                //     letter-spacing: 0;
+                // }
+
+                // &::after {
+                //     content: '';
+                //     width: 5px;
+                //     height: 5px;
+                //     border-top: 3px solid #333333;
+                //     border-right: 3px solid #333333;
+                //     transform: rotate(45deg);
+                // }
+
+            }
+
+            .button.left.fadein {
+                transform: perspective(100px) translate3d(0px, 0px, 20px);
+
+                &:hover {
+                    background: rgba($color: #fff, $alpha: 1.0);
+                    transition: all 500ms;
+                    transform: perspective(100px) translateZ(10px);
+                }
+            }
+
+            .button.right {
+                // opacity: 0;
+                transform: perspective(100px) translate3d(30px, 20px, 0px);
+                transition: all 1000ms;
+                // display: block;
+                width: 80px;
+                height: 80px;
+                padding: 0;
+                background: rgba($color: #fff, $alpha: 0.7);
+                border-radius: 50%;
+                right: 4%;
+                top: 50%;
+
+                vertical-align: middle;
+
+                &::after {
+                    // color: rgb(235, 96, 96);
+                    margin-top: 23px;
+                    margin-left: 16px;
+                    display: block;
+                    content: '';
+                    left: 3px;
+                    width: 25px;
+                    height: 25px;
+                    border-top: 5px solid;
+                    border-right: 5px solid;
+                    transform: rotate(45deg);
+                }
+
+            }
+
+            .button.right.fadein {
+                //opacity: 0.7;
+                transform: perspective(100px) translate3d(0px, 0px, 20px);
+
+                &:hover {
+                    background: rgba($color: #fff, $alpha: 1);
+                    transition: all 500ms;
+                    transform: perspective(100px) translateZ(10px);
+                }
+            }
+
+            .button.right.fadein.meka,
+            .button.left.fadein.meka {
+                color: $meka-color;
+            }
+
+            .button.right.fadein.densi,
+            .button.left.fadein.densi {
+                color: $densi-color;
+            }
+
+            .button.right.fadein.kentiku,
+            .button.left.fadein.kentiku {
+                color: $kentiku-color;
+            }
+
+            .button.right.fadein.sande,
+            .button.left.fadein.sande {
+                color: $sande-color;
+            }
+
+            .button.right.fadein.zyohou,
+            .button.left.fadein.zyohou {
+                color: $zyohou-color;
+            }
+
+            .button.right.fadein.senkou,
+            .button.left.fadein.senkou {
+                color: $senkou-color;
+            }
+
+            .button.right.fadein.honkan,
+            .button.left.fadein.honkan {
+                color: $honkan-color;
+            }
+
+
+
+            //各教室のタイトルのfadein処理↓
+            .text_parent {
+                // margin: 0px 0px 0px 50px;
+                position: relative;
+                z-index: 3;
+                font-size: 150%;
+                display: flex;
+                max-width: 100%;
+                opacity: 0;
+
+                &.fadein {
+                    transform: perspective(100px) translate3d(0px, -20px, 0px);
+                    transition: all 1000ms;
+                    opacity: 1;
+                }
+
+                .setumei {
+
+                    width: 50%;
+
+                    .setumei_text {
+                        max-width: 50%;
+                        line-height: 1.6;
+                        padding: 35px;
+                        font-size: 1.3rem;
+                        margin: 0px 60px 25px 0px;
+                        background: rgba($color: #000000, $alpha: 0.3);
+                        color: #fff;
+                        position: absolute;
+                        z-index: 20;
+                        right: 5%;
+                        overflow: hidden;
+
+                        bottom: 0;
+                        opacity: 1;
+                        transition: all 400ms;
+
+                        &.fadein {
+                            opacity: 0;
+                            transition: all 400ms;
+                        }
+                    }
+
+                    .setumei_button {
+                        // transform: perspective(100px) translate3d(-30px, 20px, 0px);
+                        // margin: 0px 20px 30px 0px;
+                        transition: all 1000ms;
+                        margin: 0px 0px 20px;
+                        width: 50px;
+                        height: 50px;
+                        padding: 0;
+                        background: #fff;
+                        border-radius: 50%;
+                        z-index: 20;
+                        position: absolute;
+                        right: 5%;
+                        bottom: 5%;
+                        opacity: 0.7;
+
+                        &:hover {
+                            opacity: 1;
+                            transition: all 400ms;
+                        }
+
+
+                        .setumei_icon {
+                            bottom: 90px;
+                            right: 16px;
+                            position: absolute;
+                            margin-top: 12px;
+                            width: 40px;
+                            height: 40px;
+                            transition: all 400ms;
+                            opacity: 0;
+
+                            &.fadein {
+                                transform: perspective(100px) translate3d(0px, 75px, 0px);
+                                transition: all 400ms;
+                                opacity: 1;
+                            }
+                        }
+
+                        .batu_icon {
+                            //margin-top: 18px;
+                            //margin-left: 20px;
+                            width: 20px;
+                            height: 20px;
+                            opacity: 1;
+                            transition: all 400ms;
+                            position: absolute;
+                            top: 30%;
+                            left: 30%;
+
+                            &.fadein {
+                                opacity: 0;
+
+                                transition: all 400ms;
+                            }
+                        }
+
+                    }
+                }
+
+                .classroom_text1 {
+                    max-width: 25%;
+                    border-radius: 10px;
+                    margin: 0px 0px 35px 80px;
+                    bottom: 0%;
+                    padding: 10px;
+                    color: white;
+                    position: absolute;
+                    opacity: 0;
+                    transform: perspective(100px) translate3d(30px, 20px, 0px);
+                    transition: all 500ms;
+                    font-size: 2rem;
+
+                    &.res {
+                        font-size: 1.3rem;
+                    }
+
+                }
+
+                .classroom_text3 {
+                    margin-top: 10px;
+                    padding: 10px;
+                    color: white;
+                    position: absolute;
+                    opacity: 0;
+                    transform: perspective(100px) translate3d(20px, 20px, 0px);
+                    transition: all 500ms;
+                }
+
+                .classroom_text1.scrollin {
+                    opacity: 1;
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    transform: perspective(100px) translate3d(0px, 0px, 20px);
+                    transition: all 800ms;
+                }
+
+                .classroom_text3.scrollin {
+                    opacity: 1;
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    transform: perspective(100px) translate3d(0px, 0px, 20px);
+                }
+            }
+        }
+
+        .yahaba_list {
+            max-width: 330px;
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-right: 29px;
+            animation-name: yahaba_list_fadein;
+            animation-duration: 3s;
+            position: absolute;
+            z-index: 20;
+            right: 0;
+
+            #mekatoro_list_all,
+            #densi_list_all,
+            #kentiku_list_all,
+            #sande_list_all,
+            #zyohou_list_all,
+            #senkou_list_all,
+            #honkan_list_all,
+            #ryou_list_all {
+                display: none;
+            }
+
+            @keyframes yahaba_list_fadein {
+                0% {
+                    opacity: 0;
+                }
+
+                90% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: #fff;
+            }
+
+            label {
+                max-width: 330px;
+                display: block;
+                margin: 0px 0px 0px 0px;
+                padding: 10px 15px 10px 20px;
+                line-height: 1;
+                color: black;
+                // background: #f0f0f0;
+                background: #fff;
+                cursor: pointer;
+                // text-align: center;
+
+                position: relative;
+                transition: all 500ms;
+                //top: 49px;
+
+                &.res {
+                    width: 260px;
+                }
+
+
+
+                // p {
+                //     font-size: 1rem;
+                //     // float: left;
+                //     // font-weight: 600;
+                //     // display: inline-block;
+                //     // position: absolute;
+                //     // top: -6px;
+                //     // right: 0;
+                //     // left: -27px;
+                //     // bottom: 0;
+                // }
+
+                &.label_meka {
+                    border: 4px solid $meka-color;
+
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $meka-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $meka-color;
+                        color: #fff;
+                    }
+                }
+
+                &.label_densi {
+                    border: 4px solid $densi-color;
+
+                    // background: #FFA826;
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $densi-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $densi-color;
+                        color: #fff;
+                    }
+                }
+
+                &.label_kentiku {
+                    border: 4px solid $kentiku-color;
+
+                    // background: #94B428;
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $kentiku-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $kentiku-color;
+                        color: #fff;
+
+                    }
+                }
+
+                &.label_sande {
+                    border: 4px solid $sande-color;
+
+                    // background: #E25C83;
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $sande-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $sande-color;
+                        color: #fff;
+
+                    }
+                }
+
+                &.label_zyohou {
+                    border: 4px solid $zyohou-color;
+
+                    // background: #E54848;
+
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $zyohou-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $zyohou-color;
+                        color: #fff;
+
+                    }
+                }
+
+
+                &.label_senkou {
+                    border: 4px solid $senkou-color;
+
+                    // background: #6F4C77;
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $senkou-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $senkou-color;
+                        color: #fff;
+
+                    }
+                }
+
+
+                &.label_honkan,
+                &.label_ryou {
+                    border: 4px solid $honkan-color;
+
+                    // background: #004EA2;
+                    // &:hover {
+                    //     transition: all 500ms;
+                    //     background: $honkan-color;
+                    //     color: #fff;
+                    //     border-radius: 0px;
+
+                    //     p::after {
+                    //         transition: all 500ms;
+                    //         border-bottom: 2px solid #fff;
+                    //         border-right: 2px solid #fff;
+                    //     }
+
+                    // }
+                    &.hover {
+                        transition: all 500ms;
+                        background: $honkan-color;
+                        color: #fff;
+
+                    }
+                }
+
+
+
+                p {
+                    //margin-bottom: -10px;
+                    font-weight: 600;
+                    display: inline-block;
+                   // position: relative;
+                    padding: 0px 45px 0px 0px;
+                    //text-align: left;
+                    left: 0;
+                    &.res{
+                        font-size: 1.3rem;
+                    }
+                    //font-size: 1.3rem;
+
+                    &::after {
+                        width: 25px;
+                        height: 8px;
+                        display: inline-block;
+                        border-bottom: 2px solid #000;
+                        border-right: 2px solid #000;
+                        transform: skew(45deg);
+                        position: absolute;
+                        top: 50%;
+                        right: 10%;
+                        margin-top: -12px;
+
+                        content: "";
+                        // display: inline-block;
+                        // width: 100%;
+                        // height: 100%;
+
+
+
+                        // background-image: url(down_button.png);
+
+                        // font-size: 10px;
+
+
+                    }
+
+                    // &:hover::after {
+                    //      transition: all 500ms;
+                    //     // transform: perspective(100px) translateZ(10px);
+                    //     // opacity: 1;
+                    //     border-bottom: 2px solid #fff;
+                    //     border-right: 2px solid #fff;
+
+                    // }
+
+                    //各科のホバー処理(拡大)
+
+                }
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+
+            input {
+                display: none;
+            }
+
+            ul {
+                max-width: 330px;
+                margin: 0px 0;
+                padding: 0;
+                // background: #f0f0f0;
+                background: #fff;
+                list-style: none;
+                text-align: center;
+
+
+            }
+
+            li {
+                height: 0;
+                overflow: hidden;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+
+                //各教室のホバー処理(拡大)↓
+                a {
+                    opacity: 0.7;
+                    color: #000;
+
+                    &:hover {
+                        // transition: all 500ms;
+                        // transform: perspective(100px) translateZ(10px);
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+
+
+
+            // @mixin aaa($bHeight, $bOpacity) {
+            //     height: $bHeight;
+            //     opacity: $bOpacity;
+
+            // }
+            #senkou2:checked~.senkou_list_all label {
+                border-radius: 0px;
+            }
+
+            //各科をクリックすると教室一覧表示↓
+            #densi2:checked~#densi_list2 li,
+            #mekatoro2:checked~#mekatoro_list2 li,
+            #kentiku2:checked~#kentiku_list2 li,
+            #sande2:checked~#sande_list2 li,
+            #zyohou2:checked~#zyohou_list2 li,
+            #senkou2:checked~#senkou_list2 li,
+            #honkan2:checked~#honkan_list2 li,
+            #ryou:checked~#ryou_list li {
+                height: 54px;
+                opacity: 1;
+
+
+            }
+
+        }
+
+        .mask {
+            z-index: 20;
+            width: 100%;
+            //height: 100%;
+            height: calc(100% - 52px);
+            animation-name: mask_fadein;
+            animation-duration: 1s;
+
+            position: absolute;
+            /* 絶対位置指定 */
+
+            pointer-events: none;
+            background-color: #247BD9;
+
+            @keyframes mask_fadein {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            /* マスクは半透明 */
+            .loader,
+            .loader:before,
+            .loader:after {
+                border-radius: 50%;
+                width: 2.5em;
+                height: 2.5em;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation: load7 1.8s infinite ease-in-out;
+                animation: load7 1.8s infinite ease-in-out;
+            }
+
+            .loader {
+                color: #ffffff;
+                font-size: 10px;
+                margin: 500px auto;
+                position: relative;
+                text-indent: -9999em;
+                -webkit-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-animation-delay: -0.16s;
+                animation-delay: -0.16s;
+                pointer-events: none;
+
+            }
+
+            .loader:before,
+            .loader:after {
+                content: '';
+                position: absolute;
+                top: 0;
+            }
+
+            .loader:before {
+                left: -3.5em;
+                -webkit-animation-delay: -0.32s;
+                animation-delay: -0.32s;
+            }
+
+            .loader:after {
+                left: 3.5em;
+            }
+
+
+            @keyframes load7 {
+
+                0%,
+                80%,
+                100% {
+                    box-shadow: 0 2.5em 0 -1.3em;
+                }
+
+                40% {
+                    box-shadow: 0 2.5em 0 0;
+                }
+            }
+
+
+        }
+
+        #roder-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130px;
+        }
+
+        .mask.roder {
+            transition: all 700ms;
+            opacity: 0;
+            // animation-name: roder;
+            // animation-duration: 4.5s;
+
+        }
+
+        // @keyframes roder {
+        //     0% {
+        //         opacity: 0.9;
+        //     }
+
+        //     90% {
+        //         opacity: 0.9;
+        //     }
+
+        //     100% {
+        //         opacity: 0;
+
+        //     }
+        // }
+
+
+    }
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+}

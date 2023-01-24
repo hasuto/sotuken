@@ -1,0 +1,663 @@
+@charset "UTF-8";
+
+$honkan-color: #004EA2;
+$meka-color: #2A579A;
+$densi-color: #FFA826;
+$kentiku-color: #94B428;
+$sande-color: #E25C83;
+$zyohou-color: #E54848;
+$senkou-color: #6F4C77;
+
+body {
+    margin: 0px;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+
+
+.container {
+    // padding-left: 15px;
+    // padding-right: 15px;
+    // margin-top: 10px;
+    // margin-left: 150px;
+    // margin-right: 150px;
+    width: 100%;
+    height: 100vh;
+    // max-height: 100%;
+    position: relative;
+    z-index: 1;
+
+    .tutorial-modalArea {
+        // display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .tutorial-modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .tutorial-modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            .tutorial-modal-content {
+                .tutorial-modal-footer {
+                    position: relative;
+                    width: 100%;
+                    height: 26px;
+                    margin: 10px 0 10px 0;
+
+                    #closebtn {
+                        font-size: large;
+                        font-weight: bold;
+                        width: 70px;
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .tutorial-modal-title {
+                font-size: larger;
+            }
+
+            .tutorial-modal-body {
+                .tutorial-text {
+                    margin: 10px 0 10px 0;
+                    font-size: larger;
+                    font-weight: 700;
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .closebtn {
+                margin: auto;
+                text-align: center;
+                font-size: larger;
+                font-weight: 900;
+                background-color: #004EA2;
+                color: #FFF;
+                width: 160px;
+                padding: 0.8em;
+                text-decoration: none;
+                border-radius: 4px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                -webkit-tap-highlight-color: transparent;
+                transition: .3s ease-out;
+            }
+
+            .closebtn:hover {
+                cursor: pointer;
+                text-decoration: none;
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .closeModal {
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            background-color: #004EA2;
+            position: absolute;
+            top: -0.5rem;
+            right: -1rem;
+            cursor: pointer;
+
+            p {
+                width: 56px;
+                height: 56px;
+                color: rgb(255, 255, 255);
+                display: grid;
+                place-items: center;
+                font-size: 30px;
+                margin: 0;
+            }
+        }
+
+    }
+
+
+
+    .header-nav {
+        border-bottom: solid 3px #004EA2;
+
+        .navbar-brand {
+            color: #004ea2;
+            font-size: larger;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+
+        .navbar-nav {
+
+            display: inline-flex;
+            height: 22px;
+
+            .nav-item {
+                list-style: none;
+                margin-left: 50px;
+                opacity: 0.7;
+                transition: .3s;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    content: '';
+                    height: 1.8px;
+                    background-color: #004EA2;
+                    transition: .3s;
+                    transform: translateX(-50%);
+                    width: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                .nav-link {
+                    color: #004ea2;
+                    font-size: medium;
+                    font-weight: 600;
+                    text-decoration: none;
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+    /* モーダルCSS */
+    .modalArea {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+    }
+
+
+
+    .modalWrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: auto;
+        max-width: 500px;
+        padding: 10px 30px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        &.modal-title {
+            font-size: larger;
+        }
+
+        &.closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        &.modal-body ul {
+            width: auto;
+
+            li {
+                display: inline-block;
+                margin: 60px;
+
+                img {
+                    padding: 3px;
+                }
+            }
+        }
+    }
+
+
+    // .top_contents {
+
+
+    .iframe {
+        position: relative;
+        width: 100%;
+        margin-top: 0px;
+        height: 100%;
+        display: block;
+        z-index: 1;
+        
+
+        .iframe_main {
+            width: 100%;
+            height: 100%;
+            margin: 0px 0px 0px 0px;
+            iframe {
+                margin-top: 0px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                //height: 92.2vh; //現時点での最大ウィンドウサイズにあわせている
+                height: 100%;
+                
+                
+            }
+        }
+
+        .iframe_title {
+            position: absolute;
+            z-index: 20;
+            margin: 20px 0px 7px 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            font-weight: 600;
+            &.res{
+                font-size: 1.5rem;
+            }
+           
+
+        }
+
+        #yahaba_pin_list_all {
+            position: absolute;
+            z-index: 20;
+            right: 0;
+
+            label {
+                width: 280px;
+                display: block;
+                margin: 45px 30px 0px 0px;
+                padding: 8px 8px 8px 8px;
+                line-height: 1;
+                color: $honkan-color;
+                // background: #f0f0f0;
+                background: #fff;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 50px;
+                position: relative;
+                transition: all 500ms;
+                border: solid 1px $honkan-color;
+
+                // .label_yahaba_pin {
+
+                // }
+
+                &.hover {
+                    transition: all 500ms;
+                    background: $honkan-color;
+                    color: #fff;
+                    border-radius: 0px;
+                }
+
+
+            }
+
+            input {
+                display: none;
+            }
+
+            p {
+                font-weight: 600;
+            }
+
+            ul {
+                width: 280px;
+                margin: 0px 0;
+                padding: 0;
+                // background: #f0f0f0;
+                background: #fff;
+                list-style: none;
+                text-align: center;
+
+
+            }
+
+            img {
+                margin: 10px 20px 0px 20px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                transition: all 500ms;
+
+            }
+
+            li {
+                height: 0;
+                overflow: hidden;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+
+                //各教室のホバー処理(拡大)↓
+                a {
+                    top: 15px;
+                    position: relative;
+                    opacity: 0.7;
+                    color: #000;
+
+                    &:hover {
+                        // transition: all 500ms;
+                        // transform: perspective(100px) translateZ(10px);
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+            #yahaba_pin:checked~#yahaba_pin_list li {
+                height: 57px;
+                opacity: 1;
+
+                img {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        #mizusawa_pin_list_all {
+            position: absolute;
+            z-index: 20;
+            right: 0;
+
+            label {
+                width: 280px;
+                display: block;
+                margin: 45px 30px 0px 0px;
+                padding: 8px 8px 8px 8px;
+                line-height: 1;
+                color: $honkan-color;
+                // background: #f0f0f0;
+                background: #fff;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 50px;
+                position: relative;
+                transition: all 500ms;
+                border: solid 1px $honkan-color;
+
+                // .label_yahaba_pin {
+
+                // }
+
+                &.hover {
+                    transition: all 500ms;
+                    background: $honkan-color;
+                    color: #fff;
+                    border-radius: 0px;
+                }
+
+
+            }
+
+            input {
+                display: none;
+            }
+
+            p {
+                font-weight: 600;
+            }
+
+            ul {
+                width: 280px;
+                margin: 0px 0;
+                padding: 0;
+                // background: #f0f0f0;
+                background: #fff;
+                list-style: none;
+                text-align: center;
+
+
+            }
+
+            img {
+                margin: 10px 20px 0px 20px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                transition: all 500ms;
+
+            }
+
+            li {
+                height: 0;
+                overflow: hidden;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+
+                //各教室のホバー処理(拡大)↓
+                a {
+                    top: 15px;
+                    position: relative;
+                    opacity: 0.7;
+                    color: #000;
+
+                    &:hover {
+                        // transition: all 500ms;
+                        // transform: perspective(100px) translateZ(10px);
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+            #mizusawa_pin:checked~#mizusawa_pin_list li {
+                height: 57px;
+                opacity: 1;
+
+                img {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        
+
+        .school_img {
+            z-index: 3;
+            position: absolute;
+
+            #title-img {
+                background-color: rgba(255, 255, 255, 0.5);
+                position: relative;
+                z-index: 10;
+
+                width: 130px;
+                border-radius: 8px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-left: 10px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+        }
+
+
+
+
+
+    }
+
+
+}
+
+.loader {
+    width: 100%;
+    height: 100%;
+    background-color: #247BD9;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* 環境によって「z-index」追加 */
+
+    /* マスクは半透明 */
+    .loader_in,
+    .loader_in:before,
+    .loader_in:after {
+        border-radius: 50%;
+        width: 2.5em;
+        height: 2.5em;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation: load7 1.8s infinite ease-in-out;
+        animation: load7 1.8s infinite ease-in-out;
+    }
+
+    .loader_in {
+        color: #ffffff;
+        font-size: 10px;
+        margin: 500px auto;
+        position: relative;
+        text-indent: -9999em;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+        pointer-events: none;
+
+    }
+
+    .loader_in:before,
+    .loader_in:after {
+        content: '';
+        position: absolute;
+        top: 0;
+    }
+
+    .loader_in:before {
+        left: -3.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
+
+    .loader_in:after {
+        left: 3.5em;
+    }
+
+
+    @keyframes load7 {
+
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 2.5em 0 -1.3em;
+        }
+
+        40% {
+            box-shadow: 0 2.5em 0 0;
+        }
+    }
+
+
+
+
+
+}
+
+#roder-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+}
+
+/* 読み込み完了後に「loaded」を付与する */
+.loader.loaded {
+    transition: all 700ms;
+    opacity: 0;
+    // animation: fadeOut2 3s forwards;
+}
+
+// @keyframes fadeOut2 {
+//     0% {
+//         opacity: 1;
+//     }
+//     90%{
+//         opacity: 0.9;
+//     }
+//     100% {
+//         display: none;
+//         opacity: 0;
+//         z-index: -1;
+//     }
+// }
+
+
+
+
+// }
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+// body {
+//     font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+// }

@@ -1,0 +1,416 @@
+#yahaba_school {
+
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    max-height: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .vr_content {
+        width: 80%;
+
+        .vr_control {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+
+            ul {
+                list-style: none;
+                margin: 5px 0px 0px 8%;
+                padding-left: 0;
+
+
+
+                li {
+                    margin-left: 5px;
+                    display: inline-block; //高さ幅をしていできるようにinline-block指定
+
+                    &:nth-child(2) {
+                        //ゲームボタンアイコンだけ、幅を狭めるため。
+                        margin-left: -1px;
+                    }
+
+                    img {
+                        opacity: 0.7;
+                        border-radius: 10px;
+                        background-color: rgba($color: white, $alpha: 0.5);
+                        padding: 10px;
+                        width: 50px;
+                        height: 50px;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .iframe {
+            z-index: 1;
+            margin-top: -54px;
+            align-items: center;
+            display: flex;
+            // margin: -70px 0px 0px 30px;
+            position: relative;
+
+            iframe {
+
+                width: 95%;
+
+                height: 95%;
+                aspect-ratio: 16 / 9;
+                // float: left;
+
+            }
+
+            img {
+
+                color: #fff;
+                opacity: 0;
+                transform: perspective(100px) translate3d(20px, 20px, 0px);
+                transition: all 500ms;
+                height: 100%;
+                margin: auto;
+                // vertical-align: middle;/*縦の表示位置も指定できる*/
+                width: 8%;
+                // float: left;
+
+
+
+            }
+
+            img.fadein {
+                opacity: 0.7;
+
+                transform: perspective(100px) translate3d(0px, 0px, 20px);
+
+                &:hover {
+                    opacity: 1;
+                    transition: all 500ms;
+                    transform: perspective(100px) translateZ(10px);
+                }
+            }
+
+            .mask {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                /* 絶対位置指定 */
+                top: 0;
+                left: 0;
+                background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+            }
+        }
+    }
+
+
+
+
+
+    .yahaba_list {
+        width: 20%;
+        margin-left: 10px;
+
+
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        label {
+            width: 210px;
+            display: block;
+            margin: 0;
+            padding: 12px 15px 30px 15px;
+            line-height: 1;
+            color: #fff;
+
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 3px solid #c3c3c3;
+            position: relative;
+
+            &.label_meka {
+                background: #2A579A;
+
+            }
+
+            &.label_densi {
+                background: #FFA826;
+            }
+
+            &.label_kentiku {
+                background: #94B428;
+            }
+
+            &.label_sande {
+                background: #E25C83;
+            }
+
+            &.label_zyohou {
+                background: #E54848;
+            }
+
+            &.label_senkou {
+                background: #6F4C77;
+            }
+
+            &.label_honkan {
+                background: #004EA2;
+            }
+
+
+            p {
+                margin-bottom: -10px;
+                display: inline-block;
+
+                &::after {
+
+
+                    content: url(down_button2.png);
+                    white-space: pre;
+                    //vertical-align: middle;
+                    transform: scale(0.1);
+                    position: absolute;
+                    top: -87px;
+                    left: -22.5px;
+                    opacity: 0.7;
+
+                    // content: "";
+                    // display: inline-block;
+                    // width: 100%;
+                    // height: 100%;
+
+
+
+                    // background-image: url(down_button.png);
+
+                    // font-size: 10px;
+
+
+                }
+
+                &:hover::after {
+                    // transition: all 500ms;
+                    // transform: perspective(100px) translateZ(10px);
+                    opacity: 1;
+
+                }
+
+                //各科のホバー処理(拡大)
+
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+        }
+
+        input {
+            display: none;
+        }
+
+        ul {
+            width: 210px;
+            margin: 0px 0;
+            padding: 0;
+            background: #247BD9;
+            list-style: none;
+            text-align: center;
+
+
+        }
+
+        li {
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+
+            //各教室のホバー処理(拡大)↓
+            a {
+                opacity: 0.7;
+
+                &:hover {
+                    // transition: all 500ms;
+                    // transform: perspective(100px) translateZ(10px);
+                    opacity: 1;
+                }
+            }
+
+        }
+
+
+
+
+        // @mixin aaa($bHeight, $bOpacity) {
+        //     height: $bHeight;
+        //     opacity: $bOpacity;
+
+        // }
+
+        //各科をクリックすると教室一覧表示↓
+        #densi2:checked~#densi_list2 li,
+        #mekatoro2:checked~#mekatoro_list2 li,
+        #kentiku2:checked~#kentiku_list2 li,
+        #sande2:checked~#sande_list2 li,
+        #zyohou2:checked~#zyohou_list2 li,
+        #senkou2:checked~#senkou_list2 li,
+        #honkan2:checked~#honkan_list2 li {
+            height: 54px;
+            opacity: 1;
+
+
+        }
+
+    }
+
+    //各教室のタイトルのfadein処理↓
+    .text_parent {
+        margin: -70px 0px 0px 30px;
+        position: relative;
+        z-index: 3;
+
+        .classroom_text1 {
+            padding: 10px;
+            color: white;
+            position: absolute;
+            opacity: 0;
+            transform: perspective(100px) translate3d(20px, 20px, 0px);
+            transition: all 500ms;
+
+        }
+
+        .classroom_text3 {
+            padding: 10px;
+            color: white;
+            position: absolute;
+            opacity: 0;
+            transform: perspective(100px) translate3d(20px, 20px, 0px);
+            transition: all 500ms;
+        }
+
+        .classroom_text1.scrollin {
+            opacity: 1;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            transform: perspective(100px) translate3d(0px, 0px, 20px);
+        }
+
+        .classroom_text3.scrollin {
+            opacity: 1;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            transform: perspective(100px) translate3d(0px, 0px, 20px);
+        }
+    }
+
+}
+
+
+// .sample_text1{
+//     margin-top: 20px;
+// }
+
+// .text_sample1.scrollin {
+//     animation-name: fadeLeftAnime;
+//     animation-duration: 0.5s;
+//     animation-fill-mode: forwards;
+//     opacity: 0;
+// }
+
+@keyframes fadeLeftAnime {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#welcome {
+    margin-top: 200px;
+}
+
+
+// .loading {
+//     position: fixed;
+//     z-index: 1000;
+//     width: 100%;
+//     height: 100vh;
+//     margin: 0;
+//     padding: 0;
+//     background: #fdfdfd;
+
+
+// }
+
+// .loading.hide{
+//     opacity: 0;
+//     pointer-events: none;
+//     transition: opacity 500ms;
+// }
+
+// .loading.circle {
+//     display: block;
+//     position: relative;
+//     top: calc(50% - 20px);
+//     width: 40px;
+//     height: 40px;
+//     margin: 0 auto;
+//     border: 8px solid #e0e0e0;
+//     border-top: 7px solid #ffcccc;
+//     border-radius: 50px;
+//     animation: loading 700ms linear 0ms infinite normal both;
+// }
+
+// @keyframes loading {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+
+@keyframes fadeOut {
+    from {
+        //開始
+        opacity: 1;
+    }
+
+    to {
+        //終わり
+        display: none;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+#loader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #00c2bc;
+    z-index: 100;
+    margin-bottom: -850px;
+    /* 環境によって「z-index」追加 */
+}
+
+/* 読み込み完了後に「loaded」を付与する */
+#loader.loaded {
+    animation: fadeOut 3s forwards;
+}

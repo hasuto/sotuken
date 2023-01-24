@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>virtual_school_tour</title>
+    <meta name="description" content="virtual_school_tour">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yahaba_main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <audio id="marubatu_bgm" preload loop>
+        <!-- <source src="op.ogg" type="audio/ogg"> -->
+        <source src="aseets/marubatu_bgm.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <div class="header-nav" style="background-color: #fff;">
+            <a class="navbar-brand" href="#">産技短VR学校見学</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item" id="y_campus">
+                    <a class="nav-link">矢巾キャンパス</a>
+                </li>
+                <li class="nav-item" id="m_campus">
+                    <a class="nav-link">水沢キャンパス</a>
+                </li>
+
+                <li class="nav-item" id="nav-alert">
+                    <a class="nav-link" href="#" data-toggle="modal" id="openModal">使い方</a>
+                    <!-- モーダルエリアここから -->
+                    <section id="modalArea" class="modalArea">
+                        <div id="modalBg" class="modalBg"></div>
+                        <div class="modalWrapper">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="usageModalLongTitle">使い方</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li><img src="/images/ico_home (1).png" alt="ホーム">見学中に、スタート写真（校舎の外）に戻る。</li>
+                                        <li><img src="/images/ico_game (1).png"
+                                                alt="ゲーム">クイズ形式で各教室のことをさらに詳しく知ることができるゲームをプレイできる。</li>
+                                        <li><img src="/images/ico_pause.png" alt="音声OFF">音声ガイドをONにする。</li>
+                                        <li><img src="/images/ico_play.png" alt="音声ON">音声ガイドをOFFにする。</li>
+                                        <li><img src="/images/ico_compasson.png" alt="コンパスオン">ジャイロ機能を使う。（スマートフォンのみ）
+                                        </li>
+                                        <li><img src="/images/ico_compassoff.png" alt="コンパスオフ">ジャイロ機能を使わない。（スマートフォンのみ）
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">閉じる</button>
+                                    </div> -->
+                            </div>
+                            <div id="closeModal" class="closeModal">
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- モーダルエリアここまで -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModalLong">更新履歴</a>
+                </li>
+            </ul>
+            <!-- メニューバーここまで -->
+
+
+
+        </div>
+        <div class="yahaba_school">
+            <div class="vr_content">
+                <div class="button019">
+                    <div class="game_button_akuse">
+                        <a id="game_button">もっと詳しく知りたい</a>
+                    </div>
+                    <a id="back_button">ひとつ前に戻る</a>
+                </div>
+
+
+                <!-- <button >もっと詳しく知りたい</button> -->
+                <!-- <button id="back_button">ひとつ前に戻る</button> -->
+                <!-- <div class="vr_control">
+                    <ul>
+                        <li><img id="home_button" src="home_button.png"></li>
+                        <li><img id="game_button" src="game_button.png"></li>
+
+                    </ul>
+                </div> -->
+                <div class="iframe">
+                    <!-- <img class="button left" id="left_button" src="aseets/left_button.png"> -->
+
+                    <div class="iframe_main">
+
+                        <iframe id="main_yahaba_aframe" src=""  frameborder="0" onload="iframe_load()"></iframe>
+                    </div>
+
+                    <!-- <img class="button right" id="right_button" src="aseets/right_button.png"> -->
+                    <!-- <div id="mask_iframe" class="mask roder">
+                        <div class="loader"></div>
+                    </div> -->
+                </div>
+                <a class="button left" id="left_button"></a>
+                <a class="button right" id="right_button"></a>
+
+                <div class="text_parent">
+                    <div class="setumei">
+                        <p class="setumei_text" id="setumei_text"></p>
+                        <a class="setumei_button" id="setumei_button"><img class="batu_icon" id="batu_icon"
+                                src="./aseets/batu.png"><img class="setumei_icon" id="setumei_icon"
+                                src="./aseets/setumei.png"></a>
+                    </div>
+                    <p id="classroom_text" class="classroom_text1">
+                    </p>
+                    <!-- <p id="classroom_text2" class="classroom_text3"></p> -->
+                </div>
+            </div>
+            <div id="mizusawa_list" class="mizusawa_list">
+                <div id="seisan_list_all">
+                    <label class="label_seisan" for="seisan">
+                        <p>生産技術科</p>
+                    </label>
+                    <input type="checkbox" id="seisan" class="list seisan" />
+                    <ul id="seisan_list">
+                        <li><a onclick="syoukai_page('8','1')">CAD室(生産技術科)</a></li>
+                        <li><a onclick="syoukai_page('8','2')">生産技術科実習場</a></li>
+
+                    </ul>
+                </div>
+
+                <div id="densi_list_all">
+                    <label class="label_densi" for="densi2">
+                        <p>電子技術科</p>
+                    </label>
+                    <input type="checkbox" id="densi2" class="list densi" />
+                    <ul id="densi_list2">
+                        <li><a onclick="syoukai_page('2','1')">コンピュータ実習室</a></li>
+                        <li><a onclick="syoukai_page('2','2')">総合実験室</a></li>
+                        <li><a onclick="syoukai_page('2','3')">無響室</a></li>
+
+                    </ul>
+                </div>
+
+                <div id="kentiku_list_all">
+                    <label class="label_kentiku" for="kentiku2">
+                        <p>建築科</p>
+                    </label>
+                    <input type="checkbox" id="kentiku2" class="list kentiku" />
+                    <ul id="kentiku_list2">
+                        <li><a onclick="syoukai_page('3','1')">建築実習教室</a></li>
+                        <li><a onclick="syoukai_page('3','2')">建築デザイン室</a></li>
+                        <li><a onclick="syoukai_page('3','3')">建築cad室</a></li>
+                    </ul>
+                </div>
+
+                <div id="sande_list_all">
+                    <label class="label_sande" for="sande2">
+                        <p>産業デザイン科</p>
+                    </label>
+                    <input type="checkbox" id="sande2" class="accordion" />
+                    <ul id="sande_list2">
+                        <li><a onclick="syoukai_page('4','1')">デザイン実験室</a></li>
+                        <li><a onclick="syoukai_page('4','2')">デザイン室</a></li>
+                        <li><a onclick="syoukai_page('4','3')">木材加工室</a></li>
+                        <li><a onclick="syoukai_page('4','4')">コンピュータ室</a></li>
+                    </ul>
+                </div>
+
+                <div id="zyohou_list_all">
+                    <label class="label_zyohou" for="zyohou2">
+                        <p>情報技術科</p>
+                    </label>
+                    <input type="checkbox" id="zyohou2" class="accordion" />
+                    <ul id="zyohou_list2">
+                        <li><a onclick="syoukai_page('5','1')">計算機工学実験室</a></li>
+                        <li><a onclick="syoukai_page('5','2')">工作室</a></li>
+                        <li><a onclick="syoukai_page('5','3')">通信実験室</a></li>
+                        <li><a onclick="syoukai_page('5','4')">画像実験室</a></li>
+                    </ul>
+                </div>
+
+                <div id="senkou_list_all">
+                    <label class="label_senkou" for="senkou2">
+                        <p>産業技術科専攻科</p>
+                    </label>
+                    <input type="checkbox" id="senkou2" class="accordion" />
+                    <ul id="senkou_list2">
+                        <li><a onclick="syoukai_page('6','1')">実習室</a></li>
+                    </ul>
+                </div>
+
+                <div id="honkan_list_all">
+                    <label class="label_honkan" for="honkan2">
+                        <p>本館</p>
+                    </label>
+                    <input type="checkbox" id="honkan2" class="accordion" />
+                    <ul id="honkan_list2">
+                        <li><a onclick="syoukai_page('7','1')">多目的ホール</a></li>
+                        <li><a onclick="syoukai_page('7','2')">大教室</a></li>
+                        <li><a onclick="syoukai_page('7','3')">図書館</a></li>
+                        <li><a onclick="syoukai_page('7','4')">学生ホール</a></li>
+                        <li><a onclick="syoukai_page('7','5')">ラウンジ</a></li>
+                        <li><a onclick="syoukai_page('7','6')">体育館</a></li>
+                    </ul>
+                </div>
+                <div id="ryou_list_all">
+                    <label class="label_ryou" for="ryou">
+                        <p>学生寮</p>
+                    </label>
+                    <input type="checkbox" id="ryou" class="accordion" />
+                    <ul id="ryou_list">
+                        <li><a onclick="syoukai_page('8','1')">玄関</a></li>
+                        <li><a onclick="syoukai_page('8','2')">玄関ロビー</a></li>
+                        <li><a onclick="syoukai_page('8','3')">1階廊下</a></li>
+                        <li><a onclick="syoukai_page('8','4')">個室棟</a></li>
+                        <li><a onclick="syoukai_page('8','5')">個室A</a></li>
+                        <li><a onclick="syoukai_page('8','6')">個室B</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mask_all" class="mask">
+                <img src="https://www.iwate-it.ac.jp/renew/wp-content/themes/sangitan/img/logo/logo_sangitan_blue.svg"
+                    alt="岩手県立産業技術短期大学校" id="roder-img">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="yahaba_main.js"></script>
+</body>
+
+</html>
+<!-- 
+<script>
+
+    var Top_yahaba_Aframe = document.getElementById('top_yahaba_aframe');
+    Top_yahaba_Aframe.src = "yahaba_school_top.html";
+
+
+</script> -->

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- <meta charset="utf-8"> -->
+    <!-- <meta http-equiv="Content-Type" content="text/Shift-JIS; charset=utf-8" /> -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./js/aframe-html-shader.min.js"></script>
+    <script src="./js/html2canvas.min.js"></script>
+
+    <!-- <script src="top.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <a-scene device-orientation-permission-ui="enabled: false" loading-screen="enabled: false" vr-mode-ui="enabled: true">
+            <a-assets>
+                <audio id="audio01" src="" preload="auto"></audio>
+            </a-assets>
+            <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
+            <!-- <a-text position="-1 1.25 -3" onclick="marubatu_game('sande_mokuzai')" value="Hell, World!" color="black"></a-text> -->
+            <!-- <a-text position="-1 1.25 -3" value="Hell, World!" color="black"></a-text>-->
+            <!-- <a-entity mb-text onclick="marubatu_game()" id="sample" position="-1 1.25 -3" scale="3 3 3" data-text="もっと知りたい"></a-entity> -->
+            <a-gltf-model onclick="marubatu_game()" src="game_button.glb" id="game_button2"  position="9 13 -20" rotation="0 90 0" scale="3 3 3" ></a-gltf-model>
+            <a-gltf-model id="game_button" onclick="marubatu_game()" src="game_button.glb" position="9 13 -20" rotation="0 90 0" scale="2 2 2" ></a-gltf-model>
+            <a-gltf-model id="game_button" onclick="marubatu_game()" src="game_button.glb" position="9 13 -20" rotation="0 90 0" scale="2 2 2" sound="src: url(../sounds/sample.mp3);"></a-gltf-model>
+            <!--下記のはもともと科の教室名が表示されていた-->
+            <!-- <a-entity syobun id="syoukai_text" visible="true" position="-3 -1 -3" scale="2 2 2" data-text=""></a-entity> -->
+            <!-- <a-entity id="elmo" geometry="primitive: box" 
+          sound="src: url(../sounds/sample.mp3); on: click"></a-entity> -->
+            <a-sky id="back-ground" src="" position="0 0 0" rotation="0 -120 5"
+                animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 60000; easing: linear"></a-sky>
+
+            <a-entity cursor="rayOrigin: mouse"></a-entity>
+            <a-camera position="0 0 0" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD"
+                cursor-opacity="0.5">
+
+                <!-- <a-cursor></a-cursor> -->
+            </a-camera>
+
+
+        </a-scene>
+
+    </div>
+    <script src="main_syoukai.js"></script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+<script src="main_syoukai.js"></script>
+    </head>
+    <body>
+<img id="back_ground" src=""> -->
+<!-- <iframe width="600" height="400" allowfullscreen="" style="border-style:none;" src="http://hogehoge.com/pannellum/pannellum.htm#panorama=http://hogehoge.com/images/kentiku_cad.jpeg&autoLoad=true"></iframe> -->
+
+
+<!-- <div id="vrview">
+
+    <p id="syoukai_text">あああああ</p>
+</div>
+
+<script>
+    var winH = window.innerHeight;
+    var vrView;
+    window.addEventListener('load', onVrViewLoad)
+    function onVrViewLoad(){
+      vrView = new VRView.Player('#vrview', { //先ほど作成した画像を表示させるボックスのid名
+      image: 'images/kentiku_cad.jpeg',  //表示させたい画像のパス
+      width: '90%',
+      height: winH,
+      });
+    }
+  </script>
+ 
+<script src="./vrview-gh-pages/build/vrview.min.js"></script>
+    </body>
+</html> -->
