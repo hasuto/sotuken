@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,SAAS,EAAE,MAAM;CACpB;;AACD,AAAA,OAAO,CAAA;EACH,OAAO,EAAE,GAAG;CACf;;AAED,AAAA,KAAK,CAAA;EACD,KAAK,EAAC,KAAK;CACd",
-    "sources": [
-        "MaruBatu.scss"
-    ],
-    "names": [],
-    "file": "MaruBatu.css"
-}
