@@ -4,12 +4,23 @@ var reset_txt;
 var this_text; //各科の紹介文格納用
 var this_id1; //紹介文をcsvファイルから読み込むための、id
 var this_id2;//紹介文をcsvファイルから読み込むための、id
-var Top_yahaba_Aframe = document.getElementById('main_mizusawa_aframe');
+var Top_mizusawa_Aframe = document.getElementById('main_mizusawa_aframe');
 var text;
 var id1;
 var id2;
+var game_hantei;
+var setumei_text = document.getElementById('setumei_text');
+const bgm1 = document.querySelector("#marubatu_bgm");
+var bgm_1;
+var syoukai_bgm = document.querySelector('#syoukai_bgm');
+var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
+var mizusawa_list_resu = {
+    fontSize: "2em",
+    width: "300px"
+}
 document.getElementById('right_button').style.visibility = 'hidden';
 document.getElementById('left_button').style.visibility = 'hidden';
+$('#back_button').hide();
 window.onload = function () {
 
     var data = location.href.split("?")[1];
@@ -17,9 +28,10 @@ window.onload = function () {
     text = data.split("=")[1];
     id1 = data.split("=")[2];
     id2 = data.split("=")[3];
+    game_hantei = data.split("=")[4];
     getCSV();
     // document.getElementById('mask').classList.add("roder");
-    // Top_yahaba_Aframe.src = "syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
+    // Top_mizusawa_Aframe.src = "syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
     // syoukai_page(id1,id2);
     // if (document.getElementById('mask').classList.contains("roder")) {
     //     if (document.getElementById('mask').style.opacity == 0) {
@@ -29,28 +41,173 @@ window.onload = function () {
     // document.querySelector(".mask").addEventListener("animationend", function () {
     //     button_visi();
     // });
-    var yahaba_list = document.getElementById('mizusawa_list');
-    var list_eles = yahaba_list.getElementsByTagName('input');
+    var mizusawa_list = document.getElementById('mizusawa_list');
+    var list_eles = mizusawa_list.getElementsByTagName('input');
+    //console.log((list_eles).not('#seisan2'));
 
-    //console.log((list_eles).not('#mekatoro2'));
-   
+    if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+        // ❶スマホのみに適用させるJavaScriptを記述
+        // $('.button019').css('fontSize','2em');
+        // $('.mizusawa_list').css(mizusawa_list_resu);
+        $('#game_button').addClass('res');
+        // $('#back_button').addClass('res');
+        //$('.mizusawa_list').find('label').addClass('res');
+        $('#classroom_text').addClass('res');
+        $('.mizusawa_list').find('p').addClass('res');
+
+        $('.label_seisan').click(function () {
+            if ($('#seisan').prop('checked') == true) {
+                $(".label_seisan").removeClass("hover");
+            } else {
+                $(".label_seisan").addClass("hover");
+            }
+        });
+
+        $('.label_denki').click(function () {
+            if ($('#denki').prop('checked') == true) {
+                $(".label_denki").removeClass("hover");
+            } else {
+                $(".label_denki").addClass("hover");
+            }
+        });
+
+
+        $('.label_setubi').click(function () {
+            if ($('#setubi').prop('checked') == true) {
+                $(".label_setubi").removeClass("hover");
+            } else {
+                $(".label_setubi").addClass("hover");
+            }
+        });
+
+        $('.label_honkan').click(function () {
+            if ($('#honkan_m').prop('checked') == true) {
+                $(".label_honkan_m").removeClass("hover");
+            } else {
+                $(".label_honkan_m").addClass("hover");
+            }
+        });
+
+        console.log($('.mizusawa_list').find('label'));
+        console.log("スマホだよーーーー");
+
+    } else {
+        // ❷その他PC・タブレットに適用させるJavaScriptを記述
+        $('#seisan_list_all').hover(function () {
+            document.getElementById('seisan').checked = true;
+            $(".label_seisan").addClass("hover");
+        },
+            function () {
+                document.getElementById('seisan').checked = false;
+                $(".label_seisan").removeClass("hover");
+            });
+
+
+        $('#denki_list_all').hover(function () {
+            document.getElementById('denki').checked = true;
+            $(".label_denki").addClass("hover");
+        },
+            function () {
+                document.getElementById('denki').checked = false;
+                $(".label_denki").removeClass("hover");
+            });
+
+        $('#setubi_list_all').hover(function () {
+            document.getElementById('setubi').checked = true;
+            $(".label_setubi").addClass("hover");
+        },
+            function () {
+                document.getElementById('setubi').checked = false;
+                $(".label_setubi").removeClass("hover");
+            });
+
+        $('#honkan_m_list_all').hover(function () {
+            document.getElementById('honkan_m').checked = true;
+            $(".label_honkan_m").addClass("hover");
+        },
+            function () {
+                document.getElementById('honkan_m').checked = false;
+                $(".label_honkan_m").removeClass("hover");
+            });
+
+        console.log("PCだよーーーーーーー");
+    }
+
+
 }
 
-$('#main_mizusawa_aframe').on('load', function () {
-    //iframeのdocumentを取得する（Mozilla系 || 古いIE系）
-    var doc = this.contentDocument || this.contentWindow.document;
+// $(window).on('load resize',function(){
+//     $('.iframe_main').css('width',  $(window).width());
+//     $('.iframe_main').css('height',  $(window).height());
+// });
+
+// window.onpageshow = function (event) {
+//     if (event.persisted) {
+//         window.location.reload();
+//     }
+// };
+
+// $('#main_mizusawa_aframe').on('load', function () {
+//     //iframeのdocumentを取得する（Mozilla系 || 古いIE系）
+
+
+
+// });
+
+function iframe_load() {
+    var doc = Top_mizusawa_Aframe.contentDocument || Top_mizusawa_Aframe.contentWindow.document;
     console.log("読み込まれている");
     console.log(doc);
+    document.getElementById('mask_all').classList.remove("roder");
     //iframeの全要素が読み込まれたら処理
     $("#main_mizusawa_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
         console.log("コンプリートマイン");
         if (document.getElementById('mask_all').classList.contains("roder")) {
 
         } else {
-            document.getElementById('mask_all').classList.add("roder");
-            document.getElementById('classroom_text').classList.add("scrollin");
-            document.getElementById('classroom_text2').classList.add("scrollin");
-            button_visi();
+
+
+
+
+
+            if (Top_mizusawa_Aframe.getAttribute('src').indexOf('MaruBatu01.html') != -1) {
+                //alert('aaaa');
+                document.getElementById('left_button').classList.remove("fadein");
+                document.getElementById('right_button').classList.remove("fadein");
+                $('.text_parent').removeClass("fadein");
+                document.getElementById('right_button').style.visibility = 'hidden';
+                document.getElementById('left_button').style.visibility = 'hidden';
+                $('.setumei').hide();
+                $('#mizusawa_list').hide();
+                $('#game_button').hide();
+                $('#back_button').show();
+                window.setTimeout(function () {
+                    console.log('通っている');
+                    document.getElementById('mask_all').classList.add("roder");
+                    // bgm1.play();
+                }, 3000);
+
+            } else {
+                // alert('oooo');
+                document.getElementById('mask_all').classList.add("roder");
+                window.setTimeout(function () {
+                    document.getElementById('classroom_text').classList.add("scrollin");
+                    $('.text_parent').addClass("fadein");
+                    // document.getElementById('classroom_text2').classList.add("scrollin");
+                    document.getElementById('left_button').classList.add("fadein");
+                    document.getElementById('right_button').classList.add("fadein");
+                    document.getElementById('right_button').style.visibility = 'visible';
+                    document.getElementById('left_button').style.visibility = 'visible';
+                    // syoukai_bgm.pause();
+                    //bgm_1.play();
+                    //bgm_1.loop = true;
+                    button_visi();
+                }, 500);
+            }
+
+
+
+
         }
 
         // if (document.getElementById('mask').classList.contains("roder")) {
@@ -73,20 +230,35 @@ $('#main_mizusawa_aframe').on('load', function () {
         // }
 
     });
+}
 
 
-});
 
-
-function list_visi(){
-    if(Number(this_id1) == 8){
+function list_visi() {
+    if (Number(this_id1) == 9) {
         document.getElementById('seisan_list_all').style.display = 'inline';
-    } else if(Number(this_id1) == 9){
+        document.getElementById('left_button').classList.add("seisan");
+        document.getElementById('right_button').classList.add("seisan");
+        $('#game_button').addClass('seisan');
+        $('#back_button').addClass('seisan');
+    } else if (Number(this_id1) == 10) {
         document.getElementById('denki_list_all').style.display = 'inline';
-    }else if(Number(this_id1) == 10){
+        document.getElementById('left_button').classList.add("denki");
+        document.getElementById('right_button').classList.add("denki");
+        $('#game_button').addClass('denki');
+        $('#back_button').addClass('denki');
+    } else if (Number(this_id1) == 11) {
         document.getElementById('setubi_list_all').style.display = 'inline';
-    }else if(Number(this_id1) == 11){
-        document.getElementById('honkan_list_all').style.display = 'inline';
+        document.getElementById('left_button').classList.add("setubi");
+        document.getElementById('right_button').classList.add("setubi");
+        $('#game_button').addClass('setubi');
+        $('#back_button').addClass('setubi');
+    } else if (Number(this_id1) == 12) {
+        document.getElementById('honkan_m_list_all').style.display = 'inline';
+        document.getElementById('left_button').classList.add("honkan");
+        document.getElementById('right_button').classList.add("honkan");
+        $('#game_button').addClass('honkan');
+        $('#back_button').addClass('honkan');
     }
 }
 
@@ -111,121 +283,33 @@ function button_visi() {
 
 
 
+document.getElementById('game_button').addEventListener('click', function (e) {
+    //window.location.href = '../marubatu_game/MaruBatu01.html?a='+text;
+    // Top_mizusawa_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
+    window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + id1 + "=" + id2 + "=" + "game";
 
-// document.getElementById('seisan').addEventListener('click', function (e) {
 
-//     if (document.getElementById("mekatoro2").checked) {
+});
 
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("honkan2").checked = false;
-//         //document.querySelectorAll('input').not().checked = false;
 
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
 
-// document.getElementById('densi2').addEventListener('click', function (e) {
 
-//     if (document.getElementById("densi2").checked) {
 
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("honkan2").checked = false;
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
 
-// document.getElementById('kentiku2').addEventListener('click', function (e) {
 
-//     if (document.getElementById("kentiku2").checked) {
 
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("honkan2").checked = false;
+$('#back_button').click(function () {
+    window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
+})
 
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
+$('#setumei_button').click(function () {
+    $(".setumei_text").toggleClass("fadein");
+    $("#batu_icon").toggleClass("fadein");
+    $("#setumei_icon").toggleClass("fadein");
 
-// document.getElementById('sande2').addEventListener('click', function (e) {
+})
+//　for文
 
-//     if (document.getElementById("sande2").checked) {
-
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("honkan2").checked = false;
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
-
-// document.getElementById('zyohou2').addEventListener('click', function (e) {
-
-//     if (document.getElementById("zyohou2").checked) {
-
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("honkan2").checked = false;
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
-
-// document.getElementById('senkou2').addEventListener('click', function (e) {
-
-//     if (document.getElementById("senkou2").checked) {
-
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         document.getElementById("honkan2").checked = false;
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
-
-// document.getElementById('honkan2').addEventListener('click', function (e) {
-
-//     if (document.getElementById("honkan2").checked) {
-
-//         document.getElementById("densi2").checked = false;
-//         document.getElementById("mekatoro2").checked = false;
-//         document.getElementById("sande2").checked = false;
-//         document.getElementById("zyohou2").checked = false;
-//         document.getElementById("senkou2").checked = false;
-//         document.getElementById("kentiku2").checked = false;
-//         console.log("okd");
-//     } else {
-//         console.log("notok");
-//     }
-// });
 
 document.getElementById('left_button').addEventListener('click', function (e) {
 
@@ -278,7 +362,6 @@ document.getElementById('left_button').addEventListener('click', function (e) {
 });
 
 document.getElementById('right_button').addEventListener('click', function (e) {
-
     if (document.getElementById('right_button').style.visibility == 'visible') {
 
         switch (Number(this_id2)) {
@@ -390,19 +473,19 @@ function start(id1, id2) {
 
     //リストかオブジェクトから、飛んだ時にどの科にいるか指定
     switch (Number(this_id1)) {
-        case 8:
+        case 9:
             reset_txt = 'seisan_cad';
             break;
 
-        case 9:
+        case 10:
             reset_txt = 'denki_maikon';
             break;
 
-        case 10:
+        case 11:
             reset_txt = 'setubi_zisyu';
             break;
 
-        case 11:
+        case 12:
             reset_txt = 'mizusawa_koudou';
             break;
 
@@ -413,7 +496,7 @@ function start(id1, id2) {
 function syoukai_page(id1, id2) {
 
     //元々はsyoukai_pageの引数から判定していた。変更後はgetCSV関数にて判定。
-    // Top_yahaba_Aframe.src = "/aframegame1/syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
+    // Top_mizusawa_Aframe.src = "/aframegame1/syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
     window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
     this_id1 = id1;
     this_id2 = id2;
@@ -426,19 +509,19 @@ function syoukai_page(id1, id2) {
 
     //リストかオブジェクトから、飛んだ時にどの科にいるか指定
     switch (Number(this_id1)) {
-        case 8:
+        case 9:
             reset_txt = 'seisan_cad';
             break;
 
-        case 9:
+        case 10:
             reset_txt = 'denki_maikon';
             break;
 
-        case 10:
+        case 11:
             reset_txt = 'setubi_zisyu';
             break;
 
-        case 11:
+        case 12:
             reset_txt = 'mizusawa_koudou';
             break;
 
@@ -515,21 +598,35 @@ function syoukai_hantei() {
 
     console.log(csv_column);
     // result[csv_column][2]
-    Top_yahaba_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
+    if (game_hantei == "game") {
+        Top_mizusawa_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
+    } else {
+        Top_mizusawa_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
+        bgm_1 = new Audio('aseets/' + result[csv_column][3] + '.mp3');
+
+    }
+
+
+
+
 
     syoukai_text();
 }
 
 
 function syoukai_text() {
-    console.log(csv_column);
-    console.log(result[csv_column][2]);
-    document.getElementById('classroom_text').textContent = result[csv_column][2];
-   // document.getElementById('classroom_text').innerHTML = '<p>'+result[csv_column][2]+'<br>'+result[csv_column][4]+'</p>';
-    document.getElementById('classroom_text2').textContent = result[csv_column][4];
+    var room_text = result[csv_column][2].split('\\n')
+    document.getElementById('classroom_text').innerText = room_text[0] + "\n" + room_text[1];
+    //document.getElementById('classroom_text').innerText = result[csv_column][2];
+    console.log(result[csv_column][2].split('科'));
+    // document.getElementById('classroom_text').innerHTML = '<p>'+result[csv_column][2]+'<br>'+result[csv_column][4]+'</p>';
+    // document.getElementById('classroom_text2').textContent = result[csv_column][4];
+    setumei_text.textContent = result[csv_column][4];
+
 
     // var text = result[csv_column][2];
     // var elem = document.getElementById("syoukai_text");
     // elem.innerHTML = text;
     // document.getElementById("syoukai_text").textContent = text;
 }
+

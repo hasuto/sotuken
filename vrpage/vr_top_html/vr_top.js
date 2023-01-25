@@ -240,10 +240,22 @@ $('#top_aframe').on('load', function () {
 
 
         //水沢校のクリックイベント
+        $("#top_aframe").contents().find(doc.getElementById('seisangizyutu')).on("click", function (e) {
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '9' + "=" + '1';
+        });
         $("#top_aframe").contents().find(doc.getElementById('denkigizyutu')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '10' + "=" + '1';
-                // syoukai_page('3', '1');
+        });
+        $("#top_aframe").contents().find(doc.getElementById('kentikusetubi')).on("click", function (e) {
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '11' + "=" + '1';
+        });
+
+        $("#top_aframe").contents().find(doc.getElementById('honkan_m')).on("click", function (e) {
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '1';
+        });
+
+        $("#top_aframe").contents().find(doc.getElementById('taikukan_m')).on("click", function (e) {
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '4';
         });
 
 

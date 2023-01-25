@@ -7,7 +7,7 @@
     <meta name="description" content="virtual_school_tour">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="yahaba_main.css">
+    <link rel="stylesheet" href="mizusawa_main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
@@ -73,7 +73,7 @@
 
 
         </div>
-        <div class="yahaba_school">
+        <div class="mizusawa_school">
             <div class="vr_content">
                 <div class="button019">
                     <div class="game_button_akuse">
@@ -97,7 +97,7 @@
 
                     <div class="iframe_main">
 
-                        <iframe id="main_yahaba_aframe" src=""  frameborder="0" onload="iframe_load()"></iframe>
+                        <iframe id="main_mizusawa_aframe" src="" frameborder="0" onload="iframe_load()"></iframe>
                     </div>
 
                     <!-- <img class="button right" id="right_button" src="aseets/right_button.png"> -->
@@ -127,101 +127,50 @@
                     </label>
                     <input type="checkbox" id="seisan" class="list seisan" />
                     <ul id="seisan_list">
-                        <li><a onclick="syoukai_page('8','1')">CAD室(生産技術科)</a></li>
-                        <li><a onclick="syoukai_page('8','2')">生産技術科実習場</a></li>
+                        <li><a onclick="syoukai_page('9','1')">CAD室(生産技術科)</a></li>
+                        <li><a onclick="syoukai_page('9','2')">生産技術科実習場</a></li>
 
                     </ul>
                 </div>
 
-                <div id="densi_list_all">
-                    <label class="label_densi" for="densi2">
+                <div id="denki_list_all">
+                    <label class="label_denki" for="denki">
                         <p>電子技術科</p>
                     </label>
-                    <input type="checkbox" id="densi2" class="list densi" />
-                    <ul id="densi_list2">
-                        <li><a onclick="syoukai_page('2','1')">コンピュータ実習室</a></li>
-                        <li><a onclick="syoukai_page('2','2')">総合実験室</a></li>
-                        <li><a onclick="syoukai_page('2','3')">無響室</a></li>
+                    <input type="checkbox" id="denki" class="list denki" />
+                    <ul id="denki_list">
+                        <li><a onclick="syoukai_page('10','1')">マイコン・PLC制御実習室</a></li>
+                        <li><a onclick="syoukai_page('10','2')">電気設備実習室</a></li>
+                        <li><a onclick="syoukai_page('10','3')">実験室</a></li>
 
                     </ul>
                 </div>
 
-                <div id="kentiku_list_all">
-                    <label class="label_kentiku" for="kentiku2">
-                        <p>建築科</p>
+                <div id="setubi_list_all">
+                    <label class="label_setubi" for="setubi">
+                        <p>建築設備科</p>
                     </label>
-                    <input type="checkbox" id="kentiku2" class="list kentiku" />
-                    <ul id="kentiku_list2">
-                        <li><a onclick="syoukai_page('3','1')">建築実習教室</a></li>
-                        <li><a onclick="syoukai_page('3','2')">建築デザイン室</a></li>
-                        <li><a onclick="syoukai_page('3','3')">建築cad室</a></li>
+                    <input type="checkbox" id="setubi" class="list setubi" />
+                    <ul id="setubi_list">
+                        <li><a onclick="syoukai_page('11','1')">実習場</a></li>
+                        <li><a onclick="syoukai_page('11','2')">模擬家屋</a></li>
                     </ul>
                 </div>
 
-                <div id="sande_list_all">
-                    <label class="label_sande" for="sande2">
-                        <p>産業デザイン科</p>
+                <div id="honkan_m_list_all">
+                    <label class="label_honkan_m" for="honkan_m">
+                        <p>水沢校本館</p>
                     </label>
-                    <input type="checkbox" id="sande2" class="accordion" />
-                    <ul id="sande_list2">
-                        <li><a onclick="syoukai_page('4','1')">デザイン実験室</a></li>
-                        <li><a onclick="syoukai_page('4','2')">デザイン室</a></li>
-                        <li><a onclick="syoukai_page('4','3')">木材加工室</a></li>
-                        <li><a onclick="syoukai_page('4','4')">コンピュータ室</a></li>
+                    <input type="checkbox" id="honkan_m" class="accordion" />
+                    <ul id="honkan_m_list">
+                        <li><a onclick="syoukai_page('12','1')">講堂</a></li>
+                        <li><a onclick="syoukai_page('12','2')">図書館</a></li>
+                        <li><a onclick="syoukai_page('12','3')">ラウンジ</a></li>
+                        <li><a onclick="syoukai_page('12','4')">体育館</a></li>
                     </ul>
                 </div>
 
-                <div id="zyohou_list_all">
-                    <label class="label_zyohou" for="zyohou2">
-                        <p>情報技術科</p>
-                    </label>
-                    <input type="checkbox" id="zyohou2" class="accordion" />
-                    <ul id="zyohou_list2">
-                        <li><a onclick="syoukai_page('5','1')">計算機工学実験室</a></li>
-                        <li><a onclick="syoukai_page('5','2')">工作室</a></li>
-                        <li><a onclick="syoukai_page('5','3')">通信実験室</a></li>
-                        <li><a onclick="syoukai_page('5','4')">画像実験室</a></li>
-                    </ul>
-                </div>
 
-                <div id="senkou_list_all">
-                    <label class="label_senkou" for="senkou2">
-                        <p>産業技術科専攻科</p>
-                    </label>
-                    <input type="checkbox" id="senkou2" class="accordion" />
-                    <ul id="senkou_list2">
-                        <li><a onclick="syoukai_page('6','1')">実習室</a></li>
-                    </ul>
-                </div>
-
-                <div id="honkan_list_all">
-                    <label class="label_honkan" for="honkan2">
-                        <p>本館</p>
-                    </label>
-                    <input type="checkbox" id="honkan2" class="accordion" />
-                    <ul id="honkan_list2">
-                        <li><a onclick="syoukai_page('7','1')">多目的ホール</a></li>
-                        <li><a onclick="syoukai_page('7','2')">大教室</a></li>
-                        <li><a onclick="syoukai_page('7','3')">図書館</a></li>
-                        <li><a onclick="syoukai_page('7','4')">学生ホール</a></li>
-                        <li><a onclick="syoukai_page('7','5')">ラウンジ</a></li>
-                        <li><a onclick="syoukai_page('7','6')">体育館</a></li>
-                    </ul>
-                </div>
-                <div id="ryou_list_all">
-                    <label class="label_ryou" for="ryou">
-                        <p>学生寮</p>
-                    </label>
-                    <input type="checkbox" id="ryou" class="accordion" />
-                    <ul id="ryou_list">
-                        <li><a onclick="syoukai_page('8','1')">玄関</a></li>
-                        <li><a onclick="syoukai_page('8','2')">玄関ロビー</a></li>
-                        <li><a onclick="syoukai_page('8','3')">1階廊下</a></li>
-                        <li><a onclick="syoukai_page('8','4')">個室棟</a></li>
-                        <li><a onclick="syoukai_page('8','5')">個室A</a></li>
-                        <li><a onclick="syoukai_page('8','6')">個室B</a></li>
-                    </ul>
-                </div>
             </div>
             <div id="mask_all" class="mask">
                 <img src="https://www.iwate-it.ac.jp/renew/wp-content/themes/sangitan/img/logo/logo_sangitan_blue.svg"
@@ -232,15 +181,15 @@
     </div>
 
 
-    <script src="yahaba_main.js"></script>
+    <script src="mizusawa_main.js"></script>
 </body>
 
 </html>
 <!-- 
 <script>
 
-    var Top_yahaba_Aframe = document.getElementById('top_yahaba_aframe');
-    Top_yahaba_Aframe.src = "yahaba_school_top.html";
+    var Top_mizusawa_Aframe = document.getElementById('top_mizusawa_aframe');
+    Top_mizusawa_Aframe.src = "mizusawa_school_top.html";
 
 
 </script> -->
