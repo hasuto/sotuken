@@ -20,9 +20,13 @@
 
   <a-scene device-orientation-permission-ui="enabled: false">
     <a-assets>
-
+      <a-asset-item id="dodai_obj" src="top_aseets/yahaba_dodai.obj"></a-asset-item>
+      <a-asset-item id="dodai_mtl" src="top_aseets/yahaba_dodai.mtl"></a-asset-item>
       <audio id="audio01" src="" preload="auto"></audio>
     </a-assets>
+
+    <!-- <a-obj-model  visible="true" src="#dodai_obj" mtl="#dodai_mtl" position="-13 0 0" ></a-obj-model> -->
+
     <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
 
     <!--クリック時にイベント発火させなくとも動く-->
@@ -186,16 +190,27 @@
       animation__mouseleave="property: position; from: -14.5 4.1 7; to: -14.5 3.6 7; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
 
 
-    <a-gltf-model id="dodai" visible="true" src="top_aseets/dodai.glb" position="-13 0 0" scale="1 1.5 1"
-      rotation="0 0 0"></a-gltf-model>
+     <a-gltf-model id="dodai" visible="true" src="top_aseets/yahaba_dodai.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model> 
+      
+
+
+
+      <a-gltf-model id="car" visible="true" src="top_aseets/car.glb" position="15 0 -18" scale="0.7 0.7 0.7"
+      rotation="0 0 0"
+      animation="property:position; to: 15 0 8; loop: true; dur: 5000; easing: linear"
+      ></a-gltf-model>
     <!-- 
       <a-gltf-model id="sousyoku" visible="true" src="top_aseets/sousyoku0111_2.glb" position="-13 0 0" scale="1 1.5 1"
       rotation="0 0 0"></a-gltf-model> -->
 
     <a-entity cursor="rayOrigin: mouse"></a-entity>
+    <a-entity light="type: ambient; color: #ffffff; intensity:0.7" position="-1 1 0"></a-entity>
+    <a-entity light="type: directional; color: #ffffff;  intensity:1" position="90 1 90"
+   ></a-entity>
 
     <a-entity id="camera_pc" camera look-controls
-      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 20 10 -20">
+      orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 30 10 -15">
 
     </a-entity>
     <a-entity id="camera_phone" camera look-controls
