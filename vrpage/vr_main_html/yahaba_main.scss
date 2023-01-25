@@ -635,12 +635,14 @@ body {
 
 
                         .setumei_icon {
-                            bottom: 90px;
-                            right: 16px;
+                            bottom: 175%;
+                            right: 10px;
+                            // top: 30%;
+                            // left: 30%;
                             position: absolute;
-                            margin-top: 12px;
-                            width: 40px;
-                            height: 40px;
+                            //margin-top: 12px;
+                            width: 30px;
+                            height: 30px;
                             transition: all 400ms;
                             opacity: 0;
 
