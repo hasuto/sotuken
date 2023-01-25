@@ -2,6 +2,7 @@
 body {
   margin: 0px;
   font-family: 'Noto Sans Japanese', sans-serif;
+  height: 100%;
 }
 
 .container {
@@ -566,5 +567,9 @@ body {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
 }
 /*# sourceMappingURL=vr_top.css.map */

@@ -80,7 +80,7 @@ window.onload = function () {
 
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
-        console.log("スマホだよーーーー");
+        console.log("スマホだよーーーーmaru");
         document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
         document.querySelector('#game-explanation_2').setAttribute("scale", { x: 8, y: 8, z: 8 });
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });
@@ -89,11 +89,11 @@ window.onload = function () {
         document.querySelector('#mondai3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#mondai4').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#mondai5').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondaibun1').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondaibun2').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondaibun3').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondaibun4').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondaibun5').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement1').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement3').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement4').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement5').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#mondai-back').setAttribute("scale", { x: 2, y: 1, z: 1.4 });
         document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y:1, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
@@ -105,7 +105,7 @@ window.onload = function () {
         document.querySelector('#Maru').setAttribute("position", { x: -7, y: 10, z: 0 });
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
-        console.log("PCだよーーーーーーー");
+        console.log("PCだよーーーーーーーmaru");
     }
 
 
@@ -215,7 +215,7 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
 
 
 
-function mondaibun1(a) {
+function problem_statement1(a) {
     console.log("okだよ");
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun1]:empty').forEach(mdbun1 => {
@@ -238,7 +238,7 @@ function mondaibun1(a) {
     })
 }
 
-function mondaibun2(a) {
+function problem_statement2(a) {
     console.log("okだよ");
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun2]:empty').forEach(mdbun2 => {
@@ -261,7 +261,7 @@ function mondaibun2(a) {
     })
 }
 
-function mondaibun3(a) {
+function problem_statement3(a) {
     console.log("okだよ");
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun3]:empty').forEach(mdbun3 => {
@@ -284,7 +284,7 @@ function mondaibun3(a) {
     })
 }
 
-function mondaibun4(a) {
+function problem_statement4(a) {
     console.log("okだよ");
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun4]:empty').forEach(mdbun4 => {
@@ -307,7 +307,7 @@ function mondaibun4(a) {
     })
 }
 
-function mondaibun5(a) {
+function problem_statement5(a) {
     console.log("okだよ");
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun5]:empty').forEach(mdbun5 => {
@@ -330,7 +330,7 @@ function mondaibun5(a) {
     })
 }
 
-// function mondaibun1(){
+// function problem_statement1(){
 //     console.log(mdbun.dataset.text)
 //     const text = mdbun.dataset.text
 //     const text_cnt = text.length
@@ -385,7 +385,7 @@ function render() {
 
 function restart() {
     var restart = document.querySelector('#restart');
-    var monbun5 = document.querySelector('#mondaibun5');
+    var monbun5 = document.querySelector('#problem_statement5');
     var mondai5 = document.querySelector('#mondai5');
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
@@ -424,8 +424,8 @@ function start() {
     // var startback = document.querySelector('#start-button');
     // var front_text = document.getElementById("front_text");
     // front_text.setAttribute("value", "Hello, World! \n hello ");
-    // var mondaibun = document.querySelector('#mondaibun').mb_text.dataset.text;
-    // console.log(mondaibun);
+    // var problem_statement = document.querySelector('#problem_statement').mb_text.dataset.text;
+    // console.log(problem_statement);
 
     console.log(result[1][2]);
     if (startbutton.getAttribute('visible') == true) {
@@ -773,11 +773,11 @@ function mondai() {
     var mondai3 = document.querySelector('#mondai3');
     var mondai4 = document.querySelector('#mondai4');
     var mondai5 = document.querySelector('#mondai5');
-    var monbun1 = document.querySelector('#mondaibun1');
-    var monbun2 = document.querySelector('#mondaibun2');
-    var monbun3 = document.querySelector('#mondaibun3');
-    var monbun4 = document.querySelector('#mondaibun4');
-    var monbun5 = document.querySelector('#mondaibun5');
+    var monbun1 = document.querySelector('#problem_statement1');
+    var monbun2 = document.querySelector('#problem_statement2');
+    var monbun3 = document.querySelector('#problem_statement3');
+    var monbun4 = document.querySelector('#problem_statement4');
+    var monbun5 = document.querySelector('#problem_statement5');
     var mondaiback = document.querySelector('#mondai-back');
 
     switch (cnt) {
@@ -786,7 +786,7 @@ function mondai() {
             monbun1.setAttribute('visible', true);
             mondaiback.setAttribute('visible', true);
             console.log(cnt);
-            mondaibun1(cnt);
+            problem_statement1(cnt);
             break;
         case 2:
             mondai1.setAttribute('visible', false);
@@ -794,7 +794,7 @@ function mondai() {
             monbun1.setAttribute('visible', false);
             monbun2.setAttribute('visible', true);
             console.log(cnt);
-            mondaibun2(cnt);
+            problem_statement2(cnt);
             break;
 
         case 3:
@@ -802,21 +802,21 @@ function mondai() {
             mondai3.setAttribute('visible', true);
             monbun2.setAttribute('visible', false);
             monbun3.setAttribute('visible', true);
-            mondaibun3(cnt);
+            problem_statement3(cnt);
             break;
         case 4:
             mondai3.setAttribute('visible', false);
             mondai4.setAttribute('visible', true);
             monbun3.setAttribute('visible', false);
             monbun4.setAttribute('visible', true);
-            mondaibun4(cnt);
+            problem_statement4(cnt);
             break;
         case 5:
             mondai4.setAttribute('visible', false);
             mondai5.setAttribute('visible', true);
             monbun4.setAttribute('visible', false);
             monbun5.setAttribute('visible', true);
-            mondaibun5(cnt);
+            problem_statement5(cnt);
             break;
     }
 

@@ -11,9 +11,8 @@ $senkou-color: #6F4C77;
 body {
     margin: 0px;
     font-family: 'Noto Sans Japanese', sans-serif;
+    height: 100%;
 }
-
-
 
 .container {
     // padding-left: 15px;
@@ -658,6 +657,6 @@ body {
     box-sizing: border-box;
 }
 
-// body {
-//     font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
-// }
+body {
+    font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+}
