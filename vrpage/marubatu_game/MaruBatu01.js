@@ -8,7 +8,8 @@
 var sceneEl;
 // const sound01 = document.getElementById("my_sound01");
 
-
+// var aaaa;
+// var new_mdbun;
 var Maru;
 var Batu;
 var Maru_hantei;
@@ -95,10 +96,10 @@ window.onload = function () {
         document.querySelector('#problem_statement4').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement5').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 1, z: 1.4 });
-        document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y:1, z: 0 });
+        document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y: 1, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
-        document.querySelector('#maru-hantei').setAttribute("scale",{ x: 0.8, y: 0.8, z: 0.27 });
-        document.querySelector('#maru-hantei').setAttribute("position", { x: -7.4, y:1, z: 0 });
+        document.querySelector('#maru-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
+        document.querySelector('#maru-hantei').setAttribute("position", { x: -7.4, y: 1, z: 0 });
         document.querySelector('#Batu').setAttribute("scale", { x: 4, y: 4, z: 4 });
         document.querySelector('#Batu').setAttribute("position", { x: 27, y: 10, z: 0 });
         document.querySelector('#Maru').setAttribute("scale", { x: 4, y: 4, z: 4 });
@@ -213,41 +214,51 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
     console.log(results[0][1]); // 300yen
 }
 
-function split_problem_statement(mondai){
- mondai_array = mondai.split('\\n');
-//  mondai_array.forEach(function (value,index){
-//     console.log(index,value);
-//     // if(value.length < 25 && value+1.length){
+function split_problem_statement(a) {
+    console.log(result[a][1])
+    mondai_array = result[a][1].split('\\n');
+    //  mondai_array.forEach(function (value,index){
+    //     console.log(index,value);
+    //     // if(value.length < 25 && value+1.length){
 
-//     // }
-//     console.log(value+1);
-//  });
-var anser = [];
+    //     // }
+    //     console.log(value+1);
+    //  });
+    var anser = [];
 
- for(i = 0; i < mondai_array.length; i++){
-    if(mondai_array[i].length < 25){
-    console.log("あああああああああああ");
-        if(mondai_array[i].length + mondai_array[i+1].length < 25){
-        anser.push(mondai_array[i] + mondai_array[i+1]);
-        //   mondai_array[i].push(mondai_array[i+1]);
-            console.log(anser[1]);
-            i++;
+    for (i = 0; i < mondai_array.length; i++) {
+        if (mondai_array[i].length < 25) {
+            console.log("あああああああああああ");
+            if (mondai_array[i].length + mondai_array[i + 1].length < 25) {
+                anser.push(mondai_array[i] + mondai_array[i + 1]);
+                //   mondai_array[i].push(mondai_array[i+1]);
+                console.log(anser[1]);
+                i++;
+            }
         }
     }
- }
-    
- 
- return anser[0];
+
+    switch (cnt) {
+        case 1:
+            problem_statement1(anser[0]);
+            problem_statement1_2(anser[1]);
+            break;
+        case 2:
+            break;
+    }
+
+
 }
 
-function problem_statement1(a) {
+function problem_statement1(mondai_text) {
     console.log("okだよ");
-    console.log(result[a][1]);
+   // console.log(result[a][1]);
 
     document.querySelectorAll('[mdbun1]:empty').forEach(mdbun1 => {
         console.log(mdbun1.dataset.text)
         //mdbun1.dataset.text = result[a][1];
-        mdbun1.dataset.text = split_problem_statement(result[a][1]);
+        mdbun1.dataset.text = mondai_text;
+        //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
         const text = mdbun1.dataset.text
         const text_cnt = text.length
         const width = text_cnt * 1.4
@@ -261,8 +272,52 @@ function problem_statement1(a) {
         ctx.fillText(text, 0, 125)
 
         const base64 = cvs.toDataURL("image/png")
-        mdbun1.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
+        mdbun1.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
+        //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
+        // a = mdbun1;
+        // new_mdbun = mdbun1;
+
+        console.log(mdbun1);
     })
+
+    //  document.querySelector('#test_1').textContent = result[a][1];
+
+    // a.after(new_mdbun);
+}
+
+function problem_statement1_2(a) {
+    console.log("okだよ");
+    console.log(a);
+
+    document.querySelectorAll('[mdbun1_2]:empty').forEach(mdbun1_2 => {
+        console.log(mdbun1_2.dataset.text)
+        //mdbun1.dataset.text = result[a][1];
+        mdbun1_2.dataset.text = a;
+        //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
+        const text = mdbun1_2.dataset.text
+        const text_cnt = text.length
+        const width = text_cnt * 1.4
+        const height = 1.6
+        let cvs = document.createElement('canvas')
+        let ctx = cvs.getContext('2d')
+        cvs.width = width * 100
+        cvs.height = height * 100
+        ctx.fillStyle = "rgb(0, 0, 0)"
+        ctx.font = '100pt Arial'
+        ctx.fillText(text, 0, 125)
+
+        const base64 = cvs.toDataURL("image/png")
+        mdbun1_2.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
+        //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
+        // a = mdbun1;
+        // new_mdbun = mdbun1;
+
+        //console.log(mdbun1);
+    })
+
+    //  document.querySelector('#test_1').textContent = result[a][1];
+
+    // a.after(new_mdbun);
 }
 
 function problem_statement2(a) {
@@ -270,8 +325,8 @@ function problem_statement2(a) {
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun2]:empty').forEach(mdbun2 => {
         console.log(mdbun2.dataset.text)
-       // mdbun2.dataset.text = result[a][1];
-       mdbun2.dataset.text = split_problem_statement(result[a][1]);
+        // mdbun2.dataset.text = result[a][1];
+        mdbun2.dataset.text = split_problem_statement(result[a][1]);
         const text = mdbun2.dataset.text
         const text_cnt = text.length
         const width = text_cnt * 1.4
@@ -814,7 +869,7 @@ function issue() {
             monbun1.setAttribute('visible', true);
             issueback.setAttribute('visible', true);
             console.log(cnt);
-            problem_statement1(cnt);
+            split_problem_statement(cnt);
             break;
         case 2:
             issue1.setAttribute('visible', false);
@@ -822,7 +877,7 @@ function issue() {
             monbun1.setAttribute('visible', false);
             monbun2.setAttribute('visible', true);
             console.log(cnt);
-            problem_statement2(cnt);
+            split_problem_statement(cnt);
             break;
 
         case 3:
@@ -830,7 +885,7 @@ function issue() {
             issue3.setAttribute('visible', true);
             monbun2.setAttribute('visible', false);
             monbun3.setAttribute('visible', true);
-            problem_statement3(cnt);
+            problem_statement1(cnt);
             break;
         case 4:
             issue3.setAttribute('visible', false);

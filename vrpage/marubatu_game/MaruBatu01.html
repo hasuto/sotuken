@@ -3,10 +3,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/Shift-JIS; charset=utf-8" />
-    
+
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="./js/aframe-html-shader.min.js"></script>
-    <script src="./js/html2canvas.min.js"></script>
+    <script src="js/aframe-html-shader.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
 
     <script src="MaruBatu01.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,20 +20,32 @@
 
 
     <div>
-        <a-scene device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true" style="position:fixed;top:0;">
+
+        <div id="target1" class="target">
+
+            <div class="cf">
+                <h3>A-Frame</h3>
+                <p id="test_1">A-Frameは簡単にWeb VRが実現できるフレームワークです。</p>
+            </div>
+            <p class="detail">320px × 200px</p>
+        </div>
+        <a-scene device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true"
+            style="position:fixed;top:0;">
             <a-assets>
                 <a-asset-item id="Maru-obj" src="assets/maru.obj"></a-asset-item>
                 <a-asset-item id="Maru-mtl" src="assets/maru.mtl"></a-asset-item>
                 <a-asset-item id="Batu-obj" src="assets/batu.obj"></a-asset-item>
                 <a-asset-item id="Batu-mtl" src="assets/batu.mtl"></a-asset-item>
-                
-            <!-- ここのこめんと消せば音が鳴る    <audio id="audio01" src="./assets/bgm.mp3" preload="auto"></audio> -->
+                <a-asset-item id="font" src="assets/NotoSerifJP-Regular.otf"></a-asset-item>
+
+                <!-- ここのこめんと消せば音が鳴る    <audio id="audio01" src="./assets/bgm.mp3" preload="auto"></audio> -->
             </a-assets>
             <!-- <a-plane position="5 2 -1" width="2" height="1" scale="10 10 10"  material="shader:html;target: #target1;"></a-plane> -->
             <!-- <a-sound id="my_sound01" src="#audio01" position="0 1.2 -3" autoplay="true" loop="true"></a-sound> -->
             <!-- <a-entity mb-text id="start" onclick="start()" visible="true" position="11 10 30" data-text="ゲームスタート" 
                 scale="15 15 15" ></a-entity> -->
-            <a-text id="restart" onclick="restart()" visible="false" position="5 6.5 30" value="game-re-start" scale="10 10 10"></a-text>
+            <a-text id="restart" onclick="restart()" visible="false" position="5 6.5 30" value="game-re-start"
+                scale="10 10 10"></a-text>
             <!-- <a-text id="issue" visible="false" position="5 30 30" value="問題1" font="sample1-msdf.json" color="black"
                 negate="false" scale="10 10 10"></a-text>
             <a-text id="issue2" visible="false" position="5 30 30" value="問題2" font="sample1-msdf.json" color="black"
@@ -54,10 +66,14 @@
             <!-- <a-text id="front_text" position="0 1.7 -2" value="Hello, World!" align="center" color="#000"
              scale="10 10 10">
             </a-text> -->
-            
+            <!-- <a-plane width="80" height="50" rotation="0 0 0" material="shader:html;target: #target1;"></a-plane> -->
+            <a-entity text-geometry="Hello world; font: #font; size: .30;" material="color: black" position="10 25 30">
+            </a-entity>
+
             <!-- <a-plane id="issue-back" src="assets/maruwaku.png"  visible="false" position="10 48 0" rotation="0 0 0" width="100" height="20" color="white"></a-plane> -->
             <!-- <a-plane id="start-back" visible="true" width="30" height="7" position="11 10 0"  color="white"></a-plane> -->
-            <a-entity mb-text id="issue1" visible="false" position="5 30 30" scale="10 10 10" data-text="問題1"></a-entity>
+            <a-entity mb-text id="issue1" visible="false" position="5 30 30" scale="10 10 10"
+                data-text="問題1"></a-entity>
             <a-entity mb-text id="issue2" visible="false" position="5 30 30" scale="10 10 10"
                 data-text="問題2"></a-entity>
             <a-entity mb-text id="issue3" visible="false" position="5 30 30" scale="10 10 10"
@@ -66,43 +82,61 @@
                 data-text="問題4"></a-entity>
             <a-entity mb-text id="issue5" visible="false" position="5 30 30" scale="10 10 10"
                 data-text="問題5"></a-entity>
-            <a-entity mb-text id="correct_answer" visible="false" position="11 19 30" scale="15 15 15" data-text="正解！" color="white"></a-entity>
-            <a-entity mb-text id="incorrect_answer" visible="false" position="10 19 30" scale="15 15 15" data-text="不正解！" color="white"></a-entity>
-            <a-entity mb-text id="game-explanation_1" visible="true" position="10 19 30" scale="15 15 15" data-text="〇✕ゲームにチャレンジして、科について学ぼう" color="white"></a-entity>
-            <a-entity mb-text id="game-explanation_2" visible="true" position="10 17 30" scale="15 15 15" data-text="現在選択中の各科の各教室にちなんだ、５問の問題に答え、全問正解を目指そう！" color="white"></a-entity>
-            <a-entity mdbun1 id="problem_statement1" visible="true" id="problem_statement" position="12 28 30" scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun2 id="problem_statement2" visible="false" id="problem_statement" position="12 28 30" scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun3 id="problem_statement3" visible="false" id="problem_statement" position="12 28 30" scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun4 id="problem_statement4" visible="false" id="problem_statement" position="12 28 30" scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun5 id="problem_statement5" visible="false" id="problem_statement" position="12 28 30" scale="10 10 10" data-text=""></a-entity>
+            <a-entity mb-text id="correct_answer" visible="false" position="11 19 30" scale="15 15 15" data-text="正解！"
+                color="white"></a-entity>
+            <a-entity mb-text id="incorrect_answer" visible="false" position="10 19 30" scale="15 15 15"
+                data-text="不正解！" color="white"></a-entity>
+            <a-entity mb-text id="game-explanation_1" visible="true" position="10 19 30" scale="15 15 15"
+                data-text="〇✕ゲームにチャレンジして、\n科について学ぼう" color="white"></a-entity>
+            <a-entity mb-text id="game-explanation_2" visible="true" position="10 17 30" scale="15 15 15"
+                data-text="現在選択中の各科の各教室にちなんだ、５問の問題に答え、全問正解を目指そう！" color="white"></a-entity>
+            <a-entity mdbun1 id="problem_statement1" visible="true" position="12 28 30" scale="10 10 10"
+                data-text=""></a-entity>
+            <a-entity mdbun1_2 id="problem_statement1_2" visible="true" position="12 24 30" scale="10 10 10"
+                data-text=""></a-entity>
+            <a-entity mdbun1_3 id="problem_statement1_3" visible="true" position="12 20 30" scale="10 10 10"
+                data-text=""></a-entity>
+            <a-entity mdbun2 id="problem_statement2" visible="false" id="problem_statement" position="12 28 30"
+                scale="10 10 10" data-text=""></a-entity>
+            <a-entity mdbun3 id="problem_statement3" visible="false" id="problem_statement" position="12 28 30"
+                scale="10 10 10" data-text=""></a-entity>
+            <a-entity mdbun4 id="problem_statement4" visible="false" id="problem_statement" position="12 28 30"
+                scale="10 10 10" data-text=""></a-entity>
+            <a-entity mdbun5 id="problem_statement5" visible="false" id="problem_statement" position="12 28 30"
+                scale="10 10 10" data-text=""></a-entity>
 
             <a-gltf-model id="Maru" visible="true" src="assets/maru2.glb" position="-14 10 0" scale="8 8 8"
                 rotation="80 0 0"></a-gltf-model>
             <a-gltf-model id="Batu" visible="true" src="assets/batu.glb" position="34 10 0" scale="8 8 8"
                 rotation="-45 -98 95"></a-gltf-model>
-            <a-gltf-model id="game-explanation_3" visible="true" src="assets/textback.glb" position="10 17.5 0" rotation="0.4 89 0" scale="1 1 4.6"></a-gltf-model>
-            <a-gltf-model id="maru-hantei" visible="false" src="assets/textback.glb" onclick="maru()" position="-15 0 0" rotation="0.4 89 0" scale="1 1 0.5"></a-gltf-model>
-            <a-gltf-model id="batu-hantei" visible="false" src="assets/textback.glb" onclick="batu()" position="33 0 0" rotation="0.4 89 0" scale="1 1 0.4"></a-gltf-model>
-            <a-gltf-model id="start-button" onclick="start()" visible="true" src="assets/start_button.glb" position="10 10 0" rotation="0.3 80 0" scale="6 6 6"></a-gltf-model>
-            <a-gltf-model id="next-button" onclick="next()" visible="false" src="assets/next_button.glb" position="10 18 0" rotation="0.3 80 0" scale="5 5 5"></a-gltf-model>
-            <a-gltf-model id="issue-back" visible="false" src="assets/textback.glb" position="10 37 0" rotation="0.4 89 0" scale="2 1 1.7"></a-gltf-model>
-            <a-gltf-model id="hantei-back" visible="false" src="assets/textback.glb" position="10 22 0" rotation="0.4 89 0" scale="1 0.6 0.5"></a-gltf-model>
-            <a-gltf-model id="score-back" visible="false" src="assets/textback.glb" position="10 12 0" rotation="0.4 89 0" scale="1 0.6 0.6"></a-gltf-model>
+            <a-gltf-model id="game-explanation_3" visible="true" src="assets/textback.glb" position="10 17.5 0"
+                rotation="0.4 89 0" scale="1 1 4.6"></a-gltf-model>
+            <a-gltf-model id="maru-hantei" visible="false" src="assets/textback.glb" onclick="maru()" position="-15 0 0"
+                rotation="0.4 89 0" scale="1 1 0.5"></a-gltf-model>
+            <a-gltf-model id="batu-hantei" visible="false" src="assets/textback.glb" onclick="batu()" position="33 0 0"
+                rotation="0.4 89 0" scale="1 1 0.4"></a-gltf-model>
+            <a-gltf-model id="start-button" onclick="start()" visible="true" src="assets/start_button.glb"
+                position="10 10 0" rotation="0.3 80 0" scale="6 6 6"></a-gltf-model>
+            <a-gltf-model id="next-button" onclick="next()" visible="false" src="assets/next_button.glb"
+                position="10 18 0" rotation="0.3 80 0" scale="5 5 5"></a-gltf-model>
+            <a-gltf-model id="issue-back" visible="false" src="assets/textback.glb" position="10 37 0"
+                rotation="0.4 89 0" scale="2 1 1.7"></a-gltf-model>
+            <a-gltf-model id="hantei-back" visible="false" src="assets/textback.glb" position="10 22 0"
+                rotation="0.4 89 0" scale="1 0.6 0.5"></a-gltf-model>
+            <a-gltf-model id="score-back" visible="false" src="assets/textback.glb" position="10 12 0"
+                rotation="0.4 89 0" scale="1 0.6 0.6"></a-gltf-model>
             <!-- <a-entity mb-text visible="false" position="5 5 -1" scale="10 10 10" data-text="新.こんにちは世界(script)🌝">
             </a-entity> -->
-            
+
             <!-- <a-entity  visible="true" obj-model="obj:#Maru-obj; mtl:#Maru-mtl;" position="-10 10 0"
                 scale="4 4 4" rotation="-80 0 0"></a-entity> -->
             <!-- <a-entity id="Batu" visible="true" obj-model="obj:#Batu-obj; mtl:#Batu-mtl;" position="30 10 0"
                 scale="4 4 4" rotation="-45 -98 95"></a-entity> -->
-                <a-entity cursor="rayOrigin: mouse"></a-entity>
+            <a-entity cursor="rayOrigin: mouse"></a-entity>
 
 
-            <a-sky  id="back-ground" 
-            src="" 
-            position="0 0 0" 
-            rotation="0 -120 5"
-            animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 40000; easing: linear"></a-sky>
+            <a-sky id="back-ground" src="" position="0 0 0" rotation="0 -120 5"
+                animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 40000; easing: linear"></a-sky>
             <a-camera position="10 10 60" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD"
                 cursor-opacity="0.5">
                 <!-- <a-cursor></a-cursor> -->

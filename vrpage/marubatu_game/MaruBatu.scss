@@ -1,10 +1,27 @@
 #start{
     font-size: larger;
 }
-a-plane{
-    opacity: 0.5;
-}
+// a-plane{
+//     opacity: 0.5;
+// }
 
 #Maru{
     scale:8 8 8;
+}
+
+.target {
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    font-size: 100%;
+    background: #FFF;
+    display: hidden;
+    padding: 30px;
+    border-radius: 50px;
+    overflow: hidden;
+    p{
+        background: #F00;
+        border-radius: 10px;
+    }
+    /*z-index: 1;*/
 }
