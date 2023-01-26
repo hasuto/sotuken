@@ -29,7 +29,7 @@ hantei_maru = "o";
 var hantei_batu = [];
 hantei_batu = "x";
 var results;
-var seikai;
+var correct_answer;
 var text;
 var score_result;
 var Maru = document.querySelector('#Maru');
@@ -84,17 +84,17 @@ window.onload = function () {
         document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
         document.querySelector('#game-explanation_2').setAttribute("scale", { x: 8, y: 8, z: 8 });
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });
-        document.querySelector('#mondai1').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondai2').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondai3').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondai4').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondai5').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue1').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue3').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue4').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue5').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement1').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement2').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement4').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement5').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#mondai-back').setAttribute("scale", { x: 2, y: 1, z: 1.4 });
+        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 1, z: 1.4 });
         document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y:1, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
         document.querySelector('#maru-hantei').setAttribute("scale",{ x: 0.8, y: 0.8, z: 0.27 });
@@ -213,14 +213,41 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
     console.log(results[0][1]); // 300yen
 }
 
+function split_problem_statement(mondai){
+ mondai_array = mondai.split('\\n');
+//  mondai_array.forEach(function (value,index){
+//     console.log(index,value);
+//     // if(value.length < 25 && value+1.length){
 
+//     // }
+//     console.log(value+1);
+//  });
+var anser = [];
+
+ for(i = 0; i < mondai_array.length; i++){
+    if(mondai_array[i].length < 25){
+    console.log("あああああああああああ");
+        if(mondai_array[i].length + mondai_array[i+1].length < 25){
+        anser.push(mondai_array[i] + mondai_array[i+1]);
+        //   mondai_array[i].push(mondai_array[i+1]);
+            console.log(anser[1]);
+            i++;
+        }
+    }
+ }
+    
+ 
+ return anser[0];
+}
 
 function problem_statement1(a) {
     console.log("okだよ");
     console.log(result[a][1]);
+
     document.querySelectorAll('[mdbun1]:empty').forEach(mdbun1 => {
         console.log(mdbun1.dataset.text)
-        mdbun1.dataset.text = result[a][1];
+        //mdbun1.dataset.text = result[a][1];
+        mdbun1.dataset.text = split_problem_statement(result[a][1]);
         const text = mdbun1.dataset.text
         const text_cnt = text.length
         const width = text_cnt * 1.4
@@ -243,7 +270,8 @@ function problem_statement2(a) {
     console.log(result[a][1]);
     document.querySelectorAll('[mdbun2]:empty').forEach(mdbun2 => {
         console.log(mdbun2.dataset.text)
-        mdbun2.dataset.text = result[a][1];
+       // mdbun2.dataset.text = result[a][1];
+       mdbun2.dataset.text = split_problem_statement(result[a][1]);
         const text = mdbun2.dataset.text
         const text_cnt = text.length
         const width = text_cnt * 1.4
@@ -386,11 +414,11 @@ function render() {
 function restart() {
     var restart = document.querySelector('#restart');
     var monbun5 = document.querySelector('#problem_statement5');
-    var mondai5 = document.querySelector('#mondai5');
+    var issue5 = document.querySelector('#issue5');
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
-    var seikai = document.querySelector('#seikai');
-    var hazure = document.querySelector('#hazure');
+    var correct_answer = document.querySelector('#correct_answer');
+    var incorrect_answer = document.querySelector('#incorrect_answer');
     var hanteiback = document.querySelector('#hantei-back');
 
     console.log("押してる");
@@ -399,19 +427,19 @@ function restart() {
         cnt = 0;
         restart.setAttribute("visible", false);
         monbun5.setAttribute("visible", false);
-        mondai5.setAttribute("visible", false);
+        issue5.setAttribute("visible", false);
         scoreback.setAttribute('visible', false);
         hanteiback.setAttribute('visible', false);
         score_result.setAttribute("visible", false);
-        seikai.setAttribute("visible", false);
-        hazure.setAttribute("visible", false);
+        correct_answer.setAttribute("visible", false);
+        incorrect_answer.setAttribute("visible", false);
         Maru.setAttribute("visible", true);
         Batu.setAttribute("visible", true);
 
         console.log("リスタート");
         console.log(cnt, score);
         cnt++;
-        mondai();
+        issue();
     }
 }
 
@@ -435,13 +463,13 @@ function start() {
         game_explanation_3.setAttribute('visible', false);
         // startback.setAttribute('visible',false);
         cnt++;
-        mondai();
+        issue();
     }
     console.log(cnt);
 
     // if (cnt == 0) {
     //     cnt++;
-    //     mondai();
+    //     issue();
     // }
 
 }
@@ -461,8 +489,8 @@ function onMouseClick2(event) {
 // }
 
 function maru() {
-    seikai = document.querySelector('#seikai');
-    var hazure = document.querySelector('#hazure');
+    correct_answer = document.querySelector('#correct_answer');
+    var incorrect_answer = document.querySelector('#incorrect_answer');
     var next = document.querySelector('#next-button');
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
@@ -474,12 +502,12 @@ function maru() {
             case 1:
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     } else if (result[cnt][2] == results[1][0]) {
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
                     hanteiback.setAttribute('visible', true);
@@ -491,11 +519,11 @@ function maru() {
                 break;
             case 2:
                 // if (result[cnt][2] == results[0][0]) {
-                //     hazure.setAttribute('visible', false);
-                //     seikai.setAttribute('visible', true);
+                //     incorrect_answer.setAttribute('visible', false);
+                //     correct_answer.setAttribute('visible', true);
                 // } else if (result[cnt][2] == results[1][0]) {
-                //     seikai.setAttribute('visible', false);
-                //     hazure.setAttribute('visible', true);
+                //     correct_answer.setAttribute('visible', false);
+                //     incorrect_answer.setAttribute('visible', true);
                 // }
                 // hanteiback.setAttribute('visible', true);
                 // Batu.setAttribute('visible', false);
@@ -503,12 +531,12 @@ function maru() {
                 // console.log(result[cnt][2]);
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     } else if (result[cnt][2] == results[1][0]) {
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
                     hanteiback.setAttribute('visible', true);
@@ -520,11 +548,11 @@ function maru() {
                 break;
             case 3:
                 // if (result[cnt][2] == results[0][0]) {
-                //     hazure.setAttribute('visible', false);
-                //     seikai.setAttribute('visible', true);
+                //     incorrect_answer.setAttribute('visible', false);
+                //     correct_answer.setAttribute('visible', true);
                 // } else if (result[cnt][2] == results[1][0]) {
-                //     seikai.setAttribute('visible', false);
-                //     hazure.setAttribute('visible', true);
+                //     correct_answer.setAttribute('visible', false);
+                //     incorrect_answer.setAttribute('visible', true);
                 // }
                 // hanteiback.setAttribute('visible', true);
                 // next.setAttribute('visible', true);
@@ -535,12 +563,12 @@ function maru() {
                 // console.log(result[cnt][2]);
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     } else if (result[cnt][2] == results[1][0]) {
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
                     hanteiback.setAttribute('visible', true);
@@ -552,23 +580,23 @@ function maru() {
                 break;
             case 4:
                 // if (result[cnt][2] == results[0][0]) {
-                //     hazure.setAttribute('visible', false);
-                //     seikai.setAttribute('visible', true);
+                //     incorrect_answer.setAttribute('visible', false);
+                //     correct_answer.setAttribute('visible', true);
                 // } else if (result[cnt][2] == results[1][0]) {
-                //     seikai.setAttribute('visible', false);
-                //     hazure.setAttribute('visible', true);
+                //     correct_answer.setAttribute('visible', false);
+                //     incorrect_answer.setAttribute('visible', true);
                 // }
                 // hanteiback.setAttribute('visible', true);
                 // Batu.setAttribute('visible', false);
                 // next.setAttribute('visible', true);
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     } else if (result[cnt][2] == results[1][0]) {
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
                     hanteiback.setAttribute('visible', true);
@@ -580,11 +608,11 @@ function maru() {
                 break;
             case 5:
                 // if (result[cnt][2] == results[0][0]) {
-                //     hazure.setAttribute('visible', false);
-                //     seikai.setAttribute('visible', true);
+                //     incorrect_answer.setAttribute('visible', false);
+                //     correct_answer.setAttribute('visible', true);
                 // } else if (result[cnt][2] == results[1][0]) {
-                //     seikai.setAttribute('visible', false);
-                //     hazure.setAttribute('visible', true);
+                //     correct_answer.setAttribute('visible', false);
+                //     incorrect_answer.setAttribute('visible', true);
                 // }
                 // console.log(results[0][0]);
                 // hanteiback.setAttribute('visible', true);
@@ -594,12 +622,12 @@ function maru() {
                 // Batu.setAttribute('visible', false);
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     } else if (result[cnt][2] == results[1][0]) {
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     }
 
                     hanteiback.setAttribute('visible', true);
@@ -621,8 +649,8 @@ function maru() {
 }
 
 function batu() {
-    var seikai = document.querySelector('#seikai');
-    var hazure = document.querySelector('#hazure');
+    var correct_answer = document.querySelector('#correct_answer');
+    var incorrect_answer = document.querySelector('#incorrect_answer');
     var next = document.querySelector('#next-button');
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
@@ -634,12 +662,12 @@ function batu() {
                 if (Maru.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
 
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
 
                     } else if (result[cnt][2] == results[1][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     }
                     console.log("score" + score);
@@ -649,15 +677,15 @@ function batu() {
                     console.log(hantei_maru);
                     console.log(result[cnt][2]);
                 }
-                // seikai.setAttribute('visible', false);
-                // hazure.setAttribute('visible', true);
+                // correct_answer.setAttribute('visible', false);
+                // incorrect_answer.setAttribute('visible', true);
                 // hanteiback.setAttribute('visible', true);
                 // next.setAttribute('visible', true);
                 // Maru.setAttribute('visible', false);
                 break;
             case 2:
-                // hazure.setAttribute('visible', false);
-                // seikai.setAttribute('visible', true);
+                // incorrect_answer.setAttribute('visible', false);
+                // correct_answer.setAttribute('visible', true);
                 // hanteiback.setAttribute('visible', true);
                 // next.setAttribute('visible', true);
                 // if (Maru.getAttribute('visible') == true) {
@@ -667,11 +695,11 @@ function batu() {
                 if (Maru.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
 
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     } else if (result[cnt][2] == results[1][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     }
                     console.log("score" + score);
@@ -683,19 +711,19 @@ function batu() {
                 }
                 break;
             case 3:
-                // seikai.setAttribute('visible', false);
-                // hazure.setAttribute('visible', true);
+                // correct_answer.setAttribute('visible', false);
+                // incorrect_answer.setAttribute('visible', true);
                 // hanteiback.setAttribute('visible', true);
                 // next.setAttribute('visible', true);
                 // Maru.setAttribute('visible', false);
                 if (Maru.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
 
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     } else if (result[cnt][2] == results[1][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     }
                     console.log("score" + score);
@@ -707,8 +735,8 @@ function batu() {
                 }
                 break;
             case 4:
-                // hazure.setAttribute('visible', false);
-                // seikai.setAttribute('visible', true);
+                // incorrect_answer.setAttribute('visible', false);
+                // correct_answer.setAttribute('visible', true);
                 // hanteiback.setAttribute('visible', true);
                 // next.setAttribute('visible', true);
                 // if (Maru.getAttribute('visible') == true) {
@@ -718,11 +746,11 @@ function batu() {
                 if (Maru.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
 
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
                     } else if (result[cnt][2] == results[1][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     }
                     console.log("score" + score);
@@ -734,19 +762,19 @@ function batu() {
                 }
                 break;
             case 5:
-                // seikai.setAttribute('visible', false);
-                // hazure.setAttribute('visible', true);
+                // correct_answer.setAttribute('visible', false);
+                // incorrect_answer.setAttribute('visible', true);
                 // hanteiback.setAttribute('visible', true);
                 // Maru.setAttribute('visible', false);
                 if (Maru.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
 
-                        seikai.setAttribute('visible', false);
-                        hazure.setAttribute('visible', true);
+                        correct_answer.setAttribute('visible', false);
+                        incorrect_answer.setAttribute('visible', true);
 
                     } else if (result[cnt][2] == results[1][0]) {
-                        hazure.setAttribute('visible', false);
-                        seikai.setAttribute('visible', true);
+                        incorrect_answer.setAttribute('visible', false);
+                        correct_answer.setAttribute('visible', true);
                         score++;
                     }
                     console.log("score" + score);
@@ -766,31 +794,31 @@ function batu() {
 
 
 
-function mondai() {
+function issue() {
 
-    var mondai1 = document.querySelector('#mondai1');
-    var mondai2 = document.querySelector('#mondai2');
-    var mondai3 = document.querySelector('#mondai3');
-    var mondai4 = document.querySelector('#mondai4');
-    var mondai5 = document.querySelector('#mondai5');
+    var issue1 = document.querySelector('#issue1');
+    var issue2 = document.querySelector('#issue2');
+    var issue3 = document.querySelector('#issue3');
+    var issue4 = document.querySelector('#issue4');
+    var issue5 = document.querySelector('#issue5');
     var monbun1 = document.querySelector('#problem_statement1');
     var monbun2 = document.querySelector('#problem_statement2');
     var monbun3 = document.querySelector('#problem_statement3');
     var monbun4 = document.querySelector('#problem_statement4');
     var monbun5 = document.querySelector('#problem_statement5');
-    var mondaiback = document.querySelector('#mondai-back');
+    var issueback = document.querySelector('#issue-back');
 
     switch (cnt) {
         case 1:
-            mondai1.setAttribute('visible', true);
+            issue1.setAttribute('visible', true);
             monbun1.setAttribute('visible', true);
-            mondaiback.setAttribute('visible', true);
+            issueback.setAttribute('visible', true);
             console.log(cnt);
             problem_statement1(cnt);
             break;
         case 2:
-            mondai1.setAttribute('visible', false);
-            mondai2.setAttribute('visible', true);
+            issue1.setAttribute('visible', false);
+            issue2.setAttribute('visible', true);
             monbun1.setAttribute('visible', false);
             monbun2.setAttribute('visible', true);
             console.log(cnt);
@@ -798,22 +826,22 @@ function mondai() {
             break;
 
         case 3:
-            mondai2.setAttribute('visible', false);
-            mondai3.setAttribute('visible', true);
+            issue2.setAttribute('visible', false);
+            issue3.setAttribute('visible', true);
             monbun2.setAttribute('visible', false);
             monbun3.setAttribute('visible', true);
             problem_statement3(cnt);
             break;
         case 4:
-            mondai3.setAttribute('visible', false);
-            mondai4.setAttribute('visible', true);
+            issue3.setAttribute('visible', false);
+            issue4.setAttribute('visible', true);
             monbun3.setAttribute('visible', false);
             monbun4.setAttribute('visible', true);
             problem_statement4(cnt);
             break;
         case 5:
-            mondai4.setAttribute('visible', false);
-            mondai5.setAttribute('visible', true);
+            issue4.setAttribute('visible', false);
+            issue5.setAttribute('visible', true);
             monbun4.setAttribute('visible', false);
             monbun5.setAttribute('visible', true);
             problem_statement5(cnt);
@@ -824,19 +852,19 @@ function mondai() {
 
 function next() {
     var next = document.querySelector('#next-button');
-    var seikai = document.querySelector('#seikai');
-    var hazure = document.querySelector('#hazure');
+    var correct_answer = document.querySelector('#correct_answer');
+    var incorrect_answer = document.querySelector('#incorrect_answer');
     var hanteiback = document.querySelector('#hantei-back');
 
     if (next.getAttribute('visible') == true) {
-        hazure.setAttribute('visible', false);
-        seikai.setAttribute('visible', false);
+        incorrect_answer.setAttribute('visible', false);
+        correct_answer.setAttribute('visible', false);
         hanteiback.setAttribute('visible', false);
         next.setAttribute('visible', false);
         Maru.setAttribute('visible', true);
         Batu.setAttribute('visible', true);
         cnt++;
-        mondai();
+        issue();
     }
 }
 
