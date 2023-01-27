@@ -91,11 +91,22 @@ window.onload = function () {
         document.querySelector('#issue4').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#issue5').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement1').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement1_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement1_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement2_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement2_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement3').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement3_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement3_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement4').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement4_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement4_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement5').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 1, z: 1.4 });
+        document.querySelector('#problem_statement5_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#problem_statement5_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
+        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 1.5, z: 1.4 });
+        document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 29, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y: 1, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
         document.querySelector('#maru-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
@@ -226,94 +237,166 @@ function split_problem_statement(a) {
     //  });
     var anser = [];
 
-    for (i = 0; i < mondai_array.length; i++) {
-        if (mondai_array[i].length < 25) {
-            console.log("あああああああああああ");
-            if (mondai_array[i].length + mondai_array[i + 1].length < 25) {
-                anser.push(mondai_array[i] + mondai_array[i + 1]);
-                //   mondai_array[i].push(mondai_array[i+1]);
-                console.log(anser[1]);
-                i++;
-            }
-        }
-    }
+    // for (i = 0; i < mondai_array.length; i++) {
+    //     if (mondai_array[i].length < 25) {
+    //         console.log("あああああああああああ");
+    //         if (mondai_array[i + 1]) {
+    //             if (mondai_array[i].length + mondai_array[i + 1].length < 25) {
+    //                 anser.push(mondai_array[i] + mondai_array[i + 1]);
+    //                 //   mondai_array[i].push(mondai_array[i+1]);
+    //                 console.log(anser[0]);
+    //                 console.log(anser[1]);
+    //                 console.log(anser[2]);
+    //                 console.log(anser[3]);
+    //                 console.log(anser[4]);
+    //                 i++;
+    //             }
+    //         } else {
+    //             anser.push(mondai_array[i]);
+    //         }
+    //     }
+    // }
 
     switch (cnt) {
         case 1:
-            problem_statement1(anser[0]);
-            problem_statement1_2(anser[1]);
+            problem_statement1(mondai_array[0], a);
+            problem_statement1_2(mondai_array[1], a);
+            problem_statement1_3(mondai_array[2], a);
+
             break;
         case 2:
+            problem_statement1(mondai_array[0], a);
+            problem_statement1_2(mondai_array[1], a);
+            problem_statement1_3(mondai_array[2], a);
+            break;
+        case 3:
+            problem_statement1(mondai_array[0], a);
+            problem_statement1_2(mondai_array[1], a);
+            problem_statement1_3(mondai_array[2], a);
+            break;
+        case 4:
+            problem_statement1(mondai_array[0], a);
+            problem_statement1_2(mondai_array[1], a);
+            problem_statement1_3(mondai_array[2], a);
+            break;
+        case 5:
+            problem_statement1(mondai_array[0], a);
+            problem_statement1_2(mondai_array[1], a);
+            problem_statement1_3(mondai_array[2], a);
             break;
     }
 
 
 }
 
-function problem_statement1(mondai_text) {
+function problem_statement1(mondai_text, a) {
     console.log("okだよ");
-   // console.log(result[a][1]);
+    // console.log(result[a][1]);
+    if (mondai_text != null) {
+        var mdbun_1 = "mdbun" + a;
 
-    document.querySelectorAll('[mdbun1]:empty').forEach(mdbun1 => {
-        console.log(mdbun1.dataset.text)
-        //mdbun1.dataset.text = result[a][1];
-        mdbun1.dataset.text = mondai_text;
-        //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
-        const text = mdbun1.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
+        document.querySelectorAll('[' + mdbun_1 + ']:empty').forEach(mdbun_1 => {
+            console.log(mdbun_1.dataset.text)
+            //mdbun1.dataset.text = result[a][1];
+            mdbun_1.dataset.text = mondai_text;
+            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
+            const text = mdbun_1.dataset.text
+            const text_cnt = text.length
+            const width = text_cnt * 1.4
+            const height = 1.6
+            let cvs = document.createElement('canvas')
+            let ctx = cvs.getContext('2d')
+            cvs.width = width * 100
+            cvs.height = height * 100
+            ctx.fillStyle = "rgb(0, 0, 0)"
+            ctx.font = '100pt Arial'
+            ctx.fillText(text, 0, 125)
 
-        const base64 = cvs.toDataURL("image/png")
-        mdbun1.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
-        //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
-        // a = mdbun1;
-        // new_mdbun = mdbun1;
+            const base64 = cvs.toDataURL("image/png")
+            mdbun_1.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
+            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
+            // a = mdbun1;
+            // new_mdbun = mdbun1;
 
-        console.log(mdbun1);
-    })
+            console.log(mdbun_1);
+        })
+    }
 
     //  document.querySelector('#test_1').textContent = result[a][1];
 
     // a.after(new_mdbun);
 }
 
-function problem_statement1_2(a) {
+function problem_statement1_2(mondai_text, a) {
     console.log("okだよ");
     console.log(a);
+    if (mondai_text != null) {
+        var mdbun_2 = "mdbun" + a + "_2";
 
-    document.querySelectorAll('[mdbun1_2]:empty').forEach(mdbun1_2 => {
-        console.log(mdbun1_2.dataset.text)
-        //mdbun1.dataset.text = result[a][1];
-        mdbun1_2.dataset.text = a;
-        //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
-        const text = mdbun1_2.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
+        document.querySelectorAll('[' + mdbun_2 + ']:empty').forEach(mdbun_2 => {
+            console.log(mdbun_2.dataset.text)
+            //mdbun1.dataset.text = result[a][1];
+            mdbun_2.dataset.text = mondai_text;
+            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
+            const text = mdbun_2.dataset.text
+            const text_cnt = text.length
+            const width = text_cnt * 1.4
+            const height = 1.6
+            let cvs = document.createElement('canvas')
+            let ctx = cvs.getContext('2d')
+            cvs.width = width * 100
+            cvs.height = height * 100
+            ctx.fillStyle = "rgb(0, 0, 0)"
+            ctx.font = '100pt Arial'
+            ctx.fillText(text, 0, 125)
 
-        const base64 = cvs.toDataURL("image/png")
-        mdbun1_2.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
-        //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
-        // a = mdbun1;
-        // new_mdbun = mdbun1;
+            const base64 = cvs.toDataURL("image/png")
+            mdbun_2.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
+            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
+            // a = mdbun1;
+            // new_mdbun = mdbun1;
 
-        //console.log(mdbun1);
-    })
+            //console.log(mdbun1);
+        })
+    }
+
+    //  document.querySelector('#test_1').textContent = result[a][1];
+
+    // a.after(new_mdbun);
+}
+
+function problem_statement1_3(mondai_text, a) {
+    console.log("okだよ");
+    console.log(a);
+    if (mondai_text != null) {
+        var mdbun_3 = "mdbun" + a + "_3";
+
+        document.querySelectorAll('[' + mdbun_3 + ']:empty').forEach(mdbun_3 => {
+            console.log(mdbun_3.dataset.text)
+            //mdbun1.dataset.text = result[a][1];
+            mdbun_3.dataset.text = mondai_text;
+            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
+            const text = mdbun_3.dataset.text
+            const text_cnt = text.length
+            const width = text_cnt * 1.4
+            const height = 1.6
+            let cvs = document.createElement('canvas')
+            let ctx = cvs.getContext('2d')
+            cvs.width = width * 100
+            cvs.height = height * 100
+            ctx.fillStyle = "rgb(0, 0, 0)"
+            ctx.font = '100pt Arial'
+            ctx.fillText(text, 0, 125)
+
+            const base64 = cvs.toDataURL("image/png")
+            mdbun_3.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
+            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
+            // a = mdbun1;
+            // new_mdbun = mdbun1;
+
+            //console.log(mdbun1);
+        })
+    }
 
     //  document.querySelector('#test_1').textContent = result[a][1];
 
@@ -469,6 +552,8 @@ function render() {
 function restart() {
     var restart = document.querySelector('#restart');
     var monbun5 = document.querySelector('#problem_statement5');
+    var monbun5_2 = document.querySelector('#problem_statement5_2');
+    var monbun5_3 = document.querySelector('#problem_statement5_3');
     var issue5 = document.querySelector('#issue5');
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
@@ -482,6 +567,8 @@ function restart() {
         cnt = 0;
         restart.setAttribute("visible", false);
         monbun5.setAttribute("visible", false);
+        monbun5_2.setAttribute("visible", false);
+        monbun5_3.setAttribute("visible", false);
         issue5.setAttribute("visible", false);
         scoreback.setAttribute('visible', false);
         hanteiback.setAttribute('visible', false);
@@ -857,25 +944,49 @@ function issue() {
     var issue4 = document.querySelector('#issue4');
     var issue5 = document.querySelector('#issue5');
     var monbun1 = document.querySelector('#problem_statement1');
+    var monbun1_2 = document.querySelector('#problem_statement1_2');
+    var monbun1_3 = document.querySelector('#problem_statement1_3');
+
     var monbun2 = document.querySelector('#problem_statement2');
+    var monbun2_2 = document.querySelector('#problem_statement2_2');
+    var monbun2_3 = document.querySelector('#problem_statement2_3');
+
     var monbun3 = document.querySelector('#problem_statement3');
+    var monbun3_2 = document.querySelector('#problem_statement3_2');
+    var monbun3_3 = document.querySelector('#problem_statement3_3');
+
     var monbun4 = document.querySelector('#problem_statement4');
+    var monbun4_2 = document.querySelector('#problem_statement4_2');
+    var monbun4_3 = document.querySelector('#problem_statement4_3');
+
     var monbun5 = document.querySelector('#problem_statement5');
+    var monbun5_2 = document.querySelector('#problem_statement5_2');
+    var monbun5_3 = document.querySelector('#problem_statement5_3');
+
+    // var monbun3 = document.querySelector('#problem_statement3');
+    // var monbun4 = document.querySelector('#problem_statement4');
+    // var monbun5 = document.querySelector('#problem_statement5');
     var issueback = document.querySelector('#issue-back');
 
     switch (cnt) {
         case 1:
             issue1.setAttribute('visible', true);
-            monbun1.setAttribute('visible', true);
             issueback.setAttribute('visible', true);
+            monbun1.setAttribute('visible', true);
+            monbun1_2.setAttribute('visible', true);
+            monbun1_3.setAttribute('visible', true);
             console.log(cnt);
             split_problem_statement(cnt);
             break;
         case 2:
             issue1.setAttribute('visible', false);
             issue2.setAttribute('visible', true);
-            monbun1.setAttribute('visible', false);
             monbun2.setAttribute('visible', true);
+            monbun2_2.setAttribute('visible', true);
+            monbun2_3.setAttribute('visible', true);
+            monbun1.setAttribute('visible', false);
+            monbun1_2.setAttribute('visible', false);
+            monbun1_3.setAttribute('visible', false);
             console.log(cnt);
             split_problem_statement(cnt);
             break;
@@ -883,23 +994,35 @@ function issue() {
         case 3:
             issue2.setAttribute('visible', false);
             issue3.setAttribute('visible', true);
-            monbun2.setAttribute('visible', false);
             monbun3.setAttribute('visible', true);
-            problem_statement1(cnt);
+            monbun3_2.setAttribute('visible', true);
+            monbun3_3.setAttribute('visible', true);
+            monbun2.setAttribute('visible', false);
+            monbun2_2.setAttribute('visible', false);
+            monbun2_3.setAttribute('visible', false);
+            split_problem_statement(cnt);
             break;
         case 4:
             issue3.setAttribute('visible', false);
             issue4.setAttribute('visible', true);
-            monbun3.setAttribute('visible', false);
             monbun4.setAttribute('visible', true);
-            problem_statement4(cnt);
+            monbun4_2.setAttribute('visible', true);
+            monbun4_3.setAttribute('visible', true);
+            monbun3.setAttribute('visible', false);
+            monbun3_2.setAttribute('visible', false);
+            monbun3_3.setAttribute('visible', false);
+            split_problem_statement(cnt);
             break;
         case 5:
             issue4.setAttribute('visible', false);
             issue5.setAttribute('visible', true);
-            monbun4.setAttribute('visible', false);
             monbun5.setAttribute('visible', true);
-            problem_statement5(cnt);
+            monbun5_2.setAttribute('visible', true);
+            monbun5_3.setAttribute('visible', true);
+            monbun4.setAttribute('visible', false);
+            monbun4_2.setAttribute('visible', false);
+            monbun4_3.setAttribute('visible', false);
+            split_problem_statement(cnt);
             break;
     }
 
