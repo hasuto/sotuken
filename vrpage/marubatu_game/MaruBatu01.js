@@ -105,8 +105,8 @@ window.onload = function () {
         document.querySelector('#problem_statement5').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement5_2').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#problem_statement5_3').setAttribute("scale", { x: 7, y: 7, z: 7 });
-        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 1.5, z: 1.4 });
-        document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 29, z: 0 });
+        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 3.5, z: 2.3 });
+        document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 45, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("position", { x: 27, y: 1, z: 0 });
         document.querySelector('#batu-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
         document.querySelector('#maru-hantei').setAttribute("scale", { x: 0.8, y: 0.8, z: 0.27 });
