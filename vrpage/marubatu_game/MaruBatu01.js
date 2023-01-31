@@ -83,7 +83,7 @@ window.onload = function () {
         // ❶スマホのみに適用させるJavaScriptを記述
         console.log("スマホだよーーーーmaru");
         document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
-        document.querySelector('#game-explanation_2').setAttribute("scale", { x: 8, y: 8, z: 8 });
+       
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });
         document.querySelector('#issue1').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#issue2').setAttribute("scale", { x: 7, y: 7, z: 7 });
@@ -497,7 +497,7 @@ function start() {
     if (startbutton.getAttribute('visible') == true) {
         startbutton.setAttribute('visible', false);
         game_explanation_1.setAttribute('visible', false);
-        game_explanation_2.setAttribute('visible', false);
+      //  game_explanation_2.setAttribute('visible', false);
         game_explanation_3.setAttribute('visible', false);
         // startback.setAttribute('visible',false);
         cnt++;

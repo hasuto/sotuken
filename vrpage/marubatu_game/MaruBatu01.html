@@ -36,7 +36,6 @@
                 <a-asset-item id="Maru-mtl" src="assets/maru.mtl"></a-asset-item>
                 <a-asset-item id="Batu-obj" src="assets/batu.obj"></a-asset-item>
                 <a-asset-item id="Batu-mtl" src="assets/batu.mtl"></a-asset-item>
-                <a-asset-item id="font" src="assets/NotoSerifJP-Regular.otf"></a-asset-item>
 
                 <!-- ここのこめんと消せば音が鳴る    <audio id="audio01" src="./assets/bgm.mp3" preload="auto"></audio> -->
             </a-assets>
@@ -80,14 +79,12 @@
                 data-text="問題4"></a-entity>
             <a-entity mb-text id="issue5" visible="false" position="5 30 30" scale="10 10 10"
                 data-text="問題5"></a-entity>
-            <!-- <a-entity mb-text id="correct_answer" visible="false" position="11 19 30" scale="15 15 15" data-text="正解！"
-                color="white"></a-entity>
-            <a-entity mb-text id="incorrect_answer" visible="false" position="10 19 30" scale="15 15 15"
-                data-text="不正解！" color="white"></a-entity> -->
+  
             <a-entity mb-text id="game-explanation_1" visible="true" position="10 19 30" scale="15 15 15"
-                data-text="〇✕ゲームにチャレンジして、\n科について学ぼう" color="white"></a-entity>
-            <a-entity mb-text id="game-explanation_2" visible="true" position="10 17 30" scale="15 15 15"
-                data-text="現在選択中の各科の各教室にちなんだ、５問の問題に答え、全問正解を目指そう！" color="white"></a-entity>
+                data-text="〇✕ゲームにチャレンジして、教室について学ぼう" color="white"></a-entity>
+
+            <!-- <a-entity mb-text id="game-explanation_2" visible="true" position="10 17 30" scale="15 15 15"
+                data-text="現在選択中の各科の各教室にちなんだ、５問の問題に答え、全問正解を目指そう！" color="white"></a-entity> -->
             <a-entity mdbun1 id="problem_statement1" visible="true" position="12 28 30" scale="10 10 10"
                 data-text=""></a-entity>
             <a-entity mdbun1_2 id="problem_statement1_2" visible="true" position="12 26 30" scale="10 10 10"
@@ -123,19 +120,13 @@
             <a-entity mdbun5_3 id="problem_statement5_3" visible="true" position="12 24 30" scale="10 10 10"
                 data-text=""></a-entity>
 
-            <!-- <a-entity mdbun3 id="problem_statement3" visible="false" id="problem_statement" position="12 28 30"
-                scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun4 id="problem_statement4" visible="false" id="problem_statement" position="12 28 30"
-                scale="10 10 10" data-text=""></a-entity>
-            <a-entity mdbun5 id="problem_statement5" visible="false" id="problem_statement" position="12 28 30"
-                scale="10 10 10" data-text=""></a-entity> -->
 
             <a-gltf-model id="Maru" visible="true" src="assets/maru2.glb" position="-14 10 0" scale="8 8 8"
                 rotation="80 0 0"></a-gltf-model>
             <a-gltf-model id="Batu" visible="true" src="assets/batu.glb" position="34 10 0" scale="8 8 8"
                 rotation="-45 -98 95"></a-gltf-model>
-            <a-gltf-model id="game-explanation_3" visible="true" src="assets/textback.glb" position="10 17.5 0"
-                rotation="0.4 89 0" scale="1 1 4.6"></a-gltf-model>
+            <a-gltf-model id="game-explanation_3" visible="true" src="assets/mondaibun_maru.glb" position="10 17.5 0"
+                rotation="0.4 -90 0" scale="1 1 1"></a-gltf-model>
             <a-gltf-model id="maru-hantei" visible="false" src="assets/textback.glb" onclick="maru()" position="-15 0 0"
                 rotation="0.4 89 0" scale="1 1 0.5"></a-gltf-model>
             <a-gltf-model id="batu-hantei" visible="false" src="assets/textback.glb" onclick="batu()" position="33 0 0"
@@ -151,8 +142,6 @@
                 position="10 16 0" rotation="0.3 -90 0" scale="3 3 3"></a-gltf-model>
             <a-gltf-model id="issue-back" visible="false" src="assets/mondaibun_maru.glb" position="10 44 0"
                 rotation="0 -90 0" scale="2 6 6"></a-gltf-model>
-            <!-- <a-gltf-model id="hantei-back" visible="false" src="assets/textback.glb" position="10 22 0"
-                rotation="0.4 89 0" scale="1 0.6 0.5"></a-gltf-model> -->
 
             <a-gltf-model id="correct_answer" visible="false" src="assets/seikai_obj.glb" position="10 23 0"
                 rotation="0.4 -90 0" scale="3 3 3"></a-gltf-model>
@@ -160,13 +149,7 @@
                 rotation="0.4 -90 0" scale="3 3 3"></a-gltf-model>
             <a-gltf-model id="score-back" visible="false" src="assets/mondaibun_maru.glb" position="10 12 0"
                 rotation="0.4 -90 0" scale="1 1.4 1.4"></a-gltf-model>
-            <!-- <a-entity mb-text visible="false" position="5 5 -1" scale="10 10 10" data-text="新.こんにちは世界(script)🌝">
-            </a-entity> -->
 
-            <!-- <a-entity  visible="true" obj-model="obj:#Maru-obj; mtl:#Maru-mtl;" position="-10 10 0"
-                scale="4 4 4" rotation="-80 0 0"></a-entity> -->
-            <!-- <a-entity id="Batu" visible="true" obj-model="obj:#Batu-obj; mtl:#Batu-mtl;" position="30 10 0"
-                scale="4 4 4" rotation="-45 -98 95"></a-entity> -->
             <a-entity cursor="rayOrigin: mouse"></a-entity>
 
 
