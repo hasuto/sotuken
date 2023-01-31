@@ -47,6 +47,7 @@ body {
                 opacity: 0.7;
                 transition: .3s;
                 position: relative;
+                cursor: pointer;
 
                 &::after {
                     position: absolute;
@@ -201,6 +202,7 @@ body {
                 transition: 0.3s ease-in-out;
                 font-weight: 700;
                 z-index: 20;
+                cursor: pointer;
 
                 &.res {
                     font-size: 1.3em;
@@ -398,6 +400,7 @@ body {
                 z-index: 20;
                 margin: auto;
                 display: inline;
+                cursor: pointer;
 
             }
 
@@ -520,7 +523,7 @@ body {
             }
 
 
-      
+
 
             .button.right.fadein.honkan,
             .button.left.fadein.honkan {
@@ -587,6 +590,7 @@ body {
                         right: 5%;
                         bottom: 5%;
                         opacity: 0.7;
+                        cursor: pointer;
 
                         &:hover {
                             opacity: 1;
@@ -692,7 +696,7 @@ body {
             #seisan_list_all,
             #denki_list_all,
             #setubi_list_all,
-            #honkan_m_list_all{
+            #honkan_m_list_all {
                 display: none;
             }
 
@@ -823,7 +827,7 @@ body {
 
 
 
-                &.label_honkan_m{
+                &.label_honkan_m {
                     border: 4px solid $honkan-color;
 
                     // background: #004EA2;
@@ -935,6 +939,7 @@ body {
                 -ms-transition: all 0.5s;
                 -o-transition: all 0.5s;
                 transition: all 0.5s;
+                cursor: pointer;
 
                 //各教室のホバー処理(拡大)↓
                 a {

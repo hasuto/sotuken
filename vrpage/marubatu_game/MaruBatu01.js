@@ -115,6 +115,12 @@ window.onload = function () {
         document.querySelector('#Batu').setAttribute("position", { x: 27, y: 10, z: 0 });
         document.querySelector('#Maru').setAttribute("scale", { x: 4, y: 4, z: 4 });
         document.querySelector('#Maru').setAttribute("position", { x: -7, y: 10, z: 0 });
+        document.querySelector('#start-button').setAttribute("scale", { x: 3, y: 3, z: 3 });
+        document.querySelector('#start-button').setAttribute("position", { x: 10, y: 10, z: 0 });
+        document.querySelector('#restart').setAttribute("scale", { x: 3, y: 3, z: 3 });
+        document.querySelector('#restart').setAttribute("position", { x: 10, y:3, z: 0 });
+        document.querySelector('#next-button').setAttribute("scale", { x: 3, y: 3, z: 3 });
+        document.querySelector('#next-button').setAttribute("position", { x: 10, y:17, z: 0 });
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
         console.log("PCだよーーーーーーーmaru");
@@ -403,116 +409,7 @@ function problem_statement1_3(mondai_text, a) {
     // a.after(new_mdbun);
 }
 
-function problem_statement2(a) {
-    console.log("okだよ");
-    console.log(result[a][1]);
-    document.querySelectorAll('[mdbun2]:empty').forEach(mdbun2 => {
-        console.log(mdbun2.dataset.text)
-        // mdbun2.dataset.text = result[a][1];
-        mdbun2.dataset.text = split_problem_statement(result[a][1]);
-        const text = mdbun2.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
 
-        const base64 = cvs.toDataURL("image/png")
-        mdbun2.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-function problem_statement3(a) {
-    console.log("okだよ");
-    console.log(result[a][1]);
-    document.querySelectorAll('[mdbun3]:empty').forEach(mdbun3 => {
-        console.log(mdbun3.dataset.text)
-        mdbun3.dataset.text = result[a][1];
-        const text = mdbun3.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
-
-        const base64 = cvs.toDataURL("image/png")
-        mdbun3.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-function problem_statement4(a) {
-    console.log("okだよ");
-    console.log(result[a][1]);
-    document.querySelectorAll('[mdbun4]:empty').forEach(mdbun4 => {
-        console.log(mdbun4.dataset.text)
-        mdbun4.dataset.text = result[a][1];
-        const text = mdbun4.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
-
-        const base64 = cvs.toDataURL("image/png")
-        mdbun4.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-function problem_statement5(a) {
-    console.log("okだよ");
-    console.log(result[a][1]);
-    document.querySelectorAll('[mdbun5]:empty').forEach(mdbun5 => {
-        console.log(mdbun5.dataset.text)
-        mdbun5.dataset.text = result[a][1];
-        const text = mdbun5.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
-
-        const base64 = cvs.toDataURL("image/png")
-        mdbun5.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-// function problem_statement1(){
-//     console.log(mdbun.dataset.text)
-//     const text = mdbun.dataset.text
-//     const text_cnt = text.length
-//     const width = text_cnt * 1.4
-//     const height = 1.6
-//     let cvs = document.createElement('canvas')
-//     let ctx = cvs.getContext('2d')
-//     cvs.width = width * 100
-//     cvs.height = height * 100
-//     ctx.fillStyle = "rgb(0, 0, 0)"
-//     ctx.font = '100pt Arial'
-//     ctx.fillText(text, 0, 125)
-
-//     const base64 = cvs.toDataURL("image/png")
-//     mdbun.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-// }
 
 function init() {
 
@@ -559,7 +456,7 @@ function restart() {
     var scoreback = document.querySelector('#score-back');
     var correct_answer = document.querySelector('#correct_answer');
     var incorrect_answer = document.querySelector('#incorrect_answer');
-    var hanteiback = document.querySelector('#hantei-back');
+
 
     console.log("押してる");
     if (restart.getAttribute('visible') == true) {
@@ -571,7 +468,6 @@ function restart() {
         monbun5_3.setAttribute("visible", false);
         issue5.setAttribute("visible", false);
         scoreback.setAttribute('visible', false);
-        hanteiback.setAttribute('visible', false);
         score_result.setAttribute("visible", false);
         correct_answer.setAttribute("visible", false);
         incorrect_answer.setAttribute("visible", false);
@@ -637,7 +533,6 @@ function maru() {
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
     var restart = document.querySelector('#restart');
-    var hanteiback = document.querySelector('#hantei-back');
     // const $score = document.getElementById("score");
     if (Maru.getAttribute('visible') == true) {
         switch (cnt) {
@@ -652,7 +547,7 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
+                    
                     next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -660,17 +555,7 @@ function maru() {
                 }
                 break;
             case 2:
-                // if (result[cnt][2] == results[0][0]) {
-                //     incorrect_answer.setAttribute('visible', false);
-                //     correct_answer.setAttribute('visible', true);
-                // } else if (result[cnt][2] == results[1][0]) {
-                //     correct_answer.setAttribute('visible', false);
-                //     incorrect_answer.setAttribute('visible', true);
-                // }
-                // hanteiback.setAttribute('visible', true);
-                // Batu.setAttribute('visible', false);
-                // next.setAttribute('visible', true);
-                // console.log(result[cnt][2]);
+                
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -681,7 +566,6 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -689,20 +573,7 @@ function maru() {
                 }
                 break;
             case 3:
-                // if (result[cnt][2] == results[0][0]) {
-                //     incorrect_answer.setAttribute('visible', false);
-                //     correct_answer.setAttribute('visible', true);
-                // } else if (result[cnt][2] == results[1][0]) {
-                //     correct_answer.setAttribute('visible', false);
-                //     incorrect_answer.setAttribute('visible', true);
-                // }
-                // hanteiback.setAttribute('visible', true);
-                // next.setAttribute('visible', true);
-                // if (Batu.getAttribute('visible') == true) {
-                //     score++;
-                // }
-                // Batu.setAttribute('visible', false);
-                // console.log(result[cnt][2]);
+           
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -713,7 +584,6 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -721,16 +591,7 @@ function maru() {
                 }
                 break;
             case 4:
-                // if (result[cnt][2] == results[0][0]) {
-                //     incorrect_answer.setAttribute('visible', false);
-                //     correct_answer.setAttribute('visible', true);
-                // } else if (result[cnt][2] == results[1][0]) {
-                //     correct_answer.setAttribute('visible', false);
-                //     incorrect_answer.setAttribute('visible', true);
-                // }
-                // hanteiback.setAttribute('visible', true);
-                // Batu.setAttribute('visible', false);
-                // next.setAttribute('visible', true);
+
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -741,7 +602,6 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -749,19 +609,7 @@ function maru() {
                 }
                 break;
             case 5:
-                // if (result[cnt][2] == results[0][0]) {
-                //     incorrect_answer.setAttribute('visible', false);
-                //     correct_answer.setAttribute('visible', true);
-                // } else if (result[cnt][2] == results[1][0]) {
-                //     correct_answer.setAttribute('visible', false);
-                //     incorrect_answer.setAttribute('visible', true);
-                // }
-                // console.log(results[0][0]);
-                // hanteiback.setAttribute('visible', true);
-                // if (Batu.getAttribute('visible') == true) {
-                //     score++;
-                // }
-                // Batu.setAttribute('visible', false);
+       
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -772,7 +620,6 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
 
-                    hanteiback.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
                     console.log(result[cnt][2]);
@@ -797,7 +644,6 @@ function batu() {
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
     var restart = document.querySelector('#restart');
-    var hanteiback = document.querySelector('#hantei-back');
     if (Batu.getAttribute('visible') == true) {
         switch (cnt) {
             case 1:
@@ -813,7 +659,6 @@ function batu() {
                         score++;
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     next.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -845,7 +690,6 @@ function batu() {
                         score++;
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
                     next.setAttribute('visible', true);
                     console.log(hantei_maru);
@@ -869,7 +713,6 @@ function batu() {
                         score++;
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
                     next.setAttribute('visible', true);
                     console.log(hantei_maru);
@@ -896,7 +739,6 @@ function batu() {
                         score++;
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
                     next.setAttribute('visible', true);
                     console.log(hantei_maru);
@@ -920,7 +762,6 @@ function batu() {
                         score++;
                     }
                     console.log("score" + score);
-                    hanteiback.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
                     console.log(hantei_maru);
                     console.log(result[cnt][2]);
@@ -1032,12 +873,10 @@ function next() {
     var next = document.querySelector('#next-button');
     var correct_answer = document.querySelector('#correct_answer');
     var incorrect_answer = document.querySelector('#incorrect_answer');
-    var hanteiback = document.querySelector('#hantei-back');
 
     if (next.getAttribute('visible') == true) {
         incorrect_answer.setAttribute('visible', false);
         correct_answer.setAttribute('visible', false);
-        hanteiback.setAttribute('visible', false);
         next.setAttribute('visible', false);
         Maru.setAttribute('visible', true);
         Batu.setAttribute('visible', true);

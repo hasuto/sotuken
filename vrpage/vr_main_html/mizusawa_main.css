@@ -33,6 +33,7 @@ body {
   -webkit-transition: .3s;
   transition: .3s;
   position: relative;
+  cursor: pointer;
 }
 
 .container .header-nav .navbar-nav .nav-item::after {
@@ -204,6 +205,7 @@ body {
   transition: 0.3s ease-in-out;
   font-weight: 700;
   z-index: 20;
+  cursor: pointer;
 }
 
 .container .mizusawa_school .vr_content .button019 a.res {
@@ -380,6 +382,7 @@ body {
   z-index: 20;
   margin: auto;
   display: inline;
+  cursor: pointer;
 }
 
 .container .mizusawa_school .vr_content .button.left {
@@ -549,6 +552,7 @@ body {
   right: 5%;
   bottom: 5%;
   opacity: 0.7;
+  cursor: pointer;
 }
 
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button:hover {
@@ -804,6 +808,7 @@ body {
   overflow: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .container .mizusawa_school .mizusawa_list li a {

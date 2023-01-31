@@ -49,6 +49,7 @@ body {
                 opacity: 0.7;
                 transition: .3s;
                 position: relative;
+                cursor: pointer;
 
                 &::after {
                     position: absolute;
@@ -190,7 +191,7 @@ body {
                 background: #fff;
                 text-decoration: none;
                 left: 30px;
-
+                cursor: pointer;
                 border-radius: 50px;
                 position: absolute;
                 // display: flex;
@@ -428,6 +429,7 @@ body {
                 z-index: 20;
                 margin: auto;
                 display: inline;
+                cursor: pointer;
 
             }
 
@@ -629,6 +631,7 @@ body {
                         right: 5%;
                         bottom: 5%;
                         opacity: 0.7;
+                        cursor: pointer;
 
                         &:hover {
                             opacity: 1;
@@ -665,6 +668,7 @@ body {
                             position: absolute;
                             top: 30%;
                             left: 30%;
+                            
 
                             &.fadein {
                                 opacity: 0;
@@ -973,13 +977,15 @@ body {
                     //margin-bottom: -10px;
                     font-weight: 600;
                     display: inline-block;
-                   // position: relative;
+                    // position: relative;
                     padding: 0px 45px 0px 0px;
                     //text-align: left;
                     left: 0;
-                    &.res{
+
+                    &.res {
                         font-size: 1.3rem;
                     }
+
                     //font-size: 1.3rem;
 
                     &::after {
@@ -1052,6 +1058,7 @@ body {
                 -ms-transition: all 0.5s;
                 -o-transition: all 0.5s;
                 transition: all 0.5s;
+                cursor: pointer;
 
                 //各教室のホバー処理(拡大)↓
                 a {

@@ -1,8 +1,7 @@
 @charset "UTF-8";
 body {
-  margin: 0px;
+  margin: 0;
   font-family: 'Noto Sans Japanese', sans-serif;
-  height: 100%;
 }
 
 .container {
@@ -150,6 +149,7 @@ body {
   -webkit-transition: .3s;
   transition: .3s;
   position: relative;
+  cursor: pointer;
 }
 
 .container .header-nav .navbar-nav .nav-item::after {
@@ -240,14 +240,13 @@ body {
   position: relative;
   width: 100%;
   margin-top: 0px;
-  height: 100%;
+  height: 97.5vh;
   display: block;
   z-index: 1;
 }
 
 .container .iframe .iframe_main {
   width: 100%;
-  height: 100%;
   margin: 0px 0px 0px 0px;
 }
 
@@ -269,6 +268,7 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   font-weight: 600;
+  top: 0;
 }
 
 .container .iframe .iframe_title.res {
@@ -279,6 +279,7 @@ body {
   position: absolute;
   z-index: 20;
   right: 0;
+  top: 0;
 }
 
 .container .iframe #yahaba_pin_list_all label {

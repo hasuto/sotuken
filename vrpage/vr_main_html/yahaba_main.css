@@ -33,6 +33,7 @@ body {
   -webkit-transition: .3s;
   transition: .3s;
   position: relative;
+  cursor: pointer;
 }
 
 .container .header-nav .navbar-nav .nav-item::after {
@@ -190,6 +191,7 @@ body {
   background: #fff;
   text-decoration: none;
   left: 30px;
+  cursor: pointer;
   border-radius: 50px;
   position: absolute;
   -ms-flex-pack: distribute;
@@ -408,6 +410,7 @@ body {
   z-index: 20;
   margin: auto;
   display: inline;
+  cursor: pointer;
 }
 
 .container .yahaba_school .vr_content .button.left {
@@ -592,6 +595,7 @@ body {
   right: 5%;
   bottom: 5%;
   opacity: 0.7;
+  cursor: pointer;
 }
 
 .container .yahaba_school .vr_content .text_parent .setumei .setumei_button:hover {
@@ -884,6 +888,7 @@ body {
   overflow: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .container .yahaba_school .yahaba_list li a {
