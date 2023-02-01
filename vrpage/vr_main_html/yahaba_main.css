@@ -1,6 +1,12 @@
 @charset "UTF-8";
 body {
   margin: 0px;
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 .container {
