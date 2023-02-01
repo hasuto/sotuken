@@ -121,6 +121,10 @@ window.onload = function () {
         document.querySelector('#restart').setAttribute("position", { x: 10, y:3, z: 0 });
         document.querySelector('#next-button').setAttribute("scale", { x: 3, y: 3, z: 3 });
         document.querySelector('#next-button').setAttribute("position", { x: 10, y:17, z: 0 });
+         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 3, y: 2.5, z: 3.5 });
+         document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 4.6, z: 3 });
+         document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 43, z: 0 });
+        // document.querySelector('#game-explanation_3').setAttribute("position", { x: 10, y:17, z: 0 });
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
         console.log("PCだよーーーーーーーmaru");
