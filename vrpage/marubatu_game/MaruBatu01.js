@@ -203,7 +203,7 @@ function convertCSVtoArray(str) { // 読み込んだCSVデータが文字列と�
         result[i] = tmp[i].split(',');
     }
 
-    console.log(result[0][1]); // 300yen
+    //console.log(result[0][1]); // 300yen
 }
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV2() {
@@ -228,7 +228,7 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
         results[i] = tmp[i].split(',');
     }
 
-    console.log(results[0][1]); // 300yen
+    //console.log(results[0][1]); // 300yen
 }
 
 function split_problem_statement(a) {

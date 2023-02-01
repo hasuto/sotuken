@@ -225,9 +225,8 @@ function iframe_load() {
     console.log(doc);
     document.getElementById('mask_all').classList.remove("roder");
     //iframeの全要素が読み込まれたら処理
-
-    $("main_yahaba_aframe").contents().find(doc.querySelector('a-sky')).attr('src',"images/" + result[csv_column][3] + ".jpeg");
     
+
 
     $("#main_yahaba_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
         console.log("コンプリートマイン");
@@ -255,7 +254,7 @@ function iframe_load() {
                     document.getElementById('mask_all').classList.add("roder");
                     
                     // bgm1.play();
-                }, 3000);
+                }, 500);
 
             } else {
                 // alert('oooo');
@@ -609,7 +608,7 @@ function syoukai_page(id1, id2) {
     this_id2 = id2;
     // getCSV();
     syoukai_hantei();
-    document.getElementById('mask_all').classList.remove("roder");
+    //document.getElementById('mask_all').classList.remove("roder");
     document.getElementById('classroom_text').classList.remove("scrollin");
     button_visi();
 

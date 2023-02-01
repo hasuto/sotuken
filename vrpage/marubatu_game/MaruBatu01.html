@@ -22,12 +22,12 @@
     <div>
 
     
-        <a-scene device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true"
+        <a-scene id="marubatu" device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true"
             style="position:fixed;top:0;">
             <a-assets>
-
-                <!-- ここのこめんと消せば音が鳴る    <audio id="audio01" src="./assets/bgm.mp3" preload="auto"></audio> -->
+                <audio id="audio01" src="" preload="auto"></audio>
             </a-assets>
+            <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
             <!-- <a-plane position="5 2 -1" width="2" height="1" scale="10 10 10"  material="shader:html;target: #target1;"></a-plane> -->
             <!-- <a-sound id="my_sound01" src="#audio01" position="0 1.2 -3" autoplay="true" loop="true"></a-sound> -->
             <!-- <a-entity mb-text id="start" onclick="start()" visible="true" position="11 10 30" data-text="ゲームスタート" 
