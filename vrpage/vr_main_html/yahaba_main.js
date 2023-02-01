@@ -225,6 +225,10 @@ function iframe_load() {
     console.log(doc);
     document.getElementById('mask_all').classList.remove("roder");
     //iframeの全要素が読み込まれたら処理
+
+    $("main_yahaba_aframe").contents().find(doc.querySelector('a-sky')).attr('src',"images/" + result[csv_column][3] + ".jpeg");
+    
+
     $("#main_yahaba_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
         console.log("コンプリートマイン");
         if (document.getElementById('mask_all').classList.contains("roder")) {
@@ -249,6 +253,7 @@ function iframe_load() {
                 window.setTimeout(function () {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
+                    
                     // bgm1.play();
                 }, 3000);
 
@@ -263,6 +268,7 @@ function iframe_load() {
                     document.getElementById('right_button').classList.add("fadein");
                     document.getElementById('right_button').style.visibility = 'visible';
                     document.getElementById('left_button').style.visibility = 'visible';
+                  
                     // syoukai_bgm.pause();
                     //bgm_1.play();
                     //bgm_1.loop = true;
@@ -709,6 +715,8 @@ function syoukai_hantei() {
     }
 
     console.log(csv_column);
+
+
     // result[csv_column][2]
     if (game_hantei == "game") {
         Top_yahaba_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];

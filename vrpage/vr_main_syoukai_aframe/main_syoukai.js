@@ -12,13 +12,9 @@ window.onload = function () {
     // });
     console.log(location.href);
     var data = location.href.split("?")[1];
-    console.log(data)
     text = data.split("=")[1];
     id1 = data.split("=")[2];
     id2 = data.split("=")[3];
-    console.log(text);
-    console.log(id1);
-    console.log(id2);
 
     getCSV();
  
@@ -37,11 +33,6 @@ window.onload = function () {
     //audio.setAttribute('src',"sounds/" + text + ".mp3");
     // audio.setAttribute('src',"../sounds/sample.mp3");
 
-    // sceneEl = document.querySelector("a-scene");
-    // game_button = sceneEl.querySelector("#game_button");
-    // game_button.rotation.set =(0,0,0);
-    // camera.add(game_button);
-    // this.scene.add(this.camera);
     
     
 };
@@ -82,14 +73,9 @@ function syoukai_hantei(){
         }
         
     }
-    
-    syoukai_text();
+
 }
 
-// console.log(game_button);
-// document.getElementById('sample').addEventListener('click',function(e){
-//     console.log("押しているよ");
-// });
 
 function marubatu_game(){
     alert(text);
@@ -97,70 +83,7 @@ function marubatu_game(){
 }
 
 
-// document.querySelector('#my_sound01').addEventListener('sound-loaded',function(){
-//     console.log("コンプリート");
-// });
 
-function syoukaibun() {
-    console.log("okだよ");
-    console.log(result[csv_column][2]);
-    document.querySelectorAll('[syobun]:empty').forEach(syobun => {
-        console.log(syobun.dataset.text);
-        syobun.dataset.text = result[csv_column][2];
-        console.log(syobun.dataset.text);
-        const text = syobun.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
-
-        const base64 = cvs.toDataURL("image/png")
-        syobun.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-function aframeMutlByte() {
-    console.log("okだよ");
-    document.querySelectorAll('[mb-text]:empty').forEach(mb_text => {
-        console.log(mb_text.dataset.text)
-        const text = mb_text.dataset.text
-        const text_cnt = text.length
-        const width = text_cnt * 1.4
-        const height = 1.6
-        let cvs = document.createElement('canvas')
-        let ctx = cvs.getContext('2d')
-        cvs.width = width * 100
-        cvs.height = height * 100
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.font = '100pt Arial'
-        ctx.fillText(text, 0, 125)
-
-        const base64 = cvs.toDataURL("image/png")
-        mb_text.innerHTML = `<a-image scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`
-    })
-}
-
-function syoukai_text(){
-    console.log(csv_column);
-    console.log(result[csv_column][2]);
-    syoukaibun();
-    aframeMutlByte();
-
-    // var background = document.querySelector('#back-ground');
-    // var audio = document.querySelector('#audio01');
-    // console.log(result[csv_column][3]);
-    // background.setAttribute('src',"images/" + result[csv_column][3] + ".jpeg");
-    // var text = result[csv_column][2];
-    // var elem = document.getElementById("syoukai_text");
-    // elem.innerHTML = text;
-    // document.getElementById("syoukai_text").textContent = text;
-}
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV() {
