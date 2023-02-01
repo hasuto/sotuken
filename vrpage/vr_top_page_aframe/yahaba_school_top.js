@@ -50,8 +50,8 @@ window.onload = function () {
 
     } else {
       
-        camera_phone.parentNode.removeChild(camera_phone);
-        camera_pc.parentNode.appendChild(camera_pc);
+        // camera_phone.parentNode.removeChild(camera_phone);
+        // camera_pc.parentNode.appendChild(camera_pc);
         console.log("PCだよーーーーーーー");
     }
     //render();
