@@ -139,6 +139,7 @@ html {
           animation-fill-mode: forwards;
   height: calc(100% - 54px);
   width: 100%;
+  height: -webkit-fill-available;
 }
 
 @-webkit-keyframes yahaba_school_fadein {
@@ -168,6 +169,7 @@ html {
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   position: relative;
+  height: -webkit-fill-available;
 }
 
 @-webkit-keyframes vr_content_fadein {
@@ -369,6 +371,7 @@ html {
 .container .yahaba_school .vr_content .iframe {
   width: 100%;
   height: 100%;
+  height: -webkit-fill-available;
   margin-top: 0px;
   display: block;
   position: relative;
@@ -378,6 +381,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0px 0px 0px 0px;
+  height: -webkit-fill-available;
 }
 
 .container .yahaba_school .vr_content .iframe .iframe_main iframe {
@@ -388,6 +392,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+  height: -webkit-fill-available;
   border: none;
 }
 

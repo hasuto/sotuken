@@ -157,6 +157,7 @@ html{
         animation-fill-mode: forwards;
         height: calc(100% - 54px);
         width: 100%;
+        height: -webkit-fill-available;
 
 
         @keyframes yahaba_school_fadein {
@@ -178,6 +179,7 @@ html{
             animation-name: vr_content_fadein;
             animation-duration: 3s;
             position: relative;
+            height: -webkit-fill-available;
 
             @keyframes vr_content_fadein {
                 0% {
@@ -377,6 +379,7 @@ html{
             .iframe {
                 width: 100%;
                 height: 100%;
+                height: -webkit-fill-available;
                 margin-top: 0px;
                 display: block;
                 position: relative;
@@ -387,7 +390,7 @@ html{
                     width: 100%;
                     height: 100%;
                     margin: 0px 0px 0px 0px;
-
+                    height: -webkit-fill-available;
                     iframe {
                         margin-top: 0px;
                         position: absolute;
@@ -396,6 +399,7 @@ html{
                         left: 0;
                         width: 100%;
                         height: 100%;
+                        height: -webkit-fill-available;
                         border: none;
 
                     }
