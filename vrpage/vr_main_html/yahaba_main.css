@@ -976,11 +976,12 @@ html {
 .container .yahaba_school .mask .loader {
   color: #ffffff;
   font-size: 10px;
-  margin: 500px auto;
+  top: 50%;
+  left: 49%;
+  -webkit-transform: translate(-50%, -50%, 0);
+          transform: translate(-50%, -50%, 0);
   position: relative;
   text-indent: -9999em;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
   pointer-events: none;
@@ -1030,12 +1031,38 @@ html {
 }
 
 .container .yahaba_school #roder-img {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 130px;
+  -webkit-animation-name: pikapika;
+          animation-name: pikapika;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes pikapika {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pikapika {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 .container .yahaba_school .mask.roder {

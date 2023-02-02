@@ -491,6 +491,7 @@ function start() {
     var game_explanation_1 = document.querySelector('#game-explanation_1');
     var game_explanation_2 = document.querySelector('#game-explanation_2');
     var game_explanation_3 = document.querySelector('#game-explanation_3');
+
     // var startback = document.querySelector('#start-button');
     // var front_text = document.getElementById("front_text");
     // front_text.setAttribute("value", "Hello, World! \n hello ");
@@ -504,6 +505,8 @@ function start() {
       //  game_explanation_2.setAttribute('visible', false);
         game_explanation_3.setAttribute('visible', false);
         // startback.setAttribute('visible',false);
+        Maru.setAttribute("visible", true);
+        Batu.setAttribute("visible", true);
         cnt++;
         issue();
     }
