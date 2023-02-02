@@ -24,6 +24,21 @@ window.onload = () => {
                 $('#yahaba_pin_list_all').hide();
         }
 
+        if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+        //スマホ
+        
+              
+                    $(".navbar-brand").addClass("res");
+                    $(".navbar-nav").addClass("res");
+                    $(".nav-item").addClass("res");
+                    $(".nav-link").addClass("res");
+                    $(".btn-play").addClass("res");
+                    
+                  
+        }else{
+
+       }
+        
 
 }
 
@@ -32,7 +47,76 @@ window.onload = () => {
 
 // });
 
+$(function () {
+        var video1 = document.getElementById('modal_top_video');
+        var video2 = document.getElementById('modal_tutorial_video');
+        var video3 = document.getElementById('modal_marubatu_video');
+        var video4 = document.getElementById('modal_syoukai_video');
+        // video.controls = false;
+        /*チュートリアル*/
+        $('#tutorial-Modal').click(function () {
+                $('#tutorial-modalArea').fadeIn();
+        });
+        $('#closeModal , #tutorial-modalBg').click(function () {
+                $('#tutorial-modalArea').fadeOut();
+        });
+        $('#closebtn , #tutorial-modalBg').click(function () {
+                $('#modal_tutorial_video')[0].pause();
+                video2.currentTime = 0;
+                $('#tutorial-modalArea').fadeOut();
+        });
+        /*---------*/
 
+        /*使い方*/
+        $('#openModal').click(function () {
+                $('#modalArea').fadeIn();
+                console.log('開くボタン')
+                $('#modal_top_video')[0].play();
+                
+        });
+        // $('#closeModal , #modalBg').click(function () {
+        //         $('#modalArea').fadeOut();
+        //         console.log("閉じるボタン");
+        // });
+        $('#closebtn , #modalBg').click(function () {
+                $('#modal_top_video')[0].pause();
+                video1.currentTime = 0;
+                $('#modalArea').fadeOut();
+                console.log("閉じるボタン2");
+        });
+        /*---------*/
+
+        /*更新履歴*/
+        $('#update-Modal').click(function () {
+                $('#update-modalArea').fadeIn();
+        });
+        $('#closeModal , #update-modalBg').click(function () {
+                $('#update-modalArea').fadeOut();
+        });
+        $('#closebtn , #update-modalBg').click(function () {
+                $('#update-modalArea').fadeOut();
+        });
+        /*---------*/
+});
+
+
+$(function () {
+        var audio = $("#audio").get(0);
+        var isPlaying = false;
+        $("#btn").on("click", function () {
+                if (isPlaying) {
+                        audio.pause();
+                } else {
+                        audio.play();
+                }
+        });
+        audio.onplaying = function () {
+                isPlaying = true;
+        };
+        audio.onpause = function () {
+                isPlaying = false;
+        };
+});
 
 $(function () {
         $('#openModal').click(function () {

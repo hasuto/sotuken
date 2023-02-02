@@ -6,7 +6,7 @@
     <title>virtual_school_tour</title>
     <meta name="description" content="virtual_school_tour">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="vr_top.min.css">
+    <link rel="stylesheet" href="vr_top.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
    
@@ -40,7 +40,9 @@
                 <div class="tutorial-modal-content">
                     <div class="tutorial-modal-body">
                         <div class="tutorial-text">ようこそ！<br>バーチャル学校見学へ！</div>
-                        <div style="text-align: center;"><img src="images/metoriku.png"></div>
+                        <video id="modal_tutorial_video" width="540" height="260" autoplay loop preload playsinline>
+                            <source src="tutorial (2).mp4" type="video/mp4">
+                        </video>
                         <div class="tutorial-text">興味のある場所をクリックして<br>
                             施設内をVR画像で見てみよう！</div>
                     </div>
@@ -61,7 +63,7 @@
                 </li>
 
                 <li class="nav-item" id="nav-alert">
-                    <a class="nav-link" href="#" data-toggle="modal" id="openModal">使い方</a>
+                    <a class="nav-link" data-toggle="modal" id="openModal">使い方</a>
                     <!-- モーダルエリアここから -->
                     <section id="modalArea" class="modalArea">
                         <div id="modalBg" class="modalBg"></div>
@@ -71,17 +73,19 @@
                                     <h5 class="modal-title" id="usageModalLongTitle">使い方</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <ul>
-                                    </ul>
+                                    <video id="modal_top_video" width="540" height="260" loop preload playsinline>
+                                        <source src="tutorial (2).mp4" type="video/mp4">
+                                    </video>
+                                    <!-- <div style="text-align: center;"><img src="metoriku.png"></div> -->
+                                    <div class="modal-text">興味のある場所をクリックして<br>
+                                        施設内をVR画像で見てみよう！</div>
                                 </div>
                                 <!-- <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">閉じる</button>
                                     </div> -->
                             </div>
-                            <div id="closeModal" class="closeModal">
-                                <button>
-                                    <p>閉じる</p>
-                                </button>
+                            <div id="closebtn" class="closebtn">
+                                閉じる
                             </div>
                         </div>
                     </section>
@@ -89,6 +93,42 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModalLong">更新履歴</a>
+                </li>
+
+                <li class="nav-item">
+                    <!-- 音声ファイル -->
+                    <audio id="bgm1" preload loop>
+                        <source src="op.ogg" type="audio/ogg">
+                        <source src="bgm.mp3" type="audio/mp3">
+                    </audio>
+
+                    <!-- 再生ボタン -->
+                    <button class="btn-play" type="button"><img src="ボリュームOFFアイコン .png"></button>
+
+                    <script>
+                        const bgm1 = document.querySelector("#bgm1");       // <audio>
+                        const btn = document.querySelector(".btn-play");   // <button>
+
+                        btn.addEventListener("click", () => {
+                            // pausedがtrue=>停止, false=>再生中
+                            if (!bgm1.paused) {
+                                btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+                                bgm1.pause();
+                            }
+                            else {
+                                btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+                                bgm1.play();
+                            }
+                        });
+
+                        /**
+                         * [event] 再生終了時に実行
+                         */
+                        bgm1.addEventListener("ended", () => {
+                            bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
+                            btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「再生ボタン」に変更
+                        });
+                    </script>
                 </li>
             </ul>
             <!-- メニューバーここまで -->

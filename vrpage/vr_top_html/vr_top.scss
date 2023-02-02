@@ -83,7 +83,7 @@ body {
                 .tutorial-text {
                     margin: 10px 0 10px 0;
                     font-size: larger;
-                    font-weight: 700;
+                    font-weight: 600;
                     text-align: center;
                 }
 
@@ -144,12 +144,28 @@ body {
     .header-nav {
         border-bottom: solid 3px #004EA2;
 
+        .btn-play {
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
         .navbar-brand {
             color: #004ea2;
-            font-size: larger;
+            font-size: large;
+
             font-weight: 700;
             text-decoration: none;
             margin-left: 20px;
+
+            &.res {
+                font-size: xx-large;
+            }
         }
 
 
@@ -159,13 +175,27 @@ body {
             display: inline-flex;
             height: 22px;
 
+            &.res {
+                padding-left: 0px;
+            }
+
+            
+
+
             .nav-item {
                 list-style: none;
                 margin-left: 50px;
-                opacity: 0.7;
+                
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
+                
+                
+
+                &.res {
+                    margin-left: 20px;
+                    
+                }
 
                 &::after {
                     position: absolute;
@@ -179,10 +209,7 @@ body {
                     width: 0;
                 }
 
-                &:hover {
-                    opacity: 1;
-                }
-
+               
                 &:hover::after {
                     width: 100%;
                 }
@@ -192,7 +219,25 @@ body {
                     font-size: medium;
                     font-weight: 600;
                     text-decoration: none;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
+    
 
+                    &.res {
+                        font-size: x-large;
+                    }
+
+                }
+                .btn-play{
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    &.res{
+                        padding-top: 5px;
+                    }
                 }
             }
         }
@@ -213,49 +258,165 @@ body {
         width: 100%;
         height: 100%;
 
-        &.modalBg {
+        .modalBg {
             width: 100%;
             height: 100%;
             background-color: rgba(30, 30, 30, 0.9);
         }
-    }
+
+        .modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
 
 
-
-    .modalWrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        height: auto;
-        max-width: 500px;
-        padding: 10px 30px;
-        background-color: #fff;
-        border-radius: 10px;
-
-        &.modal-title {
-            font-size: larger;
         }
 
-        &.closeModal {
+        .modal-header {
+            .modal-title {
+                font-size: larger;
+                text-align: center;
+                border-bottom: solid 2px #004EA2;
+            }
+        }
+
+        .closeModal {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
             cursor: pointer;
         }
 
-        &.modal-body ul {
-            width: auto;
+        .modal-body {
+            .modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .closebtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        .closebtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
+    /* モーダルCSS */
+    .update-modalArea {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .update-modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .update-modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .update-modal-title {
+            font-size: larger;
+            text-align: center;
+            border-bottom: solid 2px #004EA2;
+        }
+
+        .update-closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .update-modal-body {
 
             li {
-                display: inline-block;
-                margin: 60px;
-
-                img {
-                    padding: 3px;
-                }
+                margin-bottom: 10px;
             }
+
+            .update-modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .update-text {
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .closebtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        .closebtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
         }
     }
 
@@ -270,12 +431,13 @@ body {
         height: 97.5vh;
         display: block;
         z-index: 1;
-        
+
 
         .iframe_main {
             width: 100%;
             //height: calc(100% - 54px) ;
             margin: 0px 0px 0px 0px;
+
             iframe {
                 margin-top: 0px;
                 position: absolute;
@@ -284,9 +446,9 @@ body {
                 left: 0;
                 width: 100%;
                 //height: 92.2vh; //現時点での最大ウィンドウサイズにあわせている
-                height:100%;
-                
-                
+                height: 100%;
+
+
             }
         }
 
@@ -299,10 +461,11 @@ body {
             border-radius: 8px;
             font-weight: 600;
             top: 0;
-            &.res{
+
+            &.res {
                 font-size: 1.5rem;
             }
-           
+
 
         }
 
@@ -511,7 +674,7 @@ body {
             }
         }
 
-        
+
 
         .school_img {
             z-index: 3;
@@ -568,14 +731,15 @@ body {
     }
 
     .loader_in {
+        top: 53%;
+        left: 49.5%;
         color: #ffffff;
         font-size: 10px;
-        margin: 500px auto;
+        transform: translate(-50%, -50%,0);
+       // margin: 500px auto;
         position: relative;
         text-indent: -9999em;
-        -webkit-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        transform: translateZ(0);
+        
         -webkit-animation-delay: -0.16s;
         animation-delay: -0.16s;
         pointer-events: none;
