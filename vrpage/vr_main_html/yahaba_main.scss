@@ -10,10 +10,13 @@ $senkou-color: #6F4C77;
 
 body {
     margin: 0px;
-    height: -webkit-fill-available;
     min-height: 100vh;
+    /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+    font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
 }
-html{
+
+html {
     height: -webkit-fill-available;
 }
 
@@ -157,7 +160,7 @@ html{
         animation-fill-mode: forwards;
         height: calc(100% - 54px);
         width: 100%;
-       
+
 
 
         @keyframes yahaba_school_fadein {
@@ -179,7 +182,7 @@ html{
             animation-name: vr_content_fadein;
             animation-duration: 3s;
             position: relative;
-            height: -webkit-fill-available;
+
 
             @keyframes vr_content_fadein {
                 0% {
@@ -391,6 +394,7 @@ html{
                     height: 100%;
                     margin: 0px 0px 0px 0px;
                     height: -webkit-fill-available;
+
                     iframe {
                         margin-top: 0px;
                         position: absolute;
@@ -678,7 +682,7 @@ html{
                             position: absolute;
                             top: 30%;
                             left: 30%;
-                            
+
 
                             &.fadein {
                                 opacity: 0;
@@ -1241,6 +1245,3 @@ html{
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
-}
