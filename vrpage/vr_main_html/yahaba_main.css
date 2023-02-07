@@ -20,6 +20,133 @@ html {
   /* モーダルCSS */
 }
 
+.container .tutorial-modalArea {
+  position: fixed;
+  z-index: 10;
+  /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .tutorial-modalArea .tutorial-modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-content .tutorial-modal-footer {
+  position: relative;
+  width: 100%;
+  height: 26px;
+  margin: 10px 0 10px 0;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-content .tutorial-modal-footer #closebtn {
+  font-size: large;
+  font-weight: bold;
+  width: 70px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-title {
+  font-size: larger;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-body .tutorial-text {
+  margin: 10px 0 10px 0;
+  font-size: larger;
+  font-weight: 600;
+  text-align: center;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-body img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .closebtn {
+  margin: auto;
+  text-align: center;
+  font-size: larger;
+  font-weight: 900;
+  background-color: #004EA2;
+  color: #FFF;
+  width: 160px;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.container .tutorial-modalArea .tutorial-modalWrapper .closebtn:hover {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.container .tutorial-modalArea .closeModal {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background-color: #004EA2;
+  position: absolute;
+  top: -0.5rem;
+  right: -1rem;
+  cursor: pointer;
+}
+
+.container .tutorial-modalArea .closeModal p {
+  width: 56px;
+  height: 56px;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.container .header-nav {
+  border-bottom: solid 3px #004EA2;
+}
+
+.container .header-nav .btn-play {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.container .header-nav img {
+  width: 20px;
+  height: 20px;
+}
+
 .container .header-nav .navbar-brand {
   color: #004ea2;
   font-size: larger;
@@ -85,10 +212,155 @@ html {
   height: 100%;
 }
 
-.container .modalArea.modalBg {
+.container .modalArea .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
+}
+
+.container .modalArea #modal1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container .modalArea .modal-header .modal-title {
+  font-size: larger;
+  text-align: center;
+  border-bottom: solid 2px #004EA2;
+}
+
+.container .modalArea .closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.container .modalArea .modal-body .modal-text {
+  margin: 10px 0 10px 0;
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container .modalArea .modal-body img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .modalArea #switchbtn {
+  margin: auto;
+  text-align: center;
+  font-size: larger;
+  font-weight: 900;
+  background-color: #004EA2;
+  color: #FFF;
+  width: 160px;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.container .modalArea #switchbtn:hover {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.container .modalArea2 {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .modalArea2 .modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.container .modalArea2 #modal2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container .modalArea2 .modal-header .modal-title {
+  font-size: larger;
+  text-align: center;
+  border-bottom: solid 2px #004EA2;
+}
+
+.container .modalArea2 .closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.container .modalArea2 .modal-body .modal-text {
+  margin: 10px 0 10px 0;
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container .modalArea2 .modal-body img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .modalArea2 #closebtn {
+  margin: auto;
+  text-align: center;
+  font-size: larger;
+  font-weight: 900;
+  background-color: #004EA2;
+  color: #FFF;
+  width: 160px;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.container .modalArea2 #closebtn:hover {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 .container .modalWrapper {
@@ -105,26 +377,26 @@ html {
   border-radius: 10px;
 }
 
-.container .modalWrapper.modal-title {
+.container .modalWrapper .modal-title {
   font-size: larger;
 }
 
-.container .modalWrapper.closeModal {
+.container .modalWrapper .closeModal {
   position: absolute;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
 
-.container .modalWrapper.modal-body ul {
+.container .modalWrapper .modal-body ul {
   width: auto;
 }
 
-.container .modalWrapper.modal-body ulli {
+.container .modalWrapper .modal-body ulli {
   margin: 10px;
 }
 
-.container .modalWrapper.modal-body ulliimg {
+.container .modalWrapper .modal-body ulliimg {
   padding: 3px;
 }
 
