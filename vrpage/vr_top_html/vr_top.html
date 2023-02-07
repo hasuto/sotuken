@@ -135,7 +135,7 @@
                     </audio>
 
                     <!-- 再生ボタン -->
-                    <button class="btn-play" type="button"><img src="ボリュームOFFアイコン .png"></button>
+                    <button class="btn-play" type="button"><img src="images/volume_off.png"></button>
 
                     <script>
                         const bgm1 = document.querySelector("#bgm1");       // <audio>
@@ -144,11 +144,11 @@
                         btn.addEventListener("click", () => {
                             // pausedがtrue=>停止, false=>再生中
                             if (!bgm1.paused) {
-                                btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+                                btn.innerHTML = '<img src="images/volume_off.png">';  // 「再生ボタン」に切り替え
                                 bgm1.pause();
                             }
                             else {
-                                btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+                                btn.innerHTML = '<img src="images/volume_on.png">';  // 「一時停止ボタン」に切り替え
                                 bgm1.play();
                             }
                         });
@@ -158,7 +158,7 @@
                          */
                         bgm1.addEventListener("ended", () => {
                             bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
-                            btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「再生ボタン」に変更
+                            btn.innerHTML = '<img src="images/volume_on.png">';  // 「再生ボタン」に変更
                         });
                     </script>
                 </li>

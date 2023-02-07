@@ -21,9 +21,136 @@ body {
     box-sizing: border-box;
 
 
+    
+    .tutorial-modalArea {
+        // display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .tutorial-modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .tutorial-modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            .tutorial-modal-content {
+                .tutorial-modal-footer {
+                    position: relative;
+                    width: 100%;
+                    height: 26px;
+                    margin: 10px 0 10px 0;
+
+                    #closebtn {
+                        font-size: large;
+                        font-weight: bold;
+                        width: 70px;
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .tutorial-modal-title {
+                font-size: larger;
+            }
+
+            .tutorial-modal-body {
+                .tutorial-text {
+                    margin: 10px 0 10px 0;
+                    font-size: larger;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .closebtn {
+                margin: auto;
+                text-align: center;
+                font-size: larger;
+                font-weight: 900;
+                background-color: #004EA2;
+                color: #FFF;
+                width: 160px;
+                padding: 0.8em;
+                text-decoration: none;
+                border-radius: 4px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                -webkit-tap-highlight-color: transparent;
+                transition: .3s ease-out;
+            }
+
+            .closebtn:hover {
+                cursor: pointer;
+                text-decoration: none;
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .closeModal {
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            background-color: #004EA2;
+            position: absolute;
+            top: -0.5rem;
+            right: -1rem;
+            cursor: pointer;
+
+            p {
+                width: 56px;
+                height: 56px;
+                color: rgb(255, 255, 255);
+                display: grid;
+                place-items: center;
+                font-size: 30px;
+                margin: 0;
+            }
+        }
+
+    }
+
+
     .header-nav {
         // border-bottom: solid 3px #004EA2;
 
+        border-bottom: solid 3px #004EA2;
+
+        .btn-play {
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
 
         .navbar-brand {
             color: #004ea2;
@@ -44,7 +171,7 @@ body {
             .nav-item {
                 list-style: none;
                 margin-left: 50px;
-                opacity: 0.7;
+                // opacity: 0.7;
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
@@ -61,9 +188,7 @@ body {
                     width: 0;
                 }
 
-                &:hover {
-                    opacity: 1;
-                }
+
 
                 &:hover::after {
                     width: 100%;
@@ -74,6 +199,10 @@ body {
                     font-size: medium;
                     font-weight: 600;
                     text-decoration: none;
+
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -96,12 +225,336 @@ body {
         width: 100%;
         height: 100%;
 
-        &.modalBg {
+        .modalBg {
             width: 100%;
             height: 100%;
             background-color: rgba(30, 30, 30, 0.9);
         }
+
+        #modal1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            // 追加部分 //
+            .tutorial-popin-nav {
+                ul {
+                    text-align: center;
+                    display: block;
+                    padding: 0 0 15px 0;
+
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+
+                        .tutorial-step1.select,
+                        .tutorial-step2.select {
+                            pointer-events: none;
+                            background-color: #004EA2;
+                            border-radius: 50%;
+                        }
+
+                        .tutorial-step1,
+                        .tutorial-step2 {
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            border: none;
+                            border-radius: 100%;
+                            background-color: #bfbfbf;
+                            -webkit-transition: background-color .3s ease;
+                            -o-transition: background-color .3s ease;
+                            transition: background-color .3s ease;
+                            padding: 0;
+                            cursor: pointer;
+                            margin: 0;
+                        }
+
+                        .tutorial-step1:hover,
+                        .tutorial-step2:hover {
+                            background-color: #004EA2;
+                        }
+                    }
+                }
+            }
+
+            //         //
+
+        }
+
+        .modal-header {
+            .modal-title {
+                font-size: larger;
+                text-align: center;
+                border-bottom: solid 2px #004EA2;
+            }
+        }
+
+        .closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            .modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #switchbtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        #switchbtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+        }
     }
+
+    .modalArea2 {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        #modal2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            // 追加部分 //
+            .tutorial-popin-nav {
+                ul {
+                    text-align: center;
+                    display: block;
+                    padding: 0 0 15px 0;
+
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+
+                        .tutorial-step1.select,
+                        .tutorial-step2.select {
+                            pointer-events: none;
+                            background-color: #004EA2;
+                            border-radius: 50%;
+                        }
+
+                        .tutorial-step1,
+                        .tutorial-step2 {
+                            text-align: center;
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            border: none;
+                            border-radius: 100%;
+                            background-color: #bfbfbf;
+                            -webkit-transition: background-color .3s ease;
+                            -o-transition: background-color .3s ease;
+                            transition: background-color .3s ease;
+                            padding: 0;
+                            cursor: pointer;
+                            margin: 0;
+                        }
+
+                        .tutorial-step1:hover,
+                        .tutorial-step2:hover {
+                            background-color: #004EA2;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .modal-header {
+            .modal-title {
+                font-size: larger;
+                text-align: center;
+                border-bottom: solid 2px #004EA2;
+            }
+        }
+
+        .closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            .modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #closebtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        #closebtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    /* モーダルCSS */
+    .update-modalArea {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .update-modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .update-modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .update-modal-title {
+            font-size: larger;
+            text-align: center;
+            border-bottom: solid 2px #004EA2;
+        }
+
+        .update-closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .update-modal-body {
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            .update-modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .update-text {
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .closebtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        .closebtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
 
 
 
@@ -117,18 +570,18 @@ body {
         background-color: #fff;
         border-radius: 10px;
 
-        &.modal-title {
+        .modal-title {
             font-size: larger;
         }
 
-        &.closeModal {
+        .closeModal {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
             cursor: pointer;
         }
 
-        &.modal-body ul {
+        .modal-body ul {
             width: auto;
 
             &li {

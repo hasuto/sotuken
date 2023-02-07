@@ -136,6 +136,125 @@ window.onload = function () {
 
 }
 
+
+// <audio>
+const btn = document.querySelector(".btn-play");   // <button>
+
+btn.addEventListener("click", () => {
+
+
+    // pausedがtrue=>停止, false=>再生中
+    if (game_hantei == "game") {
+        if (!bgm1.paused) {
+            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+            console.log("ストップ")
+            bgm1.pause();
+        } else {
+            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+            console.log("スタート ")
+            bgm1.play();
+        }
+    } else {
+        if (!bgm_1.paused) {
+            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+            console.log("ストップ")
+            bgm_1.pause();
+        }
+        else {
+            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+            console.log("スタート ")
+            bgm_1.play();
+        }
+
+    }
+
+});
+
+/**
+ * [event] 再生終了時に実行
+ */
+bgm1.addEventListener("ended", () => {
+    bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
+    btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「再生ボタン」に変更
+});
+
+
+
+
+$(function () {
+    var video1 = document.getElementById('modal_top_video');
+    var video2 = document.getElementById('modal_tutorial_video');
+    var video3 = document.getElementById('modal_marubatu_video');
+    var video4 = document.getElementById('modal_syoukai_video');
+
+    /*使い方*/
+    $('#openModal').click(function () {
+        $('#modalArea').fadeIn();
+        $('#modal_marubatu_video')[0].play();
+    });
+
+
+    $(function () {
+        $(".tutorial-step1").click(function () {
+            if ($(this).hasClass(".select")) {
+                //何もしない
+            } else {
+                $(".tutorial-step1").addClass("select");
+                $(".tutorial-step2.select").removeClass("select");
+
+                $('#modalArea2').fadeOut();
+                $('#modalArea').fadeIn();
+            }
+        });
+        $(".tutorial-step2").click(function () {
+            if ($(this).hasClass(".select")) {
+                //何もしない
+            } else {
+                $(".tutorial-step2").addClass("select");
+                $(".tutorial-step1.select").removeClass("select");
+
+                $('#modalArea').fadeOut();
+                $('#modalArea2').fadeIn();
+            }
+        });
+    });
+
+
+
+
+    $('#switchbtn , #modalBg1').click(function () {
+        $(".tutorial-step2").addClass("select");
+        $(".tutorial-step1.select").removeClass("select");
+        $('#modal_marubatu_video')[0].pause();
+        video3.currentTime = 0;
+        $('#modalArea').fadeOut();
+        $('#modalArea2').fadeIn();
+        $('#modal_syoukai_video')[0].play();
+    });
+    $('#closebtn , #modalBg2').click(function () {
+        $(".tutorial-step1").addClass("select");
+        $(".tutorial-step2.select").removeClass("select");
+        $('#modalArea2').fadeOut();
+        $('#modal_syoukai_video')[0].pause();
+        video4.currentTime = 0;
+    });
+    /*---------*/
+
+    /*更新履歴*/
+    $('#update-Modal').click(function () {
+        $('#update-modalArea').fadeIn();
+    });
+    $('#closeModal , #update-modalBg').click(function () {
+        $('#update-modalArea').fadeOut();
+    });
+    $('#closebtn , #update-modalBg').click(function () {
+        $('#update-modalArea').fadeOut();
+    });
+    /*---------*/
+});
+
+
+
 // $(window).on('load resize',function(){
 //     $('.iframe_main').css('width',  $(window).width());
 //     $('.iframe_main').css('height',  $(window).height());
