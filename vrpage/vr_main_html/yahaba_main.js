@@ -251,30 +251,14 @@ $(function () {
     var video2 = document.getElementById('modal_tutorial_video');
     var video3 = document.getElementById('modal_marubatu_video');
     var video4 = document.getElementById('modal_syoukai_video');
-    // video.controls = false;
-    /*チュートリアル*/
-    $('#tutorial-Modal').click(function () {
-        $('#tutorial-modalArea').fadeIn();
-    });
-    $('#closeModal , #tutorial-modalBg').click(function () {
-        $('#tutorial-modalArea').fadeOut();
-    });
-    $('#closebtn , #tutorial-modalBg').click(function () {
-        $('#modal_tutorial_video')[0].pause();
-        video2.currentTime = 0;
-        $('#tutorial-modalArea').fadeOut();
-    });
-    /*---------*/
 
     /*使い方*/
     $('#openModal').click(function () {
         $('#modalArea').fadeIn();
         $('#modal_marubatu_video')[0].play();
     });
-    // $('#closeModal , #modalBg').click(function () {
-    //     $('#modalArea').fadeOut();
-    // });
     $('#switchbtn , #modalBg').click(function () {
+        $(".tutorial-step").toggleClass(".tutorial-step select");
         $('#modal_marubatu_video')[0].pause();
         video3.currentTime = 0;
         $('#modalArea').fadeOut();
@@ -299,6 +283,22 @@ $(function () {
         $('#update-modalArea').fadeOut();
     });
     /*---------*/
+});
+$(function () {
+    $(".tutorial-step").click(function () {
+        $('#modalArea').fadeOut();
+        // cssで背景色を切り替え
+        $(".tutorial-step").toggleClass(".tutorial-step select");
+        $('#modalArea2').fadeIn();
+
+        $(".tutorial-step").click(function () {
+            $('#modalArea2').fadeOut();
+            // cssで背景色を切り替え
+            $(".tutorial-step").toggleClass(".tutorial-step select");
+            $('#modalArea').fadeIn();
+        });
+
+    });
 });
 
 
@@ -377,7 +377,7 @@ function iframe_load() {
                     bgm_1.play();
                     bgm_1.loop = true;
                     button_visi();
-                   
+
                 }, 500);
             }
 

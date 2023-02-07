@@ -20,7 +20,7 @@
 
     <div class="container">
         <div class="header-nav" style="background-color: #fff;">
-            <a class="navbar-brand" >産技短VR学校見学</a>
+            <a class="navbar-brand">産技短VR学校見学</a>
 
             <ul class="navbar-nav">
                 <li class="nav-item" id="y_campus">
@@ -33,10 +33,10 @@
                 <li class="nav-item" id="nav-alert">
                     <a class="nav-link" data-toggle="modal" id="openModal">使い方</a>
                     <!-- モーダルエリアここから -->
+
                     <section>
                         <div id="modalArea" class="modalArea">
                             <div id="modalBg" class="modalBg"></div>
-
                             <!-- モーダル1 -->
                             <div id="modal1" class="modal_box">
                                 <div class="modal-content">
@@ -52,44 +52,98 @@
                                             今いる教室について知れるゲームをプレイできるよ！</div>
                                     </div>
                                 </div>
+
+                                <!--　追加部分　-->
+                                <div class="tutorial-popin-nav">
+                                    <ul>
+                                        <li><button type="button" name="button" class="tutorial-step select"></button>
+                                        </li>
+                                        <li><button type="button" name="button" class="tutorial-step"></button></li>
+                                    </ul>
+                                </div>
+                                <!--          -->
+
                                 <div id="switchbtn" data-target="modal2" class="modal_switch">次へ</div>
                             </div>
+                        </div>
 
-                            <div id="modalArea2" class="modalArea2">
-                                <div id="modalBg" class="modalBg"></div>
-                                <!-- モーダル2 -->
-                                <div id="modal2" class="modal_box">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="usageModalLongTitle">使い方</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            <video id="modal_syoukai_video" width="540" height="260" loop preload
-                                                playsinline>
-                                                <source src="syoukai.mp4" type="video/mp4">
-                                            </video>
-                                            <div class="modal-text">興味のある場所をクリックして<br>
-                                                施設内をVR画像で見てみよう！</div>
-                                        </div>
+                        <div id="modalArea2" class="modalArea2">
+                            <div id="modalBg" class="modalBg"></div>
+                            <!-- モーダル2 -->
+                            <div id="modal2" class="modal_box">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="usageModalLongTitle">使い方</h5>
                                     </div>
-                                    <div id="closebtn">閉じる</div>
+                                    <div class="modal-body">
+                                        <video id="modal_syoukai_video" width="540" height="260" loop preload
+                                            playsinline>
+                                            <source src="syoukai.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="modal-text">右上のメニューバーか画面両端の矢印を押すと<br>
+                                            別の教室に移動することができるよ！</div>
+                                    </div>
                                 </div>
+
+                                <!--　追加部分　-->
+                                <div class="tutorial-popin-nav">
+                                    <ul>
+                                        <li><button type="button" name="button" class="tutorial-step select"></button>
+                                        </li>
+                                        <li><button type="button" name="button" class="tutorial-step"></button></li>
+                                    </ul>
+                                </div>
+                                <!--          -->
+
+                                <div id="closebtn">閉じる</div>
                             </div>
+                        </div>
                     </section>
                     <!-- モーダルエリアここまで -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModalLong">更新履歴</a>
+                    <a class="nav-link" id="update-Modal">更新履歴</a>
+                    <!-- モーダルエリアここから -->
+
+                    <section id="update-modalArea" class="update-modalArea">
+                        <div id="update-modalBg" class="update-modalBg"></div>
+                        <div class="update-modalWrapper">
+                            <div class="update-modal-content">
+                                <div class="update-modal-header">
+                                    <h5 class="update-modal-title" id="usageModalLongTitle">更新履歴</h5>
+                                </div>
+                                <div class="update-modal-body">
+                                    <ul>
+                                        <li>2020/06/23 学生寮を公開</li>
+                                        <li>2020/06/11 建築科、情報技術科を公開</li>
+                                        <li>2020/06/10 電気技術科、産業技術専攻科を公開</li>
+                                        <li>2020/06/09 電子技術科、産業デザイン科、建築設備科を公開</li>
+                                        <li>2020/06/08 メカトロニクス技術科、生産技術科を公開</li>
+                                        <li>2020/06/08 矢巾キャンパス、水沢キャンパスの施設を公開</li>
+                                        <li>2020/06/08 バーチャル学校見学サイトを公開</li>
+                                    </ul>
+                                    <div class="update-text">Special thanks!</div>
+                                    <ul>
+                                        <li>アイコン : <a href="https://icooon-mono.com/" class="text-dark"
+                                                target="_blank">ICOOON MONO</a></li>
+                                        <li>音楽 : </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="closebtn" class="closebtn">閉じる</div>
+                        </div>
+                    </section>
+                    <!-- モーダルエリアここまで -->
                 </li>
 
                 <li class="nav-item">
                     <!-- 音声ファイル -->
-                   
+
 
                     <!-- 再生ボタン -->
                     <button class="btn-play" type="button"><img src="aseets/volume_off.png"></button>
 
-                    
+
                 </li>
             </ul>
             <!-- メニューバーここまで -->
@@ -121,7 +175,7 @@
 
                     <div class="iframe_main">
 
-                        <iframe id="main_yahaba_aframe" src=""  frameborder="0" onload="iframe_load()"></iframe>
+                        <iframe id="main_yahaba_aframe" src="" frameborder="0" onload="iframe_load()"></iframe>
                     </div>
 
                     <!-- <img class="button right" id="right_button" src="aseets/right_button.png"> -->

@@ -250,6 +250,45 @@ html {
             padding: 10px 30px;
             background-color: #fff;
             border-radius: 10px;
+
+            // 追加部分 //
+            .tutorial-popin-nav {
+                ul {
+                    display: block;
+                    padding-bottom: 15px;
+
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+
+                        .tutorial-step.select {
+                            pointer-events: none;
+                            background-color: #004EA2;
+                            border-radius: 50%;
+                        }
+                        .tutorial-step{
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            border: none;
+                            border-radius: 100%;
+                            background-color: #bfbfbf;
+                            -webkit-transition: background-color .3s ease;
+                            -o-transition: background-color .3s ease;
+                            transition: background-color .3s ease;
+                            padding: 0;
+                            cursor: pointer;
+                            margin: 0;
+                        }
+                        .tutorial-step:hover{
+                            background-color: #004EA2;
+                        }
+                    }
+                }
+            }
+
+            //         //
+
         }
 
         .modal-header {
@@ -331,6 +370,47 @@ html {
             padding: 10px 30px;
             background-color: #fff;
             border-radius: 10px;
+
+            // 追加部分 //
+            .tutorial-popin-nav {
+                ul {
+                    display: block;
+                    padding-bottom: 15px;
+
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+
+                        .tutorial-step.select {
+                            pointer-events: none;
+                            background-color: #004EA2;
+                            border-radius: 50%;
+                        }
+                        .tutorial-step{
+                            text-align: center;
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            border: none;
+                            border-radius: 100%;
+                            background-color: #bfbfbf;
+                            -webkit-transition: background-color .3s ease;
+                            -o-transition: background-color .3s ease;
+                            transition: background-color .3s ease;
+                            padding: 0;
+                            cursor: pointer;
+                            margin: 0;
+                        }
+                        .tutorial-step:hover{
+                            background-color: #004EA2;
+                        }
+                    }
+                }
+            }
+
+            //         //
+
+
         }
 
         .modal-header{
@@ -384,6 +464,94 @@ html {
             box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
         }
     }
+    /* モーダルCSS */
+    .update-modalArea {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        /*サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .update-modalBg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .update-modalWrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .update-modal-title {
+            font-size: larger;
+            text-align: center;
+            border-bottom: solid 2px #004EA2;
+        }
+
+        .update-closeModal {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .update-modal-body {
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            .update-modal-text {
+                margin: 10px 0 10px 0;
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .update-text {
+                font-size: larger;
+                font-weight: 700;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .closebtn {
+            margin: auto;
+            text-align: center;
+            font-size: larger;
+            font-weight: 900;
+            background-color: #004EA2;
+            color: #FFF;
+            width: 160px;
+            padding: 0.8em;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent;
+            transition: .3s ease-out;
+        }
+
+        .closebtn:hover {
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
 
 
 
