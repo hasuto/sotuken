@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="vr_top.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-   
+
     <meta name="description" content="ページの解説" />
     <meta name="author" content="SasakiHasuto" />
     <meta property='og:locale' content="ja_JP" />
@@ -92,7 +92,39 @@
                     <!-- モーダルエリアここまで -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModalLong">更新履歴</a>
+                    <a class="nav-link" id="update-Modal">更新履歴</a>
+                    <!-- モーダルエリアここから -->
+
+                    <section id="update-modalArea" class="update-modalArea">
+                        <div id="update-modalBg" class="update-modalBg"></div>
+                        <div class="update-modalWrapper">
+                            <div class="update-modal-content">
+                                <div class="update-modal-header">
+                                    <h5 class="update-modal-title" id="usageModalLongTitle">更新履歴</h5>
+                                </div>
+                                <div class="update-modal-body">
+                                    <ul>
+                                        <li>2020/06/23 学生寮を公開</li>
+                                        <li>2020/06/11 建築科、情報技術科を公開</li>
+                                        <li>2020/06/10 電気技術科、産業技術専攻科を公開</li>
+                                        <li>2020/06/09 電子技術科、産業デザイン科、建築設備科を公開</li>
+                                        <li>2020/06/08 メカトロニクス技術科、生産技術科を公開</li>
+                                        <li>2020/06/08 矢巾キャンパス、水沢キャンパスの施設を公開</li>
+                                        <li>2020/06/08 バーチャル学校見学サイトを公開</li>
+                                    </ul>
+                                    <div class="update-text">Special thanks!</div>
+                                    <ul>
+                                        <li>アイコン : <a href="https://icooon-mono.com/" class="text-dark"
+                                                target="_blank">ICOOON MONO</a></li>
+                                        <li>音楽 : </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="closebtn" class="closebtn">閉じる</div>
+                        </div>
+                    </section>
+                    <!-- モーダルエリアここまで -->
+
                 </li>
 
                 <li class="nav-item">
@@ -425,9 +457,9 @@
 
         });
     </script>
-     <script src="vr_top.js"></script>
+    <script src="vr_top.js"></script>
 
-   
+
 
 
 </body>

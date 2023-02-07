@@ -211,22 +211,22 @@ btn.addEventListener("click", () => {
     // pausedがtrue=>停止, false=>再生中
     if (game_hantei == "game") {
         if (!bgm1.paused) {
-            btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
             console.log("ストップ")
             bgm1.pause();
         } else {
-            btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
             console.log("スタート ")
             bgm1.play();
         }
     } else {
         if (!bgm_1.paused) {
-            btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
             console.log("ストップ")
             bgm_1.pause();
         }
         else {
-            btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
             console.log("スタート ")
             bgm_1.play();
         }
@@ -271,9 +271,9 @@ $(function () {
         $('#modalArea').fadeIn();
         $('#modal_marubatu_video')[0].play();
     });
-    $('#closeModal , #modalBg').click(function () {
-        $('#modalArea').fadeOut();
-    });
+    // $('#closeModal , #modalBg').click(function () {
+    //     $('#modalArea').fadeOut();
+    // });
     $('#switchbtn , #modalBg').click(function () {
         $('#modal_marubatu_video')[0].pause();
         video3.currentTime = 0;

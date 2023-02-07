@@ -180,7 +180,7 @@ html {
             .nav-item {
                 list-style: none;
                 margin-left: 50px;
-                opacity: 0.7;
+                // opacity: 0.7;
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
@@ -197,9 +197,7 @@ html {
                     width: 0;
                 }
 
-                &:hover {
-                    opacity: 1;
-                }
+                
 
                 &:hover::after {
                     width: 100%;
@@ -210,6 +208,9 @@ html {
                     font-size: medium;
                     font-weight: 600;
                     text-decoration: none;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
