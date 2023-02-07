@@ -12,7 +12,7 @@ var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
 const bgm1 = document.querySelector("#marubatu_bgm");
 var bgm_1;
-var syoukai_bgm = document.querySelector('#syoukai_bgm');
+var syoukai_bgm = document.querySelector('#syoukai_page_bgm');
 var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
 var yahaba_list_resu = {
     fontSize: "2em",
@@ -202,6 +202,47 @@ window.onload = function () {
 }
 
 
+      // <audio>
+const btn = document.querySelector(".btn-play");   // <button>
+
+btn.addEventListener("click", () => {
+
+
+    // pausedがtrue=>停止, false=>再生中
+    if (game_hantei == "game") {
+       if(!bgm1.paused){
+        btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+        console.log("ストップ")
+        bgm1.pause();
+       }else{
+        btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+        console.log("スタート ")
+        bgm1.play();
+       }
+    } else {
+        if (!bgm_1.paused) {
+            btn.innerHTML = '<img src="ボリュームOFFアイコン .png">';  // 「再生ボタン」に切り替え
+            console.log("ストップ")
+            bgm_1.pause();
+        }
+        else {
+            btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「一時停止ボタン」に切り替え
+            console.log("スタート ")
+            bgm_1.play();
+        }
+
+    }
+   
+});
+
+/**
+ * [event] 再生終了時に実行
+ */
+bgm1.addEventListener("ended", () => {
+    bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
+    btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「再生ボタン」に変更
+});
+
 
 
 
@@ -261,23 +302,6 @@ $(function () {
   });
   
   
-  $(function () {
-      var audio = $("#audio").get(0);
-      var isPlaying = false;
-      $("#btn").on("click", function () {
-          if (isPlaying) {
-              audio.pause();
-          } else {
-              audio.play();
-          }
-      });
-      audio.onplaying = function() {
-          isPlaying = true;
-      };
-      audio.onpause = function() {
-          isPlaying = false;
-      };
-  });
 
 
 // $(window).on('load resize',function(){
@@ -332,7 +356,7 @@ function iframe_load() {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
                     
-                    // bgm1.play();
+                    bgm1.play(); //〇✕ゲーム音源スタート
                 }, 500);
 
             } else {
@@ -347,9 +371,10 @@ function iframe_load() {
                     document.getElementById('right_button').style.visibility = 'visible';
                     document.getElementById('left_button').style.visibility = 'visible';
                   
-                    // syoukai_bgm.pause();
-                    //bgm_1.play();
-                    //bgm_1.loop = true;
+                    //syoukai_bgm.play();
+                    console.log(bgm_1);
+                    bgm_1.play();
+                    bgm_1.loop = true;
                     button_visi();
                 }, 500);
             }
