@@ -25,20 +25,20 @@ window.onload = () => {
         }
 
         if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-        //スマホ
-        
-              
-                    $(".navbar-brand").addClass("res");
-                    $(".navbar-nav").addClass("res");
-                    $(".nav-item").addClass("res");
-                    $(".nav-link").addClass("res");
-                    $(".btn-play").addClass("res");
-                    
-                  
-        }else{
+                //スマホ
 
-       }
-        
+
+                $(".navbar-brand").addClass("res");
+                $(".navbar-nav").addClass("res");
+                $(".nav-item").addClass("res");
+                $(".nav-link").addClass("res");
+                $(".btn-play").addClass("res");
+
+
+        } else {
+
+        }
+
 
 }
 
@@ -72,7 +72,7 @@ $(function () {
                 $('#modalArea').fadeIn();
                 console.log('開くボタン')
                 $('#modal_top_video')[0].play();
-                
+
         });
         // $('#closeModal , #modalBg').click(function () {
         //         $('#modalArea').fadeOut();
@@ -90,9 +90,9 @@ $(function () {
         $('#update-Modal').click(function () {
                 $('#update-modalArea').fadeIn();
         });
-        $('#closeModal , #update-modalBg').click(function () {
-                $('#update-modalArea').fadeOut();
-        });
+        // $('#closeModal , #update-modalBg').click(function () {
+        //   $('#update-modalArea').fadeOut();
+        // });
         $('#closebtn , #update-modalBg').click(function () {
                 $('#update-modalArea').fadeOut();
         });
