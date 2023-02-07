@@ -261,12 +261,13 @@ html {
                         display: inline-block;
                         padding: 5px;
 
-                        .tutorial-step.select {
+                        .tutorial-step1.select,.tutorial-step2.select{
                             pointer-events: none;
                             background-color: #004EA2;
                             border-radius: 50%;
                         }
-                        .tutorial-step{
+
+                        .tutorial-step1,.tutorial-step2{
                             width: 12px;
                             height: 12px;
                             display: block;
@@ -280,7 +281,7 @@ html {
                             cursor: pointer;
                             margin: 0;
                         }
-                        .tutorial-step:hover{
+                        .tutorial-step1:hover,.tutorial-step2:hover{
                             background-color: #004EA2;
                         }
                     }
@@ -381,12 +382,12 @@ html {
                         display: inline-block;
                         padding: 5px;
 
-                        .tutorial-step.select {
+                        .tutorial-step1.select,.tutorial-step2.select {
                             pointer-events: none;
                             background-color: #004EA2;
                             border-radius: 50%;
                         }
-                        .tutorial-step{
+                        .tutorial-step1,.tutorial-step2{
                             text-align: center;
                             width: 12px;
                             height: 12px;
@@ -401,7 +402,7 @@ html {
                             cursor: pointer;
                             margin: 0;
                         }
-                        .tutorial-step:hover{
+                        .tutorial-step1:hover,.tutorial-step2:hover{
                             background-color: #004EA2;
                         }
                     }

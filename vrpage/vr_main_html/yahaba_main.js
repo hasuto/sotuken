@@ -258,7 +258,7 @@ $(function () {
         $('#modal_marubatu_video')[0].play();
     });
     $('#switchbtn , #modalBg').click(function () {
-        $(".tutorial-step").toggleClass(".tutorial-step select");
+        // $(".tutorial-step").toggleClass(".tutorial-step select");
         $('#modal_marubatu_video')[0].pause();
         video3.currentTime = 0;
         $('#modalArea').fadeOut();
@@ -284,25 +284,25 @@ $(function () {
     });
     /*---------*/
 });
+
 $(function () {
-    $(".tutorial-step").click(function () {
-        $('#modalArea').fadeOut();
-        // cssで背景色を切り替え
-        $(".tutorial-step").toggleClass(".tutorial-step select");
-        $('#modalArea2').fadeIn();
-
-        $(".tutorial-step").click(function () {
-            $('#modalArea2').fadeOut();
-            // cssで背景色を切り替え
-            $(".tutorial-step").toggleClass(".tutorial-step select");
-            $('#modalArea').fadeIn();
-        });
-
+    $(".tutorial-step1").click(function () {
+        if ($(this).hasClass(".select")) {
+            //何もしない
+          } else {
+            $(".tutorial-step1").addClass("select");
+            $(".tutorial-step2.select").removeClass("select");
+          }
+    });
+    $(".tutorial-step2").click(function () {
+        if ($(this).hasClass(".select")) {
+            //何もしない
+          } else {
+            $(".tutorial-step2").addClass("select");
+            $(".tutorial-step1.select").removeClass("select");
+          }
     });
 });
-
-
-
 
 
 // $(window).on('load resize',function(){

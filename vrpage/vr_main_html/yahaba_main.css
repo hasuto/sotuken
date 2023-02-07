@@ -202,12 +202,12 @@ html {
   display: inline-block;
   padding: 5px;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step.select {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1.select, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2 {
   width: 12px;
   height: 12px;
   display: block;
@@ -219,7 +219,7 @@ html {
   cursor: pointer;
   margin: 0;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step:hover {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1:hover, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
 .container .modalArea .modal-header .modal-title {
@@ -298,12 +298,12 @@ html {
   display: inline-block;
   padding: 5px;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step.select {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1.select, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2 {
   text-align: center;
   width: 12px;
   height: 12px;
@@ -316,7 +316,7 @@ html {
   cursor: pointer;
   margin: 0;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step:hover {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1:hover, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
 .container .modalArea2 .modal-header .modal-title {
