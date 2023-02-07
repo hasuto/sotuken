@@ -195,19 +195,22 @@ html {
   border-radius: 10px;
 }
 .container .modalArea #modal1 .tutorial-popin-nav ul {
+  text-align: center;
   display: block;
-  padding-bottom: 15px;
+  padding: 0 0 15px 0;
 }
 .container .modalArea #modal1 .tutorial-popin-nav ul li {
   display: inline-block;
   padding: 5px;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1.select, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2.select {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1.select,
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2 {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1,
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2 {
   width: 12px;
   height: 12px;
   display: block;
@@ -219,7 +222,8 @@ html {
   cursor: pointer;
   margin: 0;
 }
-.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1:hover, .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2:hover {
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1:hover,
+.container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
 .container .modalArea .modal-header .modal-title {
@@ -291,19 +295,22 @@ html {
   border-radius: 10px;
 }
 .container .modalArea2 #modal2 .tutorial-popin-nav ul {
+  text-align: center;
   display: block;
-  padding-bottom: 15px;
+  padding: 0 0 15px 0;
 }
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li {
   display: inline-block;
   padding: 5px;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1.select, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2.select {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1.select,
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2 {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1,
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2 {
   text-align: center;
   width: 12px;
   height: 12px;
@@ -316,7 +323,8 @@ html {
   cursor: pointer;
   margin: 0;
 }
-.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1:hover, .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2:hover {
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1:hover,
+.container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
 .container .modalArea2 .modal-header .modal-title {

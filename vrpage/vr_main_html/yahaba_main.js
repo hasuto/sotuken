@@ -257,15 +257,48 @@ $(function () {
         $('#modalArea').fadeIn();
         $('#modal_marubatu_video')[0].play();
     });
-    $('#switchbtn , #modalBg').click(function () {
-        // $(".tutorial-step").toggleClass(".tutorial-step select");
+
+
+    $(function () {
+        $(".tutorial-step1").click(function () {
+            if ($(this).hasClass(".select")) {
+                //何もしない
+            } else {
+                $(".tutorial-step1").addClass("select");
+                $(".tutorial-step2.select").removeClass("select");
+
+                $('#modalArea2').fadeOut();
+                $('#modalArea').fadeIn();
+            }
+        });
+        $(".tutorial-step2").click(function () {
+            if ($(this).hasClass(".select")) {
+                //何もしない
+            } else {
+                $(".tutorial-step2").addClass("select");
+                $(".tutorial-step1.select").removeClass("select");
+
+                $('#modalArea').fadeOut();
+                $('#modalArea2').fadeIn();
+            }
+        });
+    });
+
+
+
+
+    $('#switchbtn , #modalBg1').click(function () {
+        $(".tutorial-step2").addClass("select");
+        $(".tutorial-step1.select").removeClass("select");
         $('#modal_marubatu_video')[0].pause();
         video3.currentTime = 0;
         $('#modalArea').fadeOut();
         $('#modalArea2').fadeIn();
         $('#modal_syoukai_video')[0].play();
     });
-    $('#closebtn , #modalBg').click(function () {
+    $('#closebtn , #modalBg2').click(function () {
+        $(".tutorial-step1").addClass("select");
+        $(".tutorial-step2.select").removeClass("select");
         $('#modalArea2').fadeOut();
         $('#modal_syoukai_video')[0].pause();
         video4.currentTime = 0;
@@ -285,24 +318,7 @@ $(function () {
     /*---------*/
 });
 
-$(function () {
-    $(".tutorial-step1").click(function () {
-        if ($(this).hasClass(".select")) {
-            //何もしない
-          } else {
-            $(".tutorial-step1").addClass("select");
-            $(".tutorial-step2.select").removeClass("select");
-          }
-    });
-    $(".tutorial-step2").click(function () {
-        if ($(this).hasClass(".select")) {
-            //何もしない
-          } else {
-            $(".tutorial-step2").addClass("select");
-            $(".tutorial-step1.select").removeClass("select");
-          }
-    });
-});
+
 
 
 // $(window).on('load resize',function(){
