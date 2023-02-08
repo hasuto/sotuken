@@ -994,6 +994,10 @@ body {
   transition: all 400ms;
 }
 
+.container .mizusawa_school .vr_content .text_parent .setumei .setumei_text.res {
+  font-size: 1.8rem;
+}
+
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_text.fadein {
   opacity: 0;
   -webkit-transition: all 400ms;
@@ -1076,7 +1080,7 @@ body {
 }
 
 .container .mizusawa_school .vr_content .text_parent .classroom_text1.res {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 
 .container .mizusawa_school .vr_content .text_parent .classroom_text3 {
@@ -1108,7 +1112,7 @@ body {
 }
 
 .container .mizusawa_school .mizusawa_list {
-  max-width: 330px;
+  max-width: 360px;
   margin-left: 0px;
   margin-top: 10px;
   margin-right: 29px;
@@ -1159,6 +1163,11 @@ body {
   color: #fff;
 }
 
+.container .mizusawa_school .mizusawa_list a.res {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
 .container .mizusawa_school .mizusawa_list label {
   max-width: 330px;
   display: block;
@@ -1171,10 +1180,6 @@ body {
   position: relative;
   -webkit-transition: all 500ms;
   transition: all 500ms;
-}
-
-.container .mizusawa_school .mizusawa_list label.res {
-  width: 260px;
 }
 
 .container .mizusawa_school .mizusawa_list label.label_seisan {
@@ -1224,12 +1229,12 @@ body {
 .container .mizusawa_school .mizusawa_list label p {
   font-weight: 600;
   display: inline-block;
-  padding: 0px 45px 0px 0px;
+  padding: 0px 60px 0px 0px;
   left: 0;
 }
 
 .container .mizusawa_school .mizusawa_list label p.res {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .container .mizusawa_school .mizusawa_list label p::after {
@@ -1290,10 +1295,11 @@ body {
   opacity: 1;
 }
 
-.container .mizusawa_school .mask {
+.container .mask {
   z-index: 20;
   width: 100%;
-  height: calc(100% - 52px);
+  top: 0;
+  height: 100%;
   -webkit-animation-name: mask_fadein;
           animation-name: mask_fadein;
   -webkit-animation-duration: 1s;
@@ -1323,9 +1329,9 @@ body {
   }
 }
 
-.container .mizusawa_school .mask .loader,
-.container .mizusawa_school .mask .loader:before,
-.container .mizusawa_school .mask .loader:after {
+.container .mask .loader,
+.container .mask .loader:before,
+.container .mask .loader:after {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
@@ -1335,33 +1341,34 @@ body {
   animation: load7 1.8s infinite ease-in-out;
 }
 
-.container .mizusawa_school .mask .loader {
+.container .mask .loader {
   color: #ffffff;
   font-size: 10px;
-  margin: 500px auto;
+  top: 50%;
+  left: 49%;
+  -webkit-transform: translate(-50%, -50%, 0);
+          transform: translate(-50%, -50%, 0);
   position: relative;
   text-indent: -9999em;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
   pointer-events: none;
 }
 
-.container .mizusawa_school .mask .loader:before,
-.container .mizusawa_school .mask .loader:after {
+.container .mask .loader:before,
+.container .mask .loader:after {
   content: '';
   position: absolute;
   top: 0;
 }
 
-.container .mizusawa_school .mask .loader:before {
+.container .mask .loader:before {
   left: -3.5em;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
-.container .mizusawa_school .mask .loader:after {
+.container .mask .loader:after {
   left: 3.5em;
 }
 
@@ -1391,7 +1398,7 @@ body {
   }
 }
 
-.container .mizusawa_school #roder-img {
+.container #roder-img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1400,7 +1407,7 @@ body {
   width: 130px;
 }
 
-.container .mizusawa_school .mask.roder {
+.container .mask.roder {
   -webkit-transition: all 700ms;
   transition: all 700ms;
   opacity: 0;

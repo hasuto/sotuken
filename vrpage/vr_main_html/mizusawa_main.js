@@ -93,7 +93,8 @@ window.onload = function () {
         $(".nav-item").addClass("res");
         $(".nav-link").addClass("res");
         $(".btn-play").addClass("res");
-
+        $(".setumei_text").addClass("res");
+        $(".mizusawa_list").find('a').addClass("res");
         console.log($('.mizusawa_list').find('label'));
         console.log("スマホだよーーーー");
 
