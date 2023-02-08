@@ -237,13 +237,13 @@ html {
   right: 1rem;
   cursor: pointer;
 }
-.container .modalArea .modal-body .modal-text {
+.container .modalArea .modal_syoukai_body .modal-text, .container .modalArea .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
-.container .modalArea .modal-body img {
+.container .modalArea .modal_syoukai_body img, .container .modalArea .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -338,13 +338,13 @@ html {
   right: 1rem;
   cursor: pointer;
 }
-.container .modalArea2 .modal-body .modal-text {
+.container .modalArea2 .modal_syoukai_body .modal-text, .container .modalArea2 .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
-.container .modalArea2 .modal-body img {
+.container .modalArea2 .modal_syoukai_body img, .container .modalArea2 .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -475,22 +475,11 @@ html {
 .container .yahaba_school {
   background-color: #004EA2;
   display: flex;
-  -webkit-animation-name: yahaba_school_fadein;
-          animation-name: yahaba_school_fadein;
-  -webkit-animation-direction: 1s;
-          animation-direction: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: yahaba_school_fadein;
+  animation-direction: 1s;
+  animation-fill-mode: forwards;
   height: calc(100% - 54px);
   width: 100%;
-}
-@-webkit-keyframes yahaba_school_fadein {
-  0% {
-    background-color: #004EA2;
-  }
-  100% {
-    background-color: #fff;
-  }
 }
 @keyframes yahaba_school_fadein {
   0% {
@@ -504,22 +493,9 @@ html {
   border-top: solid 3px #004EA2;
   width: 100%;
   height: 100%;
-  -webkit-animation-name: vr_content_fadein;
-          animation-name: vr_content_fadein;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: vr_content_fadein;
+  animation-duration: 3s;
   position: relative;
-}
-@-webkit-keyframes vr_content_fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 @keyframes vr_content_fadein {
   0% {
@@ -933,10 +909,8 @@ html {
   margin-left: 0px;
   margin-top: 10px;
   margin-right: 29px;
-  -webkit-animation-name: yahaba_list_fadein;
-          animation-name: yahaba_list_fadein;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: yahaba_list_fadein;
+  animation-duration: 3s;
   position: absolute;
   z-index: 20;
   right: 0;
@@ -950,17 +924,6 @@ html {
 .container .yahaba_school .yahaba_list #honkan_list_all,
 .container .yahaba_school .yahaba_list #ryou_list_all {
   display: none;
-}
-@-webkit-keyframes yahaba_list_fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 @keyframes yahaba_list_fadein {
   0% {
@@ -1118,23 +1081,13 @@ html {
   z-index: 20;
   width: 100%;
   height: calc(100% - 52px);
-  -webkit-animation-name: mask_fadein;
-          animation-name: mask_fadein;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-name: mask_fadein;
+  animation-duration: 1s;
   position: absolute;
   /* 絶対位置指定 */
   pointer-events: none;
   background-color: #247BD9;
   /* マスクは半透明 */
-}
-@-webkit-keyframes mask_fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 @keyframes mask_fadein {
   0% {
@@ -1150,9 +1103,7 @@ html {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
 .container .yahaba_school .mask .loader {
@@ -1163,7 +1114,6 @@ html {
   transform: translate(-50%, -50%, 0);
   position: relative;
   text-indent: -9999em;
-  -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
   pointer-events: none;
 }
@@ -1175,19 +1125,10 @@ html {
 }
 .container .yahaba_school .mask .loader:before {
   left: -3.5em;
-  -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 .container .yahaba_school .mask .loader:after {
   left: 3.5em;
-}
-@-webkit-keyframes load7 {
-  0%, 80%, 100% {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    box-shadow: 0 2.5em 0 0;
-  }
 }
 @keyframes load7 {
   0%, 80%, 100% {
@@ -1203,22 +1144,10 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 130px;
-  -webkit-animation-name: pikapika;
-          animation-name: pikapika;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-@-webkit-keyframes pikapika {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+  animation-name: pikapika;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 @keyframes pikapika {
   0% {

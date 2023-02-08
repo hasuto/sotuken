@@ -717,10 +717,14 @@ function syoukai_hantei() {
 
     console.log(csv_column);
     // result[csv_column][2]
+
+    //サイト〇×ゲーム判定
     if (game_hantei == "game") {
         Top_mizusawa_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
+        $('.modal_syoukai_body').hide();
     } else {
         Top_mizusawa_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
+        $('.modal_marubatu_body').hide();
         bgm_1 = new Audio('aseets/' + result[csv_column][3] + '.mp3');
 
     }
