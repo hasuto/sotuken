@@ -118,7 +118,15 @@ window.onload = function () {
                 $(".label_ryou").addClass("hover");
             }
         });
+
+        $(".navbar-brand").addClass("res");
+        $(".navbar-nav").addClass("res");
+        $(".nav-item").addClass("res");
+        $(".nav-link").addClass("res");
+        $(".btn-play").addClass("res");
         console.log($('.yahaba_list').find('label'));
+
+
         console.log("スマホだよーーーー");
 
     } else {

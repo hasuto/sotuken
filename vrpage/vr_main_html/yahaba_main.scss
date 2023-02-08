@@ -148,7 +148,7 @@ html {
     .header-nav {
         // border-bottom: solid 3px #004EA2;
 
-        border-bottom: solid 3px #004EA2;
+       // border-bottom: solid 3px #004EA2;
 
         .btn-play {
             background-color: #fff;
@@ -167,6 +167,9 @@ html {
             font-weight: 700;
             text-decoration: none;
             margin-left: 20px;
+            &.res {
+                font-size: xx-large;
+            }
         }
 
 
@@ -175,7 +178,9 @@ html {
 
             display: inline-flex;
             height: 22px;
-
+            &.res {
+                padding-left: 0px;
+            }
 
             .nav-item {
                 list-style: none;
@@ -184,7 +189,10 @@ html {
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
-
+                &.res {
+                    margin-left: 20px;
+                    
+                }
                 &::after {
                     position: absolute;
                     bottom: 0;
@@ -208,9 +216,22 @@ html {
                     font-size: medium;
                     font-weight: 600;
                     text-decoration: none;
+                    opacity: 0.7;
 
                     &:hover {
                         opacity: 1;
+                    }
+                    &.res {
+                        font-size: x-large;
+                    }
+                }
+                .btn-play{
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    &.res{
+                        padding-top: 5px;
                     }
                 }
             }
