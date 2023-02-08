@@ -124,6 +124,8 @@ window.onload = function () {
         $(".nav-item").addClass("res");
         $(".nav-link").addClass("res");
         $(".btn-play").addClass("res");
+        $(".setumei_text").addClass("res");
+        
         console.log($('.yahaba_list').find('label'));
 
 

@@ -14,7 +14,7 @@ body {
 
 .container .tutorial-modalArea {
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -220,7 +220,7 @@ body {
 .container .modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -339,7 +339,7 @@ body {
 .container .modalArea2 {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -459,7 +459,7 @@ body {
 .container .update-modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;

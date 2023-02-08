@@ -251,7 +251,7 @@ body {
     .modalArea {
         display: none;
         position: fixed;
-        z-index: 10;
+        z-index: 40;
         /*サイトによってここの数値は調整 */
         top: 0;
         left: 0;
@@ -336,7 +336,7 @@ body {
     .update-modalArea {
         display: none;
         position: fixed;
-        z-index: 10;
+        z-index: 40;
         /*サイトによってここの数値は調整 */
         top: 0;
         left: 0;
@@ -476,7 +476,7 @@ body {
             top: 0;
 
             label {
-                width: 280px;
+                width: 290px;
                 display: block;
                 margin: 45px 30px 0px 0px;
                 padding: 8px 8px 8px 8px;
@@ -511,10 +511,13 @@ body {
 
             p {
                 font-weight: 600;
+                &.res {
+                    font-size: 1.3rem;
+                }
             }
 
             ul {
-                width: 280px;
+                width: 290px;
                 margin: 0px 0;
                 padding: 0;
                 // background: #f0f0f0;
@@ -551,6 +554,11 @@ body {
                     position: relative;
                     opacity: 0.7;
                     color: #000;
+
+                    &.res{
+                        font-weight: 700;
+                        font-size: 1.1em;
+                    }
 
                     &:hover {
                         // transition: all 500ms;
@@ -578,7 +586,7 @@ body {
             right: 0;
 
             label {
-                width: 280px;
+                width: 290px;
                 display: block;
                 margin: 45px 30px 0px 0px;
                 padding: 8px 8px 8px 8px;
@@ -592,6 +600,9 @@ body {
                 position: relative;
                 transition: all 500ms;
                 border: solid 1px $honkan-color;
+                &.res {
+                    width: 260px;
+                }
 
                 // .label_yahaba_pin {
 
@@ -613,10 +624,13 @@ body {
 
             p {
                 font-weight: 600;
+                &.res {
+                    font-size: 1.3rem;
+                }
             }
 
             ul {
-                width: 280px;
+                width: 290px;
                 margin: 0px 0;
                 padding: 0;
                 // background: #f0f0f0;
@@ -653,6 +667,10 @@ body {
                     position: relative;
                     opacity: 0.7;
                     color: #000;
+                        &.res{
+                            font-weight: 700;
+                            font-size: 1.2em;
+                        }
 
                     &:hover {
                         // transition: all 500ms;

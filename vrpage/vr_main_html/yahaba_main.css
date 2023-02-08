@@ -23,7 +23,7 @@ html {
 
 .container .tutorial-modalArea {
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -229,7 +229,7 @@ html {
 .container .modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -348,7 +348,7 @@ html {
 .container .modalArea2 {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -468,7 +468,7 @@ html {
 .container .update-modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -1049,6 +1049,10 @@ html {
   transition: all 400ms;
 }
 
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_text.res {
+  font-size: 1.8rem;
+}
+
 .container .yahaba_school .vr_content .text_parent .setumei .setumei_text.fadein {
   opacity: 0;
   -webkit-transition: all 400ms;
@@ -1131,7 +1135,7 @@ html {
 }
 
 .container .yahaba_school .vr_content .text_parent .classroom_text1.res {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 
 .container .yahaba_school .vr_content .text_parent .classroom_text3 {
@@ -1390,10 +1394,11 @@ html {
   opacity: 1;
 }
 
-.container .yahaba_school .mask {
-  z-index: 20;
+.container .mask {
+  z-index: 90;
   width: 100%;
-  height: calc(100% - 52px);
+  top: 0;
+  height: 100%;
   -webkit-animation-name: mask_fadein;
           animation-name: mask_fadein;
   -webkit-animation-duration: 1s;
@@ -1423,9 +1428,9 @@ html {
   }
 }
 
-.container .yahaba_school .mask .loader,
-.container .yahaba_school .mask .loader:before,
-.container .yahaba_school .mask .loader:after {
+.container .mask .loader,
+.container .mask .loader:before,
+.container .mask .loader:after {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
@@ -1435,7 +1440,7 @@ html {
   animation: load7 1.8s infinite ease-in-out;
 }
 
-.container .yahaba_school .mask .loader {
+.container .mask .loader {
   color: #ffffff;
   font-size: 10px;
   top: 50%;
@@ -1449,20 +1454,20 @@ html {
   pointer-events: none;
 }
 
-.container .yahaba_school .mask .loader:before,
-.container .yahaba_school .mask .loader:after {
+.container .mask .loader:before,
+.container .mask .loader:after {
   content: '';
   position: absolute;
   top: 0;
 }
 
-.container .yahaba_school .mask .loader:before {
+.container .mask .loader:before {
   left: -3.5em;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
-.container .yahaba_school .mask .loader:after {
+.container .mask .loader:after {
   left: 3.5em;
 }
 
@@ -1492,7 +1497,7 @@ html {
   }
 }
 
-.container .yahaba_school #roder-img {
+.container #roder-img {
   position: relative;
   top: 50%;
   left: 50%;
@@ -1527,7 +1532,7 @@ html {
   }
 }
 
-.container .yahaba_school .mask.roder {
+.container .mask.roder {
   -webkit-transition: all 700ms;
   transition: all 700ms;
   opacity: 0;

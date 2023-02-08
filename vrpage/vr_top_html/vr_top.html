@@ -267,6 +267,11 @@
                 var camera_pc = $("#top_aframe").contents().find(doc.getElementById('camera_pc'));
                 // camera_pc.parentNode.removeChild(camera_pc);
                 camera_pc.remove();
+
+                $('#mizusawa_pin_list_all').find('p').addClass('res');
+                $('#yahaba_pin_list_all').find('p').addClass('res');
+                $('#yahaba_pin_list_all').find('a').addClass('res');
+                $('#mizusawa_pin_list_all').find('a').addClass('res');
                 $('.label_yahaba_pin').click(function () {
                     if ($('#yahaba_pin').prop('checked') == true) {
                         $(".label_yahaba_pin").removeClass("hover");

@@ -224,7 +224,7 @@ body {
 .container .modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -305,7 +305,7 @@ body {
 .container .update-modalArea {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   /*サイトによってここの数値は調整 */
   top: 0;
   left: 0;
@@ -437,7 +437,7 @@ body {
 }
 
 .container .iframe #yahaba_pin_list_all label {
-  width: 280px;
+  width: 290px;
   display: block;
   margin: 45px 30px 0px 0px;
   padding: 8px 8px 8px 8px;
@@ -469,8 +469,12 @@ body {
   font-weight: 600;
 }
 
+.container .iframe #yahaba_pin_list_all p.res {
+  font-size: 1.3rem;
+}
+
 .container .iframe #yahaba_pin_list_all ul {
-  width: 280px;
+  width: 290px;
   margin: 0px 0;
   padding: 0;
   background: #fff;
@@ -503,6 +507,11 @@ body {
   color: #000;
 }
 
+.container .iframe #yahaba_pin_list_all li a.res {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
 .container .iframe #yahaba_pin_list_all li a:hover {
   opacity: 1;
 }
@@ -523,7 +532,7 @@ body {
 }
 
 .container .iframe #mizusawa_pin_list_all label {
-  width: 280px;
+  width: 290px;
   display: block;
   margin: 45px 30px 0px 0px;
   padding: 8px 8px 8px 8px;
@@ -537,6 +546,10 @@ body {
   -webkit-transition: all 500ms;
   transition: all 500ms;
   border: solid 1px #004EA2;
+}
+
+.container .iframe #mizusawa_pin_list_all label.res {
+  width: 260px;
 }
 
 .container .iframe #mizusawa_pin_list_all label.hover {
@@ -555,8 +568,12 @@ body {
   font-weight: 600;
 }
 
+.container .iframe #mizusawa_pin_list_all p.res {
+  font-size: 1.3rem;
+}
+
 .container .iframe #mizusawa_pin_list_all ul {
-  width: 280px;
+  width: 290px;
   margin: 0px 0;
   padding: 0;
   background: #fff;
@@ -587,6 +604,11 @@ body {
   position: relative;
   opacity: 0.7;
   color: #000;
+}
+
+.container .iframe #mizusawa_pin_list_all li a.res {
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 .container .iframe #mizusawa_pin_list_all li a:hover {
