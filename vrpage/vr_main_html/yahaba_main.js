@@ -45,6 +45,12 @@ window.onload = function () {
     var list_eles = yahaba_list.getElementsByTagName('input');
     //console.log((list_eles).not('#mekatoro2'));
 
+    $(".yahaba_list").find('ul').append('<li id="y_campus"><a>矢巾へ戻る</a></li>');
+
+    $(document).on('click', '#y_campus' , function() {
+        window.location.href = "../vr_top_html/vr_top.html?y";
+    });
+
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
         // $('.button019').css('fontSize','2em');

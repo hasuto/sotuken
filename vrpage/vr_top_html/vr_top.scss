@@ -194,7 +194,10 @@ body {
 
                 &.res {
                     margin-left: 20px;
-                    
+                    &::after {
+                        content: '';
+                        opacity: 0;
+                     }
                 }
 
                 &::after {

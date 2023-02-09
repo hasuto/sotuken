@@ -171,6 +171,11 @@ body {
   margin-left: 20px;
 }
 
+.container .header-nav .navbar-nav .nav-item.res::after {
+  content: '';
+  opacity: 0;
+}
+
 .container .header-nav .navbar-nav .nav-item::after {
   position: absolute;
   bottom: 0;

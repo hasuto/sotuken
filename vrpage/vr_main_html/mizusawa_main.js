@@ -43,6 +43,12 @@ window.onload = function () {
     // });
     var mizusawa_list = document.getElementById('mizusawa_list');
     var list_eles = mizusawa_list.getElementsByTagName('input');
+
+    $(".mizusawa_list").find('ul').append('<li id="m_campus"><a>水沢へ戻る</a></li>');
+
+    $(document).on('click', '#m_campus' , function() {
+        window.location.href = "../vr_top_html/vr_top.html?m";
+    });
     //console.log((list_eles).not('#seisan2'));
 
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
