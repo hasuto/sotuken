@@ -30,7 +30,10 @@
 </head>
 
 <body>
-
+    <audio id="top_page_bgm" controls>
+        <!-- <source src="op.ogg" type="audio/ogg"> -->
+        <source src="marubatu_bgm.mp3" type="audio/mp3">
+    </audio>
     <div class="container">
 
         <!-- モーダルエリアここから -->
@@ -238,6 +241,8 @@
                 } else {
                     window.setTimeout(function () {
                         loader.classList.add('loaded');
+                        bgm.muted=true;
+                        bgm.autoplay= true;
                     }, 1000);
 
 
