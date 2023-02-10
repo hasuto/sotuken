@@ -83,16 +83,15 @@ window.onload = function () {
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
         console.log("スマホだよーーーーmaru");
-        //var camera = document.querySelector("#pc");
-        //camera.setAttribute("look-controls",false);
-        //console.log(camera.getAttribute("look-controls"));
-        var Camera = document.querySelector('#pc');
-        Camera.setAttribute('camera','active',false);
-        var CameraEl = document.querySelector('#phone');
-        CameraEl.setAttribute('camera', 'active', true);
+
+        //PC用のカメラではなく、スマホ用のカメラに変更
+        var camera_pc = document.querySelector('#pc');
+        camera_pc.setAttribute('camera', 'active', false);
+        var camera_phone = document.querySelector('#phone');
+        camera_phone.setAttribute('camera', 'active', true);
 
         document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
-       
+
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });
         document.querySelector('#issue1').setAttribute("scale", { x: 7, y: 7, z: 7 });
         document.querySelector('#issue2').setAttribute("scale", { x: 7, y: 7, z: 7 });
@@ -127,12 +126,12 @@ window.onload = function () {
         document.querySelector('#start-button').setAttribute("scale", { x: 3, y: 3, z: 3 });
         document.querySelector('#start-button').setAttribute("position", { x: 10, y: 10, z: 0 });
         document.querySelector('#restart').setAttribute("scale", { x: 3, y: 3, z: 3 });
-        document.querySelector('#restart').setAttribute("position", { x: 10, y:3, z: 0 });
+        document.querySelector('#restart').setAttribute("position", { x: 10, y: 3, z: 0 });
         document.querySelector('#next-button').setAttribute("scale", { x: 3, y: 3, z: 3 });
-        document.querySelector('#next-button').setAttribute("position", { x: 10, y:17, z: 0 });
-         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 3, y: 2.5, z: 3.5 });
-         document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 4.6, z: 3 });
-         document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 43, z: 0 });
+        document.querySelector('#next-button').setAttribute("position", { x: 10, y: 17, z: 0 });
+        document.querySelector('#game-explanation_3').setAttribute("scale", { x: 3, y: 2.5, z: 3.5 });
+        document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 4.6, z: 3 });
+        document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 43, z: 0 });
         // document.querySelector('#game-explanation_3').setAttribute("position", { x: 10, y:17, z: 0 });
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
@@ -511,7 +510,7 @@ function start() {
     if (startbutton.getAttribute('visible') == true) {
         startbutton.setAttribute('visible', false);
         game_explanation_1.setAttribute('visible', false);
-      //  game_explanation_2.setAttribute('visible', false);
+        //  game_explanation_2.setAttribute('visible', false);
         game_explanation_3.setAttribute('visible', false);
         // startback.setAttribute('visible',false);
         Maru.setAttribute("visible", true);
@@ -563,7 +562,7 @@ function maru() {
                         incorrect_answer.setAttribute('visible', true);
                     }
                     console.log("score" + score);
-                    
+
                     next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
                     console.log(hantei_maru);
@@ -571,7 +570,7 @@ function maru() {
                 }
                 break;
             case 2:
-                
+
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -589,7 +588,7 @@ function maru() {
                 }
                 break;
             case 3:
-           
+
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
@@ -625,7 +624,7 @@ function maru() {
                 }
                 break;
             case 5:
-       
+
                 if (Batu.getAttribute('visible') == true) {
                     if (result[cnt][2] == results[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
