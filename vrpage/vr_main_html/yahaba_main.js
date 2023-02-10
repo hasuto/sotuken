@@ -366,6 +366,17 @@ function iframe_load() {
 
 
     $("#main_yahaba_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
+
+        if (game_hantei == "game") {
+        var camera_pc = $("#main_yahaba_aframe").contents().find(doc.getElementById('pc'));
+        // camera_pc.parentNode.removeChild(camera_pc);
+        camera_pc.remove();
+        console.log(camera_pc)
+        
+        }else{
+
+        }
+
         console.log("コンプリートマイン");
         if (document.getElementById('mask_all').classList.contains("roder")) {
 

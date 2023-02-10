@@ -21,7 +21,7 @@
 
     <div>
 
-    
+
         <a-scene id="marubatu" device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true"
             style="position:fixed;top:0;">
             <a-assets>
@@ -54,7 +54,7 @@
              scale="10 10 10">
             </a-text> -->
             <!-- <a-plane width="80" height="50" rotation="0 0 0" material="shader:html;target: #target1;"></a-plane> -->
-    
+
 
             <!-- <a-plane id="issue-back" src="assets/maruwaku.png"  visible="false" position="10 48 0" rotation="0 0 0" width="100" height="20" color="white"></a-plane> -->
             <!-- <a-plane id="start-back" visible="true" width="30" height="7" position="11 10 0"  color="white"></a-plane> -->
@@ -68,7 +68,7 @@
                 data-text="問題4"></a-entity>
             <a-entity mb-text id="issue5" visible="false" position="5 30 30" scale="10 10 10"
                 data-text="問題5"></a-entity>
-  
+
             <a-entity mb-text id="game-explanation_1" visible="true" position="10 19 30" scale="15 15 15"
                 data-text="〇✕ゲームにチャレンジして、教室について学ぼう" color="white"></a-entity>
 
@@ -144,16 +144,17 @@
 
             <a-sky id="back-ground" src="" position="0 0 0" rotation="0 -120 5"
                 animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 40000; easing: linear"></a-sky>
-            <a-camera id="pc" camera look-controls magicWindowTrackingEnabled="false" position="10 10 60" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD"
-                cursor-opacity="0.5">
-                <!-- <a-cursor></a-cursor> -->
+            <a-camera id="pc" camera look-controls magicWindowTrackingEnabled="false" position="10 10 60"
+                cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5">
+
             </a-camera>
 
-            <a-camera id="phone" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false" position="10 10 60" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD"
-            cursor-opacity="0.5">
-            <!-- <a-cursor></a-cursor> -->
-        </a-camera>
-            
+            <a-camera id="phone" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false"
+                position="10 10 60" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5">
+
+            </a-camera>
+            <!-- <a-entity camera look-controls="enabled: false;" position="10 10 60"></a-entity> -->
+
         </a-scene>
     </div>
 </body>
