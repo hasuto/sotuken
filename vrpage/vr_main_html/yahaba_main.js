@@ -367,15 +367,20 @@ function iframe_load() {
 
     $("#main_yahaba_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
 
-        if (game_hantei == "game") {
-        var camera_pc = $("#main_yahaba_aframe").contents().find(doc.getElementById('pc'));
-        // camera_pc.parentNode.removeChild(camera_pc);
-        camera_pc.remove();
-        console.log(camera_pc)
-        
-        }else{
+        // if (game_hantei == "game") {
 
-        }
+        //     var camera_pc = $("#main_yahaba_aframe").contents().find(doc.getElementById('pc'));
+        //     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+
+        //         camera_pc.remove();
+        //     }
+        
+
+        
+        
+        // }else{
+
+        // }
 
         console.log("コンプリートマイン");
         if (document.getElementById('mask_all').classList.contains("roder")) {

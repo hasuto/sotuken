@@ -18,7 +18,7 @@ var boxColor = 1; //１:赤　→　２：青　→　３：緑　→　１：�
 var score = 0;
 var cnt = 0;
 var hanntei = 0;
-var camera;
+
 var cursor;
 
 var isMouseDown = false;
@@ -34,6 +34,7 @@ var correct_answer;
 var text;
 var score_result;
 var Maru = document.querySelector('#Maru');
+
 
 
 // let element = document.getElementById('text');
@@ -82,6 +83,14 @@ window.onload = function () {
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
         console.log("スマホだよーーーーmaru");
+        //var camera = document.querySelector("#pc");
+        //camera.setAttribute("look-controls",false);
+        //console.log(camera.getAttribute("look-controls"));
+        var Camera = document.querySelector('#pc');
+        Camera.setAttribute('camera','active',false);
+        var CameraEl = document.querySelector('#phone');
+        CameraEl.setAttribute('camera', 'active', true);
+
         document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
        
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });

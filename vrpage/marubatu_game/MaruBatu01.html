@@ -144,7 +144,7 @@
 
             <a-sky id="back-ground" src="" position="0 0 0" rotation="0 -120 5"
                 animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 40000; easing: linear"></a-sky>
-            <a-camera id="pc" camera look-controls magicWindowTrackingEnabled="false" position="10 10 60"
+            <!-- <a-camera id="pc" camera look-controls magicWindowTrackingEnabled="false" position="10 10 60"
                 cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5">
 
             </a-camera>
@@ -152,8 +152,11 @@
             <a-camera id="phone" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false"
                 position="10 10 60" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5">
 
-            </a-camera>
-            <!-- <a-entity camera look-controls="enabled: false;" position="10 10 60"></a-entity> -->
+            </a-camera> -->
+
+            <a-entity id="pc" camera look-controls="enabled: true;" position="10 10 60"></a-entity>
+
+            <a-entity  id="phone" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false" position="10 10 60"></a-entity>
 
         </a-scene>
     </div>
