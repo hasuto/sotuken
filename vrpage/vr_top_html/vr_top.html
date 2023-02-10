@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <audio id="top_page_bgm" controls>
+    <audio id="top_page_bgm" preload loop>
         <!-- <source src="op.ogg" type="audio/ogg"> -->
         <source src="marubatu_bgm.mp3" type="audio/mp3">
     </audio>
@@ -241,8 +241,7 @@
                 } else {
                     window.setTimeout(function () {
                         loader.classList.add('loaded');
-                        bgm.muted=true;
-                        bgm.autoplay= true;
+                        bgm.play()
                     }, 1000);
 
 
