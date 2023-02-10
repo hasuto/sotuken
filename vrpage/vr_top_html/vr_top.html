@@ -141,28 +141,7 @@
                     <button class="btn-play" type="button"><img src="images/volume_on.png"></button>
 
                     <script>
-                        const bgm1 = document.querySelector("#bgm1");       // <audio>
-                        const btn = document.querySelector(".btn-play");   // <button>
 
-                        btn.addEventListener("click", () => {
-                            // pausedがtrue=>停止, false=>再生中
-                            if (!bgm1.paused) {
-                                btn.innerHTML = '<img src="images/volume_on.png">';  // 「再生ボタン」に切り替え
-                                bgm1.pause();
-                            }
-                            else {
-                                btn.innerHTML = '<img src="images/volume_off.png">';  // 「一時停止ボタン」に切り替え
-                                bgm1.play();
-                            }
-                        });
-
-                        /**
-                         * [event] 再生終了時に実行
-                         */
-                        bgm1.addEventListener("ended", () => {
-                            bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
-                            btn.innerHTML = '<img src="images/volume_on.png">';  // 「再生ボタン」に変更
-                        });
                     </script>
                 </li>
             </ul>
@@ -228,6 +207,28 @@
     </div>
 
     <script type="text/javascript">
+        const bgm1 = document.querySelector("#top_page_bgm");       // <audio>
+        const btn = document.querySelector(".btn-play");   // <button>
+
+        btn.addEventListener("click", () => {
+            // pausedがtrue=>停止, false=>再生中
+            if (!bgm1.paused) {
+                btn.innerHTML = '<img src="images/volume_off.png">';  // 「再生ボタン」に切り替え
+                bgm1.pause();
+            }
+            else {
+                btn.innerHTML = '<img src="images/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                bgm1.play();
+            }
+        });
+
+        /**
+         * [event] 再生終了時に実行
+         */
+        bgm1.addEventListener("ended", () => {
+            bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
+            btn.innerHTML = '<img src="images/volume_on.png">';  // 「再生ボタン」に変更
+        });
         $('#top_aframe').on('load', function () {
             //iframeのdocumentを取得する（Mozilla系 || 古いIE系）
             var doc = this.contentDocument || this.contentWindow.document;

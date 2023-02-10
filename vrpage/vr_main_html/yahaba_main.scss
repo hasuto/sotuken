@@ -147,7 +147,7 @@ html {
 
     .header-nav {
         // border-bottom: solid 3px #004EA2;
-
+        position: relative;
        // border-bottom: solid 3px #004EA2;
 
         .btn-play {
@@ -859,11 +859,11 @@ html {
 
             .iframe {
                 width: 100%;
-                height: 100%;
+                height: calc(100% - 54px);
                 height: -webkit-fill-available;
                 margin-top: 0px;
                 display: block;
-                position: relative;
+                position: absolute;
 
                 //  box-sizing: border-box;
 
@@ -1074,6 +1074,7 @@ html {
                 display: flex;
                 max-width: 100%;
                 opacity: 0;
+                top: 100%;
 
                 &.fadein {
                     transform: perspective(100px) translate3d(0px, -20px, 0px);
@@ -1717,7 +1718,7 @@ html {
         position: relative;
         top: 50%;
         left: 50%;
-        //transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         width: 130px;
         animation-name: pikapika;
         animation-duration: 1s;

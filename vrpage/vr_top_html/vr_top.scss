@@ -143,6 +143,7 @@ body {
 
     .header-nav {
         border-bottom: solid 3px #004EA2;
+        position: relative;
 
         .btn-play {
             background-color: #fff;
@@ -428,10 +429,10 @@ body {
 
 
     .iframe {
-        position: relative;
+        position: absolute;
         width: 100%;
         margin-top: 0px;
-        height: 97.5vh;
+        height: calc(100% - 57px);
         display: block;
         z-index: 1;
 
