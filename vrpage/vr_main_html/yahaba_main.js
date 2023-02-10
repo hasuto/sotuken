@@ -304,7 +304,7 @@ $(function () {
 
 
 
-    $('#switchbtn , #modalBg1').click(function () {
+    $('#switchbtn , #modalBg1 , .tutorial-step2').click(function () {
         $(".tutorial-step2").addClass("select");
         $(".tutorial-step1.select").removeClass("select");
         $('#modal_marubatu_video')[0].pause();
@@ -312,6 +312,15 @@ $(function () {
         $('#modalArea').fadeOut();
         $('#modalArea2').fadeIn();
         $('#modal_syoukai_video')[0].play();
+    });
+    $('.tutorial-step1').click(function () {
+        $(".tutorial-step1").addClass("select");
+        $(".tutorial-step2.select").removeClass("select");
+        $('#modalArea2').fadeOut();
+        $('#modalArea').fadeIn();
+        $('#modal_syoukai_video')[0].pause();
+        video4.currentTime = 0;
+        $('#modal_marubatu_video')[0].play();
     });
     $('#closebtn , #modalBg2').click(function () {
         $(".tutorial-step1").addClass("select");
@@ -877,6 +886,80 @@ function syoukai_hantei() {
     if (game_hantei == "game") {
         Top_yahaba_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
         $('.modal_syoukai_body').hide();
+
+
+        $(function () {
+            var video3 = document.getElementById('modal_marubatu_video2');
+            var video4 = document.getElementById('modal_syoukai_video2');
+        
+            /*使い方*/
+            $('#openModal').click(function () {
+                $('#modalArea').fadeIn();
+                $('#modal_marubatu_video2')[0].play();
+            });
+        
+        
+            $(function () {
+                $(".tutorial-step1").click(function () {
+                    if ($(this).hasClass(".select")) {
+                        //何もしない
+                    } else {
+                        $(".tutorial-step1").addClass("select");
+                        $(".tutorial-step2.select").removeClass("select");
+        
+                        $('#modalArea2').fadeOut();
+                        $('#modalArea').fadeIn();
+                    }
+                });
+                $(".tutorial-step2").click(function () {
+                    if ($(this).hasClass(".select")) {
+                        //何もしない
+                    } else {
+                        $(".tutorial-step2").addClass("select");
+                        $(".tutorial-step1.select").removeClass("select");
+        
+                        $('#modalArea').fadeOut();
+                        $('#modalArea2').fadeIn();
+                    }
+                });
+            });
+        
+        
+        
+        
+            $('#switchbtn , #modalBg1 , .tutorial-step2').click(function () {
+                $(".tutorial-step2").addClass("select");
+                $(".tutorial-step1.select").removeClass("select");
+                $('#modal_marubatu_video2')[0].pause();
+                video3.currentTime = 0;
+                $('#modalArea').fadeOut();
+                $('#modalArea2').fadeIn();
+                $('#modal_syoukai_video2')[0].play();
+            });
+            $('.tutorial-step1').click(function () {
+                $(".tutorial-step1").addClass("select");
+                $(".tutorial-step2.select").removeClass("select");
+                $('#modalArea2').fadeOut();
+                $('#modalArea').fadeIn();
+                $('#modal_syoukai_video2')[0].pause();
+                video4.currentTime = 0;
+                $('#modal_marubatu_video2')[0].play();
+            });
+            $('#closebtn , #modalBg2').click(function () {
+                $(".tutorial-step1").addClass("select");
+                $(".tutorial-step2.select").removeClass("select");
+                $('#modalArea2').fadeOut();
+                $('#modal_syoukai_video2')[0].pause();
+                video4.currentTime = 0;
+            });
+            /*---------*/
+        });
+
+
+
+
+
+
     } else {
         Top_yahaba_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
         $('.modal_marubatu_body').hide();
