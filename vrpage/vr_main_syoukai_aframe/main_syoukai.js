@@ -28,7 +28,7 @@ window.onload = function () {
     
     var background = document.querySelector('#back-ground');
     //var audio = document.querySelector('#audio01');
-    background.setAttribute('src',"images/" + text + ".jpeg");
+    background.setAttribute('src',"../vr_images/" + text + ".jpeg");
     //soundsフォルダーに各科の教室の名前をつけたmp3ファイルを作って、下のコメント外せば完成
     //audio.setAttribute('src',"sounds/" + text + ".mp3");
     // audio.setAttribute('src',"../sounds/sample.mp3");
