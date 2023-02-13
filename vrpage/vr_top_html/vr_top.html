@@ -31,9 +31,10 @@
 
 <body>
     <audio id="top_page_bgm" preload loop>
-        <!-- <source src="op.ogg" type="audio/ogg"> -->
+      
         <source src="marubatu_bgm.mp3" type="audio/mp3">
     </audio>
+    <!-- <iframe  src="marubatu_bgm.mp3" allow="autoplay" style="display:none"> -->
     <div class="container">
 
         <!-- モーダルエリアここから -->
@@ -132,10 +133,10 @@
 
                 <li class="nav-item">
                     <!-- 音声ファイル -->
-                    <audio id="bgm1" preload loop>
+                    <!-- <audio id="bgm1" preload loop>
                         <source src="op.ogg" type="audio/ogg">
                         <source src="bgm.mp3" type="audio/mp3">
-                    </audio>
+                    </audio> -->
 
                     <!-- 再生ボタン -->
                     <button class="btn-play" type="button"><img src="images/volume_on.png"></button>
@@ -170,7 +171,7 @@
                     <li><img src="./images/zyohou_pin.png"><a id="zyohou">情報技術科</a></li>
                     <li><img src="./images/senkou_pin.png"><a id="senkou">専攻技術科</a></li>
                     <li><img src="./images/honkan_7.png"><a id="tamoku">多目的ホール</a></li>
-                    <li><img src="./images/honkan_8.png"><a id="taiku">体育館</a></li>
+                    <li><img src="./images/honkan_8.png"><a id="taiku_y">体育館</a></li>
                     <li><img src="./images/honkan_9.png"><a id="syoku">学生ホール</a></li>
                     <li><img src="./images/honkan_10.png"><a id="ryou">学生寮</a></li>
                 </ul>
@@ -182,11 +183,11 @@
                 </label>
                 <input type="checkbox" id="mizusawa_pin" class="accordion" />
                 <ul id="mizusawa_pin_list">
-                    <li><img src="./images/seisan_pin.png"><a>生産技術科</a></li>
-                    <li><img src="./images/denki_pin.png"><a>電気技術科</a></li>
-                    <li><img src="./images/setubi_pin.png"><a>建築設備科</a></li>
-                    <li><img src="./images/honkan_m_pin.png"><a>本館</a></li>
-                    <li><img src="./images/taiku_m_pin.png"><a>体育館</a></li>
+                    <li><img src="./images/seisan_pin.png"><a id="seisan">生産技術科</a></li>
+                    <li><img src="./images/denki_pin.png"><a id="denki">電気技術科</a></li>
+                    <li><img src="./images/setubi_pin.png"><a id="setubi">建築設備科</a></li>
+                    <li><img src="./images/honkan_m_pin.png"><a id="honkan_m">本館</a></li>
+                    <li><img src="./images/taiku_m_pin.png"><a id="taiku_m">体育館</a></li>
                 </ul>
             </div>
 
@@ -242,7 +243,7 @@
                 } else {
                     window.setTimeout(function () {
                         loader.classList.add('loaded');
-                        bgm.play()
+                       
                     }, 1000);
 
 
@@ -261,6 +262,7 @@
                 });
                 $('#closebtn , #tutorial-modalBg').click(function () {
                     $('#tutorial-modalArea').fadeOut();
+                    bgm.play();
                 });
             });
 
@@ -343,7 +345,7 @@
             $('#tamoku').on('click',function(e){
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '1';
             })
-            $('#taiku').on('click',function(e){
+            $('#taiku_y').on('click',function(e){
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '6';
             });
             $('#syoku').on('click',function(e){
@@ -352,6 +354,24 @@
             $('#ryou').on('click',function(e){
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
             });
+
+            $('#seisan').on('click',function(e){
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '9' + "=" + '1';
+            });
+            $('#denki').on('click',function(e){
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '10' + "=" + '1';
+            });
+            $('#setubi').on('click',function(e){
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '11' + "=" + '1';
+            });
+            $('#honkan_m').on('click',function(e){
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '1';
+            });
+            $('#taiku_m').on('click',function(e){
+                window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '4';
+            });
+            
+            
             
             
 

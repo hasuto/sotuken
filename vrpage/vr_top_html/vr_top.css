@@ -511,6 +511,7 @@ body {
   position: relative;
   opacity: 0.7;
   color: #000;
+  cursor: pointer;
 }
 
 .container .iframe #yahaba_pin_list_all li a.res {
@@ -610,6 +611,7 @@ body {
   position: relative;
   opacity: 0.7;
   color: #000;
+  cursor: pointer;
 }
 
 .container .iframe #mizusawa_pin_list_all li a.res {

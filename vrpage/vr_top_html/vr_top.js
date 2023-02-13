@@ -8,6 +8,7 @@ console.log("変わってる");
 var Top_yahaba_Aframe = document.getElementById('top_aframe');
 var loader = document.getElementById('loader');
 var bgm = document.querySelector('#top_page_bgm');
+
 // $(document).ready(function () {
 //         if (window.performance.navigation.type == 2) {
 //                 //遷移後に動かす処理
@@ -17,7 +18,9 @@ var bgm = document.querySelector('#top_page_bgm');
 // });
 
 window.onload = () => {
+     
 
+       
 
         var data = location.href.split("?")[1];
         if (data == "y") {

@@ -316,7 +316,7 @@ function iframe_load() {
                 window.setTimeout(function () {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
-                    // bgm1.play();
+                    bgm1.play();
                 }, 3000);
 
             } else {
@@ -331,8 +331,8 @@ function iframe_load() {
                     document.getElementById('right_button').style.visibility = 'visible';
                     document.getElementById('left_button').style.visibility = 'visible';
                     // syoukai_bgm.pause();
-                    //bgm_1.play();
-                    //bgm_1.loop = true;
+                    bgm_1.play();
+                    bgm_1.loop = true;
                     button_visi();
                 }, 500);
             }
@@ -739,6 +739,7 @@ function syoukai_hantei() {
         Top_mizusawa_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
         $('.modal_marubatu_body').hide();
         bgm_1 = new Audio('aseets/' + result[csv_column][3] + '.mp3');
+        console.log(bgm_1)
 
     }
 
