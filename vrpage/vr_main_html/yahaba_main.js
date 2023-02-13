@@ -45,7 +45,7 @@ window.onload = function () {
     var list_eles = yahaba_list.getElementsByTagName('input');
     //console.log((list_eles).not('#mekatoro2'));
 
-    $(".yahaba_list").find('ul').append('<li id="y_campus"><a>矢巾へ戻る</a></li>');
+    $(".yahaba_list").find('ul').append('<li id="y_campus"><a>矢巾校へ戻る</a></li>');
 
     $(document).on('click', '#y_campus' , function() {
         window.location.href = "../vr_top_html/vr_top.html?y";

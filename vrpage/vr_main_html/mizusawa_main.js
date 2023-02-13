@@ -44,7 +44,7 @@ window.onload = function () {
     var mizusawa_list = document.getElementById('mizusawa_list');
     var list_eles = mizusawa_list.getElementsByTagName('input');
 
-    $(".mizusawa_list").find('ul').append('<li id="m_campus"><a>水沢へ戻る</a></li>');
+    $(".mizusawa_list").find('ul').append('<li id="m_campus"><a>水沢校へ戻る</a></li>');
 
     $(document).on('click', '#m_campus' , function() {
         window.location.href = "../vr_top_html/vr_top.html?m";

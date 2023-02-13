@@ -163,16 +163,16 @@
                 </label>
                 <input type="checkbox" id="yahaba_pin" class="accordion" />
                 <ul id="yahaba_pin_list">
-                    <li><img src="./images/meka_pin_2.png"><a>メカトロニクス技術科</a></li>
-                    <li><img src="./images/densi_pin.png"><a>電子技術科</a></li>
-                    <li><img src="./images/kentiku_pin.png"><a>建築科</a></li>
-                    <li><img src="./images/sande_pin.png"><a>産業デザイン科</a></li>
-                    <li><img src="./images/zyohou_pin.png"><a>情報技術科</a></li>
-                    <li><img src="./images/senkou_pin.png"><a>専攻技術科</a></li>
-                    <li><img src="./images/honkan_7.png"><a>多目的ホール</a></li>
-                    <li><img src="./images/honkan_8.png"><a>体育館</a></li>
-                    <li><img src="./images/honkan_9.png"><a>学生ホール</a></li>
-                    <li><img src="./images/honkan_10.png"><a>学生寮</a></li>
+                    <li><img src="./images/meka_pin_2.png"><a id="mekatoro">メカトロニクス技術科</a></li>
+                    <li><img src="./images/densi_pin.png"><a id="densi">電子技術科</a></li>
+                    <li><img src="./images/kentiku_pin.png"><a id="kentiku">建築科</a></li>
+                    <li><img src="./images/sande_pin.png"><a id="sande">産業デザイン科</a></li>
+                    <li><img src="./images/zyohou_pin.png"><a id="zyohou">情報技術科</a></li>
+                    <li><img src="./images/senkou_pin.png"><a id="senkou">専攻技術科</a></li>
+                    <li><img src="./images/honkan_7.png"><a id="tamoku">多目的ホール</a></li>
+                    <li><img src="./images/honkan_8.png"><a id="taiku">体育館</a></li>
+                    <li><img src="./images/honkan_9.png"><a id="syoku">学生ホール</a></li>
+                    <li><img src="./images/honkan_10.png"><a id="ryou">学生寮</a></li>
                 </ul>
             </div>
 
@@ -322,6 +322,38 @@
             }
 
 
+            $('#mekatoro').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
+            })
+            $('#densi').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '2' + "=" + '1';
+            });
+            $('#kentiku').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '3' + "=" + '1';
+            })
+            $('#sande').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '4' + "=" + '1';
+            });
+            $('#zyohou').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '5' + "=" + '1';
+            })
+            $('#senkou').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '6' + "=" + '1';
+            });
+            $('#tamoku').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '1';
+            })
+            $('#taiku').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '6';
+            });
+            $('#syoku').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '4';
+            });
+            $('#ryou').on('click',function(e){
+                window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
+            });
+            
+            
 
             //iframeの中のhtmlのidが一致するオブジェクトを押すと実行
             //下記に各科を追加していく
