@@ -12,6 +12,7 @@ var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
 const bgm1 = document.querySelector("#marubatu_bgm");
 var bgm_1;
+var bgm_count = 0;
 var syoukai_bgm = document.querySelector('#syoukai_page_bgm');
 var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
 var yahaba_list_resu = {
@@ -47,7 +48,7 @@ window.onload = function () {
 
     $(".yahaba_list").find('ul').append('<li id="y_campus"><a>矢巾校へ戻る</a></li>');
 
-    $(document).on('click', '#y_campus' , function() {
+    $(document).on('click', '#y_campus', function () {
         window.location.href = "../vr_top_html/vr_top.html?y";
     });
 
@@ -132,7 +133,7 @@ window.onload = function () {
         $(".btn-play").addClass("res");
         $(".setumei_text").addClass("res");
         $(".yahaba_list").find('a').addClass("res");
-        
+
         console.log($('.yahaba_list').find('label'));
 
 
@@ -383,10 +384,10 @@ function iframe_load() {
 
         //         camera_pc.remove();
         //     }
-        
 
-        
-        
+
+
+
         // }else{
 
         // }
@@ -414,8 +415,14 @@ function iframe_load() {
                 window.setTimeout(function () {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
+                    $('.container').mouseenter(function () {
+                        if (bgm_count == 0) {
+                            bgm1.play(); //〇✕ゲーム音源スタート
+                            bgm_count++;
+                        }
+                    });
 
-                    bgm1.play(); //〇✕ゲーム音源スタート
+
                 }, 500);
 
             } else {
@@ -431,9 +438,16 @@ function iframe_load() {
                     document.getElementById('left_button').style.visibility = 'visible';
 
                     //syoukai_bgm.play();
-                    console.log(bgm_1);
-                    bgm_1.play();
-                    bgm_1.loop = true;
+                    $('.container').mouseover(function () {
+                        console.log("触れているよーーーー")
+                        if (bgm_count == 0) {
+                            bgm_1.play(); //〇✕ゲーム音源スタート
+                            bgm_1.loop = true;
+                            bgm_count++;
+                        }
+                    });
+                   // bgm_1.play();
+                  
                     button_visi();
 
                 }, 500);
@@ -507,8 +521,8 @@ function list_visi() {
         $('#back_button').addClass('senkou');
     } else if (Number(this_id1) == 7) {
         document.getElementById('honkan_list_all').style.display = 'inline';
-        document.getElementById('left_button').classList.add("honkou");
-        document.getElementById('right_button').classList.add("honkou");
+        document.getElementById('left_button').classList.add("honkan");
+        document.getElementById('right_button').classList.add("honkan");
         $('#game_button').addClass('honkan');
         $('#back_button').addClass('honkan');
     } else if (Number(this_id1) == 8) {
@@ -610,6 +624,9 @@ document.getElementById('left_button').addEventListener('click', function (e) {
                 break;
             case 5:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
+            //    alert("case5だよ");
+            case 6:
+                syoukai_page(Number(this_id1), Number(this_id2) - 1);
                 //    alert("case5だよ");
 
 
@@ -671,6 +688,16 @@ document.getElementById('right_button').addEventListener('click', function (e) {
 
                 break;
             case 5:
+                if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
+                    syoukai_page(Number(this_id1), Number(this_id2) + 1);
+                    // alert("case5だよ");
+                } else {
+                    syoukai_page(Number(this_id1), 1);
+                    //  alert(reset_txt);
+
+                }
+                break;
+            case 6:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
                     // alert("case5だよ");
@@ -891,14 +918,14 @@ function syoukai_hantei() {
         $(function () {
             var video3 = document.getElementById('modal_marubatu_video2');
             var video4 = document.getElementById('modal_syoukai_video2');
-        
+
             /*使い方*/
             $('#openModal').click(function () {
                 $('#modalArea').fadeIn();
                 $('#modal_marubatu_video2')[0].play();
             });
-        
-        
+
+
             $(function () {
                 $(".tutorial-step1").click(function () {
                     if ($(this).hasClass(".select")) {
@@ -906,7 +933,7 @@ function syoukai_hantei() {
                     } else {
                         $(".tutorial-step1").addClass("select");
                         $(".tutorial-step2.select").removeClass("select");
-        
+
                         $('#modalArea2').fadeOut();
                         $('#modalArea').fadeIn();
                     }
@@ -917,16 +944,16 @@ function syoukai_hantei() {
                     } else {
                         $(".tutorial-step2").addClass("select");
                         $(".tutorial-step1.select").removeClass("select");
-        
+
                         $('#modalArea').fadeOut();
                         $('#modalArea2').fadeIn();
                     }
                 });
             });
-        
-        
-        
-        
+
+
+
+
             $('#switchbtn , #modalBg1 , .tutorial-step2').click(function () {
                 $(".tutorial-step2").addClass("select");
                 $(".tutorial-step1.select").removeClass("select");
@@ -992,10 +1019,10 @@ function syoukai_text() {
 }
 
 
-$(document).ready(function () {
-    if (window.performance.navigation.type == 2) {
-        //遷移後に動かす処理
-        console.log("バック");
-        bgm_1.play();
-    }
-});
+// $(document).ready(function () {
+//     if (window.performance.navigation.type == 2) {
+//         //遷移後に動かす処理
+//         console.log("バック");
+//         bgm_1.play();
+//     }
+// });

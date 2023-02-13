@@ -46,7 +46,7 @@ window.onload = function () {
 
     $(".mizusawa_list").find('ul').append('<li id="m_campus"><a>水沢校へ戻る</a></li>');
 
-    $(document).on('click', '#m_campus' , function() {
+    $(document).on('click', '#m_campus', function () {
         window.location.href = "../vr_top_html/vr_top.html?m";
     });
     //console.log((list_eles).not('#seisan2'));
@@ -483,6 +483,8 @@ document.getElementById('left_button').addEventListener('click', function (e) {
                 break;
             case 5:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
+            case 6:
+                syoukai_page(Number(this_id1), Number(this_id2) - 1);
                 //    alert("case5だよ");
 
 
@@ -544,6 +546,17 @@ document.getElementById('right_button').addEventListener('click', function (e) {
 
                 break;
             case 5:
+                if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
+                    syoukai_page(Number(this_id1), Number(this_id2) + 1);
+                    // alert("case5だよ");
+                } else {
+                    syoukai_page(Number(this_id1), 1);
+                    //  alert(reset_txt);
+
+                }
+
+                break;
+            case 6:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
                     // alert("case5だよ");
