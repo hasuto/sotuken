@@ -12,7 +12,6 @@ var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
 const back_bgm = document.querySelector("#marubatu_bgm");
 
-console.log(back_bgm.volume)
 var syokai_bgm;
 var bgm_count = 0;
 var syoukai_bgm = document.querySelector('#syoukai_page_bgm');
@@ -135,6 +134,7 @@ window.onload = function () {
         $(".btn-play").addClass("res");
         $(".setumei_text").addClass("res");
         $(".yahaba_list").find('a').addClass("res");
+        $("#back_button").addClass("res");
 
         console.log($('.yahaba_list').find('label'));
 

@@ -679,7 +679,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 280px;
+  max-width: 380px;
   padding: 10px 30px 10px 20px;
   color: #313131;
   -webkit-transition: 0.3s ease-in-out;
@@ -689,7 +689,7 @@ html {
 }
 
 .container .yahaba_school .vr_content .button019 a.res {
-  font-size: 1.3em;
+  font-size: 1.7em;
 }
 
 .container .yahaba_school .vr_content .button019 a.meka {
@@ -803,6 +803,10 @@ html {
   padding-right: 60px;
   margin-bottom: 50px;
   margin-left: 30px;
+}
+
+.container .yahaba_school .vr_content #back_button.res {
+  font-size: xx-large;
 }
 
 .container .yahaba_school .vr_content .vr_control {

@@ -674,7 +674,7 @@ body {
                 justify-content: space-around;
                 align-items: center;
 
-                max-width: 280px;
+                max-width: 380px;
                 padding: 10px 30px 10px 20px;
                 color: #313131;
                 transition: 0.3s ease-in-out;
@@ -683,7 +683,7 @@ body {
                 cursor: pointer;
 
                 &.res {
-                    font-size: 1.3em;
+                    font-size: 1.7em;
                 }
 
                 &.seisan {
@@ -774,8 +774,12 @@ body {
                 position: absolute;
                 z-index: 20;
                 bottom: 0;
+                 padding-right: 60px;
                 margin-bottom: 50px;
                 margin-left: 30px;
+                &.res{
+                    font-size: xx-large;
+                }
 
             }
 

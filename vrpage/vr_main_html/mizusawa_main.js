@@ -10,10 +10,10 @@ var id1;
 var id2;
 var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
-const bgm1 = document.querySelector("#marubatu_bgm");
-var bgm_1;
-var syoukai_bgm = document.querySelector('#syoukai_bgm');
-var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
+const back_bgm = document.querySelector("#marubatu_bgm");
+var syokai_bgm;
+// var syoukai_bgm = document.querySelector('#syoukai_bgm');
+// var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
 var mizusawa_list_resu = {
     fontSize: "2em",
     width: "300px"
@@ -101,6 +101,7 @@ window.onload = function () {
         $(".btn-play").addClass("res");
         $(".setumei_text").addClass("res");
         $(".mizusawa_list").find('a').addClass("res");
+        $("#back_button").addClass("res");
         console.log($('.mizusawa_list').find('label'));
         console.log("スマホだよーーーー");
 
@@ -158,25 +159,27 @@ btn.addEventListener("click", () => {
 
     // pausedがtrue=>停止, false=>再生中
     if (game_hantei == "game") {
-        if (!bgm1.paused) {
+        if (!back_bgm.paused) {
             btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「再生ボタン」に切り替え
             console.log("ストップ")
-            bgm1.pause();
+            back_bgm.pause();
         } else {
             btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「一時停止ボタン」に切り替え
             console.log("スタート ")
-            bgm1.play();
+            back_bgm.play();
         }
     } else {
-        if (!bgm_1.paused) {
+        if (!syokai_bgm.paused) {
             btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「再生ボタン」に切り替え
-            console.log("ストップ")
-            bgm_1.pause();
+            console.log("ストップ");
+            syokai_bgm.pause();
+            back_bgm.pause();
         }
         else {
             btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「一時停止ボタン」に切り替え
-            console.log("スタート ")
-            bgm_1.play();
+            console.log("スタート ");
+            syokai_bgm.play();
+            back_bgm.play();
         }
 
     }
@@ -186,8 +189,8 @@ btn.addEventListener("click", () => {
 /**
  * [event] 再生終了時に実行
  */
-bgm1.addEventListener("ended", () => {
-    bgm1.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
+back_bgm.addEventListener("ended", () => {
+    back_bgm.currentTime = 0;  // 再生位置を先頭に移動(こいつはなくても大丈夫です)
     btn.innerHTML = '<img src="ボリュームアイコン　3.png">';  // 「再生ボタン」に変更
 });
 
@@ -316,7 +319,7 @@ function iframe_load() {
                 window.setTimeout(function () {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
-                    bgm1.play();
+                    back_bgm.play();
                 }, 3000);
 
             } else {
@@ -331,8 +334,10 @@ function iframe_load() {
                     document.getElementById('right_button').style.visibility = 'visible';
                     document.getElementById('left_button').style.visibility = 'visible';
                     // syoukai_bgm.pause();
-                    bgm_1.play();
-                    bgm_1.loop = true;
+                    back_bgm.volume = 0.05;
+                    back_bgm.play();
+                    syokai_bgm.play();
+                    syokai_bgm.loop = true;
                     button_visi();
                 }, 500);
             }
@@ -751,8 +756,8 @@ function syoukai_hantei() {
     } else {
         Top_mizusawa_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
         $('.modal_marubatu_body').hide();
-        bgm_1 = new Audio('aseets/' + result[csv_column][3] + '.mp3');
-        console.log(bgm_1)
+        syokai_bgm = new Audio('aseets/' + result[csv_column][3] + '.mp3');
+        console.log(syokai_bgm)
 
     }
 
