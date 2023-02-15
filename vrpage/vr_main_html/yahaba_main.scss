@@ -687,7 +687,7 @@ html {
                 justify-content: space-around;
                 align-items: center;
 
-                max-width: 380px;
+                max-width: 270px;
                 padding: 10px 30px 10px 20px;
                 color: #313131;
                 transition: 0.3s ease-in-out;
@@ -696,6 +696,7 @@ html {
 
                 &.res {
                     font-size: 1.7em;
+                    max-width: 380px;
                 }
 
                 &.meka {
