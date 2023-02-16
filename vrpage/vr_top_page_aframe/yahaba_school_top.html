@@ -74,15 +74,10 @@
 
 
 
-    <a-gltf-model id="zyohou_model" visible="true" 
-      src="top_aseets/zyohou.glb" 
-      position="-13 0 0" 
-      scale="1 1 1"
-      rotation="0 0 0"
-      animation__mouseenter="property: position; 
+    <a-gltf-model id="zyohou_model" visible="true" src="top_aseets/zyohou.glb" position="-13 0 0" scale="1 1 1"
+      rotation="0 0 0" animation__mouseenter="property: position; 
       from: -13 0 0; to: -13 0.4 0; dur: 600; 
-      loop: false;  startEvents: mouseenter"
-      animation__mouseleave="property: position; 
+      loop: false;  startEvents: mouseenter" animation__mouseleave="property: position; 
       from: -13 0.4 0; to: -13 0 0; dur: 600; 
       loop: false;  startEvents: mouseleave"></a-gltf-model>
 
@@ -199,8 +194,18 @@
     <a-gltf-model id="dodai" visible="true" src="top_aseets/yahaba_dodai.glb" position="-13 0 0" scale="1 1.5 1"
       rotation="0 0 0"></a-gltf-model>
 
-      <a-gltf-model id="dodai_2" visible="true" src="top_aseets/yahaba_dodai_2.glb" position="-13 0 0" scale="1 1.5 1"
+    <a-gltf-model id="dodai_2" visible="true" src="top_aseets/yahaba_dodai_2.glb" position="-13 0 0" scale="1 1.5 1"
       rotation="0 0 0"></a-gltf-model>
+
+      <a-gltf-model id="picture" visible="true" src="top_aseets/yahaba_picture.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model>
+
+      <a-gltf-model id="tuuro" visible="true" src="top_aseets/yahaba_tuuro.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model>
+
+      <a-gltf-model id="tuuro_2" visible="true" src="top_aseets/yahaba_tuuro_2.glb" position="-13 0 0" scale="1 1.5 1"
+      rotation="0 0 0"></a-gltf-model>
+
 
 
 
@@ -215,10 +220,7 @@
     <a-entity light="type: ambient; color: #ffffff; intensity:0.7" position="-1 1 0"></a-entity>
     <a-entity light="type: directional; color: #ffffff;  intensity:1" position="90 1 90"></a-entity>
 
-    <a-entity id="camera_pc" 
-      camera look-controls="enabled: false;" 
-      magicWindowTrackingEnabled="false"
-      orbit-controls="target: -4 1.6 -0.5; 
+    <a-entity id="camera_pc" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false" orbit-controls="target: -4 1.6 -0.5; 
       maxPolarAngle:360; minDistance: 0.5; 
       maxDistance: 360; 
       initialPosition: 30 10 -15">
