@@ -8,6 +8,36 @@ $sande-color: #E25C83;
 $zyohou-color: #E54848;
 $senkou-color: #6F4C77;
 
+// p{
+//     font-size: 100px;
+//     .big{
+//         font-size:500px;
+//     }
+// }
+
+// .main .zyohou {
+//     color: #E54848;
+// }
+// .main .densi {
+//     color: #FFA826;
+// }
+// .main .meka {
+//     color: #6F4C77;
+// }
+
+// .main{
+//     &.zyohou{
+//         color: $zyohou-color;
+//     }
+//     &.densi{
+//         color: $densi-color;
+//     }
+//     &.meka{
+//         color: $meka-color;
+//     }
+// }
+
+
 body {
     margin: 0px;
     min-height: 100vh;
@@ -148,7 +178,7 @@ html {
     .header-nav {
         // border-bottom: solid 3px #004EA2;
         position: relative;
-       // border-bottom: solid 3px #004EA2;
+        // border-bottom: solid 3px #004EA2;
 
         .btn-play {
             background-color: #fff;
@@ -167,6 +197,7 @@ html {
             font-weight: 700;
             text-decoration: none;
             margin-left: 20px;
+
             &.res {
                 font-size: xx-large;
             }
@@ -178,6 +209,7 @@ html {
 
             display: inline-flex;
             height: 22px;
+
             &.res {
                 padding-left: 0px;
             }
@@ -189,15 +221,17 @@ html {
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
+
                 &.res {
                     margin-left: 20px;
 
                     &::after {
-                       content: '';
-                       opacity: 0;
+                        content: '';
+                        opacity: 0;
                     }
-                    
+
                 }
+
                 &::after {
                     position: absolute;
                     bottom: 0;
@@ -226,16 +260,20 @@ html {
                     &:hover {
                         opacity: 1;
                     }
+
                     &.res {
                         font-size: x-large;
                     }
                 }
-                .btn-play{
+
+                .btn-play {
                     opacity: 0.7;
-                    &:hover{
+
+                    &:hover {
                         opacity: 1;
                     }
-                    &.res{
+
+                    &.res {
                         padding-top: 5px;
                     }
                 }
@@ -264,7 +302,7 @@ html {
             width: 100%;
             height: 100%;
             background-color: rgba(30, 30, 30, 0.9);
-            
+
         }
 
         #modal1 {
@@ -340,7 +378,8 @@ html {
             cursor: pointer;
         }
 
-        .modal_syoukai_body , .modal_marubatu_body {
+        .modal_syoukai_body,
+        .modal_marubatu_body {
             .modal-text {
                 margin: 10px 0 10px 0;
                 font-size: larger;
@@ -465,7 +504,8 @@ html {
             cursor: pointer;
         }
 
-        .modal_syoukai_body , .modal_marubatu_body {
+        .modal_syoukai_body,
+        .modal_marubatu_body {
             .modal-text {
                 margin: 10px 0 10px 0;
                 font-size: larger;
@@ -676,6 +716,9 @@ html {
                 }
             }
 
+
+
+
             .button019 a {
                 background: #fff;
                 text-decoration: none;
@@ -816,9 +859,10 @@ html {
                 padding-right: 60px;
                 margin-bottom: 50px;
                 margin-left: 30px;
-               &.res{
-                font-size: xx-large;
-               }
+
+                &.res {
+                    font-size: xx-large;
+                }
 
             }
 
@@ -979,6 +1023,28 @@ html {
 
             }
 
+            // .button {
+            //     background-color: #bfbfbf;
+
+            //     &.right {
+            //         color: #E54848;
+            //     }
+
+            //     &.left {
+            //         color: #2A579A;
+            //     }
+            // }
+
+            // .button-right {
+            //     background-color: #bfbfbf;
+            //     color: #E54848;
+            // }
+
+            // .button-left {
+            //     background-color: #bfbfbf;
+            //     color: #2A579A;
+            // }
+
             .button.left.fadein {
                 transform: perspective(100px) translate3d(0px, 0px, 20px);
 
@@ -1105,8 +1171,9 @@ html {
                         bottom: 0;
                         opacity: 1;
                         transition: all 400ms;
-                        &.res{
-                         font-size: 1.8rem;
+
+                        &.res {
+                            font-size: 1.8rem;
                         }
 
                         &.fadein {
@@ -1264,7 +1331,8 @@ html {
                 padding: 10px;
                 text-decoration: none;
                 color: #fff;
-                &.res{
+
+                &.res {
                     font-weight: 600;
                     font-size: 1.5rem;
                 }
@@ -1288,7 +1356,7 @@ html {
 
                 // &.res {
                 //     width: 280px;
-                    
+
                 // }
 
 
@@ -1607,7 +1675,7 @@ html {
 
         }
 
-        
+
 
         // @keyframes roder {
         //     0% {
@@ -1626,6 +1694,7 @@ html {
 
 
     }
+
     .mask {
         z-index: 20;
         width: 100%;
@@ -1635,23 +1704,23 @@ html {
         height: 100%;
         animation-name: mask_fadein;
         animation-duration: 1s;
-    
+
         position: absolute;
         /* 絶対位置指定 */
-    
+
         pointer-events: none;
         background-color: #247BD9;
-    
+
         @keyframes mask_fadein {
             0% {
                 opacity: 0;
             }
-    
+
             100% {
                 opacity: 1;
             }
         }
-    
+
         /* マスクは半透明 */
         .loader,
         .loader:before,
@@ -1664,59 +1733,59 @@ html {
             -webkit-animation: load7 1.8s infinite ease-in-out;
             animation: load7 1.8s infinite ease-in-out;
         }
-    
+
         .loader {
             color: #ffffff;
             font-size: 10px;
             //margin:auto;
             top: 50%;
             left: 49%;
-    
+
             transform: translate(-50%, -50%, 0);
             position: relative;
             text-indent: -9999em;
-    
+
             //transform: translateZ(0);
             -webkit-animation-delay: -0.16s;
             animation-delay: -0.16s;
             pointer-events: none;
-    
+
         }
-    
+
         .loader:before,
         .loader:after {
             content: '';
             position: absolute;
             top: 0;
         }
-    
+
         .loader:before {
             left: -3.5em;
             -webkit-animation-delay: -0.32s;
             animation-delay: -0.32s;
         }
-    
+
         .loader:after {
             left: 3.5em;
         }
-    
-    
+
+
         @keyframes load7 {
-    
+
             0%,
             80%,
             100% {
                 box-shadow: 0 2.5em 0 -1.3em;
             }
-    
+
             40% {
                 box-shadow: 0 2.5em 0 0;
             }
         }
-    
-    
+
+
     }
-    
+
     #roder-img {
         position: relative;
         top: 50%;
@@ -1727,27 +1796,27 @@ html {
         animation-duration: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-    
+
     }
-    
+
     @keyframes pikapika {
         0% {
             opacity: 1;
         }
-    
+
         100% {
             opacity: 0.5;
         }
     }
-    
+
     .mask.roder {
         transition: all 700ms;
         opacity: 0;
         // animation-name: roder;
         // animation-duration: 4.5s;
-    
+
     }
-    
+
 }
 
 

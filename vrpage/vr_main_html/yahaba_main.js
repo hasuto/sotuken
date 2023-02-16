@@ -52,9 +52,10 @@ window.onload = function () {
     $(document).on('click', '#y_campus', function () {
         window.location.href = "../vr_top_html/vr_top.html?y";
     });
-
-    if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    console.log(navigator.userAgent);
+    if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
+       
         // $('.button019').css('fontSize','2em');
         // $('.yahaba_list').css(yahaba_list_resu);
         $('#game_button').addClass('res');
@@ -589,6 +590,19 @@ $('#setumei_button').click(function () {
     $("#setumei_icon").toggleClass("fadein");
 
 })
+
+// $('.button').click(function(){
+//     $(".button").toggleClass("on");
+// })
+
+// $('.button').click(function(){
+
+//     if($(".button").hasClass("on")){
+//         $(".button").removeClass("on");
+//     }else{
+//         $(".button").addClass("on");
+//     }   
+// })
 //　for文
 
 
