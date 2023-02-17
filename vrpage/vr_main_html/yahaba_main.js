@@ -11,7 +11,6 @@ var id2;
 var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
 const back_bgm = document.querySelector("#marubatu_bgm");
-
 var syokai_bgm;
 var bgm_count = 0;
 var syoukai_bgm = document.querySelector('#syoukai_page_bgm');
@@ -426,7 +425,7 @@ function iframe_load() {
                     //         bgm_count++;
                     //     }
                     // });
-                    back_bgm.play()
+                    back_bgm.play();
 
                 }, 500);
 
@@ -456,6 +455,7 @@ function iframe_load() {
                    back_bgm.play();
                    syokai_bgm.play();
                    syokai_bgm.loop=true;
+                    $('.bgm_setumei').addClass(".fadein");
                   
                     button_visi();
 

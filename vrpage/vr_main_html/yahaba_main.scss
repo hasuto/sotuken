@@ -719,7 +719,24 @@ html {
             }
 
 
+            // .bgm_setumei {
+            //     position: absolute;
+            //     z-index: 27;
+            //     right: 0;
+            //     background: white;
+            //     border-radius: 30%;
+            //     opacity: 0;
+            //     padding: 20px 30px;
+            //     font-size: x-large;
+            //     width: 258px;
+            //     font-weight: 600;
+            //     border: solid 3px $honkan-color;
+            //     &.fadein {
+            //         opacity: 1;
+            //         // /transition: all 500ms;
 
+            //     }
+            // }
 
             .button019 a {
                 background: #fff;
@@ -1789,7 +1806,7 @@ html {
     }
 
     #roder-img {
-        position: relative;
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

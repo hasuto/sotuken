@@ -317,14 +317,16 @@ html {
   cursor: pointer;
 }
 
-.container .modalArea .modal_syoukai_body .modal-text, .container .modalArea .modal_marubatu_body .modal-text {
+.container .modalArea .modal_syoukai_body .modal-text,
+.container .modalArea .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
 
-.container .modalArea .modal_syoukai_body img, .container .modalArea .modal_marubatu_body img {
+.container .modalArea .modal_syoukai_body img,
+.container .modalArea .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -437,14 +439,16 @@ html {
   cursor: pointer;
 }
 
-.container .modalArea2 .modal_syoukai_body .modal-text, .container .modalArea2 .modal_marubatu_body .modal-text {
+.container .modalArea2 .modal_syoukai_body .modal-text,
+.container .modalArea2 .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
 
-.container .modalArea2 .modal_syoukai_body img, .container .modalArea2 .modal_marubatu_body img {
+.container .modalArea2 .modal_syoukai_body img,
+.container .modalArea2 .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -1514,7 +1518,7 @@ html {
 }
 
 .container #roder-img {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
