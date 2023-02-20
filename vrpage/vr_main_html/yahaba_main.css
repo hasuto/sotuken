@@ -180,6 +180,83 @@ html {
   cursor: pointer;
 }
 
+.container .header-nav .navbar-nav .nav-item .bgm_setumei {
+  position: absolute;
+  z-index: 27;
+  right: -108px;
+  top: 67px;
+  background: white;
+  border-radius: 30%;
+  opacity: 0;
+  padding: 0px 30px;
+  font-size: large;
+  width: 258px;
+  font-weight: 600;
+  border: solid 3px #004EA2;
+  pointer-events: none;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei::before {
+  content: "";
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  margin-left: -15px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid #FFF;
+  z-index: 2;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei::after {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  margin-left: -17px;
+  border: 22px solid transparent;
+  border-bottom: 22px solid #004EA2;
+  z-index: 1;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei.fadein {
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .container .header-nav .navbar-nav .nav-item.res {
   margin-left: 20px;
 }
@@ -1095,6 +1172,12 @@ html {
   cursor: pointer;
 }
 
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button.res {
+  width: 90px;
+  height: 90px;
+  margin: 0px 0px 13px;
+}
+
 .container .yahaba_school .vr_content .text_parent .setumei .setumei_button:hover {
   opacity: 1;
   -webkit-transition: all 400ms;
@@ -1110,6 +1193,12 @@ html {
   -webkit-transition: all 400ms;
   transition: all 400ms;
   opacity: 0;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.res {
+  width: 70px;
+  height: 70px;
+  bottom: 93%;
 }
 
 .container .yahaba_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.fadein {
@@ -1129,6 +1218,13 @@ html {
   position: absolute;
   top: 30%;
   left: 30%;
+}
+
+.container .yahaba_school .vr_content .text_parent .setumei .setumei_button .batu_icon.res {
+  width: 50px;
+  height: 50px;
+  top: 23%;
+  left: 23%;
 }
 
 .container .yahaba_school .vr_content .text_parent .setumei .setumei_button .batu_icon.fadein {
@@ -1186,7 +1282,7 @@ html {
 }
 
 .container .yahaba_school .yahaba_list {
-  max-width: 360px;
+  max-width: 400px;
   margin-left: 0px;
   margin-top: 10px;
   margin-right: 29px;
@@ -1243,14 +1339,15 @@ html {
 
 .container .yahaba_school .yahaba_list a.res {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 20px;
 }
 
 .container .yahaba_school .yahaba_list label {
   width: 100%;
   display: block;
   margin: 0px 0px 0px 0px;
-  padding: 10px 15px 10px 20px;
+  padding: 10px 30px 10px 40px;
   line-height: 1;
   color: black;
   background: #fff;
@@ -1345,7 +1442,7 @@ html {
 }
 
 .container .yahaba_school .yahaba_list label p.res {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .container .yahaba_school .yahaba_list label p::after {
@@ -1373,7 +1470,7 @@ html {
 }
 
 .container .yahaba_school .yahaba_list ul {
-  max-width: 330px;
+  max-width: 400px;
   margin: 0px 0;
   padding: 0;
   background: #fff;
@@ -1412,6 +1509,17 @@ html {
 .container .yahaba_school .yahaba_list #ryou:checked ~ #ryou_list li {
   height: 54px;
   opacity: 1;
+}
+
+.container .yahaba_school .yahaba_list #densi2:checked ~ #densi_list2 li.res,
+.container .yahaba_school .yahaba_list #mekatoro2:checked ~ #mekatoro_list2 li.res,
+.container .yahaba_school .yahaba_list #kentiku2:checked ~ #kentiku_list2 li.res,
+.container .yahaba_school .yahaba_list #sande2:checked ~ #sande_list2 li.res,
+.container .yahaba_school .yahaba_list #zyohou2:checked ~ #zyohou_list2 li.res,
+.container .yahaba_school .yahaba_list #senkou2:checked ~ #senkou_list2 li.res,
+.container .yahaba_school .yahaba_list #honkan2:checked ~ #honkan_list2 li.res,
+.container .yahaba_school .yahaba_list #ryou:checked ~ #ryou_list li.res {
+  height: 90px;
 }
 
 .container .mask {

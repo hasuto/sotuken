@@ -224,6 +224,69 @@ html {
                 position: relative;
                 cursor: pointer;
 
+                .bgm_setumei {
+                    position: absolute;
+                    z-index: 27;
+                    right: -108px;
+                    top: 67px;
+                    background: white;
+                    border-radius: 30%;
+                    opacity: 0;
+                    padding: 0px 30px;
+                    font-size: large;
+                    width: 258px;
+                    font-weight: 600;
+                    border: solid 3px $honkan-color;
+                    pointer-events: none;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -38px;
+                        left: 50%;
+                        margin-left: -15px;
+                        border: 20px solid transparent;
+                        border-bottom: 20px solid #FFF;
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -45px;
+                        left: 50%;
+                        margin-left: -17px;
+                        border: 22px solid transparent;
+                        border-bottom: 22px solid $honkan-color;
+                        z-index: 1;
+                    }
+
+                    &.fadein {
+                     animation-name: fadein;
+                     animation-duration:6s;  
+                     animation-timing-function:ease;
+
+                    }
+                    @keyframes fadein {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        20% {
+                            opacity: 1;
+                        }
+
+                        80% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+
                 &.res {
                     margin-left: 20px;
 
@@ -719,24 +782,6 @@ html {
             }
 
 
-            // .bgm_setumei {
-            //     position: absolute;
-            //     z-index: 27;
-            //     right: 0;
-            //     background: white;
-            //     border-radius: 30%;
-            //     opacity: 0;
-            //     padding: 20px 30px;
-            //     font-size: x-large;
-            //     width: 258px;
-            //     font-weight: 600;
-            //     border: solid 3px $honkan-color;
-            //     &.fadein {
-            //         opacity: 1;
-            //         // /transition: all 500ms;
-
-            //     }
-            // }
 
             .button019 a {
                 background: #fff;
@@ -1218,6 +1263,12 @@ html {
                         opacity: 0.7;
                         cursor: pointer;
 
+                        &.res {
+                            width: 90px;
+                            height: 90px;
+                            margin: 0px 0px 13px;
+                        }
+
                         &:hover {
                             opacity: 1;
                             transition: all 400ms;
@@ -1235,6 +1286,12 @@ html {
                             height: 30px;
                             transition: all 400ms;
                             opacity: 0;
+
+                            &.res {
+                                width: 70px;
+                                height: 70px;
+                                bottom: 93%;
+                            }
 
                             &.fadein {
                                 transform: perspective(100px) translate3d(0px, 75px, 0px);
@@ -1254,6 +1311,12 @@ html {
                             top: 30%;
                             left: 30%;
 
+                            &.res {
+                                width: 50px;
+                                height: 50px;
+                                top: 23%;
+                                left: 23%;
+                            }
 
                             &.fadein {
                                 opacity: 0;
@@ -1310,7 +1373,7 @@ html {
         }
 
         .yahaba_list {
-            max-width: 360px;
+            max-width: 400px;
             margin-left: 0px;
             margin-top: 10px;
             margin-right: 29px;
@@ -1353,7 +1416,8 @@ html {
 
                 &.res {
                     font-weight: 600;
-                    font-size: 1.5rem;
+                    font-size: 2rem;
+                    padding: 20px;
                 }
             }
 
@@ -1361,7 +1425,7 @@ html {
                 width: 100%;
                 display: block;
                 margin: 0px 0px 0px 0px;
-                padding: 10px 15px 10px 20px;
+                padding: 10px 30px 10px 40px;
                 line-height: 1;
                 color: black;
                 // background: #f0f0f0;
@@ -1574,7 +1638,7 @@ html {
                     left: 0;
 
                     &.res {
-                        font-size: 1.6rem;
+                        font-size: 2rem;
                     }
 
                     //font-size: 1.3rem;
@@ -1630,7 +1694,7 @@ html {
             }
 
             ul {
-                max-width: 330px;
+                max-width: 400px;
                 margin: 0px 0;
                 padding: 0;
                 // background: #f0f0f0;
@@ -1689,8 +1753,13 @@ html {
                 height: 54px;
                 opacity: 1;
 
+                &.res {
+                    height: 90px;
+                }
+
 
             }
+
 
         }
 

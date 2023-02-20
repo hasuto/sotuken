@@ -304,14 +304,16 @@ body {
   cursor: pointer;
 }
 
-.container .modalArea .modal_syoukai_body .modal-text, .container .modalArea .modal_marubatu_body .modal-text {
+.container .modalArea .modal_syoukai_body .modal-text,
+.container .modalArea .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
 
-.container .modalArea .modal_syoukai_body img, .container .modalArea .modal_marubatu_body img {
+.container .modalArea .modal_syoukai_body img,
+.container .modalArea .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -424,14 +426,16 @@ body {
   cursor: pointer;
 }
 
-.container .modalArea2 .modal_syoukai_body .modal-text, .container .modalArea2 .modal_marubatu_body .modal-text {
+.container .modalArea2 .modal_syoukai_body .modal-text,
+.container .modalArea2 .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
 
-.container .modalArea2 .modal_syoukai_body img, .container .modalArea2 .modal_marubatu_body img {
+.container .modalArea2 .modal_syoukai_body img,
+.container .modalArea2 .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
@@ -1032,6 +1036,12 @@ body {
   cursor: pointer;
 }
 
+.container .mizusawa_school .vr_content .text_parent .setumei .setumei_button.res {
+  width: 90px;
+  height: 90px;
+  margin: 0px 0px 13px;
+}
+
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button:hover {
   opacity: 1;
   -webkit-transition: all 400ms;
@@ -1047,6 +1057,12 @@ body {
   -webkit-transition: all 400ms;
   transition: all 400ms;
   opacity: 0;
+}
+
+.container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.res {
+  width: 70px;
+  height: 70px;
+  bottom: 93%;
 }
 
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.fadein {
@@ -1066,6 +1082,13 @@ body {
   position: absolute;
   top: 30%;
   left: 30%;
+}
+
+.container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .batu_icon.res {
+  width: 50px;
+  height: 50px;
+  top: 23%;
+  left: 23%;
 }
 
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .batu_icon.fadein {
@@ -1123,7 +1146,7 @@ body {
 }
 
 .container .mizusawa_school .mizusawa_list {
-  max-width: 360px;
+  max-width: 450px;
   margin-left: 0px;
   margin-top: 10px;
   margin-right: 29px;
@@ -1176,14 +1199,15 @@ body {
 
 .container .mizusawa_school .mizusawa_list a.res {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 20px;
 }
 
 .container .mizusawa_school .mizusawa_list label {
-  max-width: 330px;
+  max-width: 100%;
   display: block;
   margin: 0px 0px 0px 0px;
-  padding: 10px 15px 10px 20px;
+  padding: 10px 30px 10px 40px;
   line-height: 1;
   color: black;
   background: #fff;
@@ -1245,7 +1269,7 @@ body {
 }
 
 .container .mizusawa_school .mizusawa_list label p.res {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .container .mizusawa_school .mizusawa_list label p::after {
@@ -1273,7 +1297,7 @@ body {
 }
 
 .container .mizusawa_school .mizusawa_list ul {
-  max-width: 330px;
+  max-width: 450px;
   margin: 0px 0;
   padding: 0;
   background: #fff;
@@ -1304,6 +1328,13 @@ body {
 .container .mizusawa_school .mizusawa_list #honkan_m:checked ~ #honkan_m_list li {
   height: 54px;
   opacity: 1;
+}
+
+.container .mizusawa_school .mizusawa_list #denki:checked ~ #denki_list li.res,
+.container .mizusawa_school .mizusawa_list #seisan:checked ~ #seisan_list li.res,
+.container .mizusawa_school .mizusawa_list #setubi:checked ~ #setubi_list li.res,
+.container .mizusawa_school .mizusawa_list #honkan_m:checked ~ #honkan_m_list li.res {
+  height: 90px;
 }
 
 .container .mask {

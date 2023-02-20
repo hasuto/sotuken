@@ -102,6 +102,11 @@ window.onload = function () {
         $(".setumei_text").addClass("res");
         $(".mizusawa_list").find('a').addClass("res");
         $("#back_button").addClass("res");
+        $("#mizusawa_list").find('li').addClass("res");
+        $(".setumei_button").addClass("res");
+        $(".setumei_icon").addClass("res");
+        $(".batu_icon").addClass("res");
+
         console.log($('.mizusawa_list').find('label'));
         console.log("スマホだよーーーー");
 

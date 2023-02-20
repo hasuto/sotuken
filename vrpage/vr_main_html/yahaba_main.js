@@ -15,6 +15,7 @@ var syokai_bgm;
 var bgm_count = 0;
 var syoukai_bgm = document.querySelector('#syoukai_page_bgm');
 var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
+var back_hantei;
 var yahaba_list_resu = {
     fontSize: "2em",
     width: "300px"
@@ -135,7 +136,11 @@ window.onload = function () {
         $(".setumei_text").addClass("res");
         $(".yahaba_list").find('a').addClass("res");
         $("#back_button").addClass("res");
-
+        $("#yahaba_list").find('li').addClass("res");
+        $(".setumei_button").addClass("res");
+        $(".setumei_icon").addClass("res");
+        $(".batu_icon").addClass("res");
+        $('.bgm_setumei').addClass("fadein");
         console.log($('.yahaba_list').find('label'));
 
 
@@ -221,7 +226,11 @@ window.onload = function () {
 
 }
 
-
+$(document).ready(function () {
+    if (window.performance.navigation.type == 2 || window.performance.navigation.type == 1) {
+        back_hantei = true;
+    }
+});
 // <audio>
 const btn = document.querySelector(".btn-play");   // <button>
 
@@ -451,11 +460,14 @@ function iframe_load() {
                     //     }
                     // });
                    // syokai_bgm.play();
+                   
                    back_bgm.volume = 0.05;
                    back_bgm.play();
                    syokai_bgm.play();
                    syokai_bgm.loop=true;
-                    $('.bgm_setumei').addClass(".fadein");
+                   if(back_hantei){
+                    $('.bgm_setumei').addClass("fadein");
+                   }
                   
                     button_visi();
 
