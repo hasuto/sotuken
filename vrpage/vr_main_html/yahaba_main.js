@@ -140,7 +140,8 @@ window.onload = function () {
         $(".setumei_button").addClass("res");
         $(".setumei_icon").addClass("res");
         $(".batu_icon").addClass("res");
-        $('.bgm_setumei').addClass("fadein");
+        $('.bgm_setumei').addClass("res");
+        
         console.log($('.yahaba_list').find('label'));
 
 
@@ -434,6 +435,9 @@ function iframe_load() {
                     //         bgm_count++;
                     //     }
                     // });
+                    if(back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0){
+                        $('.bgm_setumei').addClass("fadein");
+                       }
                     back_bgm.play();
 
                 }, 500);
@@ -465,7 +469,7 @@ function iframe_load() {
                    back_bgm.play();
                    syokai_bgm.play();
                    syokai_bgm.loop=true;
-                   if(back_hantei){
+                   if(back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0){
                     $('.bgm_setumei').addClass("fadein");
                    }
                   

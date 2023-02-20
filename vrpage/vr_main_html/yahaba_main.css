@@ -186,7 +186,7 @@ html {
   right: -108px;
   top: 67px;
   background: white;
-  border-radius: 30%;
+  border-radius: 12%;
   opacity: 0;
   padding: 0px 30px;
   font-size: large;
@@ -194,6 +194,20 @@ html {
   font-weight: 600;
   border: solid 3px #004EA2;
   pointer-events: none;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei.res {
+  font-size: x-large;
+  right: -34px;
+  width: 307px;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei.res::before {
+  left: 82%;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei.res::after {
+  left: 82%;
 }
 
 .container .header-nav .navbar-nav .nav-item .bgm_setumei::before {

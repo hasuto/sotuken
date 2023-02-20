@@ -167,6 +167,83 @@ body {
   cursor: pointer;
 }
 
+.container .header-nav .navbar-nav .nav-item .bgm_setumei {
+  position: absolute;
+  z-index: 27;
+  right: -108px;
+  top: 67px;
+  background: white;
+  border-radius: 30%;
+  opacity: 0;
+  padding: 0px 30px;
+  font-size: large;
+  width: 258px;
+  font-weight: 600;
+  border: solid 3px #004EA2;
+  pointer-events: none;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei::before {
+  content: "";
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  margin-left: -15px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid #FFF;
+  z-index: 2;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei::after {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  margin-left: -17px;
+  border: 22px solid transparent;
+  border-bottom: 22px solid #004EA2;
+  z-index: 1;
+}
+
+.container .header-nav .navbar-nav .nav-item .bgm_setumei.fadein {
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .container .header-nav .navbar-nav .nav-item.res {
   margin-left: 20px;
 }

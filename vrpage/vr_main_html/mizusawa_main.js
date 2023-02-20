@@ -12,6 +12,7 @@ var game_hantei;
 var setumei_text = document.getElementById('setumei_text');
 const back_bgm = document.querySelector("#marubatu_bgm");
 var syokai_bgm;
+var back_hantei;
 // var syoukai_bgm = document.querySelector('#syoukai_bgm');
 // var syoukai_bgm_2 = document.getElementById('syoukai_bgm_2');
 var mizusawa_list_resu = {
@@ -106,6 +107,7 @@ window.onload = function () {
         $(".setumei_button").addClass("res");
         $(".setumei_icon").addClass("res");
         $(".batu_icon").addClass("res");
+        $('.bgm_setumei').addClass("fadein");
 
         console.log($('.mizusawa_list').find('label'));
         console.log("スマホだよーーーー");
@@ -325,6 +327,9 @@ function iframe_load() {
                     console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
                     back_bgm.play();
+                    if(back_hantei){
+                        $('.bgm_setumei').addClass("fadein");
+                       }
                 }, 3000);
 
             } else {
@@ -343,6 +348,9 @@ function iframe_load() {
                     back_bgm.play();
                     syokai_bgm.play();
                     syokai_bgm.loop = true;
+                    if(back_hantei){
+                        $('.bgm_setumei').addClass("fadein");
+                       }
                     button_visi();
                 }, 500);
             }

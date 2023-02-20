@@ -182,6 +182,68 @@ body {
                 position: relative;
                 cursor: pointer;
 
+                .bgm_setumei {
+                    position: absolute;
+                    z-index: 27;
+                    right: -108px;
+                    top: 67px;
+                    background: white;
+                    border-radius: 30%;
+                    opacity: 0;
+                    padding: 0px 30px;
+                    font-size: large;
+                    width: 258px;
+                    font-weight: 600;
+                    border: solid 3px $honkan-color;
+                    pointer-events: none;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -38px;
+                        left: 50%;
+                        margin-left: -15px;
+                        border: 20px solid transparent;
+                        border-bottom: 20px solid #FFF;
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -45px;
+                        left: 50%;
+                        margin-left: -17px;
+                        border: 22px solid transparent;
+                        border-bottom: 22px solid $honkan-color;
+                        z-index: 1;
+                    }
+
+                    &.fadein {
+                     animation-name: fadein;
+                     animation-duration:6s;  
+                     animation-timing-function:ease;
+
+                    }
+                    @keyframes fadein {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        20% {
+                            opacity: 1;
+                        }
+
+                        80% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+
                 &.res {
                     margin-left: 20px;
 
