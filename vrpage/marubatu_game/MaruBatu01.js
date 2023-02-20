@@ -825,6 +825,7 @@ function issue() {
 
     switch (cnt) {
         case 1:
+            if(result[cnt][0] != null){
             issue1.setAttribute('visible', true);
             issueback.setAttribute('visible', true);
             monbun1.setAttribute('visible', true);
@@ -832,8 +833,10 @@ function issue() {
             monbun1_3.setAttribute('visible', true);
             console.log(cnt);
             split_problem_statement(cnt);
+            }
             break;
         case 2:
+            if(result[cnt][0] != null){
             issue1.setAttribute('visible', false);
             issue2.setAttribute('visible', true);
             monbun2.setAttribute('visible', true);
@@ -844,9 +847,11 @@ function issue() {
             monbun1_3.setAttribute('visible', false);
             console.log(cnt);
             split_problem_statement(cnt);
+            }
             break;
 
         case 3:
+            if(result[cnt][0] !== null){
             issue2.setAttribute('visible', false);
             issue3.setAttribute('visible', true);
             monbun3.setAttribute('visible', true);
@@ -856,8 +861,10 @@ function issue() {
             monbun2_2.setAttribute('visible', false);
             monbun2_3.setAttribute('visible', false);
             split_problem_statement(cnt);
+            }
             break;
         case 4:
+            if(result[cnt][0] !== null){
             issue3.setAttribute('visible', false);
             issue4.setAttribute('visible', true);
             monbun4.setAttribute('visible', true);
@@ -867,8 +874,10 @@ function issue() {
             monbun3_2.setAttribute('visible', false);
             monbun3_3.setAttribute('visible', false);
             split_problem_statement(cnt);
+            }
             break;
         case 5:
+            if(result[cnt][0] !== null){
             issue4.setAttribute('visible', false);
             issue5.setAttribute('visible', true);
             monbun5.setAttribute('visible', true);
@@ -878,6 +887,7 @@ function issue() {
             monbun4_2.setAttribute('visible', false);
             monbun4_3.setAttribute('visible', false);
             split_problem_statement(cnt);
+            }
             break;
     }
 
