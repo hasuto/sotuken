@@ -55,7 +55,7 @@ window.onload = function () {
     console.log(navigator.userAgent);
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
-       
+
         // $('.button019').css('fontSize','2em');
         // $('.yahaba_list').css(yahaba_list_resu);
         $('#game_button').addClass('res');
@@ -141,7 +141,7 @@ window.onload = function () {
         $(".setumei_icon").addClass("res");
         $(".batu_icon").addClass("res");
         $('.bgm_setumei').addClass("res");
-        
+
         console.log($('.yahaba_list').find('label'));
 
 
@@ -226,6 +226,29 @@ window.onload = function () {
 
 
 }
+
+
+const setFillHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+let vw = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    if (vw === window.innerWidth) {
+        // 画面の横幅にサイズ変動がないので処理を終える
+        return;
+    }
+
+    // 画面の横幅のサイズ変動があった時のみ高さを再計算する
+    vw = window.innerWidth;
+    setFillHeight();
+});
+
+// 初期化
+setFillHeight();
+
 
 $(document).ready(function () {
     if (window.performance.navigation.type == 2 || window.performance.navigation.type == 1) {
@@ -435,9 +458,9 @@ function iframe_load() {
                     //         bgm_count++;
                     //     }
                     // });
-                    if(back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0){
+                    if (back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
                         $('.bgm_setumei').addClass("fadein");
-                       }
+                    }
                     back_bgm.play();
 
                 }, 500);
@@ -463,16 +486,16 @@ function iframe_load() {
                     //         bgm_count++;
                     //     }
                     // });
-                   // syokai_bgm.play();
-                   
-                   back_bgm.volume = 0.05;
-                   back_bgm.play();
-                   syokai_bgm.play();
-                   syokai_bgm.loop=true;
-                   if(back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0){
-                    $('.bgm_setumei').addClass("fadein");
-                   }
-                  
+                    // syokai_bgm.play();
+
+                    back_bgm.volume = 0.05;
+                    back_bgm.play();
+                    syokai_bgm.play();
+                    syokai_bgm.loop = true;
+                    if (back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
+                        $('.bgm_setumei').addClass("fadein");
+                    }
+
                     button_visi();
 
                 }, 500);
