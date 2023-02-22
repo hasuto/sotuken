@@ -6,12 +6,10 @@ body {
 .container {
   width: 100%;
   height: 100vh;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* モーダルCSS */
   /* モーダルCSS */
 }
-
 .container .tutorial-modalArea {
   position: fixed;
   z-index: 40;
@@ -21,19 +19,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .container .tutorial-modalArea .tutorial-modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   height: auto;
   max-width: 600px;
@@ -41,14 +36,12 @@ body {
   background-color: #fff;
   border-radius: 10px;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-content .tutorial-modal-footer {
   position: relative;
   width: 100%;
   height: 26px;
   margin: 10px 0 10px 0;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-content .tutorial-modal-footer #closebtn {
   font-size: large;
   font-weight: bold;
@@ -60,23 +53,19 @@ body {
   background-color: #fff;
   border-radius: 5px;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-title {
   font-size: larger;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-body .tutorial-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 600;
   text-align: center;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .tutorial-modal-body img {
   width: 100%;
   height: 100%;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .closebtn {
   margin: auto;
   text-align: center;
@@ -88,20 +77,15 @@ body {
   padding: 0.8em;
   text-decoration: none;
   border-radius: 4px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .container .tutorial-modalArea .tutorial-modalWrapper .closebtn:hover {
   cursor: pointer;
   text-decoration: none;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
 }
-
 .container .tutorial-modalArea .closeModal {
   width: 56px;
   height: 56px;
@@ -112,29 +96,24 @@ body {
   right: -1rem;
   cursor: pointer;
 }
-
 .container .tutorial-modalArea .closeModal p {
   width: 56px;
   height: 56px;
-  color: white;
-  display: -ms-grid;
+  color: rgb(255, 255, 255);
   display: grid;
   place-items: center;
   font-size: 30px;
   margin: 0;
 }
-
 .container .header-nav .btn-play {
   background-color: #fff;
   border: none;
   border-radius: 5px;
 }
-
 .container .header-nav img {
   width: 20px;
   height: 20px;
 }
-
 .container .header-nav .navbar-brand {
   color: #004ea2;
   font-size: larger;
@@ -142,31 +121,23 @@ body {
   text-decoration: none;
   margin-left: 20px;
 }
-
 .container .header-nav .navbar-brand.res {
   font-size: xx-large;
 }
-
 .container .header-nav .navbar-nav {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 22px;
 }
-
 .container .header-nav .navbar-nav.res {
   padding-left: 0px;
 }
-
 .container .header-nav .navbar-nav .nav-item {
   list-style: none;
   margin-left: 50px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  transition: 0.3s;
   position: relative;
   cursor: pointer;
 }
-
 .container .header-nav .navbar-nav .nav-item .bgm_setumei {
   position: absolute;
   z-index: 27;
@@ -182,7 +153,6 @@ body {
   border: solid 3px #004EA2;
   pointer-events: none;
 }
-
 .container .header-nav .navbar-nav .nav-item .bgm_setumei::before {
   content: "";
   position: absolute;
@@ -193,7 +163,6 @@ body {
   border-bottom: 20px solid #FFF;
   z-index: 2;
 }
-
 .container .header-nav .navbar-nav .nav-item .bgm_setumei::after {
   content: "";
   position: absolute;
@@ -204,31 +173,11 @@ body {
   border-bottom: 22px solid #004EA2;
   z-index: 1;
 }
-
 .container .header-nav .navbar-nav .nav-item .bgm_setumei.fadein {
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
+  animation-name: fadein;
+  animation-duration: 6s;
+  animation-timing-function: ease;
 }
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -243,34 +192,27 @@ body {
     opacity: 0;
   }
 }
-
 .container .header-nav .navbar-nav .nav-item.res {
   margin-left: 20px;
 }
-
 .container .header-nav .navbar-nav .nav-item.res::after {
-  content: '';
+  content: "";
   opacity: 0;
 }
-
 .container .header-nav .navbar-nav .nav-item::after {
   position: absolute;
   bottom: 0;
   left: 50%;
-  content: '';
+  content: "";
   height: 1.8px;
   background-color: #004EA2;
-  -webkit-transition: .3s;
-  transition: .3s;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transition: 0.3s;
+  transform: translateX(-50%);
   width: 0;
 }
-
 .container .header-nav .navbar-nav .nav-item:hover::after {
   width: 100%;
 }
-
 .container .header-nav .navbar-nav .nav-item .nav-link {
   color: #004ea2;
   font-size: medium;
@@ -278,27 +220,21 @@ body {
   text-decoration: none;
   opacity: 0.7;
 }
-
 .container .header-nav .navbar-nav .nav-item .nav-link:hover {
   opacity: 1;
 }
-
 .container .header-nav .navbar-nav .nav-item .nav-link.res {
   font-size: x-large;
 }
-
 .container .header-nav .navbar-nav .nav-item .btn-play {
   opacity: 0.7;
 }
-
 .container .header-nav .navbar-nav .nav-item .btn-play:hover {
   opacity: 1;
 }
-
 .container .header-nav .navbar-nav .nav-item .btn-play.res {
   padding-top: 5px;
 }
-
 .container .modalArea {
   display: none;
   position: fixed;
@@ -309,19 +245,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .container .modalArea .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 .container .modalArea #modal1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   height: auto;
   max-width: 600px;
@@ -329,25 +262,21 @@ body {
   background-color: #fff;
   border-radius: 10px;
 }
-
 .container .modalArea #modal1 .tutorial-popin-nav ul {
   text-align: center;
   display: block;
   padding: 0 0 15px 0;
 }
-
 .container .modalArea #modal1 .tutorial-popin-nav ul li {
   display: inline-block;
   padding: 5px;
 }
-
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1.select,
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1,
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2 {
   width: 12px;
@@ -356,31 +285,26 @@ body {
   border: none;
   border-radius: 100%;
   background-color: #bfbfbf;
-  -webkit-transition: background-color .3s ease;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
   padding: 0;
   cursor: pointer;
   margin: 0;
 }
-
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step1:hover,
 .container .modalArea #modal1 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
-
 .container .modalArea .modal-header .modal-title {
   font-size: larger;
   text-align: center;
   border-bottom: solid 2px #004EA2;
 }
-
 .container .modalArea .closeModal {
   position: absolute;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
-
 .container .modalArea .modal_syoukai_body .modal-text,
 .container .modalArea .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
@@ -388,13 +312,11 @@ body {
   font-weight: 700;
   text-align: center;
 }
-
 .container .modalArea .modal_syoukai_body img,
 .container .modalArea .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
-
 .container .modalArea #switchbtn {
   margin: auto;
   text-align: center;
@@ -406,20 +328,15 @@ body {
   padding: 0.8em;
   text-decoration: none;
   border-radius: 4px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .container .modalArea #switchbtn:hover {
   cursor: pointer;
   text-decoration: none;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
 }
-
 .container .modalArea2 {
   display: none;
   position: fixed;
@@ -430,19 +347,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .container .modalArea2 .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 .container .modalArea2 #modal2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   height: auto;
   max-width: 600px;
@@ -450,25 +364,21 @@ body {
   background-color: #fff;
   border-radius: 10px;
 }
-
 .container .modalArea2 #modal2 .tutorial-popin-nav ul {
   text-align: center;
   display: block;
   padding: 0 0 15px 0;
 }
-
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li {
   display: inline-block;
   padding: 5px;
 }
-
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1.select,
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2.select {
   pointer-events: none;
   background-color: #004EA2;
   border-radius: 50%;
 }
-
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1,
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2 {
   text-align: center;
@@ -478,31 +388,26 @@ body {
   border: none;
   border-radius: 100%;
   background-color: #bfbfbf;
-  -webkit-transition: background-color .3s ease;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
   padding: 0;
   cursor: pointer;
   margin: 0;
 }
-
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step1:hover,
 .container .modalArea2 #modal2 .tutorial-popin-nav ul li .tutorial-step2:hover {
   background-color: #004EA2;
 }
-
 .container .modalArea2 .modal-header .modal-title {
   font-size: larger;
   text-align: center;
   border-bottom: solid 2px #004EA2;
 }
-
 .container .modalArea2 .closeModal {
   position: absolute;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
-
 .container .modalArea2 .modal_syoukai_body .modal-text,
 .container .modalArea2 .modal_marubatu_body .modal-text {
   margin: 10px 0 10px 0;
@@ -510,13 +415,11 @@ body {
   font-weight: 700;
   text-align: center;
 }
-
 .container .modalArea2 .modal_syoukai_body img,
 .container .modalArea2 .modal_marubatu_body img {
   width: 100%;
   height: 100%;
 }
-
 .container .modalArea2 #closebtn {
   margin: auto;
   text-align: center;
@@ -528,20 +431,15 @@ body {
   padding: 0.8em;
   text-decoration: none;
   border-radius: 4px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .container .modalArea2 #closebtn:hover {
   cursor: pointer;
   text-decoration: none;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
 }
-
 .container .update-modalArea {
   display: none;
   position: fixed;
@@ -552,19 +450,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .container .update-modalArea .update-modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 .container .update-modalArea .update-modalWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   height: auto;
   max-width: 600px;
@@ -572,31 +467,26 @@ body {
   background-color: #fff;
   border-radius: 10px;
 }
-
 .container .update-modalArea .update-modal-title {
   font-size: larger;
   text-align: center;
   border-bottom: solid 2px #004EA2;
 }
-
 .container .update-modalArea .update-closeModal {
   position: absolute;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
-
 .container .update-modalArea .update-modal-body li {
   margin-bottom: 10px;
 }
-
 .container .update-modalArea .update-modal-body .update-modal-text {
   margin: 10px 0 10px 0;
   font-size: larger;
   font-weight: 700;
   text-align: center;
 }
-
 .container .update-modalArea .update-modal-body .update-text {
   font-size: larger;
   font-weight: 700;
@@ -604,7 +494,6 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .container .update-modalArea .closebtn {
   margin: auto;
   text-align: center;
@@ -616,26 +505,20 @@ body {
   padding: 0.8em;
   text-decoration: none;
   border-radius: 4px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .container .update-modalArea .closebtn:hover {
   cursor: pointer;
   text-decoration: none;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
 }
-
 .container .modalWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 70%;
   height: auto;
   max-width: 500px;
@@ -643,54 +526,33 @@ body {
   background-color: #fff;
   border-radius: 10px;
 }
-
 .container .modalWrapper .modal-title {
   font-size: larger;
 }
-
 .container .modalWrapper .closeModal {
   position: absolute;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
-
 .container .modalWrapper .modal-body ul {
   width: auto;
 }
-
 .container .modalWrapper .modal-body ulli {
   margin: 10px;
 }
-
 .container .modalWrapper .modal-body ulliimg {
   padding: 3px;
 }
-
 .container .mizusawa_school {
   background-color: #004EA2;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-animation-name: mizusawa_school_fadein;
-          animation-name: mizusawa_school_fadein;
-  -webkit-animation-direction: 1s;
-          animation-direction: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: mizusawa_school_fadein;
+  animation-direction: 1s;
+  animation-fill-mode: forwards;
   height: calc(100% - 54px);
   width: 100%;
 }
-
-@-webkit-keyframes mizusawa_school_fadein {
-  0% {
-    background-color: #004EA2;
-  }
-  100% {
-    background-color: #fff;
-  }
-}
-
 @keyframes mizusawa_school_fadein {
   0% {
     background-color: #004EA2;
@@ -699,30 +561,14 @@ body {
     background-color: #fff;
   }
 }
-
 .container .mizusawa_school .vr_content {
   border-top: solid 3px #004EA2;
   width: 100%;
   height: 100%;
-  -webkit-animation-name: vr_content_fadein;
-          animation-name: vr_content_fadein;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: vr_content_fadein;
+  animation-duration: 3s;
   position: relative;
 }
-
-@-webkit-keyframes vr_content_fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes vr_content_fadein {
   0% {
     opacity: 0;
@@ -734,60 +580,47 @@ body {
     opacity: 1;
   }
 }
-
 .container .mizusawa_school .vr_content .button019 a {
   background: #fff;
   text-decoration: none;
   left: 30px;
   border-radius: 50px;
   position: absolute;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   max-width: 270px;
   padding: 10px 30px 10px 20px;
   color: #313131;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   font-weight: 700;
   z-index: 20;
   cursor: pointer;
 }
-
 .container .mizusawa_school .vr_content .button019 a.res {
   font-size: 1.7em;
   max-width: 380px;
 }
-
 .container .mizusawa_school .vr_content .button019 a.seisan {
   border: solid #007EB1 3px;
 }
-
 .container .mizusawa_school .vr_content .button019 a.denki {
   border: solid #ED7A25 3px;
 }
-
 .container .mizusawa_school .vr_content .button019 a.setubi {
   border: solid #2E792D 3px;
 }
-
 .container .mizusawa_school .vr_content .button019 a.honkan {
   border: solid #004EA2 3px;
 }
-
 .container .mizusawa_school .vr_content .button019 a:first-child {
   margin: 13px 270px 0px 0px;
   right: 0;
 }
-
 .container .mizusawa_school .vr_content .button019 a:nth-child(2) {
   margin-left: 30px;
   bottom: 0;
   left: 0;
 }
-
 .container .mizusawa_school .vr_content .button019 a:after {
   content: "";
   position: absolute;
@@ -795,49 +628,35 @@ body {
   bottom: 0;
   right: 2rem;
   font-size: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: right 0.3s;
+  justify-content: center;
+  align-items: center;
   transition: right 0.3s;
   width: 6px;
   height: 6px;
   border-top: solid 2px currentColor;
   border-right: solid 2px currentColor;
-  -webkit-transform: translateY(-50%) rotate(45deg);
-          transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
-
 .container .mizusawa_school .vr_content .button019 a.seisan:hover {
   background: #007EB1;
   color: #FFF;
 }
-
 .container .mizusawa_school .vr_content .button019 a.denki:hover {
   background: #ED7A25;
   color: #FFF;
 }
-
 .container .mizusawa_school .vr_content .button019 a.setubi:hover {
   background: #2E792D;
   color: #FFF;
 }
-
 .container .mizusawa_school .vr_content .button019 a.honkan:hover {
   background: #004EA2;
   color: #FFF;
 }
-
 .container .mizusawa_school .vr_content .button019 a:hover:after {
   right: 1.4rem;
 }
-
 .container .mizusawa_school .vr_content #back_button {
   position: absolute;
   z-index: 20;
@@ -846,32 +665,26 @@ body {
   margin-bottom: 50px;
   margin-left: 30px;
 }
-
 .container .mizusawa_school .vr_content #back_button.res {
   font-size: xx-large;
 }
-
 .container .mizusawa_school .vr_content .vr_control {
   position: relative;
   z-index: 2;
   width: 100%;
 }
-
 .container .mizusawa_school .vr_content .vr_control ul {
   list-style: none;
   margin: 5px 0px 0px 8%;
   padding-left: 0;
 }
-
 .container .mizusawa_school .vr_content .vr_control ul li {
   margin-left: 5px;
   display: inline-block;
 }
-
 .container .mizusawa_school .vr_content .vr_control ul li:nth-child(2) {
   margin-left: -1px;
 }
-
 .container .mizusawa_school .vr_content .vr_control ul li img {
   opacity: 0.7;
   border-radius: 10px;
@@ -880,11 +693,9 @@ body {
   width: 50px;
   height: 50px;
 }
-
 .container .mizusawa_school .vr_content .vr_control ul li img:hover {
   opacity: 1;
 }
-
 .container .mizusawa_school .vr_content .iframe {
   width: 100%;
   height: 100%;
@@ -892,13 +703,11 @@ body {
   display: block;
   position: relative;
 }
-
 .container .mizusawa_school .vr_content .iframe .iframe_main {
   width: 100%;
   height: 100%;
   margin: 0px 0px 0px 0px;
 }
-
 .container .mizusawa_school .vr_content .iframe .iframe_main iframe {
   margin-top: 0px;
   position: absolute;
@@ -909,13 +718,11 @@ body {
   height: 100%;
   border: none;
 }
-
 .container .mizusawa_school .vr_content .iframe .iframe_main .school_img {
   z-index: 3;
   padding-top: 10px;
   position: absolute;
 }
-
 .container .mizusawa_school .vr_content .iframe .iframe_main .school_img #title-img {
   background-color: rgba(255, 255, 255, 0.2);
   position: relative;
@@ -930,7 +737,6 @@ body {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
 .container .mizusawa_school .vr_content .button {
   position: absolute;
   z-index: 20;
@@ -938,11 +744,8 @@ body {
   display: inline;
   cursor: pointer;
 }
-
 .container .mizusawa_school .vr_content .button.left {
-  -webkit-transform: perspective(50px) translate3d(-30px, 20px, 0px);
-          transform: perspective(50px) translate3d(-30px, 20px, 0px);
-  -webkit-transition: all 1000ms;
+  transform: perspective(50px) translate3d(-30px, 20px, 0px);
   transition: all 1000ms;
   width: 80px;
   height: 80px;
@@ -954,39 +757,29 @@ body {
   display: inline;
   vertical-align: middle;
 }
-
 .container .mizusawa_school .vr_content .button.left::after {
   margin-top: 23px;
   margin-left: 28px;
   display: block;
-  content: '';
+  content: "";
   left: 3px;
   width: 25px;
   height: 25px;
   border-left: 5px solid;
   border-bottom: 5px solid;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   z-index: 20;
 }
-
 .container .mizusawa_school .vr_content .button.left.fadein {
-  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
-          transform: perspective(100px) translate3d(0px, 0px, 20px);
+  transform: perspective(100px) translate3d(0px, 0px, 20px);
 }
-
 .container .mizusawa_school .vr_content .button.left.fadein:hover {
   background: white;
-  -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transform: perspective(100px) translateZ(10px);
-          transform: perspective(100px) translateZ(10px);
+  transform: perspective(100px) translateZ(10px);
 }
-
 .container .mizusawa_school .vr_content .button.right {
-  -webkit-transform: perspective(100px) translate3d(30px, 20px, 0px);
-          transform: perspective(100px) translate3d(30px, 20px, 0px);
-  -webkit-transition: all 1000ms;
+  transform: perspective(100px) translate3d(30px, 20px, 0px);
   transition: all 1000ms;
   width: 80px;
   height: 80px;
@@ -997,77 +790,58 @@ body {
   top: 50%;
   vertical-align: middle;
 }
-
 .container .mizusawa_school .vr_content .button.right::after {
   margin-top: 23px;
   margin-left: 16px;
   display: block;
-  content: '';
+  content: "";
   left: 3px;
   width: 25px;
   height: 25px;
   border-top: 5px solid;
   border-right: 5px solid;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein {
-  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
-          transform: perspective(100px) translate3d(0px, 0px, 20px);
+  transform: perspective(100px) translate3d(0px, 0px, 20px);
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein:hover {
   background: white;
-  -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transform: perspective(100px) translateZ(10px);
-          transform: perspective(100px) translateZ(10px);
+  transform: perspective(100px) translateZ(10px);
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein.seisan,
 .container .mizusawa_school .vr_content .button.left.fadein.seisan {
   color: #007EB1;
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein.denki,
 .container .mizusawa_school .vr_content .button.left.fadein.denki {
   color: #ED7A25;
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein.setubi,
 .container .mizusawa_school .vr_content .button.left.fadein.setubi {
   color: #2E792D;
 }
-
 .container .mizusawa_school .vr_content .button.right.fadein.honkan,
 .container .mizusawa_school .vr_content .button.left.fadein.honkan {
   color: #004EA2;
 }
-
 .container .mizusawa_school .vr_content .text_parent {
   position: relative;
   z-index: 3;
   font-size: 150%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 100%;
   opacity: 0;
 }
-
 .container .mizusawa_school .vr_content .text_parent.fadein {
-  -webkit-transform: perspective(100px) translate3d(0px, -20px, 0px);
-          transform: perspective(100px) translate3d(0px, -20px, 0px);
-  -webkit-transition: all 1000ms;
+  transform: perspective(100px) translate3d(0px, -20px, 0px);
   transition: all 1000ms;
   opacity: 1;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei {
   width: 50%;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_text {
   max-width: 50%;
   line-height: 1.6;
@@ -1082,22 +856,16 @@ body {
   overflow: hidden;
   bottom: 0;
   opacity: 1;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_text.res {
   font-size: 1.8rem;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_text.fadein {
   opacity: 0;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button {
-  -webkit-transition: all 1000ms;
   transition: all 1000ms;
   margin: 0px 0px 20px;
   width: 50px;
@@ -1112,68 +880,53 @@ body {
   opacity: 0.7;
   cursor: pointer;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button.res {
   width: 90px;
   height: 90px;
   margin: 0px 0px 13px;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button:hover {
   opacity: 1;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .setumei_icon {
   bottom: 175%;
   right: 10px;
   position: absolute;
   width: 30px;
   height: 30px;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
   opacity: 0;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.res {
   width: 70px;
   height: 70px;
   bottom: 93%;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .setumei_icon.fadein {
-  -webkit-transform: perspective(100px) translate3d(0px, 75px, 0px);
-          transform: perspective(100px) translate3d(0px, 75px, 0px);
-  -webkit-transition: all 400ms;
+  transform: perspective(100px) translate3d(0px, 75px, 0px);
   transition: all 400ms;
   opacity: 1;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .batu_icon {
   width: 20px;
   height: 20px;
   opacity: 1;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
   position: absolute;
   top: 30%;
   left: 30%;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .batu_icon.res {
   width: 50px;
   height: 50px;
   top: 23%;
   left: 23%;
 }
-
 .container .mizusawa_school .vr_content .text_parent .setumei .setumei_button .batu_icon.fadein {
   opacity: 0;
-  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .classroom_text1 {
   max-width: 25%;
   border-radius: 10px;
@@ -1183,78 +936,50 @@ body {
   color: white;
   position: absolute;
   opacity: 0;
-  -webkit-transform: perspective(100px) translate3d(30px, 20px, 0px);
-          transform: perspective(100px) translate3d(30px, 20px, 0px);
-  -webkit-transition: all 500ms;
+  transform: perspective(100px) translate3d(30px, 20px, 0px);
   transition: all 500ms;
   font-size: 2rem;
 }
-
 .container .mizusawa_school .vr_content .text_parent .classroom_text1.res {
   font-size: 1.8rem;
 }
-
 .container .mizusawa_school .vr_content .text_parent .classroom_text3 {
   margin-top: 10px;
   padding: 10px;
   color: white;
   position: absolute;
   opacity: 0;
-  -webkit-transform: perspective(100px) translate3d(20px, 20px, 0px);
-          transform: perspective(100px) translate3d(20px, 20px, 0px);
-  -webkit-transition: all 500ms;
+  transform: perspective(100px) translate3d(20px, 20px, 0px);
   transition: all 500ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .classroom_text1.scrollin {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
-          transform: perspective(100px) translate3d(0px, 0px, 20px);
-  -webkit-transition: all 800ms;
+  transform: perspective(100px) translate3d(0px, 0px, 20px);
   transition: all 800ms;
 }
-
 .container .mizusawa_school .vr_content .text_parent .classroom_text3.scrollin {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transform: perspective(100px) translate3d(0px, 0px, 20px);
-          transform: perspective(100px) translate3d(0px, 0px, 20px);
+  transform: perspective(100px) translate3d(0px, 0px, 20px);
 }
-
 .container .mizusawa_school .mizusawa_list {
   max-width: 450px;
   margin-left: 0px;
   margin-top: 10px;
   margin-right: 29px;
-  -webkit-animation-name: mizusawa_list_fadein;
-          animation-name: mizusawa_list_fadein;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: mizusawa_list_fadein;
+  animation-duration: 3s;
   position: absolute;
   z-index: 20;
   right: 0;
 }
-
 .container .mizusawa_school .mizusawa_list #seisan_list_all,
 .container .mizusawa_school .mizusawa_list #denki_list_all,
 .container .mizusawa_school .mizusawa_list #setubi_list_all,
 .container .mizusawa_school .mizusawa_list #honkan_m_list_all {
   display: none;
 }
-
-@-webkit-keyframes mizusawa_list_fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes mizusawa_list_fadein {
   0% {
     opacity: 0;
@@ -1266,20 +991,17 @@ body {
     opacity: 1;
   }
 }
-
 .container .mizusawa_school .mizusawa_list a {
   display: block;
   padding: 10px;
   text-decoration: none;
   color: #fff;
 }
-
 .container .mizusawa_school .mizusawa_list a.res {
   font-weight: 600;
   font-size: 2rem;
   padding: 20px;
 }
-
 .container .mizusawa_school .mizusawa_list label {
   max-width: 100%;
   display: block;
@@ -1290,89 +1012,69 @@ body {
   background: #fff;
   cursor: pointer;
   position: relative;
-  -webkit-transition: all 500ms;
   transition: all 500ms;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_seisan {
   border: 4px solid #007EB1;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_seisan.hover {
-  -webkit-transition: all 500ms;
   transition: all 500ms;
   background: #007EB1;
   color: #fff;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_denki {
   border: 4px solid #ED7A25;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_denki.hover {
-  -webkit-transition: all 500ms;
   transition: all 500ms;
   background: #ED7A25;
   color: #fff;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_setubi {
   border: 4px solid #2E792D;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_setubi.hover {
-  -webkit-transition: all 500ms;
   transition: all 500ms;
   background: #2E792D;
   color: #fff;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_honkan_m {
   border: 4px solid #004EA2;
 }
-
 .container .mizusawa_school .mizusawa_list label.label_honkan_m.hover {
-  -webkit-transition: all 500ms;
   transition: all 500ms;
   background: #004EA2;
   color: #fff;
 }
-
 .container .mizusawa_school .mizusawa_list label p {
   font-weight: 600;
   display: inline-block;
   padding: 0px 60px 0px 0px;
   left: 0;
 }
-
 .container .mizusawa_school .mizusawa_list label p.res {
   font-size: 2rem;
 }
-
 .container .mizusawa_school .mizusawa_list label p::after {
   width: 25px;
   height: 8px;
   display: inline-block;
   border-bottom: 2px solid #000;
   border-right: 2px solid #000;
-  -webkit-transform: skew(45deg);
-          transform: skew(45deg);
+  transform: skew(45deg);
   position: absolute;
   top: 50%;
   right: 10%;
   margin-top: -12px;
   content: "";
 }
-
 .container .mizusawa_school .mizusawa_list label img {
   width: 20px;
   height: 20px;
 }
-
 .container .mizusawa_school .mizusawa_list input {
   display: none;
 }
-
 .container .mizusawa_school .mizusawa_list ul {
   max-width: 450px;
   margin: 0px 0;
@@ -1381,24 +1083,19 @@ body {
   list-style: none;
   text-align: center;
 }
-
 .container .mizusawa_school .mizusawa_list li {
   height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   cursor: pointer;
 }
-
 .container .mizusawa_school .mizusawa_list li a {
   opacity: 0.7;
   color: #000;
 }
-
 .container .mizusawa_school .mizusawa_list li a:hover {
   opacity: 1;
 }
-
 .container .mizusawa_school .mizusawa_list #denki:checked ~ #denki_list li,
 .container .mizusawa_school .mizusawa_list #seisan:checked ~ #seisan_list li,
 .container .mizusawa_school .mizusawa_list #setubi:checked ~ #setubi_list li,
@@ -1406,39 +1103,25 @@ body {
   height: 54px;
   opacity: 1;
 }
-
 .container .mizusawa_school .mizusawa_list #denki:checked ~ #denki_list li.res,
 .container .mizusawa_school .mizusawa_list #seisan:checked ~ #seisan_list li.res,
 .container .mizusawa_school .mizusawa_list #setubi:checked ~ #setubi_list li.res,
 .container .mizusawa_school .mizusawa_list #honkan_m:checked ~ #honkan_m_list li.res {
   height: 90px;
 }
-
 .container .mask {
   z-index: 20;
   width: 100%;
   top: 0;
   height: 100%;
-  -webkit-animation-name: mask_fadein;
-          animation-name: mask_fadein;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-name: mask_fadein;
+  animation-duration: 1s;
   position: absolute;
   /* 絶対位置指定 */
   pointer-events: none;
   background-color: #247BD9;
   /* マスクは半透明 */
 }
-
-@-webkit-keyframes mask_fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes mask_fadein {
   0% {
     opacity: 0;
@@ -1447,97 +1130,63 @@ body {
     opacity: 1;
   }
 }
-
 .container .mask .loader,
 .container .mask .loader:before,
 .container .mask .loader:after {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
-
 .container .mask .loader {
   color: #ffffff;
   font-size: 10px;
   top: 50%;
   left: 49%;
-  -webkit-transform: translate(-50%, -50%, 0);
-          transform: translate(-50%, -50%, 0);
+  transform: translate(-50%, -50%, 0);
   position: relative;
   text-indent: -9999em;
-  -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
   pointer-events: none;
 }
-
 .container .mask .loader:before,
 .container .mask .loader:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
 }
-
 .container .mask .loader:before {
   left: -3.5em;
-  -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
-
 .container .mask .loader:after {
   left: 3.5em;
 }
-
-@-webkit-keyframes load7 {
-  0%,
-  80%,
-  100% {
-    -webkit-box-shadow: 0 2.5em 0 -1.3em;
-            box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    -webkit-box-shadow: 0 2.5em 0 0;
-            box-shadow: 0 2.5em 0 0;
-  }
-}
-
 @keyframes load7 {
-  0%,
-  80%,
-  100% {
-    -webkit-box-shadow: 0 2.5em 0 -1.3em;
-            box-shadow: 0 2.5em 0 -1.3em;
+  0%, 80%, 100% {
+    box-shadow: 0 2.5em 0 -1.3em;
   }
   40% {
-    -webkit-box-shadow: 0 2.5em 0 0;
-            box-shadow: 0 2.5em 0 0;
+    box-shadow: 0 2.5em 0 0;
   }
 }
-
 .container #roder-img {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 130px;
 }
-
 .container .mask.roder {
-  -webkit-transition: all 700ms;
   transition: all 700ms;
   opacity: 0;
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
-}
-/*# sourceMappingURL=mizusawa_main.css.map */
+}/*# sourceMappingURL=mizusawa_main.css.map */
