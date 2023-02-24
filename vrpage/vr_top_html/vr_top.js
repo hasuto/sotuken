@@ -43,6 +43,7 @@ window.onload = () => {
                 $(".nav-item").addClass("res");
                 $(".nav-link").addClass("res");
                 $(".btn-play").addClass("res");
+                $(".btn-play").find('img').addClass("res");
 
 
         } else {

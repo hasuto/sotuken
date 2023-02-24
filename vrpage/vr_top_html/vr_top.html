@@ -32,7 +32,7 @@
 
 <body>
     <audio id="top_page_bgm" preload loop>
-      
+
         <source src="dog_bgm.mp3" type="audio/mp3">
     </audio>
     <!-- <iframe  src="marubatu_bgm.mp3" allow="autoplay" style="display:none"> -->
@@ -45,7 +45,8 @@
                 <div class="tutorial-modal-content">
                     <div class="tutorial-modal-body">
                         <div class="tutorial-text">ようこそ！<br>バーチャル学校見学へ！</div>
-                        <video id="modal_tutorial_video" width="540" height="260" autoplay loop preload playsinline muted>
+                        <video id="modal_tutorial_video" width="540" height="260" autoplay loop preload playsinline
+                            muted>
                             <source src="tutorial.mp4" type="video/mp4">
                         </video>
                         <div class="tutorial-text">興味のある場所をクリックして<br>
@@ -202,19 +203,9 @@
 
     <script type="text/javascript">
         const bgm1 = document.querySelector("#top_page_bgm");       // <audio>
-        const btn = document.querySelector(".btn-play");   // <button>
+        var btn = document.querySelector(".btn-play");   // <button>
 
-        btn.addEventListener("click", () => {
-            // pausedがtrue=>停止, false=>再生中
-            if (!bgm1.paused) {
-                btn.innerHTML = '<img src="images/volume_off.png">';  // 「再生ボタン」に切り替え
-                bgm1.pause();
-            }
-            else {
-                btn.innerHTML = '<img src="images/volume_on.png">';  // 「一時停止ボタン」に切り替え
-                bgm1.play();
-            }
-        });
+
 
         /**
          * [event] 再生終了時に実行
@@ -236,7 +227,7 @@
                 } else {
                     window.setTimeout(function () {
                         loader.classList.add('loaded');
-                       
+
                     }, 1000);
 
 
@@ -291,11 +282,35 @@
 
                 $('.iframe_title').addClass('res');
 
+                btn.addEventListener("click", () => {
+                    // pausedがtrue=>停止, false=>再生中
+                    if (!bgm1.paused) {
+                        btn.innerHTML = '<img class="res" src="images/volume_off.png">';  // 「再生ボタン」に切り替え
+                        bgm1.pause();
+                    }
+                    else {
+                        btn.innerHTML = '<img class="res" src="images/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                        bgm1.play();
+                    }
+                });
+
                 console.log("スマホだよーーーー");
 
             } else {
                 var camera_phone = $("#top_aframe").contents().find(doc.getElementById('camera_phone'));
                 camera_phone.remove();
+
+                btn.addEventListener("click", () => {
+                    // pausedがtrue=>停止, false=>再生中
+                    if (!bgm1.paused) {
+                        btn.innerHTML = '<img src="images/volume_off.png">';  // 「再生ボタン」に切り替え
+                        bgm1.pause();
+                    }
+                    else {
+                        btn.innerHTML = '<img src="images/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                        bgm1.play();
+                    }
+                });
 
                 $('#yahaba_pin_list_all').hover(function () {
                     document.getElementById('yahaba_pin').checked = true;
@@ -317,56 +332,56 @@
             }
 
 
-            $('#mekatoro').on('click',function(e){
+            $('#mekatoro').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
             })
-            $('#densi').on('click',function(e){
+            $('#densi').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '2' + "=" + '1';
             });
-            $('#kentiku').on('click',function(e){
+            $('#kentiku').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '3' + "=" + '1';
             })
-            $('#sande').on('click',function(e){
+            $('#sande').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '4' + "=" + '1';
             });
-            $('#zyohou').on('click',function(e){
+            $('#zyohou').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '5' + "=" + '1';
             })
-            $('#senkou').on('click',function(e){
+            $('#senkou').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '6' + "=" + '1';
             });
-            $('#tamoku').on('click',function(e){
+            $('#tamoku').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '1';
             })
-            $('#taiku_y').on('click',function(e){
+            $('#taiku_y').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '6';
             });
-            $('#syoku').on('click',function(e){
+            $('#syoku').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '4';
             });
-            $('#ryou').on('click',function(e){
+            $('#ryou').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
             });
 
-            $('#seisan').on('click',function(e){
+            $('#seisan').on('click', function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '9' + "=" + '1';
             });
-            $('#denki').on('click',function(e){
+            $('#denki').on('click', function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '10' + "=" + '1';
             });
-            $('#setubi').on('click',function(e){
+            $('#setubi').on('click', function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '11' + "=" + '1';
             });
-            $('#honkan_m').on('click',function(e){
+            $('#honkan_m').on('click', function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '1';
             });
-            $('#taiku_m').on('click',function(e){
+            $('#taiku_m').on('click', function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '4';
             });
-            
-            
-            
-            
+
+
+
+
 
             //iframeの中のhtmlのidが一致するオブジェクトを押すと実行
             //下記に各科を追加していく
