@@ -133,6 +133,7 @@ window.onload = function () {
         $(".nav-item").addClass("res");
         $(".nav-link").addClass("res");
         $(".btn-play").addClass("res");
+        $(".btn-play").find('img').addClass("res");
         $(".setumei_text").addClass("res");
         $(".yahaba_list").find('a').addClass("res");
         $("#back_button").addClass("res");
@@ -141,6 +142,37 @@ window.onload = function () {
         $(".setumei_icon").addClass("res");
         $(".batu_icon").addClass("res");
         $('.bgm_setumei').addClass("res");
+        btn.addEventListener("click", () => {
+
+
+            // pausedがtrue=>停止, false=>再生中
+            if (game_hantei == "game") {
+                if (!back_bgm.paused) {
+                    btn.innerHTML = '<img class="res" src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+                    console.log("ストップ")
+                    back_bgm.pause();
+                } else {
+                    btn.innerHTML = '<img class="res" src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                    console.log("スタート ")
+                    back_bgm.play();
+                }
+            } else {
+                if (!syokai_bgm.paused) {
+                    btn.innerHTML = '<img class="res" src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+                    console.log("ストップ")
+                    syokai_bgm.pause();
+                    back_bgm.pause();
+                }
+                else {
+                    btn.innerHTML = '<img class="res" src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                    console.log("スタート ")
+                    syokai_bgm.play();
+                    back_bgm.play();
+                }
+        
+            }
+        
+        });
 
         console.log($('.yahaba_list').find('label'));
 
@@ -221,7 +253,40 @@ window.onload = function () {
                 document.getElementById('ryou').checked = false;
                 $(".label_ryou").removeClass("hover");
             });
+            btn.addEventListener("click", () => {
+
+
+                // pausedがtrue=>停止, false=>再生中
+                if (game_hantei == "game") {
+                    if (!back_bgm.paused) {
+                        btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+                        console.log("ストップ")
+                        back_bgm.pause();
+                    } else {
+                        btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                        console.log("スタート ")
+                        back_bgm.play();
+                    }
+                } else {
+                    if (!syokai_bgm.paused) {
+                        btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
+                        console.log("ストップ")
+                        syokai_bgm.pause();
+                        back_bgm.pause();
+                    }
+                    else {
+                        btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
+                        console.log("スタート ")
+                        syokai_bgm.play();
+                        back_bgm.play();
+                    }
+            
+                }
+            
+            });
         console.log("PCだよーーーーーーー");
+
+
     }
 
 
@@ -258,37 +323,7 @@ $(document).ready(function () {
 // <audio>
 const btn = document.querySelector(".btn-play");   // <button>
 
-btn.addEventListener("click", () => {
 
-
-    // pausedがtrue=>停止, false=>再生中
-    if (game_hantei == "game") {
-        if (!back_bgm.paused) {
-            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-            console.log("ストップ")
-            back_bgm.pause();
-        } else {
-            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-            console.log("スタート ")
-            back_bgm.play();
-        }
-    } else {
-        if (!syokai_bgm.paused) {
-            btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-            console.log("ストップ")
-            syokai_bgm.pause();
-            back_bgm.pause();
-        }
-        else {
-            btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-            console.log("スタート ")
-            syokai_bgm.play();
-            back_bgm.play();
-        }
-
-    }
-
-});
 
 /**
  * [event] 再生終了時に実行

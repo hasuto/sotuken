@@ -148,6 +148,11 @@ html {
   height: 20px;
 }
 
+.container .header-nav img.res {
+  width: 35px;
+  height: 35px;
+}
+
 .container .header-nav .navbar-brand {
   color: #004ea2;
   font-size: larger;
@@ -323,7 +328,8 @@ html {
 }
 
 .container .header-nav .navbar-nav .nav-item .btn-play.res {
-  padding-top: 5px;
+  top: -4px;
+  position: relative;
 }
 
 .container .modalArea {

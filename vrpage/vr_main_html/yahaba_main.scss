@@ -191,6 +191,10 @@ html {
         img {
             width: 20px;
             height: 20px;
+            &.res{
+                width: 35px;
+                height: 35px;
+            }
         }
 
         .navbar-brand {
@@ -355,7 +359,8 @@ html {
                     }
 
                     &.res {
-                        padding-top: 5px;
+                        top: -4px;
+                        position: relative;
                     }
                 }
             }
