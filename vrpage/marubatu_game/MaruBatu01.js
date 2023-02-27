@@ -1,20 +1,9 @@
-// const objs = document.querySelectorAll('a-entity'); 
 
-// objs.forEach((entity) => {
-//     entity.addEventListener('click',function() {
-//         console.log("click");
-//     });
-// });
 var sceneEl;
-// const sound01 = document.getElementById("my_sound01");
 
-// var aaaa;
-// var new_mdbun;
 var Maru;
 var Batu;
-var Maru_hantei;
-var Batu_hantei;
-var boxColor = 1; //１:赤　→　２：青　→　３：緑　→　１：赤へもどる
+
 var score = 0;
 var cnt = 0;
 var hanntei = 0;
@@ -24,12 +13,10 @@ var cursor;
 var isMouseDown = false;
 
 var result = [];
-var results = [];
-var hantei_maru = [];
-hantei_maru = "o";
-var hantei_batu = [];
-hantei_batu = "x";
-var results;
+var judgement_array = []; //〇✕ゲーム判定用配列
+
+
+var judgement_array;
 var correct_answer;
 var text;
 var score_result;
@@ -236,10 +223,10 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
 
     // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
     for (var i = 0; i < tmp.length; ++i) {
-        results[i] = tmp[i].split(',');
+        judgement_array[i] = tmp[i].split(',');
     }
 
-    //console.log(results[0][1]); // 300yen
+    //console.log(judgement_array[0][1]); // 300yen
 }
 
 function split_problem_statement(a) {
@@ -459,10 +446,31 @@ function render() {
 
 function restart() {
     var restart = document.querySelector('#restart');
+    var issue1 = document.querySelector('#issue1');
+    var issue2 = document.querySelector('#issue2');
+    var issue3 = document.querySelector('#issue3');
+    var issue4 = document.querySelector('#issue4');
+    var issue5 = document.querySelector('#issue5');
+    var monbun1 = document.querySelector('#problem_statement1');
+    var monbun1_2 = document.querySelector('#problem_statement1_2');
+    var monbun1_3 = document.querySelector('#problem_statement1_3');
+
+    var monbun2 = document.querySelector('#problem_statement2');
+    var monbun2_2 = document.querySelector('#problem_statement2_2');
+    var monbun2_3 = document.querySelector('#problem_statement2_3');
+
+    var monbun3 = document.querySelector('#problem_statement3');
+    var monbun3_2 = document.querySelector('#problem_statement3_2');
+    var monbun3_3 = document.querySelector('#problem_statement3_3');
+
+    var monbun4 = document.querySelector('#problem_statement4');
+    var monbun4_2 = document.querySelector('#problem_statement4_2');
+    var monbun4_3 = document.querySelector('#problem_statement4_3');
+
     var monbun5 = document.querySelector('#problem_statement5');
     var monbun5_2 = document.querySelector('#problem_statement5_2');
     var monbun5_3 = document.querySelector('#problem_statement5_3');
-    var issue5 = document.querySelector('#issue5');
+    
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
     var correct_answer = document.querySelector('#correct_answer');
@@ -474,6 +482,22 @@ function restart() {
         score = 0;
         cnt = 0;
         restart.setAttribute("visible", false);
+        monbun1.setAttribute("visible", false);
+        monbun1_2.setAttribute("visible", false);
+        monbun1_3.setAttribute("visible", false);
+        issue1.setAttribute("visible", false);
+        monbun2.setAttribute("visible", false);
+        monbun2_2.setAttribute("visible", false);
+        monbun2_3.setAttribute("visible", false);
+        issue2.setAttribute("visible", false);
+        monbun3.setAttribute("visible", false);
+        monbun3_2.setAttribute("visible", false);
+        monbun3_3.setAttribute("visible", false);
+        issue3.setAttribute("visible", false);
+        monbun4.setAttribute("visible", false);
+        monbun4_2.setAttribute("visible", false);
+        monbun4_3.setAttribute("visible", false);
+        issue4.setAttribute("visible", false);
         monbun5.setAttribute("visible", false);
         monbun5_2.setAttribute("visible", false);
         monbun5_3.setAttribute("visible", false);
@@ -552,97 +576,112 @@ function maru() {
         switch (cnt) {
             case 1:
                 if (Batu.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
                     }
-                    console.log("score" + score);
-
-                    next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 2:
 
                 if (Batu.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
                     }
-                    console.log("score" + score);
-                    next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 3:
 
                 if (Batu.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
                     }
-                    console.log("score" + score);
-                    next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 4:
 
                 if (Batu.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
                     }
-                    console.log("score" + score);
-                    next.setAttribute('visible', true);
                     Batu.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 5:
 
                 if (Batu.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
                     }
-
                     Batu.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
-                console.log("score" + score);
-                score_result.setAttribute("value", "score " + score);
-                score_result.setAttribute('visible', true);
-                scoreback.setAttribute('visible', true);
-                restart.setAttribute('visible', true);
                 break;
 
         }
@@ -662,128 +701,122 @@ function batu() {
         switch (cnt) {
             case 1:
                 if (Maru.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
 
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
 
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
                     }
-                    console.log("score" + score);
-                    next.setAttribute('visible', true);
                     Maru.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
-                // correct_answer.setAttribute('visible', false);
-                // incorrect_answer.setAttribute('visible', true);
-                // hanteiback.setAttribute('visible', true);
-                // next.setAttribute('visible', true);
-                // Maru.setAttribute('visible', false);
+
                 break;
             case 2:
-                // incorrect_answer.setAttribute('visible', false);
-                // correct_answer.setAttribute('visible', true);
-                // hanteiback.setAttribute('visible', true);
-                // next.setAttribute('visible', true);
-                // if (Maru.getAttribute('visible') == true) {
-                //     score++;
-                // }
-                // Maru.setAttribute('visible', false);
+
                 if (Maru.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
 
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
                     }
-                    console.log("score" + score);
                     Maru.setAttribute('visible', false);
-                    next.setAttribute('visible', true);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 3:
-                // correct_answer.setAttribute('visible', false);
-                // incorrect_answer.setAttribute('visible', true);
-                // hanteiback.setAttribute('visible', true);
-                // next.setAttribute('visible', true);
-                // Maru.setAttribute('visible', false);
+
                 if (Maru.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
 
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
                     }
-                    console.log("score" + score);
                     Maru.setAttribute('visible', false);
-                    next.setAttribute('visible', true);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
+ 
                 }
                 break;
             case 4:
-                // incorrect_answer.setAttribute('visible', false);
-                // correct_answer.setAttribute('visible', true);
-                // hanteiback.setAttribute('visible', true);
-                // next.setAttribute('visible', true);
-                // if (Maru.getAttribute('visible') == true) {
-                //     score++;
-                // }
-                // Maru.setAttribute('visible', false);
+
                 if (Maru.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
 
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
                     }
-                    console.log("score" + score);
                     Maru.setAttribute('visible', false);
-                    next.setAttribute('visible', true);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
                 break;
             case 5:
-                // correct_answer.setAttribute('visible', false);
-                // incorrect_answer.setAttribute('visible', true);
-                // hanteiback.setAttribute('visible', true);
-                // Maru.setAttribute('visible', false);
+
                 if (Maru.getAttribute('visible') == true) {
-                    if (result[cnt][2] == results[0][0]) {
+                    if (result[cnt][2] == judgement_array[0][0]) {
 
                         correct_answer.setAttribute('visible', false);
                         incorrect_answer.setAttribute('visible', true);
 
-                    } else if (result[cnt][2] == results[1][0]) {
+                    } else if (result[cnt][2] == judgement_array[1][0]) {
                         incorrect_answer.setAttribute('visible', false);
                         correct_answer.setAttribute('visible', true);
                         score++;
                     }
-                    console.log("score" + score);
                     Maru.setAttribute('visible', false);
-                    console.log(hantei_maru);
-                    console.log(result[cnt][2]);
+                    if(result[cnt+1][0].indexOf("問題") != -1){           
+                        next.setAttribute('visible', true);
+                    }else{
+                        score_result.setAttribute("value", "score " + score);
+                        score_result.setAttribute('visible', true);
+                        scoreback.setAttribute('visible', true);
+                        restart.setAttribute('visible', true);
+                    }
                 }
-                score_result.setAttribute("value", "score " + score);
-                score_result.setAttribute('visible', true);
-                scoreback.setAttribute('visible', true);
-                restart.setAttribute('visible', true);
+               
                 break;
         }
     }
