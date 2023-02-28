@@ -889,17 +889,12 @@ function start(id1, id2) {
 function syoukai_page(id1, id2) {
 
     //元々はsyoukai_pageの引数から判定していた。変更後はgetCSV関数にて判定。
-    // Top_yahaba_Aframe.src = "/aframegame1/syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
     window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
     this_id1 = id1;
     this_id2 = id2;
-    // getCSV();
     syoukai_hantei();
-    //document.getElementById('mask_all').classList.remove("roder");
     document.getElementById('classroom_text').classList.remove("scrollin");
     button_visi();
-
-
     //リストかオブジェクトから、飛んだ時にどの科にいるか指定
     switch (Number(this_id1)) {
         case 1:
@@ -930,40 +925,6 @@ function syoukai_page(id1, id2) {
             reset_txt = 'honkan_tamoku';
             break;
     }
-
-    // if (document.getElementById('mask').classList.contains("roder")) {
-    //     document.querySelector(".mask").addEventListener("animationend", function () {
-    //         document.getElementById('mask').classList.remove("roder");
-    //         document.getElementById('classroom_text').classList.add("scrollin");
-    //     });
-    // } else {
-    //     document.getElementById('mask').classList.add("roder");
-    //     document.getElementById('classroom_text').classList.remove("scrollin");
-    //     document.getElementById('right_button').style.visibility = 'hidden';
-    //     document.getElementById('left_button').style.visibility = 'hidden';
-    //     document.getElementById('right_button').classList.remove("fadein");
-    //     document.getElementById('left_button').classList.remove("fadein");
-    //     document.querySelector(".mask").addEventListener("animationend", function () {
-    //         document.getElementById('mask').classList.remove("roder");
-    //         document.getElementById('classroom_text').classList.add("scrollin");
-    //         button_visi();
-    //     });
-    // }
-
-    //前に使っていた、科の教室のタイトルのフェードイン処理
-    // document.querySelector(".mask").addEventListener("animationend", function () {
-    //     document.getElementById('mask').classList.remove("roder");
-    //     if (document.getElementById('classroom_text').classList.contains("scrollin")) {
-    //         document.getElementById('classroom_text').classList.remove("scrollin");
-    //         document.getElementById('classroom_text2').classList.add("scrollin");
-
-    //     } else if (document.getElementById('classroom_text2').classList.contains("scrollin")) {
-    //         document.getElementById('classroom_text2').classList.remove("scrollin");
-    //         document.getElementById('classroom_text').classList.add("scrollin");
-    //     } else {
-    //         document.getElementById('classroom_text').classList.add("scrollin");
-    //     }
-    // });
 }
 
 function syoukai_hantei() {
