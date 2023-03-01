@@ -178,16 +178,12 @@ html {
 
 
     .header-nav {
-        // border-bottom: solid 3px #004EA2;
         position: relative;
-        // border-bottom: solid 3px #004EA2;
-
         .btn-play {
             background-color: #fff;
             border: none;
             border-radius: 5px;
         }
-
         img {
             width: 20px;
             height: 20px;
@@ -196,7 +192,6 @@ html {
                 height: 35px;
             }
         }
-
         .navbar-brand {
             color: #004ea2;
             font-size: larger;
@@ -212,22 +207,26 @@ html {
 
 
         .navbar-nav {
-
             display: inline-flex;
             height: 22px;
-
             &.res {
                 padding-left: 0px;
             }
-
             .nav-item {
                 list-style: none;
                 margin-left: 50px;
-                // opacity: 0.7;
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
+                &.res {
+                    margin-left: 20px;
 
+                    &::after {
+                        content: '';
+                        opacity: 0;
+                    }
+
+                }
                 .bgm_setumei {
                     position: absolute;
                     z-index: 27;
@@ -242,7 +241,6 @@ html {
                     font-weight: 600;
                     border: solid 3px $honkan-color;
                     pointer-events: none;
-
                     &.res {
                         font-size: x-large;
                         right: -34px;
@@ -307,15 +305,7 @@ html {
                 }
 
 
-                &.res {
-                    margin-left: 20px;
-
-                    &::after {
-                        content: '';
-                        opacity: 0;
-                    }
-
-                }
+               
 
                 &::after {
                     position: absolute;

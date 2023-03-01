@@ -185,6 +185,15 @@ html {
   cursor: pointer;
 }
 
+.container .header-nav .navbar-nav .nav-item.res {
+  margin-left: 20px;
+}
+
+.container .header-nav .navbar-nav .nav-item.res::after {
+  content: '';
+  opacity: 0;
+}
+
 .container .header-nav .navbar-nav .nav-item .bgm_setumei {
   position: absolute;
   z-index: 27;
@@ -274,15 +283,6 @@ html {
   100% {
     opacity: 0;
   }
-}
-
-.container .header-nav .navbar-nav .nav-item.res {
-  margin-left: 20px;
-}
-
-.container .header-nav .navbar-nav .nav-item.res::after {
-  content: '';
-  opacity: 0;
 }
 
 .container .header-nav .navbar-nav .nav-item::after {
