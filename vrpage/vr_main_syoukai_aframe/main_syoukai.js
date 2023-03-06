@@ -79,7 +79,7 @@ function syoukai_hantei(){
 
 function marubatu_game(){
     alert(text);
-    window.location.href = '../marubatu_game/MaruBatu01.html?a='+text;
+    window.location.href = '../marubatu_game/Marubatu.html?a='+text;
 }
 
 

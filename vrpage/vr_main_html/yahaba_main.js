@@ -473,7 +473,7 @@ function iframe_load() {
 
 
 
-            if (Top_yahaba_Aframe.getAttribute('src').indexOf('MaruBatu01.html') != -1) {
+            if (Top_yahaba_Aframe.getAttribute('src').indexOf('Marubatu.html') != -1) {
                 //alert('aaaa');
                 document.getElementById('left_button').classList.remove("fadein");
                 document.getElementById('right_button').classList.remove("fadein");
@@ -640,8 +640,8 @@ function button_visi() {
 
 
 document.getElementById('game_button').addEventListener('click', function (e) {
-    //window.location.href = '../marubatu_game/MaruBatu01.html?a='+text;
-    // Top_yahaba_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
+    //window.location.href = '../marubatu_game/Marubatu.html?a='+text;
+    // Top_yahaba_Aframe.src = '../marubatu_game/Marubatu.html?a=' + result[csv_column][3];
     window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2 + "=" + "game";
 
 
@@ -968,7 +968,7 @@ function syoukai_hantei() {
 
     //サイト〇×ゲーム判定
     if (game_hantei == "game") {
-        Top_yahaba_Aframe.src = '../marubatu_game/MaruBatu01.html?a=' + result[csv_column][3];
+        Top_yahaba_Aframe.src = '../marubatu_game/Marubatu.html?a=' + result[csv_column][3];
         $('.modal_syoukai_body').hide();
 
 

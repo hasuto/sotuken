@@ -11,8 +11,6 @@
   <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
   <script src="yahaba_school_top.min.js"></script>
   <link rel="stylesheet" href="yahaba_school_top.css">
-
-  <!-- <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script> -->
 </head>
 
 <body>
@@ -24,16 +22,8 @@
       <audio id="audio01" src="" preload="auto"></audio>
     </a-assets>
 
-    <!-- <a-obj-model  visible="true" src="#dodai_obj" mtl="#dodai_mtl" position="-13 0 0" ></a-obj-model> -->
-
     <a-sound id="my_sound01" src="#audio01" autoplay="true" loop="true"></a-sound>
 
-    <!--クリック時にイベント発火させなくとも動く-->
-    <!-- <a-gradient-sky material="shader: gradient; topColor: 255 0 0; bottomColor: 0 121 255;"></a-gradient-sky> -->
-    <!-- <a-sky color="linear-gradient(red, yellow)"></a-sky> -->
-    <!-- <a-sky radius="200" theta-start="0" theta-length="300"
-      material="shader:gradientshader;topColor:#c8ceca;  bottomColor:#e2a872;" geometry="" visible="" id="sky"
-      position=""></a-sky> -->
     <a-sky src="top_aseets/haikei_2.png"></a-sky>
 
     <a-gltf-model id="honkan_genkan" visible="true" src="top_aseets/honkan_genkan.glb" position="-13 0 0" scale="1 1 1"
@@ -81,9 +71,6 @@
       from: -13 0.4 0; to: -13 0 0; dur: 600; 
       loop: false;  startEvents: mouseleave"></a-gltf-model>
 
-    <!-- <a-gltf-model id="watari" visible="true" src="top_aseets/tuuro_all.glb" position="-13 0 0" scale="1 1 1"
-      rotation="0 0 0"></a-gltf-model> -->
-
     <a-gltf-model id="tosyo" visible="true" src="top_aseets/tosyo.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
       animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
       animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
@@ -110,18 +97,6 @@
     <a-gltf-model id="syoku" visible="true" src="top_aseets/syoku.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
       animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
       animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model>
-
-    <!-- <a-gltf-model id="piro" visible="true" src="top_aseets/piro.glb" position="-13 0 0" scale="1 1 1" rotation="0 0 0"
-      animation__mouseenter="property: position; from: -13 0 0; to: -13 0.4 0; dur: 600; loop: false;  startEvents: mouseenter"
-      animation__mouseleave="property: position; from: -13 0.4 0; to: -13 0 0; dur: 600; loop: false;  startEvents: mouseleave"></a-gltf-model> -->
-
-    <!-- <a-gltf-model id="yahaba_sousyoku" visible="true" src="top_aseets/yahaba_sousyoku.glb" position="-13 0 0"
-      scale="1 1 1" rotation="0 0 0"></a-gltf-model> -->
-
-    <!-- <a-gltf-model id="piro" visible="true" src="top_aseets/kousya_sample12_19.glb" position="-13 0 0" scale="1 1 1"
-      rotation="0 0 0"></a-gltf-model> -->
-
-
 
     <a-gltf-model id="mekatoro_point" visible="true" src="top_aseets/mekatoro_point_a.glb" position="1 2 -19"
       scale="0.5 0.5 0.5" rotation="0 0 0"
@@ -206,16 +181,6 @@
       <a-gltf-model id="tuuro_2" visible="true" src="top_aseets/yahaba_tuuro_2.glb" position="-13 0 0" scale="1 1.5 1"
       rotation="0 0 0"></a-gltf-model>
 
-
-
-
-
-    <!-- <a-gltf-model id="car" visible="true" src="top_aseets/car.glb" position="15 0 -18" scale="0.7 0.7 0.7"
-      rotation="0 0 0" animation="property:position; to: 15 0 8; loop: true; dur: 5000; easing: linear"></a-gltf-model> -->
-    <!-- 
-      <a-gltf-model id="sousyoku" visible="true" src="top_aseets/sousyoku0111_2.glb" position="-13 0 0" scale="1 1.5 1"
-      rotation="0 0 0"></a-gltf-model> -->
-
     <a-entity cursor="rayOrigin: mouse"></a-entity>
     <a-entity light="type: ambient; color: #ffffff; intensity:0.7" position="-1 1 0"></a-entity>
     <a-entity light="type: directional; color: #ffffff;  intensity:1" position="90 1 90"></a-entity>
@@ -232,12 +197,6 @@
     <a-entity id="camera_phone" camera look-controls="enabled: false;" magicWindowTrackingEnabled="false"
       orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:360; minDistance: 0.5; maxDistance: 360; initialPosition: 40 10 -30">
     </a-entity>
-
-    <!-- //前に書いていたもの値を治したいときに使用 orbit-controls="target: -4 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 20 10 -20"> 
-        <a-gltf-model id="kousya2" visible="true" src="top_aseets/honkousya.glb" position="-8 10 0" scale="1 1 1"//
-
-    rotation="-80 -50 0"></a-gltf-model>
-    <a-entity mb-text id="text" visible="true" position="0 20 0" rotation="0 0 0" scale="7 7 7" data-text="こんにちわ" color="white"></a-entity> -->
 
     </a-entity>
 
