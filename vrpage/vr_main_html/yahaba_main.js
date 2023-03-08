@@ -26,41 +26,24 @@ $('#back_button').hide();
 window.onload = function () {
 
     var data = location.href.split("?")[1];
-    console.log(data)
     text = data.split("=")[1];
     id1 = data.split("=")[2];
     id2 = data.split("=")[3];
     game_hantei = data.split("=")[4];
     getCSV();
-    // document.getElementById('mask').classList.add("roder");
-    // Top_yahaba_Aframe.src = "syoukai/main_syoukai.html?a=" + text + "=" + id1 + "=" + id2;
-    // syoukai_page(id1,id2);
-    // if (document.getElementById('mask').classList.contains("roder")) {
-    //     if (document.getElementById('mask').style.opacity == 0) {
-    //         button_visi();
-    //     }
-    // }
-    // document.querySelector(".mask").addEventListener("animationend", function () {
-    //     button_visi();
-    // });
+
     var yahaba_list = document.getElementById('yahaba_list');
     var list_eles = yahaba_list.getElementsByTagName('input');
-    //console.log((list_eles).not('#mekatoro2'));
 
     $(".yahaba_list").find('ul').append('<li id="y_campus"><a>矢巾校へ戻る</a></li>');
 
     $(document).on('click', '#y_campus', function () {
         window.location.href = "../vr_top_html/vr_top.html?y";
     });
-    console.log(navigator.userAgent);
+
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
-
-        // $('.button019').css('fontSize','2em');
-        // $('.yahaba_list').css(yahaba_list_resu);
         $('#game_button').addClass('res');
-        // $('#back_button').addClass('res');
-        //$('.yahaba_list').find('label').addClass('res');
         $('#classroom_text').addClass('res');
         $('.yahaba_list').find('p').addClass('res');
 
@@ -284,8 +267,6 @@ window.onload = function () {
                 }
             
             });
-        console.log("PCだよーーーーーーー");
-
 
     }
 
@@ -305,7 +286,6 @@ window.addEventListener('resize', () => {
         // 画面の横幅にサイズ変動がないので処理を終える
         return;
     }
-
     // 画面の横幅のサイズ変動があった時のみ高さを再計算する
     vw = window.innerWidth;
     setFillHeight();
@@ -322,8 +302,6 @@ $(document).ready(function () {
 });
 // <audio>
 const btn = document.querySelector(".btn-play");   // <button>
-
-
 
 /**
  * [event] 再生終了時に実行
@@ -418,63 +396,17 @@ $(function () {
 });
 
 
-
-
-// $(window).on('load resize',function(){
-//     $('.iframe_main').css('width',  $(window).width());
-//     $('.iframe_main').css('height',  $(window).height());
-// });
-
-// window.onpageshow = function (event) {
-//     if (event.persisted) {
-//         window.location.reload();
-//     }
-// };
-
-// $('#main_yahaba_aframe').on('load', function () {
-//     //iframeのdocumentを取得する（Mozilla系 || 古いIE系）
-
-
-
-// });
-
 function iframe_load() {
     var doc = Top_yahaba_Aframe.contentDocument || Top_yahaba_Aframe.contentWindow.document;
-    console.log("読み込まれている");
-    console.log(doc);
     document.getElementById('mask_all').classList.remove("roder");
-    //iframeの全要素が読み込まれたら処理
-
-
 
     $("#main_yahaba_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
 
-        // if (game_hantei == "game") {
-
-        //     var camera_pc = $("#main_yahaba_aframe").contents().find(doc.getElementById('pc'));
-        //     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-
-        //         camera_pc.remove();
-        //     }
-
-
-
-
-        // }else{
-
-        // }
-
-        console.log("コンプリートマイン");
         if (document.getElementById('mask_all').classList.contains("roder")) {
 
         } else {
 
-
-
-
-
             if (Top_yahaba_Aframe.getAttribute('src').indexOf('Marubatu.html') != -1) {
-                //alert('aaaa');
                 document.getElementById('left_button').classList.remove("fadein");
                 document.getElementById('right_button').classList.remove("fadein");
                 $('.text_parent').removeClass("fadein");
@@ -485,14 +417,8 @@ function iframe_load() {
                 $('#game_button').hide();
                 $('#back_button').show();
                 window.setTimeout(function () {
-                    console.log('通っている');
                     document.getElementById('mask_all').classList.add("roder");
-                    // $('.container').mouseenter(function () {
-                    //     if (bgm_count == 0) {
-                    //         back_bgm.play(); //〇✕ゲーム音源スタート
-                    //         bgm_count++;
-                    //     }
-                    // });
+        
                     if (back_hantei || (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('') > 0) {
                         $('.bgm_setumei').addClass("fadein");
                     }
@@ -501,27 +427,15 @@ function iframe_load() {
                 }, 500);
 
             } else {
-                // alert('oooo');
+
                 document.getElementById('mask_all').classList.add("roder");
                 window.setTimeout(function () {
                     document.getElementById('classroom_text').classList.add("scrollin");
                     $('.text_parent').addClass("fadein");
-                    // document.getElementById('classroom_text2').classList.add("scrollin");
                     document.getElementById('left_button').classList.add("fadein");
                     document.getElementById('right_button').classList.add("fadein");
                     document.getElementById('right_button').style.visibility = 'visible';
                     document.getElementById('left_button').style.visibility = 'visible';
-
-                    //syoukai_bgm.play();
-                    // $('.container').mouseover(function () {
-                    //     console.log("触れているよーーーー")
-                    //     if (bgm_count == 0) {
-                    //         syokai_bgm.play(); //〇✕ゲーム音源スタート
-                    //         syokai_bgm.loop = true;
-                    //         bgm_count++;
-                    //     }
-                    // });
-                    // syokai_bgm.play();
 
                     back_bgm.volume = 0.05;
                     back_bgm.play();
@@ -536,29 +450,7 @@ function iframe_load() {
                 }, 500);
             }
 
-
-
-
         }
-
-        // if (document.getElementById('mask').classList.contains("roder")) {
-        //     document.querySelector(".mask").addEventListener("animationend", function () {
-        //         document.getElementById('mask').classList.remove("roder");
-        //         document.getElementById('classroom_text').classList.add("scrollin");
-        //     });
-        // } else {
-        //     document.getElementById('mask').classList.add("roder");
-        //     document.getElementById('classroom_text').classList.remove("scrollin");
-        //     document.getElementById('right_button').style.visibility = 'hidden';
-        //     document.getElementById('left_button').style.visibility = 'hidden';
-        //     document.getElementById('right_button').classList.remove("fadein");
-        //     document.getElementById('left_button').classList.remove("fadein");
-        //     document.querySelector(".mask").addEventListener("animationend", function () {
-        //         document.getElementById('mask').classList.remove("roder");
-        //         document.getElementById('classroom_text').classList.add("scrollin");
-        //         button_visi();
-        //     });
-        // }
 
     });
 }
@@ -622,8 +514,6 @@ function list_visi() {
 function button_visi() {
 
     if (document.getElementById('mask_all').classList.contains("roder")) {
-
-
         document.getElementById('right_button').style.visibility = 'visible';
         document.getElementById('left_button').style.visibility = 'visible';
         document.getElementById('right_button').classList.add("fadein");
@@ -640,19 +530,9 @@ function button_visi() {
 
 
 document.getElementById('game_button').addEventListener('click', function (e) {
-    //window.location.href = '../marubatu_game/Marubatu.html?a='+text;
-    // Top_yahaba_Aframe.src = '../marubatu_game/Marubatu.html?a=' + result[csv_column][3];
     window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2 + "=" + "game";
 
-
 });
-
-
-
-
-
-
-
 
 $('#back_button').click(function () {
     window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
@@ -665,20 +545,6 @@ $('#setumei_button').click(function () {
 
 })
 
-// $('.button').click(function(){
-//     $(".button").toggleClass("on");
-// })
-
-// $('.button').click(function(){
-
-//     if($(".button").hasClass("on")){
-//         $(".button").removeClass("on");
-//     }else{
-//         $(".button").addClass("on");
-//     }   
-// })
-//　for文
-
 
 document.getElementById('left_button').addEventListener('click', function (e) {
 
@@ -690,42 +556,33 @@ document.getElementById('left_button').addEventListener('click', function (e) {
                     if (result[Number(csv_column) + i][0] == this_id1) {
                         leftbtn_cnt++;
                     } else {
-                        // alert(leftbtn_cnt);
                         break;
                     }
                 }
 
-                // syoukai_page(result[Number(csv_column) + (leftbtn_cnt - 1)][3], Number(this_id1), Number(this_id2) + (leftbtn_cnt - 1));
                 syoukai_page(Number(this_id1), Number(this_id2) + (leftbtn_cnt - 1));
                 reset_txt = result[csv_column][3];
-                //   alert("case1だよ");
+     
                 break;
 
             case 2:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
-                //     alert("case2だよ");
+            
                 break;
             case 3:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
-                //  alert("case3だよ");
-
-
 
                 break;
             case 4:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
-                //   alert("case4だよ");
-
 
                 break;
             case 5:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
-            //    alert("case5だよ");
+
             case 6:
                 syoukai_page(Number(this_id1), Number(this_id2) - 1);
-                //    alert("case5だよ");
-
-
+    
                 break;
         }
 
@@ -738,34 +595,30 @@ document.getElementById('right_button').addEventListener('click', function (e) {
 
         switch (Number(this_id2)) {
             case 1:
-                // reset_txt = result[csv_column][3];
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
-
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
 
-                    // alert("case1だよ");
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    // alert(reset_txt);
+
                 }
                 break;
 
             case 2:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
-                    // alert("case2だよ");
+               
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    //  alert(reset_txt);
+                
                 }
                 break;
             case 3:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
-                    //alert("case3だよ");
+            
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    //  alert(reset_txt);
 
                 }
 
@@ -775,10 +628,9 @@ document.getElementById('right_button').addEventListener('click', function (e) {
 
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
-                    // alert("case4だよ");
+                
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    //   alert(reset_txt);
 
                 }
 
@@ -786,20 +638,18 @@ document.getElementById('right_button').addEventListener('click', function (e) {
             case 5:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
-                    // alert("case5だよ");
+                
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    //  alert(reset_txt);
-
+            
                 }
                 break;
             case 6:
                 if (result[Number(csv_column) + 1][0] == Number(this_id1)) {
                     syoukai_page(Number(this_id1), Number(this_id2) + 1);
-                    // alert("case5だよ");
+       
                 } else {
                     syoukai_page(Number(this_id1), 1);
-                    //  alert(reset_txt);
 
                 }
 
@@ -817,7 +667,7 @@ document.getElementById("m_campus").addEventListener('click', function (e) {
 });
 function getCSV() {
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-    req.open("get", "main_syoukai.csv", true); // アクセスするファイルを指定
+    req.open("get", "aseets/main_syoukai.csv", true); // アクセスするファイルを指定
     req.send(null); // HTTPリクエストの発行
 
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ 
@@ -836,8 +686,6 @@ function convertCSVtoArray(str) { // 読み込んだCSVデータが文字列と�
     for (var i = 0; i < tmp.length; ++i) {
         result[i] = tmp[i].split(',');
     }
-
-    console.log(result[1][2]); // 300yen
     start(id1, id2);
 
 }
@@ -939,32 +787,20 @@ function syoukai_hantei() {
     for (var i = 0; i <= tmp.length; i++) {
         var str = result[i][0];
         if (str == this_id1) {
-            console.log("一致");
-            console.log("id1" + this_id1);
-            console.log(str);
-            console.log(i);
             hantei_id1 = i;
             break;
         }
     }
 
     for (var j = hantei_id1; j <= tmp.length; j++) {
-        console.log("a2=" + j);
         var str2 = result[j][1];
         if (str2 == this_id2) {
-            console.log(str2);
-            console.log(j);
-            console.log(result[j][2]);
             csv_column = j;
             break;
         }
 
     }
 
-    console.log(csv_column);
-
-
-    // result[csv_column][2]
 
     //サイト〇×ゲーム判定
     if (game_hantei == "game") {
@@ -975,7 +811,6 @@ function syoukai_hantei() {
         $(function () {
             var video3 = document.getElementById('modal_marubatu_video2');
             var video4 = document.getElementById('modal_syoukai_video2');
-
             /*使い方*/
             $('#openModal').click(function () {
                 $('#modalArea').fadeIn();
@@ -1041,20 +876,12 @@ function syoukai_hantei() {
 
 
 
-
-
-
     } else {
         Top_yahaba_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
         $('.modal_marubatu_body').hide();
         syokai_bgm = new Audio('aseets/' + result[csv_column][3] + '.mp3');
 
     }
-
-
-
-
-
     syoukai_text();
 }
 
@@ -1062,24 +889,5 @@ function syoukai_hantei() {
 function syoukai_text() {
     var room_text = result[csv_column][2].split('\\n')
     document.getElementById('classroom_text').innerText = room_text[0] + "\n" + room_text[1];
-    //document.getElementById('classroom_text').innerText = result[csv_column][2];
-    console.log(result[csv_column][2].split('科'));
-    // document.getElementById('classroom_text').innerHTML = '<p>'+result[csv_column][2]+'<br>'+result[csv_column][4]+'</p>';
-    // document.getElementById('classroom_text2').textContent = result[csv_column][4];
     setumei_text.textContent = result[csv_column][4];
-
-
-    // var text = result[csv_column][2];
-    // var elem = document.getElementById("syoukai_text");
-    // elem.innerHTML = text;
-    // document.getElementById("syoukai_text").textContent = text;
 }
-
-
-// $(document).ready(function () {
-//     if (window.performance.navigation.type == 2) {
-//         //遷移後に動かす処理
-//         console.log("バック");
-//         syokai_bgm.play();
-//     }
-// });

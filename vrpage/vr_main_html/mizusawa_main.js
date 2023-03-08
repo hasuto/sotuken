@@ -598,7 +598,7 @@ document.getElementById("m_campus").addEventListener('click', function (e) {
 });
 function getCSV() {
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-    req.open("get", "main_syoukai.csv", true); // アクセスするファイルを指定
+    req.open("get", "aseets/main_syoukai.csv", true); // アクセスするファイルを指定
     req.send(null); // HTTPリクエストの発行
 
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ 

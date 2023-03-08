@@ -11,26 +11,16 @@ $senkou-color: #6F4C77;
 body {
     margin: 0;
     font-family: 'Noto Sans Japanese', sans-serif;
-    //height: 100%;
 }
 
 .container {
-    // padding-left: 15px;
-    // padding-right: 15px;
-    // margin-top: 10px;
-    // margin-left: 150px;
-    // margin-right: 150px;
     width: 100%;
     height: 100vh;
-    // max-height: 100%;
-    //position: relative;
     z-index: 1;
 
     .tutorial-modalArea {
-        // display: none;
         position: fixed;
         z-index: 10;
-        /*サイトによってここの数値は調整 */
         top: 0;
         left: 0;
         width: 100%;
@@ -74,11 +64,6 @@ body {
                     }
                 }
             }
-
-            // .tutorial-modal-title {
-            //     font-size: larger;
-                
-            // }
 
             .tutorial-modal-body {
                 .tutorial-text {
@@ -173,9 +158,6 @@ body {
                 font-size: xx-large;
             }
         }
-
-
-
         .navbar-nav {
 
             display: inline-flex;
@@ -184,10 +166,6 @@ body {
             &.res {
                 padding-left: 0px;
             }
-
-            
-
-
             .nav-item {
                 list-style: none;
                 margin-left: 50px;
@@ -195,9 +173,6 @@ body {
                 transition: .3s;
                 position: relative;
                 cursor: pointer;
-                
-                
-
                 &.res {
                     margin-left: 20px;
                     &::after {
@@ -205,7 +180,6 @@ body {
                         opacity: 0;
                      }
                 }
-
                 &::after {
                     position: absolute;
                     bottom: 0;
@@ -216,13 +190,10 @@ body {
                     transition: .3s;
                     transform: translateX(-50%);
                     width: 0;
-                }
-
-               
+                }       
                 &:hover::after {
                     width: 100%;
                 }
-
                 .nav-link {
                     color: #004ea2;
                     font-size: medium;
@@ -232,12 +203,9 @@ body {
                     &:hover {
                         opacity: 1;
                     }
-    
-
                     &.res {
                         font-size: x-large;
                     }
-
                 }
                 .btn-play{
                     opacity: 0.7;
@@ -262,18 +230,15 @@ body {
         display: none;
         position: fixed;
         z-index: 40;
-        /*サイトによってここの数値は調整 */
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-
         .modalBg {
             width: 100%;
             height: 100%;
             background-color: rgba(30, 30, 30, 0.9);
         }
-
         .modalWrapper {
             position: absolute;
             top: 50%;
@@ -285,10 +250,7 @@ body {
             padding: 10px 30px;
             background-color: #fff;
             border-radius: 10px;
-
-
         }
-
         .modal-header {
             .modal-title {
                 font-size: larger;
@@ -296,14 +258,12 @@ body {
                 border-bottom: solid 2px #004EA2;
             }
         }
-
         .closeModal {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
             cursor: pointer;
         }
-
         .modal-body {
             .modal-text {
                 margin: 10px 0 10px 0;
@@ -311,13 +271,11 @@ body {
                 font-weight: 700;
                 text-align: center;
             }
-
             img {
                 width: 100%;
                 height: 100%;
             }
         }
-
         .closebtn {
             margin: auto;
             text-align: center;
@@ -333,15 +291,12 @@ body {
             -webkit-tap-highlight-color: transparent;
             transition: .3s ease-out;
         }
-
         .closebtn:hover {
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
         }
     }
-
-
     /* モーダルCSS */
     .update-Modal{
         padding-top: 10px;
@@ -350,18 +305,15 @@ body {
         display: none;
         position: fixed;
         z-index: 40;
-        /*サイトによってここの数値は調整 */
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-
         .update-modalBg {
             width: 100%;
             height: 100%;
             background-color: rgba(30, 30, 30, 0.9);
         }
-
         .update-modalWrapper {
             position: absolute;
             top: 50%;
@@ -374,13 +326,11 @@ body {
             background-color: #fff;
             border-radius: 10px;
         }
-
         .update-modal-title {
             font-size: larger;
             text-align: center;
             border-bottom: solid 2px #004EA2;
         }
-
         .update-closeModal {
             position: absolute;
             top: 0.5rem;
@@ -389,10 +339,6 @@ body {
         }
 
         .update-modal-body {
-
-            // li {
-            //     margin-bottom: 10px;
-            // }
 
             .update-modal-text {
                 margin: 10px 0 10px 0;
@@ -433,10 +379,6 @@ body {
         }
     }
 
-
-    // .top_contents {
-
-
     .iframe {
         position: absolute;
         width: 100%;
@@ -445,10 +387,8 @@ body {
         display: block;
         z-index: 1;
 
-
         .iframe_main {
             width: 100%;
-            //height: calc(100% - 54px) ;
             margin: 0px 0px 0px 0px;
 
             iframe {
@@ -458,7 +398,6 @@ body {
                 top: 0;
                 left: 0;
                 width: 100%;
-                //height: 92.2vh; //現時点での最大ウィンドウサイズにあわせている
                 height: 100%;
 
 
@@ -478,8 +417,6 @@ body {
             &.res {
                 font-size: 1.5rem;
             }
-
-
         }
 
         #yahaba_pin_list_all {
@@ -495,7 +432,6 @@ body {
                 padding: 8px 8px 8px 8px;
                 line-height: 1;
                 color: $honkan-color;
-                // background: #f0f0f0;
                 background: #fff;
                 cursor: pointer;
                 text-align: center;
@@ -504,17 +440,12 @@ body {
                 transition: all 500ms;
                 border: solid 1px $honkan-color;
 
-                // .label_yahaba_pin {
-
-                // }
-
                 &.hover {
                     transition: all 500ms;
                     background: $honkan-color;
                     color: #fff;
                     border-radius: 0px;
                 }
-
 
             }
 
@@ -533,11 +464,9 @@ body {
                 width: 290px;
                 margin: 0px 0;
                 padding: 0;
-                // background: #f0f0f0;
                 background: #fff;
                 list-style: none;
                 text-align: center;
-
 
             }
 
@@ -575,8 +504,6 @@ body {
                     }
 
                     &:hover {
-                        // transition: all 500ms;
-                        // transform: perspective(100px) translateZ(10px);
                         opacity: 1;
                     }
                 }
@@ -606,7 +533,6 @@ body {
                 padding: 8px 8px 8px 8px;
                 line-height: 1;
                 color: $honkan-color;
-                // background: #f0f0f0;
                 background: #fff;
                 cursor: pointer;
                 text-align: center;
@@ -617,10 +543,6 @@ body {
                 &.res {
                     width: 260px;
                 }
-
-                // .label_yahaba_pin {
-
-                // }
 
                 &.hover {
                     transition: all 500ms;
@@ -647,7 +569,6 @@ body {
                 width: 290px;
                 margin: 0px 0;
                 padding: 0;
-                // background: #f0f0f0;
                 background: #fff;
                 list-style: none;
                 text-align: center;
@@ -688,8 +609,6 @@ body {
                         }
 
                     &:hover {
-                        // transition: all 500ms;
-                        // transform: perspective(100px) translateZ(10px);
                         opacity: 1;
                     }
                 }
@@ -769,10 +688,8 @@ body {
         color: #ffffff;
         font-size: 10px;
         transform: translate(-50%, -50%,0);
-       // margin: 500px auto;
         position: relative;
         text-indent: -9999em;
-        
         -webkit-animation-delay: -0.16s;
         animation-delay: -0.16s;
         pointer-events: none;
@@ -828,12 +745,7 @@ body {
 .loader.loaded {
     transition: all 700ms;
     opacity: 0;
-    // animation: fadeOut2 3s forwards;
 }
-
-
-
-
 
 * {
     box-sizing: border-box;

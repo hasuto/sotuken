@@ -32,7 +32,7 @@
 
 <body>
     <audio id="top_page_bgm" preload loop>
-        <source src="dog_bgm.mp3" type="audio/mp3">
+        <source src="assets/dog_bgm.mp3" type="audio/mp3">
     </audio>
     <div class="container">
 
@@ -45,7 +45,7 @@
                         <div class="tutorial-text">ようこそ！<br>バーチャル学校見学へ！</div>
                         <video id="modal_tutorial_video" width="540" height="260" autoplay loop preload playsinline
                             muted>
-                            <source src="tutorial.mp4" type="video/mp4">
+                            <source src="assets/tutorial.mp4" type="video/mp4">
                         </video>
                         <div class="tutorial-text">興味のある場所をクリックして<br>
                             施設内をVR画像で見てみよう！</div>
@@ -78,15 +78,11 @@
                                 </div>
                                 <div class="modal-body">
                                     <video id="modal_top_video" width="540" height="260" loop preload playsinline muted>
-                                        <source src="tutorial.mp4" type="video/mp4">
+                                        <source src="assets/tutorial.mp4" type="video/mp4">
                                     </video>
-                                    <!-- <div style="text-align: center;"><img src="metoriku.png"></div> -->
                                     <div class="modal-text">興味のある場所をクリックして<br>
                                         施設内をVR画像で見てみよう！</div>
                                 </div>
-                                <!-- <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">閉じる</button>
-                                    </div> -->
                             </div>
                             <div id="closebtn" class="closebtn">
                                 閉じる
@@ -125,10 +121,6 @@
 
                 <li class="nav-item">
                     <!-- 音声ファイル -->
-                    <!-- <audio id="bgm1" preload loop>
-                        <source src="op.ogg" type="audio/ogg">
-                        <source src="bgm.mp3" type="audio/mp3">
-                    </audio> -->
 
                     <!-- 再生ボタン -->
                     <button class="btn-play" type="button"><img src="images/volume_on.png"></button>
@@ -143,7 +135,6 @@
 
 
         </div>
-        <!-- <div class="top_contents"> -->
         <div class="iframe">
             <div class="iframe_main">
                 <iframe id="top_aframe" src="" frameborder="0"></iframe>
@@ -184,7 +175,6 @@
             </div>
 
         </div>
-        <!-- モーダルエリアここから -->
     </div>
     <div id="loader" class="loader">
         <img src="https://www.iwate-it.ac.jp/renew/wp-content/themes/sangitan/img/logo/logo_sangitan_blue.svg"
@@ -201,8 +191,6 @@
     <script type="text/javascript">
         const bgm1 = document.querySelector("#top_page_bgm");       // <audio>
         var btn = document.querySelector(".btn-play");   // <button>
-
-
 
         /**
          * [event] 再生終了時に実行
@@ -234,7 +222,6 @@
             });
 
             $(function () {
-                /*チュートリアル*/
                 $('#tutorial-Modal').click(function () {
                     $('#tutorial-modalArea').fadeIn();
                 });
@@ -380,86 +367,70 @@
             //iframeの中のhtmlのidが一致するオブジェクトを押すと実行
             //矢巾校の校舎のクリックイベント
             $("#top_aframe").contents().find(doc.getElementById('mekatoro_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('mekatoro_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('densi_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '2' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('densi_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '2' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('kentiku_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '3' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('kentiku_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '3' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('sande_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '4' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('sande_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '4' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('zyohou_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '5' + "=" + '1';
             });
 
 
             $("#top_aframe").contents().find(doc.getElementById('zyohou_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '5' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('senkou_model')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '6' + "=" + '1';
             });
 
 
             $("#top_aframe").contents().find(doc.getElementById('senkou_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '6' + "=" + '1';
             });
 
 
             $("#top_aframe").contents().find(doc.getElementById('taiku')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '6';
             });
 
 
             $("#top_aframe").contents().find(doc.getElementById('syoku')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '4';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('tamoku')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('ryou')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
             });
 
@@ -469,22 +440,18 @@
 
 
             $("#top_aframe").contents().find(doc.getElementById('honkan_genkan')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '1';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('syokudou_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '4';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('taikukan_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '7' + "=" + '6';
             });
 
             $("#top_aframe").contents().find(doc.getElementById('ryou_point')).on("click", function (e) {
-                //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
             });
 
@@ -526,8 +493,6 @@
             $("#top_aframe").contents().find(doc.getElementById('taiku_m_point')).on("click", function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '12' + "=" + '4';
             });
-
-
 
 
         });

@@ -36,8 +36,6 @@ window.onload = () => {
         } else {
 
         }
-
-
 }
 
 $(function () {
@@ -45,7 +43,6 @@ $(function () {
         var video2 = document.getElementById('modal_tutorial_video');
         var video3 = document.getElementById('modal_marubatu_video');
         var video4 = document.getElementById('modal_syoukai_video');
-        // video.controls = false;
         /*チュートリアル*/
         $('#tutorial-Modal').click(function () {
                 $('#tutorial-modalArea').fadeIn();
@@ -67,10 +64,6 @@ $(function () {
                 $('#modal_top_video')[0].play();
 
         });
-        // $('#closeModal , #modalBg').click(function () {
-        //         $('#modalArea').fadeOut();
-        //         console.log("閉じるボタン");
-        // });
         $('#closebtn , #modalBg').click(function () {
                 $('#modal_top_video')[0].pause();
                 video1.currentTime = 0;
@@ -83,9 +76,6 @@ $(function () {
         $('#update-Modal').click(function () {
                 $('#update-modalArea').fadeIn();
         });
-        // $('#closeModal , #update-modalBg').click(function () {
-        //   $('#update-modalArea').fadeOut();
-        // });
         $('#closebtn , #update-modalBg').click(function () {
                 $('#update-modalArea').fadeOut();
         });
@@ -121,7 +111,7 @@ $(function () {
 
         });
 });
-
+//ヘッダーの矢巾キャンパスのクリックイベント
 document.getElementById("y_campus").addEventListener('click', function (e) {
         if (document.getElementById("top_aframe").getAttribute('src') != "../vr_top_page_aframe/yahaba_school_top.html") {
                 window.location.href = "../vr_top_html/vr_top.html?y";
@@ -134,7 +124,7 @@ document.getElementById("y_campus").addEventListener('click', function (e) {
         }
 });
 
-//ヘッダーの
+//ヘッダーの水沢キャンパスのクリックイベント
 document.getElementById("m_campus").addEventListener('click', function (e) {
         if (document.getElementById("top_aframe").getAttribute('src') != "../vr_top_page_aframe/mizusawa_school_top.html") {
                 window.location.href = "../vr_top_html/vr_top.html?m";
