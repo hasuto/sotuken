@@ -9,35 +9,22 @@ var Top_yahaba_Aframe = document.getElementById('top_aframe');
 var loader = document.getElementById('loader');
 var bgm = document.querySelector('#top_page_bgm');
 
-// $(document).ready(function () {
-//         if (window.performance.navigation.type == 2) {
-//                 //遷移後に動かす処理
-//                 console.log("ああああああああああああ");
-//                 bgm1.play();
-//         }
-// });
 
 window.onload = () => {
-     
-
-       
-
         var data = location.href.split("?")[1];
+        //URLから矢巾校か水沢校か判定・yが矢巾校・mが水沢校
         if (data == "y") {
                 Top_yahaba_Aframe.src = "../vr_top_page_aframe/yahaba_school_top.html";
                 document.getElementById('iframe_title').textContent = '矢巾キャンパス';
                 $('#mizusawa_pin_list_all').hide();
-
         } else if (data == "m") {
                 Top_yahaba_Aframe.src = "../vr_top_page_aframe/mizusawa_school_top.html";
                 document.getElementById('iframe_title').textContent = '水沢キャンパス';
                 $('#yahaba_pin_list_all').hide();
         }
-
+        //ユーザーの端末OSからスマホかPCか判定
         if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-                //スマホ
-
-
+                //スマホ用のjavascript
                 $(".navbar-brand").addClass("res");
                 $(".navbar-nav").addClass("res");
                 $(".nav-item").addClass("res");
@@ -52,11 +39,6 @@ window.onload = () => {
 
 
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-
-
-// });
 
 $(function () {
         var video1 = document.getElementById('modal_top_video');
@@ -152,7 +134,7 @@ document.getElementById("y_campus").addEventListener('click', function (e) {
         }
 });
 
-
+//ヘッダーの
 document.getElementById("m_campus").addEventListener('click', function (e) {
         if (document.getElementById("top_aframe").getAttribute('src') != "../vr_top_page_aframe/mizusawa_school_top.html") {
                 window.location.href = "../vr_top_html/vr_top.html?m";

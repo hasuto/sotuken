@@ -32,10 +32,8 @@
 
 <body>
     <audio id="top_page_bgm" preload loop>
-
         <source src="dog_bgm.mp3" type="audio/mp3">
     </audio>
-    <!-- <iframe  src="marubatu_bgm.mp3" allow="autoplay" style="display:none"> -->
     <div class="container">
 
         <!-- モーダルエリアここから -->
@@ -187,12 +185,6 @@
 
         </div>
         <!-- モーダルエリアここから -->
-
-        <!-- <div id="mask_all" class="mask">
-                <img src="https://www.iwate-it.ac.jp/renew/wp-content/themes/sangitan/img/logo/logo_sangitan_blue.svg"
-                    alt="岩手県立産業技術短期大学校" id="roder-img">
-                <div class="loader"></div>
-            </div> -->
     </div>
     <div id="loader" class="loader">
         <img src="https://www.iwate-it.ac.jp/renew/wp-content/themes/sangitan/img/logo/logo_sangitan_blue.svg"
@@ -226,11 +218,11 @@
 
             //iframeの全要素が読み込まれたら処理
             $("#top_aframe").contents().find(doc.querySelector('a-scene')).on("loaded", function (e) {
-                console.log("コンプリートマイン2");
                 if (document.getElementById('loader').classList.contains("loaded")) {
 
                 } else {
                     window.setTimeout(function () {
+                        //ローディング画面のフェードアウト処理
                         loader.classList.add('loaded');
 
                     }, 1000);
@@ -257,11 +249,10 @@
 
 
 
-
+            //ユーザーの端末OSからスマホかPCか判定
             if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
                 // ❶スマホのみに適用させるJavaScriptを記述
                 var camera_pc = $("#top_aframe").contents().find(doc.getElementById('camera_pc'));
-                // camera_pc.parentNode.removeChild(camera_pc);
                 camera_pc.remove();
                 console.log(camera_pc);
 
@@ -299,9 +290,8 @@
                     }
                 });
 
-                console.log("スマホだよーーーー");
-
             } else {
+                //PCのみに適用させるjavascriptを以下に記述
                 var camera_phone = $("#top_aframe").contents().find(doc.getElementById('camera_phone'));
                 camera_phone.remove();
 
@@ -333,10 +323,9 @@
                         document.getElementById('mizusawa_pin').checked = false;
                         $(".label_mizusawa_pin").removeClass("hover");
                     });
-                console.log("PCだよーーーーーーー");
             }
 
-
+            //ピン一覧リストの各科のクリックイベント
             $('#mekatoro').on('click', function (e) {
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
             })
@@ -389,8 +378,7 @@
 
 
             //iframeの中のhtmlのidが一致するオブジェクトを押すと実行
-            //下記に各科を追加していく
-            // syoukai_page('3', '1');
+            //矢巾校の校舎のクリックイベント
             $("#top_aframe").contents().find(doc.getElementById('mekatoro_model')).on("click", function (e) {
                 //alert('kentiku');
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '1' + "=" + '1';
@@ -500,15 +488,9 @@
                 window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + '8' + "=" + '1';
             });
 
-            // $("#top_aframe").contents().find(doc.getElementById('kousya')).on("mouseenter", function (e) {
-            //         //alert('kentiku');
-            //         console.log("触れている");
-            //         // syoukai_page('3', '1');
-            // });
 
 
-
-            //水沢校のクリックイベント
+            //水沢校の校舎のクリックイベント
             $("#top_aframe").contents().find(doc.getElementById('seisangizyutu')).on("click", function (e) {
                 window.location.href = "../vr_main_html/mizusawa_main.html?a=" + 'text' + "=" + '9' + "=" + '1';
             });
