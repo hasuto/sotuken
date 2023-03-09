@@ -5,7 +5,7 @@ var this_text; //各科の紹介文格納用
 var this_id1; //紹介文をcsvファイルから読み込むための、id
 var this_id2;//紹介文をcsvファイルから読み込むための、id
 var Top_yahaba_Aframe = document.getElementById('main_yahaba_aframe');
-var text;
+
 var id1;
 var id2;
 var game_hantei;
@@ -26,7 +26,6 @@ $('#back_button').hide();
 window.onload = function () {
 
     var data = location.href.split("?")[1];
-    //text = data.split("=")[1];
     id1 = data.split("=")[0];
     id2 = data.split("=")[1];
     game_hantei = data.split("=")[2];
