@@ -37,7 +37,6 @@ function init() {
 
 function aframeMutlByte() {
     document.querySelectorAll('[mb-text]:empty').forEach(mb_text => {
-        console.log(mb_text.dataset.text)
         const text = mb_text.dataset.text
         const text_cnt = text.length
         const width = text_cnt * 1.4

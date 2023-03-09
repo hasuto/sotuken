@@ -24,52 +24,17 @@ var Maru = document.querySelector('#Maru');
 
 
 
-// let element = document.getElementById('text');
-// console.log(element.children[0].data-text);
-// sound01.playSound();
 
-
-// let changeElement = (el)=> {
-
-//     if(el.style.display==''){
-//       el.style.display='none';
-//     }else{
-//       el.style.display='';
-//     }
-
-//   }
 
 
 
 window.onload = function () {
     init();
     render();
-    // if (window.matchMedia('(max-width: 767px)').matches) {
-    //     //スマホ処理
-    //     console.log("スマホだよー");
-    //     document.querySelector('#game-explanation_1').setAttribute("scale", { x: 8, y: 8, z: 8 });
-    //     document.querySelector('#game-explanation_2').setAttribute("scale", { x: 8, y: 8, z: 8 });
-    //     document.querySelector('#game-explanation_3').setAttribute("scale", { x: 1, y: 1, z: 1.5 });
-    //     //document.querySelector('#Maru').setAttribute("scale", { x: 4, y: 4, z: 4 });
-    //     document.querySelector('#Batu').setAttribute("scale", { x: 4, y: 4, z: 4 });
-    //     document.querySelector('#Batu').setAttribute("position", { x: 27, y: 10, z: 0 });
-    //     document.querySelector('#Maru').setAttribute("scale", { x: 4, y: 4, z: 4 });
-    //     document.querySelector('#Maru').setAttribute("position", { x: -7, y: 10, z: 0 });
-
-
-    //     // $(Maru).attr({
-    //     //     'scale': { x: 4, y: 4, z: 4 }
-    //     // });
-
-
-    // } else if (window.matchMedia('(min-width:768px)').matches) {
-    //     //PC処理
-    //     console.log("PCだよー");
-    // }
 
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
         // ❶スマホのみに適用させるJavaScriptを記述
-        console.log("スマホだよーーーーmaru");
+    
 
         //PC用のカメラではなく、スマホ用のカメラに変更
         var camera_pc = document.querySelector('#pc');
@@ -119,16 +84,14 @@ window.onload = function () {
         document.querySelector('#game-explanation_3').setAttribute("scale", { x: 3, y: 2.5, z: 3.5 });
         document.querySelector('#issue-back').setAttribute("scale", { x: 2, y: 4.6, z: 3 });
         document.querySelector('#issue-back').setAttribute("position", { x: 10, y: 43, z: 0 });
-        // document.querySelector('#game-explanation_3').setAttribute("position", { x: 10, y:17, z: 0 });
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
-        console.log("PCだよーーーーーーーmaru");
+   
     }
 
 
     var data = location.href.split("?")[1];
-    text = data.split("=")[1];
-    console.log(text);
+    text = data.split("=")[0];
     getCSV();
     getCSV2();
 
@@ -136,27 +99,9 @@ window.onload = function () {
     var a = "12";
     background.setAttribute('src', "../vr_images/" + text + ".jpeg");
     background.setAttribute('position', a);
-    console.log(background.getAttribute('position'));
-    console.log(background.getAttribute('src'));
 
 };
 
-// function proc(){
-//     init();
-//     render();
-//     var data = location.href.split("?")[1];
-//     text = data.split("=")[1];
-//     console.log(text);
-//     getCSV();
-//     getCSV2();
-
-//     var background = document.querySelector('#back-ground');
-//     var a = "12";
-//     background.setAttribute('src',"assets/" + text + ".jpeg");
-//     background.setAttribute('position',a);
-//     console.log(background.getAttribute('position'));
-//     console.log(background.getAttribute('src'));
-// }
 
 function aframeMutlByte() {
     document.querySelectorAll('[mb-text]:empty').forEach(mb_text => {
@@ -201,7 +146,6 @@ function convertCSVtoArray(str) { // 読み込んだCSVデータが文字列と�
         result[i] = tmp[i].split(',');
     }
 
-    //console.log(result[0][1]); // 300yen
 }
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV2() {
@@ -226,40 +170,12 @@ function convertCSVtoArray2(str) { // 読み込んだCSVデータが文字列と
         judgement_array[i] = tmp[i].split(',');
     }
 
-    //console.log(judgement_array[0][1]); // 300yen
 }
 
 function split_problem_statement(a) {
-    console.log(result[a][1])
     mondai_array = result[a][1].split('\\n');
-    //  mondai_array.forEach(function (value,index){
-    //     console.log(index,value);
-    //     // if(value.length < 25 && value+1.length){
 
-    //     // }
-    //     console.log(value+1);
-    //  });
     var anser = [];
-
-    // for (i = 0; i < mondai_array.length; i++) {
-    //     if (mondai_array[i].length < 25) {
-    //         console.log("あああああああああああ");
-    //         if (mondai_array[i + 1]) {
-    //             if (mondai_array[i].length + mondai_array[i + 1].length < 25) {
-    //                 anser.push(mondai_array[i] + mondai_array[i + 1]);
-    //                 //   mondai_array[i].push(mondai_array[i+1]);
-    //                 console.log(anser[0]);
-    //                 console.log(anser[1]);
-    //                 console.log(anser[2]);
-    //                 console.log(anser[3]);
-    //                 console.log(anser[4]);
-    //                 i++;
-    //             }
-    //         } else {
-    //             anser.push(mondai_array[i]);
-    //         }
-    //     }
-    // }
 
     switch (cnt) {
         case 1:
@@ -294,16 +210,12 @@ function split_problem_statement(a) {
 }
 
 function problem_statement1(mondai_text, a) {
-    console.log("okだよ");
-    // console.log(result[a][1]);
+
     if (mondai_text != null) {
         var mdbun_1 = "mdbun" + a;
 
         document.querySelectorAll('[' + mdbun_1 + ']:empty').forEach(mdbun_1 => {
-            console.log(mdbun_1.dataset.text)
-            //mdbun1.dataset.text = result[a][1];
             mdbun_1.dataset.text = mondai_text;
-            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
             const text = mdbun_1.dataset.text
             const text_cnt = text.length
             const width = text_cnt * 1.4
@@ -318,30 +230,16 @@ function problem_statement1(mondai_text, a) {
 
             const base64 = cvs.toDataURL("image/png")
             mdbun_1.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
-            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
-            // a = mdbun1;
-            // new_mdbun = mdbun1;
-
-            console.log(mdbun_1);
         })
     }
-
-    //  document.querySelector('#test_1').textContent = result[a][1];
-
-    // a.after(new_mdbun);
 }
 
 function problem_statement1_2(mondai_text, a) {
-    console.log("okだよ");
-    console.log(a);
     if (mondai_text != null) {
         var mdbun_2 = "mdbun" + a + "_2";
 
         document.querySelectorAll('[' + mdbun_2 + ']:empty').forEach(mdbun_2 => {
-            console.log(mdbun_2.dataset.text)
-            //mdbun1.dataset.text = result[a][1];
             mdbun_2.dataset.text = mondai_text;
-            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
             const text = mdbun_2.dataset.text
             const text_cnt = text.length
             const width = text_cnt * 1.4
@@ -356,30 +254,18 @@ function problem_statement1_2(mondai_text, a) {
 
             const base64 = cvs.toDataURL("image/png")
             mdbun_2.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
-            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
-            // a = mdbun1;
-            // new_mdbun = mdbun1;
-
-            //console.log(mdbun1);
         })
     }
 
-    //  document.querySelector('#test_1').textContent = result[a][1];
-
-    // a.after(new_mdbun);
 }
 
 function problem_statement1_3(mondai_text, a) {
-    console.log("okだよ");
-    console.log(a);
+
     if (mondai_text != null) {
         var mdbun_3 = "mdbun" + a + "_3";
 
         document.querySelectorAll('[' + mdbun_3 + ']:empty').forEach(mdbun_3 => {
-            console.log(mdbun_3.dataset.text)
-            //mdbun1.dataset.text = result[a][1];
             mdbun_3.dataset.text = mondai_text;
-            //mdbun1.dataset.text = split_problem_statement(result[a+1][1]);
             const text = mdbun_3.dataset.text
             const text_cnt = text.length
             const width = text_cnt * 1.4
@@ -394,17 +280,9 @@ function problem_statement1_3(mondai_text, a) {
 
             const base64 = cvs.toDataURL("image/png")
             mdbun_3.innerHTML = `<a-image whiteSpace="true" scale="${(width) / 10} ${height / 10} 1" src="${base64}"></a-image>`;
-            //mdbun1.innerHTML = `<a-image position="10 18 30" scale="${(width) / 5} ${height / 10} 1" src="${base64}"></a-image>`;
-            // a = mdbun1;
-            // new_mdbun = mdbun1;
-
-            //console.log(mdbun1);
         })
     }
 
-    //  document.querySelector('#test_1').textContent = result[a][1];
-
-    // a.after(new_mdbun);
 }
 
 
@@ -414,9 +292,6 @@ function init() {
     sceneEl = document.querySelector("a-scene");
     Maru = sceneEl.querySelector("#Maru");
     Batu = sceneEl.querySelector("#Batu");
-    // start_back = sceneEl.querySelector('#start-back');
-
-
 
     // マウス、タッチ処理を呼び出すイベントリスナーをセット
     document.addEventListener("mousedown", onMouseDown);
@@ -430,7 +305,6 @@ function init() {
 
     Maru.addEventListener("click", onMouseClick1);
     Batu.addEventListener("click", onMouseClick2);
-    // start_back.addEventListener("click",onMouseClick3);
 
 }
 
@@ -476,8 +350,6 @@ function restart() {
     var correct_answer = document.querySelector('#correct_answer');
     var incorrect_answer = document.querySelector('#incorrect_answer');
 
-
-    console.log("押してる");
     if (restart.getAttribute('visible') == true) {
         score = 0;
         cnt = 0;
@@ -509,8 +381,6 @@ function restart() {
         Maru.setAttribute("visible", true);
         Batu.setAttribute("visible", true);
 
-        console.log("リスタート");
-        console.log(cnt, score);
         cnt++;
         issue();
     }
@@ -523,30 +393,15 @@ function start() {
     var game_explanation_2 = document.querySelector('#game-explanation_2');
     var game_explanation_3 = document.querySelector('#game-explanation_3');
 
-    // var startback = document.querySelector('#start-button');
-    // var front_text = document.getElementById("front_text");
-    // front_text.setAttribute("value", "Hello, World! \n hello ");
-    // var problem_statement = document.querySelector('#problem_statement').mb_text.dataset.text;
-    // console.log(problem_statement);
-
-    console.log(result[1][2]);
     if (startbutton.getAttribute('visible') == true) {
         startbutton.setAttribute('visible', false);
         game_explanation_1.setAttribute('visible', false);
-        //  game_explanation_2.setAttribute('visible', false);
         game_explanation_3.setAttribute('visible', false);
-        // startback.setAttribute('visible',false);
         Maru.setAttribute("visible", true);
         Batu.setAttribute("visible", true);
         cnt++;
         issue();
     }
-    console.log(cnt);
-
-    // if (cnt == 0) {
-    //     cnt++;
-    //     issue();
-    // }
 
 }
 
@@ -560,9 +415,6 @@ function onMouseClick2(event) {
 
 }
 
-// function onMouseClick3(event){
-//     start();
-// }
 
 function maru() {
     correct_answer = document.querySelector('#correct_answer');
@@ -571,7 +423,6 @@ function maru() {
     score_result = document.querySelector('#score');
     var scoreback = document.querySelector('#score-back');
     var restart = document.querySelector('#restart');
-    // const $score = document.getElementById("score");
     if (Maru.getAttribute('visible') == true) {
         switch (cnt) {
             case 1:
@@ -850,10 +701,6 @@ function issue() {
     var monbun5 = document.querySelector('#problem_statement5');
     var monbun5_2 = document.querySelector('#problem_statement5_2');
     var monbun5_3 = document.querySelector('#problem_statement5_3');
-
-    // var monbun3 = document.querySelector('#problem_statement3');
-    // var monbun4 = document.querySelector('#problem_statement4');
-    // var monbun5 = document.querySelector('#problem_statement5');
     var issueback = document.querySelector('#issue-back');
 
     switch (cnt) {
@@ -864,7 +711,6 @@ function issue() {
             monbun1.setAttribute('visible', true);
             monbun1_2.setAttribute('visible', true);
             monbun1_3.setAttribute('visible', true);
-            console.log(cnt);
             split_problem_statement(cnt);
             }
             break;
@@ -878,7 +724,6 @@ function issue() {
             monbun1.setAttribute('visible', false);
             monbun1_2.setAttribute('visible', false);
             monbun1_3.setAttribute('visible', false);
-            console.log(cnt);
             split_problem_statement(cnt);
             }
             break;
@@ -958,20 +803,4 @@ function onMouseMove(event) {
 function onMouseUp(event) {
     isMouseDown = false;
 }
-
-// function getMouseX(event) {
-//     if (event.type.indexOf("touch") == -1)
-//         return event.clientX;
-//     else
-//         return event.touches[0].clientX;
-// }
-
-// function getMouseY(event) {
-//     if (event.type.indexOf("touch") == -1)
-//         return event.clientY;
-//     else
-//         return event.touches[0].clientY;
-// }
-
-
 

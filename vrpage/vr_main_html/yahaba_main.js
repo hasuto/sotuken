@@ -26,10 +26,10 @@ $('#back_button').hide();
 window.onload = function () {
 
     var data = location.href.split("?")[1];
-    text = data.split("=")[1];
-    id1 = data.split("=")[2];
-    id2 = data.split("=")[3];
-    game_hantei = data.split("=")[4];
+    //text = data.split("=")[1];
+    id1 = data.split("=")[0];
+    id2 = data.split("=")[1];
+    game_hantei = data.split("=")[2];
     getCSV();
 
     var yahaba_list = document.getElementById('yahaba_list');
@@ -132,23 +132,19 @@ window.onload = function () {
             if (game_hantei == "game") {
                 if (!back_bgm.paused) {
                     btn.innerHTML = '<img class="res" src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-                    console.log("ストップ")
                     back_bgm.pause();
                 } else {
                     btn.innerHTML = '<img class="res" src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-                    console.log("スタート ")
                     back_bgm.play();
                 }
             } else {
                 if (!syokai_bgm.paused) {
                     btn.innerHTML = '<img class="res" src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-                    console.log("ストップ")
                     syokai_bgm.pause();
                     back_bgm.pause();
                 }
                 else {
                     btn.innerHTML = '<img class="res" src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-                    console.log("スタート ")
                     syokai_bgm.play();
                     back_bgm.play();
                 }
@@ -157,10 +153,6 @@ window.onload = function () {
         
         });
 
-        console.log($('.yahaba_list').find('label'));
-
-
-        console.log("スマホだよーーーー");
 
     } else {
         // ❷その他PC・タブレットに適用させるJavaScriptを記述
@@ -243,23 +235,19 @@ window.onload = function () {
                 if (game_hantei == "game") {
                     if (!back_bgm.paused) {
                         btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-                        console.log("ストップ")
                         back_bgm.pause();
                     } else {
                         btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-                        console.log("スタート ")
                         back_bgm.play();
                     }
                 } else {
                     if (!syokai_bgm.paused) {
                         btn.innerHTML = '<img src="aseets/volume_off.png">';  // 「再生ボタン」に切り替え
-                        console.log("ストップ")
                         syokai_bgm.pause();
                         back_bgm.pause();
                     }
                     else {
                         btn.innerHTML = '<img src="aseets/volume_on.png">';  // 「一時停止ボタン」に切り替え
-                        console.log("スタート ")
                         syokai_bgm.play();
                         back_bgm.play();
                     }
@@ -530,12 +518,12 @@ function button_visi() {
 
 
 document.getElementById('game_button').addEventListener('click', function (e) {
-    window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2 + "=" + "game";
+    window.location.href = "../vr_main_html/yahaba_main.html?"  + id1 + "=" + id2 + "=" + "game";
 
 });
 
 $('#back_button').click(function () {
-    window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
+    window.location.href = "../vr_main_html/yahaba_main.html?"  + id1 + "=" + id2;
 })
 
 $('#setumei_button').click(function () {
@@ -737,7 +725,7 @@ function start(id1, id2) {
 function syoukai_page(id1, id2) {
 
     //元々はsyoukai_pageの引数から判定していた。変更後はgetCSV関数にて判定。
-    window.location.href = "../vr_main_html/yahaba_main.html?a=" + 'text' + "=" + id1 + "=" + id2;
+    window.location.href = "../vr_main_html/yahaba_main.html?"+ id1 + "=" + id2;
     this_id1 = id1;
     this_id2 = id2;
     syoukai_hantei();
@@ -780,9 +768,6 @@ function syoukai_hantei() {
     var i;
 
     //tmp.lengthは読み込んだcsvファイルの行数の格納変数
-    console.log(tmp.length);
-
-
 
     for (var i = 0; i <= tmp.length; i++) {
         var str = result[i][0];
@@ -804,7 +789,7 @@ function syoukai_hantei() {
 
     //サイト〇×ゲーム判定
     if (game_hantei == "game") {
-        Top_yahaba_Aframe.src = '../marubatu_game/Marubatu.html?a=' + result[csv_column][3];
+        Top_yahaba_Aframe.src = '../marubatu_game/Marubatu.html?' + result[csv_column][3];
         $('.modal_syoukai_body').hide();
 
 
@@ -877,7 +862,7 @@ function syoukai_hantei() {
 
 
     } else {
-        Top_yahaba_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?a=" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
+        Top_yahaba_Aframe.src = "../vr_main_syoukai_aframe/main_syoukai.html?" + result[csv_column][3] + "=" + this_id1 + "=" + this_id2;
         $('.modal_marubatu_body').hide();
         syokai_bgm = new Audio('aseets/' + result[csv_column][3] + '.mp3');
 

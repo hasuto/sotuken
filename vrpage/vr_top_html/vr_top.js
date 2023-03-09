@@ -4,7 +4,6 @@ var this_text; //各科の紹介文格納用
 var this_id1; //紹介文をcsvファイルから読み込むための、id
 var this_id2;//紹介文をcsvファイルから読み込むための、id
 var reset_txt;
-console.log("変わってる");
 var Top_yahaba_Aframe = document.getElementById('top_aframe');
 var loader = document.getElementById('loader');
 var bgm = document.querySelector('#top_page_bgm');
@@ -60,7 +59,6 @@ $(function () {
         /*使い方*/
         $('#openModal').click(function () {
                 $('#modalArea').fadeIn();
-                console.log('開くボタン')
                 $('#modal_top_video')[0].play();
 
         });
@@ -68,7 +66,6 @@ $(function () {
                 $('#modal_top_video')[0].pause();
                 video1.currentTime = 0;
                 $('#modalArea').fadeOut();
-                console.log("閉じるボタン2");
         });
         /*---------*/
 
@@ -103,7 +100,6 @@ $(function () {
 
 $(function () {
         $('#openModal').click(function () {
-                console.log('a');
                 $('#modalArea').fadeIn();
         });
         $('#closeModal , #modalBg').click(function () {
